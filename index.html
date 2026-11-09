@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preferred Outcomes | Flight Statutory Demand Dossier</title>
+    <!-- Built-in minimalist SVG favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
     <style>
         :root {
             --bg-color: #0f172a;
@@ -20,7 +22,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
-            padding: 20px;
+            padding: 16px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,14 +31,15 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 540px;
             width: 100%;
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 30px;
+            padding: 24px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
             text-align: center;
+            box-sizing: border-box;
         }
 
         .badge {
@@ -45,17 +48,18 @@
             color: var(--accent);
             padding: 6px 12px;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 22px;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            word-break: break-word;
         }
 
         .flight-id {
@@ -65,20 +69,20 @@
 
         p.description {
             color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 24px;
         }
 
         .buy-button {
-            display: inline-block;
+            display: block;
             width: 100%;
             background-color: var(--accent);
             color: white;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             text-decoration: none;
-            padding: 16px 20px;
+            padding: 14px 16px;
             border-radius: 8px;
             box-sizing: border-box;
             text-align: center;
@@ -92,21 +96,26 @@
         }
 
         .footer-note {
-            margin-top: 20px;
+            margin-top: 16px;
             font-size: 12px;
             color: var(--text-muted);
+            line-height: 1.4;
+            word-break: break-word;
         }
 
         @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
             .container {
-                padding: 20px;
+                padding: 18px;
             }
             h1 {
                 font-size: 20px;
             }
             .buy-button {
                 font-size: 14px;
-                padding: 14px 16px;
+                padding: 12px 14px;
             }
         }
     </style>
@@ -123,13 +132,13 @@
 
         <a href="#" id="checkoutButton" class="buy-button">Acquire Statutory Demand Dossier - $15.00</a>
 
-        <div class="footer-note">
-            Secure checkout powered by Gumroad. Instant PDF dossier delivery.
+        <div class="footer-note" id="footerNote">
+            Secure 256-bit encrypted checkout. Instant digital delivery of verified legal demand documents.
         </div>
     </div>
 
     <script>
-        // Cleanly reads the flight code from the path (e.g., preferredoutcomes.org/ACA119 -> ACA119)
+        // Extracts the clean flight path (e.g., /ACA119 -> ACA119)
         const pathSegments = window.location.pathname.replace(/^\/+/, '').split('/');
         const flightIdent = pathSegments[0] ? pathSegments[0].toUpperCase() : '';
 
@@ -137,7 +146,7 @@
             document.getElementById('flightIdentDisplay').textContent = flightIdent;
             document.getElementById('hookText').textContent = `This flight qualifies for maximum statutory cash settlement under the applicable regulatory framework due to verified disruption. Download your complete legal dossier and formal airline claim package instantly.`;
             
-            // Dynamic Gumroad product link matching your Make.com backend
+            // Connects directly to your automated product checkout link format
             document.getElementById('checkoutButton').href = `https://gumroad.com/l/${flightIdent.toLowerCase()}`;
         } else {
             document.getElementById('flightIdentDisplay').textContent = 'SYSTEM READY';
