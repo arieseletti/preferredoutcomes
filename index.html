@@ -19,6 +19,7 @@
       --text-secondary: #8b949e;
       --accent: #388bfd;
       --alert: #f85149;
+      --warning: #d29922;
       --success: #3fb950;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -190,7 +191,7 @@
       text-align: left;
     }
     .comp-table th, .comp-table td {
-      padding: 0.7rem 0.75rem;
+      padding: 0.75rem;
       border-bottom: 1px solid var(--border);
       border-right: 1px solid var(--border);
       line-height: 1.45;
@@ -202,11 +203,41 @@
       font-weight: 700;
       text-transform: uppercase;
     }
-    .comp-table tr.highlight-row {
-      background: rgba(56, 139, 253, 0.08);
+    /* RED / YELLOW / GREEN COMPARISON ROWS */
+    .comp-table tr.row-red {
+      background: rgba(248, 81, 73, 0.08);
+      color: var(--text-primary);
+    }
+    .comp-table tr.row-red td:first-child {
+      border-left: 3px solid var(--alert);
+    }
+    .comp-table tr.row-red .status-tag {
+      color: var(--alert);
+      font-weight: 700;
+    }
+    .comp-table tr.row-yellow {
+      background: rgba(210, 153, 34, 0.08);
+      color: var(--text-primary);
+    }
+    .comp-table tr.row-yellow td:first-child {
+      border-left: 3px solid var(--warning);
+    }
+    .comp-table tr.row-yellow .status-tag {
+      color: var(--warning);
+      font-weight: 700;
+    }
+    .comp-table tr.row-green {
+      background: rgba(63, 185, 80, 0.12);
       color: #ffffff;
     }
-    .comp-table tr.highlight-row td { font-weight: 500; }
+    .comp-table tr.row-green td:first-child {
+      border-left: 3px solid var(--success);
+      font-weight: 700;
+    }
+    .comp-table tr.row-green .status-tag {
+      color: var(--success);
+      font-weight: 700;
+    }
     .guarantee-box {
       border: 1px dashed var(--border);
       background: rgba(63, 185, 80, 0.05);
@@ -378,7 +409,7 @@
         </li>
       </ul>
 
-      <!-- 4. THE 3-WAY COMPARISON TABLE -->
+      <!-- 4. THE 3-WAY COMPARISON TABLE (RED / YELLOW / GREEN) -->
       <div class="section-title">PASSENGER RECOVERY COMPARISON // YOUR 3 OPTIONS RIGHT NOW</div>
       <div class="table-wrap">
         <table class="comp-table">
@@ -390,20 +421,20 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1. Airline Standard Web Form</td>
+            <tr class="row-red">
+              <td>🔴 1. Airline Standard Web Form</td>
               <td>Free</td>
-              <td><strong>70%+ Auto-Rejected.</strong> Carrier blames "operational cascading" unless you cite the statutory burden-of-proof clause.</td>
+              <td><span class="status-tag">70%+ AUTO-REJECTED.</span> Carrier blames "operational cascading" unless you cite the statutory burden-of-proof clause.</td>
             </tr>
-            <tr>
-              <td>2. Claim Shark Agencies (AirHelp, etc.)</td>
-              <td>35%–50% Fee ($300–$500 taken)</td>
-              <td>They submit a basic template letter, take 3 to 6 months to process, and pocket up to half of your payout.</td>
+            <tr class="row-yellow">
+              <td>🟡 2. Claim Shark Agencies (AirHelp, etc.)</td>
+              <td><span class="status-tag">35%–50% Fee</span> ($300–$500 taken)</td>
+              <td><span class="status-tag">3–6 MONTH WAIT.</span> They submit a basic template letter and pocket up to half of your settlement check.</td>
             </tr>
-            <tr class="highlight-row">
-              <td>3. Preferred Outcomes <span id="table-flight">Statutory</span> Dossier</td>
-              <td>$15.00 Flat</td>
-              <td><strong>You Keep 100% of Your Cash.</strong> Instant phone download with step-by-step triage, phone bypass, and legal demand templates.</td>
+            <tr class="row-green">
+              <td>🟢 3. Preferred Outcomes <span id="table-flight">Statutory</span> Dossier</td>
+              <td><span class="status-tag">$15.00 Flat</span></td>
+              <td><span class="status-tag">YOU KEEP 100% OF YOUR CASH.</span> Instant phone download with step-by-step triage, phone bypass, and legal demand templates.</td>
             </tr>
           </tbody>
         </table>
@@ -411,7 +442,7 @@
 
       <!-- 5. RISK-REVERSAL & CTA -->
       <div class="guarantee-box">
-        <strong>INSTANT ACCESS & COMPLIANCE GUARANTEE:</strong> For $15—less than an airport terminal sandwich—you download both complete North American Master Statutory Dossiers (Canada APPR + US DOT 14 CFR) directly to your phone in 10 seconds and keep 100% of your airline settlement.
+        <strong>INSTANT ACCESS & COMPLIANCE GUARANTEE:</strong> For $15—less than an airport terminal sandwich—you download the complete Flight Statutory Demand Dossier directly to your phone in 10 seconds and keep 100% of your airline settlement.
       </div>
 
       <div>
