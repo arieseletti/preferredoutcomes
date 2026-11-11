@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>P/O // Preferred Outcomes — Statutory Dispute & Claim Registry</title>
-  <!-- Built-in P/O Monospace Stamp Favicon on Black Framed Square -->
+  <title>P/O // Preferred Outcomes — Secure Intake Gateway</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090a0f' stroke='%23ffffff' stroke-width='4'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='monospace' font-weight='700' font-size='26' letter-spacing='-1'%3EP/O%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,8 +16,6 @@
       --text-primary: #e6edf3;
       --text-secondary: #8b949e;
       --accent: #388bfd;
-      --alert: #f85149;
-      --warning: #d29922;
       --success: #3fb950;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,506 +25,134 @@
       font-family: 'JetBrains Mono', monospace;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 1.25rem;
     }
-    .container {
+    .terminal-box {
       width: 100%;
-      max-width: 740px;
+      max-width: 520px;
       border: 1px solid var(--border);
       background: var(--card-bg);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-      margin: 1rem 0;
+      padding: 2rem;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
     }
-    .header {
-      padding: 1.15rem 1.4rem;
-      border-bottom: 1px solid var(--border);
+    .header-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.8rem;
-      letter-spacing: 0.04em;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      font-size: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
     }
-    .brand-link {
-      color: var(--text-primary);
-      text-decoration: none;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    .badge {
+    .status-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 6px;
       color: var(--success);
       font-weight: 700;
-      font-size: 0.72rem;
     }
-    .badge::before {
+    .status-badge::before {
       content: "";
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       background: var(--success);
       border-radius: 50%;
-      display: inline-block;
     }
-    .nav-bar {
-      display: flex;
-      border-bottom: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.01);
-      font-size: 0.7rem;
-      flex-wrap: wrap;
-    }
-    .nav-btn {
-      flex: 1 1 25%;
-      text-align: center;
-      padding: 0.65rem 0.4rem;
-      color: var(--text-secondary);
-      background: none;
-      border: none;
-      border-right: 1px solid var(--border);
-      font-family: inherit;
-      font-size: 0.68rem;
-      cursor: pointer;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: all 0.15s;
-    }
-    .nav-btn:last-child { border-right: none; }
-    .nav-btn:hover, .nav-btn.active {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.05);
+    h1 {
+      font-size: 0.95rem;
       font-weight: 700;
-    }
-    .view-section {
-      display: none;
-      padding: 1.6rem 1.4rem;
-      flex-direction: column;
-      gap: 1.35rem;
-    }
-    .view-section.active { display: flex; }
-    .record-box {
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.02);
-      padding: 1.15rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      font-size: 0.78rem;
-    }
-    .record-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-      padding-bottom: 0.45rem;
-      gap: 1rem;
-    }
-    .record-label { color: var(--text-secondary); flex-shrink: 0; }
-    .record-val { font-weight: 700; color: #fff; text-align: right; }
-    .record-val.status { color: var(--success); }
-    .editorial-headline {
-      font-size: 1.15rem;
-      line-height: 1.45;
-      color: #ffffff;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    .editorial-headline .hl-target {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-    .warning-banner {
-      border: 1px solid rgba(56, 139, 253, 0.4);
-      background: rgba(56, 139, 253, 0.07);
-      padding: 1rem 1.1rem;
-      font-size: 0.76rem;
-      line-height: 1.6;
-      color: var(--text-primary);
-    }
-    .warning-banner strong { color: var(--accent); }
-    .section-title {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: #ffffff;
       letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.45rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
       text-transform: uppercase;
     }
-    .body-copy {
-      font-size: 0.78rem;
-      line-height: 1.65;
-      color: var(--text-secondary);
-    }
-    .body-copy strong { color: var(--text-primary); }
-    .bullet-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      font-size: 0.76rem;
-      line-height: 1.55;
-      color: var(--text-secondary);
-    }
-    .bullet-list li {
-      border-left: 2px solid var(--accent);
-      padding-left: 0.85rem;
-    }
-    .bullet-list li strong { color: #ffffff; }
-    .table-wrap {
-      width: 100%;
-      overflow-x: auto;
-      border: 1px solid var(--border);
-    }
-    .comp-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.72rem;
-      text-align: left;
-    }
-    .comp-table th, .comp-table td {
-      padding: 0.75rem;
-      border-bottom: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-      line-height: 1.45;
-    }
-    .comp-table th:last-child, .comp-table td:last-child { border-right: none; }
-    .comp-table th {
-      background: rgba(255, 255, 255, 0.04);
-      color: #ffffff;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .comp-table tr.row-red { background: rgba(248, 81, 73, 0.08); color: var(--text-primary); }
-    .comp-table tr.row-red td:first-child { border-left: 3px solid var(--alert); }
-    .comp-table tr.row-red .status-tag { color: var(--alert); font-weight: 700; }
-    .comp-table tr.row-yellow { background: rgba(210, 153, 34, 0.08); color: var(--text-primary); }
-    .comp-table tr.row-yellow td:first-child { border-left: 3px solid var(--warning); }
-    .comp-table tr.row-yellow .status-tag { color: var(--warning); font-weight: 700; }
-    .comp-table tr.row-green { background: rgba(63, 185, 80, 0.12); color: #ffffff; }
-    .comp-table tr.row-green td:first-child { border-left: 3px solid var(--success); font-weight: 700; }
-    .comp-table tr.row-green .status-tag { color: var(--success); font-weight: 700; }
-    .guarantee-box {
-      border: 1px dashed var(--border);
-      background: rgba(63, 185, 80, 0.05);
-      padding: 0.9rem 1rem;
-      font-size: 0.74rem;
-      line-height: 1.55;
-      color: var(--text-secondary);
-    }
-    .guarantee-box strong { color: var(--success); }
-    .division-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      font-size: 0.76rem;
-    }
-    .division-item {
-      border: 1px solid var(--border);
-      padding: 0.75rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.01);
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .div-tag {
-      font-size: 0.68rem;
-      padding: 0.15rem 0.4rem;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-    .div-tag.live { border-color: var(--success); color: var(--success); }
-    .action-btn {
-      display: block !important;
-      width: 100% !important;
-      text-align: center !important;
-      background: #ffffff !important;
-      color: #000000 !important;
-      text-decoration: none !important;
-      padding: 1rem 0.85rem !important;
-      font-weight: 700 !important;
-      font-size: 0.82rem !important;
-      letter-spacing: 0.05em !important;
-      border: none !important;
-      border-radius: 0 !important;
-      cursor: pointer !important;
-      line-height: 1.4 !important;
-      font-family: 'JetBrains Mono', monospace !important;
-    }
-    .action-btn:hover { opacity: 0.92; }
-    .cta-subtext {
-      text-align: center;
-      font-size: 0.68rem;
-      color: var(--text-secondary);
-      margin-top: 0.55rem;
-    }
-    .footer {
-      padding: 1rem 1.4rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.68rem;
+    p {
+      font-size: 0.75rem;
       color: var(--text-secondary);
       line-height: 1.5;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+      margin-bottom: 1.5rem;
     }
-    .footer-links {
+    .input-form {
       display: flex;
+      flex-direction: column;
       gap: 1rem;
-      flex-wrap: wrap;
     }
-    .footer-links button {
-      background: none;
+    .query-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1rem;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .query-input:focus {
+      border-color: var(--accent);
+    }
+    .submit-btn {
+      width: 100%;
+      background: #ffffff;
+      color: #000000;
       border: none;
-      color: var(--text-secondary);
-      font-family: inherit;
-      font-size: 0.68rem;
+      padding: 0.9rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.8rem;
       cursor: pointer;
-      text-decoration: underline;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
-    .footer-links button:hover { color: #ffffff; }
-
-    @media (max-width: 520px) {
-      body { padding: 0.5rem; }
-      .header { padding: 0.9rem 1rem; font-size: 0.72rem; }
-      .nav-btn { flex: 1 1 50%; border-bottom: 1px solid var(--border); font-size: 0.65rem; }
-      .view-section { padding: 1.2rem 1rem; gap: 1.1rem; }
-      .record-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
-      .record-val { text-align: left; width: 100%; }
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+    .footer-note {
+      margin-top: 1.5rem;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      letter-spacing: 0.03em;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="header">
-      <span class="brand-link" onclick="switchView('dispatch')">[P/O] PREFERRED OUTCOMES // STATUTORY REGISTRY</span>
-      <span class="badge" id="top-badge">SYSTEMS ONLINE</span>
+  <div class="terminal-box">
+    <div class="header-row">
+      <span>[P/O] SECURE GATEWAY</span>
+      <span class="status-badge">ONLINE</span>
     </div>
 
-    <!-- 4-TAB NAVIGATION BAR -->
-    <div class="nav-bar">
-      <button class="nav-btn active" id="btn-dispatch" onclick="switchView('dispatch')">01 // DISPATCH</button>
-      <button class="nav-btn" id="btn-about" onclick="switchView('about')">02 // REGISTRY & DIVISIONS</button>
-      <button class="nav-btn" id="btn-terms" onclick="switchView('terms')">03 // TERMS & COMPLIANCE</button>
-      <button class="nav-btn" id="btn-contact" onclick="switchView('contact')">04 // SUPPORT</button>
-    </div>
+    <h1>Statutory Incident Intake</h1>
+    <p>Enter your designated case identifier, flight code, or statutory docket reference to access your secure action parameters.</p>
 
-    <!-- VIEW 1: GENERALIZED LANDING & DYNAMIC ROUTER -->
-    <div class="view-section active" id="view-dispatch">
-      <div class="record-box">
-        <div class="record-row">
-          <span class="record-label">GATEWAY ROUTING</span>
-          <span class="record-val" id="docket-id">GENERALIZED DISPATCH HUB</span>
-        </div>
-        <div class="record-row">
-          <span class="record-label">SYSTEM STATUS</span>
-          <span class="record-val status">ACTIVE STATUTORY MONITORING</span>
-        </div>
-        <div class="record-row">
-          <span class="record-label">DISPATCH COVERAGE</span>
-          <span class="record-val" id="coverage-tier">MULTI-VERTICAL REGULATORY EXECUTION</span>
-        </div>
-        <div class="record-row" style="border-bottom: none; padding-bottom: 0;">
-          <span class="record-label">ENFORCEMENT AUTHORITY</span>
-          <span class="record-val" id="jurisdiction">GLOBAL STATUTORY & COMPLIANCE FRAMEWORKS</span>
-        </div>
-      </div>
+    <form class="input-form" onsubmit="handleQuerySubmit(event)">
+      <input type="text" id="incident-code" class="query-input" placeholder="e.g. LH400, TORONTO-TENANT-01" required autocomplete="off" />
+      <button type="submit" class="submit-btn">Access Secure Docket //</button>
+    </form>
 
-      <!-- GENERALIZED EDITORIAL HOOK -->
-      <h1 class="editorial-headline">
-        Automated Statutory & Regulatory Demand Generation for <span class="hl-target" id="headline-target">High-Friction Consumer & Corporate Disputes</span>.
-      </h1>
-
-      <div class="warning-banner">
-        <strong>SECURE INSTITUTIONAL REPOSITORY:</strong> When commercial entities, carriers, property managers, or service providers rely on automated rejections and bureaucratic friction to withhold mandatory compliance or compensation, our system compiles and dispatches verified statutory demand dossiers in seconds.
-      </div>
-
-      <p class="body-copy">
-        By bypassing traditional administrative gatekeeper delays and automated AI rejection filters, claimants secure 100% of their statutory entitlements directly through automated compliance execution.
-      </p>
-
-      <div class="section-title">WHAT THIS STATUTORY ACTION DOSSIER GIVES YOU IMMEDIATELY</div>
-      <ul class="bullet-list">
-        <li>
-          <strong>01 // Triage & Situation Matrix:</strong> Immediate navigation to your exact dispute category—whether handling transit disruption, tenancy abatement, or corporate service breach.
-        </li>
-        <li>
-          <strong>02 // Queue & Friction Bypass:</strong> Operational protocols to bypass front-line hold queues and engage direct compliance resolution channels.
-        </li>
-        <li>
-          <strong>03 // Copy-Paste Statutory Demand Notices:</strong> Pre-formatted regulatory compliance frameworks that defeat automated corporate rejection bots.
-        </li>
-        <li>
-          <strong>04 // Proof-of-Service & Chargeback Package:</strong> Timestamped documentation formatted for immediate escalation to financial institutions or regulatory oversight bodies.
-        </li>
-      </ul>
-
-      <div class="section-title">RECOVERY COMPARISON // YOUR OPTIONS RIGHT NOW</div>
-      <div class="table-wrap">
-        <table class="comp-table">
-          <thead>
-            <tr>
-              <th>Recovery Method</th>
-              <th>Cost</th>
-              <th>Actual Outcome</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="row-red">
-              <td>🔴 1. Standard Corporate Web Forms</td>
-              <td>Free</td>
-              <td><span class="status-tag">70%+ AUTO-REJECTED.</span> Relies on automated algorithms designed to exhaust claimants.</td>
-            </tr>
-            <tr class="row-yellow">
-              <td>🟡 2. Third-Party Claim Agencies</td>
-              <td>35%–50% Cut</td>
-              <td><span class="status-tag">3–6 MONTH DELAY.</span> Intermediaries pocket a massive portion of your settlement check.</td>
-            </tr>
-            <tr class="row-green">
-              <td>🟢 3. Preferred Outcomes <span id="table-label">Automated</span> Dossier</td>
-              <td>$29.00 USD Flat</td>
-              <td><span class="status-tag">YOU KEEP 100% OF YOUR CASH.</span> Instant programmatic generation and multi-channel delivery.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="guarantee-box">
-        <strong>INSTANT ACCESS & COMPLIANCE GUARANTEE:</strong> Secure processing via Lemon Squeezy Merchant of Record. Instant PDF dossier generation and delivery directly upon payment confirmation.
-      </div>
-
-      <div>
-        <!-- REPLACE THE HREF BELOW WITH YOUR ACTUAL LEMON SQUEEZY CHECKOUT LINK -->
-        <a class="action-btn" id="checkout-btn" href="https://yourstore.lemonsqueezy.com/checkout/buy/your-product-id" target="_blank" rel="noopener">
-          ACQUIRE STATUTORY DEMAND DOSSIER — $29.00 USD
-        </a>
-        <div class="cta-subtext">
-          Encrypted global checkout. Automated tax/VAT handling by Lemon Squeezy. Instant electronic delivery.
-        </div>
-      </div>
-    </div>
-
-    <!-- VIEW 2: ABOUT & MULTI-VERTICAL DIVISIONS -->
-    <div class="view-section" id="view-about">
-      <div class="section-title">INSTITUTIONAL MANDATE // PREFERRED OUTCOMES</div>
-      <p class="body-copy">
-        <strong>Preferred Outcomes [P/O]</strong> is an independent statutory research and consumer self-advocacy registry. When commercial carriers, property management entities, or financial institutions rely on automated rejection filters and bureaucratic friction to deny individuals their mandatory statutory rights, we provide pre-compiled, jurisdiction-specific administrative demand dossiers that enforce compliance.
-      </p>
-
-      <div class="section-title">ACTIVE REGULATORY DIVISIONS</div>
-      <div class="division-grid">
-        <div class="division-item">
-          <span><strong>DIV-01 // COMMERCIAL AVIATION</strong> (APPR / 14 CFR 259 / EU261)</span>
-          <span class="div-tag live">ACTIVE DISPATCH</span>
-        </div>
-        <div class="division-item">
-          <span><strong>DIV-02 // PROPERTY & TENANT STATUTES</strong> (Habitability & Deposit Recovery)</span>
-          <span class="div-tag live">ACTIVE DISPATCH</span>
-        </div>
-        <div class="division-item">
-          <span><strong>DIV-03 // CONSUMER & BANKING</strong> (FCRA / Reg E Chargeback Escalation)</span>
-          <span class="div-tag live">ACTIVE DISPATCH</span>
-        </div>
-        <div class="division-item">
-          <span><strong>DIV-04 // CORPORATE COMPLIANCE & DMCA SHIELD</strong></span>
-          <span class="div-tag">INDEXING</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIEW 3: TERMS, DISCLAIMER & NO-REFUND POLICY -->
-    <div class="view-section" id="view-terms">
-      <div class="section-title">NON-REPRESENTATION & REGULATORY DISCLAIMER</div>
-      <p class="body-copy">
-        <strong>1. NO ATTORNEY-CLIENT RELATIONSHIP:</strong> Preferred Outcomes is an automated statutory research and document preparation registry. <strong>We are not a law firm</strong>, do not provide formal legal representation, and do not offer individualized legal counsel. All dossiers consist of standardized statutory self-advocacy templates, public regulatory citations, and administrative filing procedures.
-      </p>
-      <p class="body-copy">
-        <strong>2. LICENSING & NON-REFUNDABLE ELECTRONIC DISPATCH:</strong> Because Preferred Outcomes delivers immediate, unrestricted access to downloadable digital files, statutory demand templates, and regulatory escalation protocols upon checkout, <strong>all sales are final and strictly non-refundable</strong> once electronic dispatch has occurred. By completing a transaction, the purchaser acknowledges immediate digital fulfillment and waives any statutory withdrawal period.
-      </p>
-      <p class="body-copy">
-        <strong>3. CLAIM EXECUTION:</strong> FutureWarning monetary recovery depends on claimant submission of accurate documentation to the operating entity or relevant federal/municipal agency within statutory time limits.
-      </p>
-    </div>
-
-    <!-- VIEW 4: CONTACT & SUPPORT -->
-    <div class="view-section" id="view-contact">
-      <div class="section-title">DISPATCH COMMUNICATIONS & RECEIPT INQUIRIES</div>
-      <div class="record-box">
-        <div class="record-row">
-          <span class="record-label">ELECTRONIC REGISTRY DESK</span>
-          <span class="record-val">support@preferredoutcomes.org</span>
-        </div>
-        <div class="record-row">
-          <span class="record-label">DELIVERY MECHANISM</span>
-          <span class="record-val">Instant Browser Download + Email PDF</span>
-        </div>
-        <div class="record-row" style="border-bottom: none; padding-bottom: 0;">
-          <span class="record-label">RESPONSE PROTOCOL</span>
-          <span class="record-val">24–48 HRS (ADMINISTRATIVE)</span>
-        </div>
-      </div>
-      <p class="body-copy">
-        <strong>LOST RECEIPT OR FILE ACCESS:</strong> Every dossier is delivered immediately upon payment confirmation via screen download and automated email receipt. If you entered a typo in your email address during checkout or require a duplicate dispatch link, contact <strong>support@preferredoutcomes.org</strong> or reply directly to your receipt email with your transaction date.
-      </p>
-    </div>
-
-    <div class="footer">
-      <span>© PREFERRED OUTCOMES REGISTRY. NOT A LAW FIRM. ALL RIGHTS RESERVED.</span>
-      <div class="footer-links">
-        <button onclick="switchView('dispatch')">Dispatch</button>
-        <button onclick="switchView('about')">About</button>
-        <button onclick="switchView('terms')">Terms</button>
-        <button onclick="switchView('contact')">Support</button>
-      </div>
+    <div class="footer-note">
+      PREFERRED OUTCOMES REGISTRY &bull; ENCRYPTED ROUTING
     </div>
   </div>
 
   <script>
-    function switchView(viewName) {
-      document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
-      document.getElementById('view-' + viewName).classList.add('active');
-      document.getElementById('btn-' + viewName).classList.add('active');
-    }
-
-    function parseDynamicRoute() {
-      const pathSeg = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0].toUpperCase();
-      const hashSeg = window.location.hash.replace('#', '').trim().toUpperCase();
-      const code = (pathSeg && !['INDEX.HTML', '404.HTML', 'ABOUT', 'TERMS', 'CONTACT'].includes(pathSeg)) ? pathSeg : hashSeg;
-
-      const docketEl = document.getElementById('docket-id');
-      const headlineTargetEl = document.getElementById('headline-target');
-      const tableLabelEl = document.getElementById('table-label');
-      const checkoutBtn = document.getElementById('checkout-btn');
-
-      if (code && !['INDEX.HTML', '404.HTML', 'ABOUT', 'TERMS', 'CONTACT'].includes(code)) {
-        docketEl.textContent = `INCIDENT DOCKET // ${code}`;
-        headlineTargetEl.textContent = `Incident / Docket ${code}`;
-        tableLabelEl.textContent = `Incident ${code}`;
-        checkoutBtn.textContent = `ACQUIRE ${code} STATUTORY DEMAND DOSSIER — $29.00 USD`;
-        document.title = `${code} Statutory Dispute Dossier | Preferred Outcomes`;
-      } else {
-        docketEl.textContent = "GENERALIZED DISPATCH HUB";
-        headlineTargetEl.textContent = "High-Friction Consumer & Corporate Disputes";
-        tableLabelEl.textContent = "Automated";
-        checkoutBtn.textContent = "ACQUIRE STATUTORY DEMAND DOSSIER — $29.00 USD";
+    function handleQuerySubmit(event) {
+      event.preventDefault();
+      const code = document.getElementById('incident-code').value.trim();
+      if (code) {
+        // Directs user straight to the secure subfolder docket path
+        window.location.href = '/' + encodeURIComponent(code);
       }
-
-      if (pathSeg === 'ABOUT' || hashSeg === 'ABOUT') switchView('about');
-      if (pathSeg === 'TERMS' || hashSeg === 'TERMS') switchView('terms');
-      if (pathSeg === 'CONTACT' || hashSeg === 'CONTACT') switchView('contact');
     }
-
-    window.addEventListener('DOMContentLoaded', parseDynamicRoute);
-    window.addEventListener('hashchange', parseDynamicRoute);
   </script>
+
 </body>
 </html>
