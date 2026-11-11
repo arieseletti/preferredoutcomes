@@ -62,7 +62,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      color: var(--alert);
+      color: var(--success);
       font-weight: 700;
       font-size: 0.72rem;
     }
@@ -70,7 +70,7 @@
       content: "";
       width: 8px;
       height: 8px;
-      background: var(--alert);
+      background: var(--success);
       border-radius: 50%;
       display: inline-block;
     }
@@ -82,7 +82,7 @@
       flex-wrap: wrap;
     }
     .nav-btn {
-      flex: 1 1 33.33%;
+      flex: 1 1 25%;
       text-align: center;
       padding: 0.65rem 0.4rem;
       color: var(--text-secondary);
@@ -128,7 +128,7 @@
     }
     .record-label { color: var(--text-secondary); flex-shrink: 0; }
     .record-val { font-weight: 700; color: #fff; text-align: right; }
-    .record-val.status { color: var(--alert); }
+    .record-val.status { color: var(--success); }
     .editorial-headline {
       font-size: 1.15rem;
       line-height: 1.45;
@@ -136,19 +136,19 @@
       font-weight: 700;
       letter-spacing: -0.01em;
     }
-    .editorial-headline .hl-flight {
+    .editorial-headline .hl-target {
       color: var(--accent);
       text-decoration: underline;
     }
     .warning-banner {
-      border: 1px solid rgba(248, 81, 73, 0.4);
-      background: rgba(248, 81, 73, 0.07);
+      border: 1px solid rgba(56, 139, 253, 0.4);
+      background: rgba(56, 139, 253, 0.07);
       padding: 1rem 1.1rem;
       font-size: 0.76rem;
       line-height: 1.6;
       color: var(--text-primary);
     }
-    .warning-banner strong { color: var(--alert); }
+    .warning-banner strong { color: var(--accent); }
     .section-title {
       font-size: 0.82rem;
       font-weight: 700;
@@ -268,7 +268,7 @@
       margin-top: 0.55rem;
     }
     .footer {
-      padding: 1.15rem 1.4rem;
+      padding: 1rem 1.4rem;
       border-top: 1px solid var(--border);
       font-size: 0.68rem;
       color: var(--text-secondary);
@@ -297,7 +297,7 @@
     @media (max-width: 520px) {
       body { padding: 0.5rem; }
       .header { padding: 0.9rem 1rem; font-size: 0.72rem; }
-      .nav-btn { flex: 1 1 50%; font-size: 0.65rem; }
+      .nav-btn { flex: 1 1 50%; border-bottom: 1px solid var(--border); font-size: 0.65rem; }
       .view-section { padding: 1.2rem 1rem; gap: 1.1rem; }
       .record-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
       .record-val { text-align: left; width: 100%; }
@@ -308,54 +308,76 @@
 
   <div class="container">
     <div class="header">
-      <span class="brand-link" onclick="switchView('dispatch')">[P/O] PREFERRED OUTCOMES // REGISTRY</span>
+      <span class="brand-link" onclick="switchView('dispatch')">[P/O] PREFERRED OUTCOMES // STATUTORY REGISTRY</span>
       <span class="badge" id="top-badge">SYSTEMS ONLINE</span>
     </div>
 
-    <!-- CLEANED UP 3-TAB NAVIGATION BAR -->
+    <!-- 4-TAB NAVIGATION BAR -->
     <div class="nav-bar">
-      <button class="nav-btn active" id="btn-dispatch" onclick="switchView('dispatch')">01 // DISPATCH GATEWAY</button>
+      <button class="nav-btn active" id="btn-dispatch" onclick="switchView('dispatch')">01 // DISPATCH</button>
       <button class="nav-btn" id="btn-about" onclick="switchView('about')">02 // REGISTRY & DIVISIONS</button>
       <button class="nav-btn" id="btn-terms" onclick="switchView('terms')">03 // TERMS & COMPLIANCE</button>
+      <button class="nav-btn" id="btn-contact" onclick="switchView('contact')">04 // SUPPORT</button>
     </div>
 
-    <!-- VIEW 1: GENERALIZED LANDING & ACTIVE DISPATCH ROUTER -->
+    <!-- VIEW 1: GENERALIZED LANDING & DYNAMIC ROUTER -->
     <div class="view-section active" id="view-dispatch">
       <div class="record-box">
         <div class="record-row">
-          <span class="record-label">GATEWAY STATUS</span>
-          <span class="record-val status" style="color: var(--success);">AUTOMATED ROUTING ACTIVE</span>
+          <span class="record-label">GATEWAY ROUTING</span>
+          <span class="record-val" id="docket-id">GENERALIZED DISPATCH HUB</span>
         </div>
         <div class="record-row">
-          <span class="record-label">ACTIVE INCIDENT / DOCKET</span>
-          <span class="record-val" id="flight-id">GENERALIZED DISPATCH HUB</span>
+          <span class="record-label">SYSTEM STATUS</span>
+          <span class="record-val status">ACTIVE STATUTORY MONITORING</span>
+        </div>
+        <div class="record-row">
+          <span class="record-label">DISPATCH COVERAGE</span>
+          <span class="record-val" id="coverage-tier">MULTI-VERTICAL REGULATORY EXECUTION</span>
         </div>
         <div class="record-row" style="border-bottom: none; padding-bottom: 0;">
-          <span class="record-label">JURISDICTIONAL ENFORCEMENT</span>
-          <span class="record-val" id="jurisdiction">GLOBAL STATUTORY & REGULATORY FRAMEWORKS</span>
+          <span class="record-label">ENFORCEMENT AUTHORITY</span>
+          <span class="record-val" id="jurisdiction">GLOBAL STATUTORY & COMPLIANCE FRAMEWORKS</span>
         </div>
       </div>
 
+      <!-- GENERALIZED EDITORIAL HOOK -->
       <h1 class="editorial-headline">
-        Automated Statutory & Regulatory Demand Generation for <span class="hl-flight" id="headline-flight">High-Friction Consumer & Corporate Disputes</span>.
+        Automated Statutory & Regulatory Demand Generation for <span class="hl-target" id="headline-target">High-Friction Consumer & Corporate Disputes</span>.
       </h1>
 
       <div class="warning-banner">
-        <strong>SECURE INSTITUTIONAL REPOSITORY:</strong> This infrastructure processes immediate administrative notices, passenger claims, and regulatory demands without manual friction or bureaucratic delay. Access specific incident endpoints directly via secure URL routing.
+        <strong>SECURE INSTITUTIONAL REPOSITORY:</strong> When commercial entities, carriers, property managers, or service providers rely on automated rejections and bureaucratic friction to withhold mandatory compliance or compensation, our system compiles and dispatches verified statutory demand dossiers in seconds.
       </div>
 
       <p class="body-copy">
-        When corporations, carriers, or administrative entities rely on automated rejections and friction to withhold mandatory financial settlements, our system compiles and dispatches verified statutory demand dossiers in seconds.
+        By bypassing traditional administrative gatekeeper delays and automated AI rejection filters, claimants secure 100% of their statutory entitlements directly through automated compliance execution.
       </p>
 
-      <div class="section-title">SYSTEM CAPABILITIES // 3-WAY OVERSIGHT MATRIX</div>
+      <div class="section-title">WHAT THIS STATUTORY ACTION DOSSIER GIVES YOU IMMEDIATELY</div>
+      <ul class="bullet-list">
+        <li>
+          <strong>01 // Triage & Situation Matrix:</strong> Immediate navigation to your exact dispute category—whether handling transit disruption, tenancy abatement, or corporate service breach.
+        </li>
+        <li>
+          <strong>02 // Queue & Friction Bypass:</strong> Operational protocols to bypass front-line hold queues and engage direct compliance resolution channels.
+        </li>
+        <li>
+          <strong>03 // Copy-Paste Statutory Demand Notices:</strong> Pre-formatted regulatory compliance frameworks that defeat automated corporate rejection bots.
+        </li>
+        <li>
+          <strong>04 // Proof-of-Service & Chargeback Package:</strong> Timestamped documentation formatted for immediate escalation to financial institutions or regulatory oversight bodies.
+        </li>
+      </ul>
+
+      <div class="section-title">RECOVERY COMPARISON // YOUR OPTIONS RIGHT NOW</div>
       <div class="table-wrap">
         <table class="comp-table">
           <thead>
             <tr>
-              <th>Execution Method</th>
-              <th>Friction Level</th>
-              <th>Projected Outcome</th>
+              <th>Recovery Method</th>
+              <th>Cost</th>
+              <th>Actual Outcome</th>
             </tr>
           </thead>
           <tbody>
@@ -365,21 +387,21 @@
               <td><span class="status-tag">70%+ AUTO-REJECTED.</span> Relies on automated algorithms designed to exhaust claimants.</td>
             </tr>
             <tr class="row-yellow">
-              <td>🟡 2. Traditional Legal / Claim Agencies</td>
+              <td>🟡 2. Third-Party Claim Agencies</td>
               <td>35%–50% Cut</td>
-              <td><span class="status-tag">3–6 MONTH DELAY.</span> Third-party intermediaries pocket a massive portion of your settlement.</td>
+              <td><span class="status-tag">3–6 MONTH DELAY.</span> Intermediaries pocket a massive portion of your settlement check.</td>
             </tr>
             <tr class="row-green">
-              <td>🟢 3. Preferred Outcomes Automated Dispatch</td>
-              <td>$29 USD Flat</td>
-              <td><span class="status-tag">100% RETENTION.</span> Instant programmatic generation and automated multi-channel delivery.</td>
+              <td>🟢 3. Preferred Outcomes <span id="table-label">Automated</span> Dossier</td>
+              <td>$29.00 USD Flat</td>
+              <td><span class="status-tag">YOU KEEP 100% OF YOUR CASH.</span> Instant programmatic generation and multi-channel delivery.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div class="guarantee-box">
-        <strong>INSTANT AUTOMATED DISPATCH:</strong> Secure processing via Lemon Squeezy Merchant of Record. Instant PDF dossier generation and delivery directly upon payment confirmation.
+        <strong>INSTANT ACCESS & COMPLIANCE GUARANTEE:</strong> Secure processing via Lemon Squeezy Merchant of Record. Instant PDF dossier generation and delivery directly upon payment confirmation.
       </div>
 
       <div>
@@ -397,38 +419,63 @@
     <div class="view-section" id="view-about">
       <div class="section-title">INSTITUTIONAL MANDATE // PREFERRED OUTCOMES</div>
       <p class="body-copy">
-        <strong>Preferred Outcomes [P/O]</strong> operates as an independent statutory research and consumer self-advocacy utility. We eliminate administrative bottlenecks by converting complex regulatory frameworks into immediate, automated execution documents.
+        <strong>Preferred Outcomes [P/O]</strong> is an independent statutory research and consumer self-advocacy registry. When commercial carriers, property management entities, or financial institutions rely on automated rejection filters and bureaucratic friction to deny individuals their mandatory statutory rights, we provide pre-compiled, jurisdiction-specific administrative demand dossiers that enforce compliance.
       </p>
 
-      <div class="section-title">ACTIVE OPERATIONAL PODS</div>
+      <div class="section-title">ACTIVE REGULATORY DIVISIONS</div>
       <div class="division-grid">
         <div class="division-item">
-          <span><strong>POD-01 // GLOBAL AVIATION & TRANSIT</strong> (EU261 / APPR / US DOT)</span>
+          <span><strong>DIV-01 // COMMERCIAL AVIATION</strong> (APPR / 14 CFR 259 / EU261)</span>
           <span class="div-tag live">ACTIVE DISPATCH</span>
         </div>
         <div class="division-item">
-          <span><strong>POD-02 // CONSUMER DISRUPTIONS & OUTAGES</strong> (Telecom & Banking)</span>
+          <span><strong>DIV-02 // PROPERTY & TENANT STATUTES</strong> (Habitability & Deposit Recovery)</span>
           <span class="div-tag live">ACTIVE DISPATCH</span>
         </div>
         <div class="division-item">
-          <span><strong>POD-03 // PROPERTY HABITABILITY & TENANCY</strong> (Abatements)</span>
+          <span><strong>DIV-03 // CONSUMER & BANKING</strong> (FCRA / Reg E Chargeback Escalation)</span>
           <span class="div-tag live">ACTIVE DISPATCH</span>
         </div>
         <div class="division-item">
-          <span><strong>POD-04 // CORPORATE COMPLIANCE & DMCA SHIELD</strong></span>
+          <span><strong>DIV-04 // CORPORATE COMPLIANCE & DMCA SHIELD</strong></span>
           <span class="div-tag">INDEXING</span>
         </div>
       </div>
     </div>
 
-    <!-- VIEW 3: TERMS & COMPLIANCE -->
+    <!-- VIEW 3: TERMS, DISCLAIMER & NO-REFUND POLICY -->
     <div class="view-section" id="view-terms">
       <div class="section-title">NON-REPRESENTATION & REGULATORY DISCLAIMER</div>
       <p class="body-copy">
-        <strong>1. NO ATTORNEY-CLIENT RELATIONSHIP:</strong> Preferred Outcomes is an automated statutory research and document preparation utility. <strong>We are not a law firm</strong>, do not provide formal legal representation, and do not offer individualized legal counsel. All dossiers consist of standardized statutory templates and administrative escalation protocols.
+        <strong>1. NO ATTORNEY-CLIENT RELATIONSHIP:</strong> Preferred Outcomes is an automated statutory research and document preparation registry. <strong>We are not a law firm</strong>, do not provide formal legal representation, and do not offer individualized legal counsel. All dossiers consist of standardized statutory self-advocacy templates, public regulatory citations, and administrative filing procedures.
       </p>
       <p class="body-copy">
-        <strong>2. NON-REFUNDABLE ELECTRONIC DISPATCH:</strong> Because this infrastructure delivers immediate, unrestricted access to downloadable digital files and statutory demand templates upon checkout, <strong>all sales are final and strictly non-refundable</strong> once electronic dispatch has occurred.
+        <strong>2. LICENSING & NON-REFUNDABLE ELECTRONIC DISPATCH:</strong> Because Preferred Outcomes delivers immediate, unrestricted access to downloadable digital files, statutory demand templates, and regulatory escalation protocols upon checkout, <strong>all sales are final and strictly non-refundable</strong> once electronic dispatch has occurred. By completing a transaction, the purchaser acknowledges immediate digital fulfillment and waives any statutory withdrawal period.
+      </p>
+      <p class="body-copy">
+        <strong>3. CLAIM EXECUTION:</strong> FutureWarning monetary recovery depends on claimant submission of accurate documentation to the operating entity or relevant federal/municipal agency within statutory time limits.
+      </p>
+    </div>
+
+    <!-- VIEW 4: CONTACT & SUPPORT -->
+    <div class="view-section" id="view-contact">
+      <div class="section-title">DISPATCH COMMUNICATIONS & RECEIPT INQUIRIES</div>
+      <div class="record-box">
+        <div class="record-row">
+          <span class="record-label">ELECTRONIC REGISTRY DESK</span>
+          <span class="record-val">support@preferredoutcomes.org</span>
+        </div>
+        <div class="record-row">
+          <span class="record-label">DELIVERY MECHANISM</span>
+          <span class="record-val">Instant Browser Download + Email PDF</span>
+        </div>
+        <div class="record-row" style="border-bottom: none; padding-bottom: 0;">
+          <span class="record-label">RESPONSE PROTOCOL</span>
+          <span class="record-val">24–48 HRS (ADMINISTRATIVE)</span>
+        </div>
+      </div>
+      <p class="body-copy">
+        <strong>LOST RECEIPT OR FILE ACCESS:</strong> Every dossier is delivered immediately upon payment confirmation via screen download and automated email receipt. If you entered a typo in your email address during checkout or require a duplicate dispatch link, contact <strong>support@preferredoutcomes.org</strong> or reply directly to your receipt email with your transaction date.
       </p>
     </div>
 
@@ -436,8 +483,9 @@
       <span>© PREFERRED OUTCOMES REGISTRY. NOT A LAW FIRM. ALL RIGHTS RESERVED.</span>
       <div class="footer-links">
         <button onclick="switchView('dispatch')">Dispatch</button>
-        <button onclick="switchView('about')">Registry</button>
+        <button onclick="switchView('about')">About</button>
         <button onclick="switchView('terms')">Terms</button>
+        <button onclick="switchView('contact')">Support</button>
       </div>
     </div>
   </div>
@@ -453,25 +501,29 @@
     function parseDynamicRoute() {
       const pathSeg = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0].toUpperCase();
       const hashSeg = window.location.hash.replace('#', '').trim().toUpperCase();
-      const code = (pathSeg && !['INDEX.HTML', '404.HTML', 'ABOUT', 'TERMS', 'DISPATCH'].includes(pathSeg)) ? pathSeg : hashSeg;
+      const code = (pathSeg && !['INDEX.HTML', '404.HTML', 'ABOUT', 'TERMS', 'CONTACT'].includes(pathSeg)) ? pathSeg : hashSeg;
 
-      const flightEl = document.getElementById('flight-id');
-      const headlineFlightEl = document.getElementById('headline-flight');
+      const docketEl = document.getElementById('docket-id');
+      const headlineTargetEl = document.getElementById('headline-target');
+      const tableLabelEl = document.getElementById('table-label');
       const checkoutBtn = document.getElementById('checkout-btn');
 
-      if (code && !['INDEX.HTML', '404.HTML', 'ABOUT', 'TERMS', 'DISPATCH'].includes(code)) {
-        flightEl.textContent = code;
-        headlineFlightEl.textContent = `Incident / Docket ${code}`;
-        checkoutBtn.textContent = `ACQUIRE DISPATCH DOSSIER (${code}) — $29.00 USD`;
-        document.title = `${code} Statutory Dispatch | Preferred Outcomes`;
+      if (code && !['INDEX.HTML', '404.HTML', 'ABOUT', 'TERMS', 'CONTACT'].includes(code)) {
+        docketEl.textContent = `INCIDENT DOCKET // ${code}`;
+        headlineTargetEl.textContent = `Incident / Docket ${code}`;
+        tableLabelEl.textContent = `Incident ${code}`;
+        checkoutBtn.textContent = `ACQUIRE ${code} STATUTORY DEMAND DOSSIER — $29.00 USD`;
+        document.title = `${code} Statutory Dispute Dossier | Preferred Outcomes`;
       } else {
-        flightEl.textContent = "GENERALIZED DISPATCH HUB";
-        headlineFlightEl.textContent = "High-Friction Consumer & Corporate Disputes";
+        docketEl.textContent = "GENERALIZED DISPATCH HUB";
+        headlineTargetEl.textContent = "High-Friction Consumer & Corporate Disputes";
+        tableLabelEl.textContent = "Automated";
         checkoutBtn.textContent = "ACQUIRE STATUTORY DEMAND DOSSIER — $29.00 USD";
       }
 
       if (pathSeg === 'ABOUT' || hashSeg === 'ABOUT') switchView('about');
       if (pathSeg === 'TERMS' || hashSeg === 'TERMS') switchView('terms');
+      if (pathSeg === 'CONTACT' || hashSeg === 'CONTACT') switchView('contact');
     }
 
     window.addEventListener('DOMContentLoaded', parseDynamicRoute);
