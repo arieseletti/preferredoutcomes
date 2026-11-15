@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
@@ -30,12 +32,13 @@ jobs:
         run: |
           git config user.name "PO Automated Engine"
           git config user.email "bot@preferredoutcomes.org"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git checkout main || git checkout -b main
           git add -A
           if ! git diff --cached --quiet; then
             git commit -m "Deploy automated aviation and global news silos [skip ci]"
-            git fetch origin main
-            git rebase -X theirs origin/main
-            git push origin HEAD:main
+            git pull --rebase origin main
+            git push origin main
           else
             echo "No new silos to commit."
           fi
