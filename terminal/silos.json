@@ -110,9 +110,260 @@
       "type": "OUTAGES",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
+    },
+    "ROU1927": {
+      "ts": 1794766591248,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL292": {
+      "ts": 1794766604536,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "c54185e9656255d9": {
+      "ts": 1794766624835,
+      "slug": "papa-en-peru-2023",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "PE"
+    },
+    "7d4c52ad503b38e2": {
+      "ts": 1794766631094,
+      "slug": "southeast-asia-summit-issues",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "d3e7bd1706477f2a": {
+      "ts": 1794766636282,
+      "slug": "soldier-fire-tragedy-response",
+      "type": "CULTURE",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    "68335bf7b657c68c": {
+      "ts": 1794766644539,
+      "slug": "nvidia-401k-crisis",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "4557e7e683b3407c": {
+      "ts": 1794766650397,
+      "slug": "solidarite-homelessness-quebec",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    "10d3e96df0792791": {
+      "ts": 1794766655813,
+      "slug": "green-party-leadership-victory",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    "eef3a684fbf66804": {
+      "ts": 1794766662192,
+      "slug": "rainforest-protection-funds",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "217f58e7ba0581d7": {
+      "ts": 1794766668255,
+      "slug": "budget-bet-debt-strategy",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "233fff98a41f92d0": {
+      "ts": 1794766673382,
+      "slug": "ucp-separatist-pledge",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    "51ee58f6cb619057": {
+      "ts": 1794766679458,
+      "slug": "foster-homes-needed-winter",
+      "type": "CULTURE",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    "fcfb040d293bb3eb": {
+      "ts": 1794766684727,
+      "slug": "west-end-crash-claims",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "CA"
+    },
+    "ab1f636ed9afcc2e": {
+      "ts": 1794766690455,
+      "slug": "age-of-consent-law-changes",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GB"
+    },
+    "930d5d20df309bbe": {
+      "ts": 1794766696374,
+      "slug": "cold-health-alerts-scotland",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GB"
+    },
+    "ef0dfd07a361842f": {
+      "ts": 1794766701473,
+      "slug": "fatal-police-pursuit-crash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GB"
+    },
+    "b075f91e11757190": {
+      "ts": 1794766707626,
+      "slug": "trident-nuclear-submarine-deployment",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GB"
     }
   },
   "active_silos": [
+    {
+      "id": "trident-nuclear-submarine-deployment",
+      "ts": 1794766707626,
+      "slug": "trident-nuclear-submarine-deployment",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GB"
+    },
+    {
+      "id": "fatal-police-pursuit-crash",
+      "ts": 1794766701473,
+      "slug": "fatal-police-pursuit-crash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GB"
+    },
+    {
+      "id": "cold-health-alerts-scotland",
+      "ts": 1794766696374,
+      "slug": "cold-health-alerts-scotland",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GB"
+    },
+    {
+      "id": "age-of-consent-law-changes",
+      "ts": 1794766690455,
+      "slug": "age-of-consent-law-changes",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GB"
+    },
+    {
+      "id": "west-end-crash-claims",
+      "ts": 1794766684727,
+      "slug": "west-end-crash-claims",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "CA"
+    },
+    {
+      "id": "foster-homes-needed-winter",
+      "ts": 1794766679458,
+      "slug": "foster-homes-needed-winter",
+      "type": "CULTURE",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    {
+      "id": "ucp-separatist-pledge",
+      "ts": 1794766673382,
+      "slug": "ucp-separatist-pledge",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    {
+      "id": "budget-bet-debt-strategy",
+      "ts": 1794766668255,
+      "slug": "budget-bet-debt-strategy",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "rainforest-protection-funds",
+      "ts": 1794766662192,
+      "slug": "rainforest-protection-funds",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "green-party-leadership-victory",
+      "ts": 1794766655813,
+      "slug": "green-party-leadership-victory",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    {
+      "id": "solidarite-homelessness-quebec",
+      "ts": 1794766650397,
+      "slug": "solidarite-homelessness-quebec",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    {
+      "id": "nvidia-401k-crisis",
+      "ts": 1794766644539,
+      "slug": "nvidia-401k-crisis",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "soldier-fire-tragedy-response",
+      "ts": 1794766636282,
+      "slug": "soldier-fire-tragedy-response",
+      "type": "CULTURE",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    {
+      "id": "southeast-asia-summit-issues",
+      "ts": 1794766631094,
+      "slug": "southeast-asia-summit-issues",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "papa-en-peru-2023",
+      "ts": 1794766624835,
+      "slug": "papa-en-peru-2023",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "PE"
+    },
+    {
+      "id": "AAL292",
+      "ts": 1794766604536,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "ROU1927",
+      "ts": 1794766591248,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "everything-broken-outage",
       "ts": 1794764750869,
