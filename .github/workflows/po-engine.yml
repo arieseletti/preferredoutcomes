@@ -1,54 +1,44 @@
-// 2. SCAN & SEGMENT GLOBAL NEWS FEEDS (Expanded Batch)
-let newsEvaluatedThisRun = 0;
-for (const feedUrl of NEWS_FEEDS) {
-  if (newsEvaluatedThisRun >= 50) break;
-  const res = await fetch(feedUrl, { headers: BROWSER_HEADERS });
-  if (!res.ok) continue;
-  const xml = await res.text();
-  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 15);
+name: PO Global Discovery Engine
 
-  for (const match of items) {
-    if (newsEvaluatedThisRun >= 50) break;
-    const block = match[1];
-    const titleMatch = block.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/) || block.match(/<title>([\s\S]*?)<\/title>/);
-    const descMatch = block.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/) || block.match(/<description>([\s\S]*?)<\/description>/);
-    const title = (titleMatch?.[1] || '').replace(/<[^>]+>/g, '').trim();
-    const desc = (descMatch?.[1] || '').replace(/<[^>]+>/g, '').trim();
-    if (!title) continue;
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 
-    const hash = crypto.createHash('md5').update(title).digest('hex').slice(0, 16);
-    if (state.deployed[hash]) continue;
+permissions:
+  contents: write
 
-    newsEvaluatedThisRun++;
-    const ai = await callOpenAI(NEWS_SYSTEM, `Headline: ${title} | Details: ${desc}`);
-    if (ai.skip) {
-      state.deployed[hash] = { ts: Date.now(), status: 'SKIPPED' };
-      continue;
-    }
+jobs:
+  deploy-silos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    const slug = (ai.slug || hash).toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-    const html = buildLiveHtml({
-      langCode: ai.lang_code || 'en',
-      pageTitle: ai.human_h1,
-      metaDesc: ai.ai_direct_answer,
-      badgeText: ai.badge_text,
-      h1: ai.human_h1,
-      aiAnswer: ai.ai_direct_answer,
-      statusBarLeft: ai.ledger_counter_text,
-      q1: ai.q1_human, a1: ai.a1_answer,
-      q2: ai.q2_human, a2: ai.a2_answer,
-      q3: ai.q3_human, a3: ai.a3_answer,
-      compareHeading: ai.compare_heading,
-      greenTitle: ai.green_option_title, greenText: ai.green_option_text,
-      niche: ai.niche || 'CULTURE', incident: slug, region: ai.region || 'GLOBAL', tier: ai.tier || 'TIER_2_LEDGER',
-      namePh: ai.name_placeholder, inputPh: ai.input_placeholder, emailPh: ai.email_placeholder, ctaText: ai.cta_button_text,
-      freeTitle: ai.free_tool_title, freeCta: ai.free_tool_cta, freePh: ai.free_input_placeholder, coregText: ai.coreg_disclosure_text, freeBtn: ai.free_button_text
-    });
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    const dir = path.join('docket', slug);
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), html);
-    state.deployed[hash] = { ts: Date.now(), status: 'LIVE', slug, type: ai.niche, tier: ai.tier, region: ai.region };
-    newUrls.push(`https://preferredoutcomes.org/docket/${slug}/`);
-  }
-}
+      - name: Run PO Engine
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FLIGHTAWARE_API_KEY: ${{ secrets.FLIGHTAWARE_API_KEY }}
+        run: node scripts/po-engine.mjs
+
+      - name: Commit and Push Generated Pages
+        run: |
+          git config user.name "PO Automated Engine"
+          git config user.email "bot@preferredoutcomes.org"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git checkout main || git checkout -b main
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Deploy automated aviation and global news silos [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No new silos to commit."
+          fi
