@@ -3,232 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>P/O // Live Silo Command Terminal</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230f172a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' fill='%234ade80' font-family='sans-serif' font-weight='900' font-size='44'%3EP/O%3C/text%3E%3C/svg%3E">
+  <title>P/O // Command Nexus v4.2 — Live Telemetry & Revenue</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23080605' stroke='%23ff6b00' stroke-width='6'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' fill='%23ff6b00' font-family='sans-serif' font-weight='900' font-size='44'%3EP/O%3C/text%3E%3C/svg%3E">
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --bg-obsidian: #070504;
+      --card-glass: rgba(20, 15, 12, 0.88);
+      --border-orange: rgba(255, 107, 0, 0.32);
+      --orange-bright: #ff6b00;
+      --orange-glow: #ff8533;
+      --emerald-neon: #00ff66;
+      --cream-text: #ffedd5;
+      --muted-text: #a8a29e;
+      --wine-red: #be123c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      padding: 24px;
-      background: #090d16;
-      color: #f8fafc;
+      background-color: var(--bg-obsidian);
+      background-image:
+        radial-gradient(circle at 15% 0%, rgba(255, 107, 0, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 85% 100%, rgba(0, 255, 102, 0.08) 0%, transparent 45%);
+      color: var(--cream-text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      min-height: 100vh;
+      padding: 20px;
     }
-    .wrap { max-width: 1180px; margin: 0 auto; }
+    .container { max-width: 1320px; margin: 0 auto; }
     .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #1e293b;
-      padding-bottom: 16px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-      gap: 12px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--card-glass); border: 1px solid var(--border-orange);
+      border-top: 1px solid rgba(255, 133, 51, 0.6);
+      border-radius: 14px; padding: 16px 22px; margin-bottom: 20px;
+      backdrop-filter: blur(18px); box-shadow: 0 12px 35px rgba(0,0,0,0.65);
+      flex-wrap: wrap; gap: 12px;
     }
-    .brand { font-size: 18px; font-weight: 900; letter-spacing: 0.06em; color: #ffffff; }
-    .brand span { color: #4ade80; }
-    .status-pill {
-      background: #052e16;
-      border: 1px solid #16a34a;
-      color: #4ade80;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 800;
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; font-size: 18px; letter-spacing: 0.06em; }
+    .pulse-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--emerald-neon); box-shadow: 0 0 12px var(--emerald-neon);
+      animation: pulse 1.8s infinite;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-      margin-bottom: 24px;
+    @keyframes pulse { 0%, 100% { transform: scale(0.95); opacity: 0.8; } 50% { transform: scale(1.2); opacity: 1; } }
+    .top-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      padding: 9px 14px; border-radius: 8px; font-weight: 800; font-size: 12px;
+      cursor: pointer; border: 1px solid var(--border-orange);
+      background: rgba(255, 107, 0, 0.14); color: var(--cream-text);
+      transition: all 0.15s; text-transform: uppercase; letter-spacing: 0.04em;
     }
-    .card {
-      background: #0f172a;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      padding: 16px;
+    .btn:hover { background: var(--orange-bright); color: #070504; box-shadow: 0 0 16px rgba(255,107,0,0.5); }
+    .btn-green { background: rgba(0, 255, 102, 0.14); border-color: var(--emerald-neon); color: var(--emerald-neon); }
+    .btn-green:hover { background: var(--emerald-neon); color: #070504; box-shadow: 0 0 16px rgba(0,255,102,0.5); }
+
+    .kpi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin-bottom: 20px;
     }
-    .card-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: 700; }
-    .card-val { font-size: 28px; font-weight: 900; margin-top: 6px; color: #ffffff; }
-    .controls {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
+    .kpi-card {
+      background: var(--card-glass); border: 1px solid var(--border-orange);
+      border-top: 1px solid rgba(255, 160, 90, 0.45);
+      border-radius: 12px; padding: 18px; position: relative; overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.55);
     }
-    input, select {
-      background: #0f172a;
-      border: 1px solid #334155;
-      color: #f8fafc;
-      padding: 10px 14px;
-      border-radius: 6px;
-      font-size: 14px;
+    .kpi-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-text); font-weight: 700; }
+    .kpi-val { font-size: 28px; font-weight: 900; margin-top: 6px; color: #ffffff; }
+    .kpi-sub { font-size: 11px; color: var(--orange-glow); margin-top: 4px; font-weight: 600; }
+
+    .split-bar {
+      background: var(--card-glass); border: 1px solid var(--border-orange);
+      border-radius: 12px; padding: 16px 20px; margin-bottom: 20px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
     }
-    input { flex: 1; min-width: 240px; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #0f172a;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      overflow: hidden;
+    .split-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; }
+    .split-controls input {
+      width: 70px; padding: 6px 10px; background: #0d0a08; border: 1px solid var(--orange-bright);
+      color: #fff; border-radius: 6px; font-weight: 800; text-align: center;
     }
-    th, td {
-      text-align: left;
-      padding: 12px 14px;
-      border-bottom: 1px solid #1e293b;
-      font-size: 13px;
+
+    .controls-row {
+      display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
     }
-    th { background: #1e293b; color: #94a3b8; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
-    tr:hover { background: #131c31; }
-    a.silo-link { color: #38bdf8; text-decoration: none; font-weight: 700; }
-    a.silo-link:hover { text-decoration: underline; }
-    .badge {
-      display: inline-block;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 800;
+    .input-box, .select-box {
+      background: var(--card-glass); border: 1px solid var(--border-orange);
+      color: var(--cream-text); padding: 11px 14px; border-radius: 8px; font-size: 13px;
     }
-    .t1 { background: #052e16; color: #4ade80; border: 1px solid #16a34a; }
-    .t2 { background: #451a03; color: #fbbf24; border: 1px solid #d97706; }
-    .t3 { background: #1e1b4b; color: #818cf8; border: 1px solid #4f46e5; }
+    .input-box { flex: 1; min-width: 240px; }
+
+    .table-wrap {
+      background: var(--card-glass); border: 1px solid var(--border-orange);
+      border-radius: 14px; overflow-x: auto; box-shadow: 0 15px 40px rgba(0,0,0,0.65);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 900px; }
+    th, td { padding: 13px 16px; text-align: left; border-bottom: 1px solid rgba(255, 107, 0, 0.14); font-size: 13px; }
+    th { background: rgba(255, 107, 0, 0.1); color: var(--orange-glow); font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; }
+    tr:hover { background: rgba(255, 107, 0, 0.06); }
+    a.silo-url { color: var(--orange-bright); font-weight: 800; text-decoration: none; }
+    a.silo-url:hover { text-decoration: underline; color: var(--emerald-neon); }
+
+    .badge { padding: 4px 9px; border-radius: 6px; font-size: 11px; font-weight: 800; display: inline-block; }
+    .b-t1 { background: rgba(0, 255, 102, 0.15); color: var(--emerald-neon); border: 1px solid var(--emerald-neon); }
+    .b-t2 { background: rgba(255, 107, 0, 0.18); color: var(--orange-glow); border: 1px solid var(--orange-bright); }
+    .b-t3 { background: rgba(190, 18, 60, 0.25); color: #fda4af; border: 1px solid var(--wine-red); }
+
+    .escrow-wrap { width: 140px; background: #1c1613; height: 8px; border-radius: 4px; overflow: hidden; margin-top: 4px; }
+    .escrow-fill { height: 100%; background: linear-gradient(90deg, var(--orange-bright), var(--emerald-neon)); }
+
+    .bell-btn {
+      background: transparent; border: 1px solid rgba(255,255,255,0.15); color: var(--muted-text);
+      padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 700;
+    }
+    .bell-btn.active { background: rgba(255, 107, 0, 0.25); border-color: var(--orange-bright); color: #fff; box-shadow: 0 0 10px rgba(255,107,0,0.4); }
+
+    /* Modal */
+    .modal-bg {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px); z-index: 999; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-bg.open { display: flex; }
+    .modal {
+      background: #120d0a; border: 2px solid var(--orange-bright); border-radius: 14px;
+      max-width: 560px; width: 100%; padding: 24px; box-shadow: 0 20px 60px rgba(255,107,0,0.25);
+    }
+    .modal h3 { color: var(--orange-bright); margin-bottom: 10px; font-size: 18px; }
+    .modal p { font-size: 13px; color: var(--muted-text); margin-bottom: 16px; line-height: 1.5; }
+    .modal label { display: block; font-size: 11px; text-transform: uppercase; color: var(--cream-text); margin-bottom: 6px; font-weight: 700; }
+    .modal input { width: 100%; padding: 11px; background: #070504; border: 1px solid var(--border-orange); color: #fff; border-radius: 6px; margin-bottom: 14px; }
+
+    /* Live Pop-up Toast */
+    #toastBox { position: fixed; bottom: 24px; right: 24px; z-index: 1000; display: flex; flex-direction: column; gap: 10px; }
+    .toast {
+      background: #140e0a; border: 2px solid var(--orange-bright); color: #fff;
+      padding: 14px 18px; border-radius: 10px; box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+      font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 12px;
+      animation: slideIn 0.3s ease-out;
+    }
+    @keyframes slideIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
     <div class="topbar">
-      <div class="brand">P/O // <span>GLOBAL DISCOVERY TERMINAL</span></div>
-      <div class="status-pill" id="schemaStatus">● ENGINE ONLINE</div>
+      <div class="brand">
+        <div class="pulse-dot"></div>
+        <span>P/O // COMMAND NEXUS v4.2</span>
+      </div>
+      <div class="top-actions">
+        <button class="btn btn-green" onclick="simulateEvent('DFY')">+ Simulate \$29 DFY</button>
+        <button class="btn" onclick="simulateEvent('EGO')">+ Simulate \$4.99 Notice</button>
+        <button class="btn" onclick="simulateEvent('CPL')">+ Simulate \$2.50 Free Lead</button>
+        <button class="btn" onclick="toggleModal(true)">⚙️ Live Data Bridge</button>
+      </div>
     </div>
 
-    <div class="grid">
-      <div class="card"><div class="card-label">Active Live Silos</div><div class="card-val" id="totalCount">0</div></div>
-      <div class="card"><div class="card-label">Tier 1 ($29 Statutory)</div><div class="card-val" id="t1Count">0</div></div>
-      <div class="card"><div class="card-label">Tier 2 ($4.99 Ledger)</div><div class="card-val" id="t2Count">0</div></div>
-      <div class="card"><div class="card-label">Tier 3 ($1.99 Poll)</div><div class="card-val" id="t3Count">0</div></div>
-      <div class="card"><div class="card-label">Aviation Dispatches</div><div class="card-val" id="flightCount">0</div></div>
-    </div>
-
-    <div class="controls">
-      <input type="text" id="searchInput" placeholder="Search by slug, flight number, or keyword...">
-      <select id="tierFilter">
-        <option value="ALL">All Tiers</option>
-        <option value="TIER_1_STATUTORY">Tier 1 ($29.00 Statutory)</option>
-        <option value="TIER_2_LEDGER">Tier 2 ($4.99 Ledger)</option>
-        <option value="TIER_3_POLL">Tier 3 ($1.99 Poll)</option>
-      </select>
-      <select id="nicheFilter">
-        <option value="ALL">All Niches</option>
-        <option value="AVIATION">AVIATION</option>
-        <option value="OUTAGES">OUTAGES</option>
-        <option value="RECALLS">RECALLS</option>
-        <option value="FINANCE">FINANCE</option>
-        <option value="TENANCY">TENANCY</option>
-        <option value="POLITICS">POLITICS</option>
-        <option value="CULTURE">CULTURE</option>
-      </select>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Live Silo / Docket URL</th>
-          <th>Niche</th>
-          <th>Monetization Tier</th>
-          <th>Region</th>
-          <th>Deployed</th>
-        </tr>
-      </thead>
-      <tbody id="siloTable">
-        <tr><td colspan="5">Loading live telemetry from silos.json...</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <script>
-    let allSilos = [];
-
-    function formatTime(ts) {
-      if (!ts) return '—';
-      const mins = Math.round((Date.now() - ts) / 60000);
-      if (mins < 1) return 'Just now';
-      if (mins < 60) return mins + 'm ago';
-      const hrs = Math.round(mins / 60);
-      if (hrs < 24) return hrs + 'h ago';
-      return Math.round(hrs / 24) + 'd ago';
-    }
-
-    function tierBadge(tier) {
-      if (tier === 'TIER_2_LEDGER') return '<span class="badge t2">$4.99 LEDGER</span>';
-      if (tier === 'TIER_3_POLL') return '<span class="badge t3">$1.99 POLL</span>';
-      return '<span class="badge t1">$29.00 STATUTORY</span>';
-    }
-
-    function render() {
-      const q = document.getElementById('searchInput').value.toLowerCase();
-      const tf = document.getElementById('tierFilter').value;
-      const nf = document.getElementById('nicheFilter').value;
-
-      const filtered = allSilos.filter(s => {
-        const id = (s.id || s.slug || '').toLowerCase();
-        const matchQ = !q || id.includes(q) || (s.type || '').toLowerCase().includes(q);
-        const matchT = tf === 'ALL' || s.tier === tf;
-        const matchN = nf === 'ALL' || s.type === nf;
-        return matchQ && matchT && matchN;
-      });
-
-      const tbody = document.getElementById('siloTable');
-      if (filtered.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="5">No matching silos found.</td></tr>';
-        return;
-      }
-
-      tbody.innerHTML = filtered.map(s => {
-        const isFlight = s.type === 'AVIATION';
-        const folder = isFlight ? 'flight' : 'docket';
-        const slug = (s.slug || s.id || '').toLowerCase();
-        const url = '/' + folder + '/' + slug + '/';
-        return '<tr>' +
-          '<td><a class="silo-link" href="' + url + '" target="_blank">' + url + ' &nearr;</a></td>' +
-          '<td>' + (s.type || 'OUTAGES') + '</td>' +
-          '<td>' + tierBadge(s.tier) + '</td>' +
-          '<td>' + (s.region || 'US') + '</td>' +
-          '<td>' + formatTime(s.ts) + '</td>' +
-        '</tr>';
-      }).join('');
-    }
-
-    async function init() {
-      try {
-        const res = await fetch('/terminal/silos.json?t=' + Date.now());
-        const data = await res.json();
-        document.getElementById('schemaStatus').textContent = '● SCHEMA V' + (data.schema_version || 7) + ' ONLINE';
-
-        const list = Array.isArray(data.active_silos) && data.active_silos.length > 0
-          ? data.active_silos
-          : Object.entries(data.deployed || {})
-              .filter(([, v]) => v.status === 'LIVE')
-              .map(([k, v]) => ({ id: v.slug || k, ...v }));
-
-        allSilos = list.sort((a, b) => (b.ts || 0) - (a.ts || 0));
-
-        document.getElementById('totalCount').textContent = allSilos.length;
-        document.getElementById('t1Count').textContent = allSilos.filter(s => s.tier === 'TIER_1_STATUTORY').length;
-        document.getElementById('t2Count').textContent = allSilos.filter(s => s.tier === 'TIER_2_LEDGER').length;
-        document.getElementById('t3Count').textContent = allSilos.filter(s => s.tier === 'TIER_3_POLL').length;
-        document.getElementById('flightCount').textContent = allSilos.filter(s => s.type === 'AVIATION').length;
-
-        render();
-      } catch (e) {
-        document.getElementById('siloTable').innerHTML = '<tr><td colspan="5">Waiting for first silos.json sync...</td></tr>';
-      }
-    }
-
-    document.getElementById('searchInput').addEventListener('input', render);
-    document.getElementById('tierFilter').addEventListener('change', render);
-    document.getElementById('nicheFilter').addEventListener('change', render);
-    init();
-  </script>
-</body>
-</html>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Gross Automated Revenue</div>
+        <div class="kpi-val" id="grossRev">\$0.00</div>
+        <div class="kpi-sub" id="revSub">DFY + Micro-Tolls + CPL Co-Reg</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Net Operator Profit</div>
+        <div class="kpi-val" id="netProfit" style="color:var(--emerald-neon);">\$0.00</div>
+        <div class="kpi-sub" id="finderSub">After Finder's Split Deduction</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Active Indexed Silos</div>
+        <div class="kpi-val" id="activeSilosCount">0</div>
+        <div class="kpi-sub" id="siloBreakdown">0 Aviation // 0 Dockets</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Verified Leads & Claimants</div>
+        <div class="kpi-val" id="totalLeadsCount">0</div>
+        <div class="kpi-sub" id="b2bEscrowVal">\$0 Est. B2B Batch Escrow Value</div>
