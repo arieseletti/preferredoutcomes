@@ -40,8 +40,8 @@
           "run": "node scripts/po-engine.mjs"
         },
         {
-          "name": "Commit and Push Generated Pages",
-          "run": "git config user.name \"PO Automated Engine\" && git config user.email \"bot@preferredoutcomes.org\" && git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git && (git checkout main || git checkout -b main) && git add -A && if ! git diff --cached --quiet; then git commit -m \"Deploy automated aviation and global news silos\" && git push --force origin main; else echo \"No new silos to commit.\"; fi"
+          "name": "Commit, Push, and Trigger Cloudflare",
+          "run": "git config user.name \"PO Automated Engine\" && git config user.email \"bot@preferredoutcomes.org\" && git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git && (git checkout main || git checkout -b main) && git add -A && if ! git diff --cached --quiet; then git commit -m \"Deploy automated aviation and global news silos\" && git push --force origin main && curl -X POST \"https://api.cloudflare.com/client/v4/workers/builds/deploy_hooks/b78b0949-c743-431f-8471-a6511b9deefb\"; else echo \"No new silos to commit.\"; fi"
         }
       ]
     }
