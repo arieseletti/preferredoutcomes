@@ -148,9 +148,9 @@
         <span>P/O // COMMAND NEXUS v4.2</span>
       </div>
       <div class="top-actions">
-        <button class="btn btn-green" onclick="simulateEvent('DFY')">+ Simulate \$29 DFY</button>
-        <button class="btn" onclick="simulateEvent('EGO')">+ Simulate \$4.99 Notice</button>
-        <button class="btn" onclick="simulateEvent('CPL')">+ Simulate \$2.50 Free Lead</button>
+        <button class="btn btn-green" onclick="simulateEvent('DFY')">+ Simulate $29 DFY</button>
+        <button class="btn" onclick="simulateEvent('EGO')">+ Simulate $4.99 Notice</button>
+        <button class="btn" onclick="simulateEvent('CPL')">+ Simulate $2.50 Free Lead</button>
         <button class="btn" onclick="toggleModal(true)">⚙️ Live Data Bridge</button>
       </div>
     </div>
@@ -158,12 +158,12 @@
     <div class="kpi-grid">
       <div class="kpi-card">
         <div class="kpi-label">Gross Automated Revenue</div>
-        <div class="kpi-val" id="grossRev">\$0.00</div>
+        <div class="kpi-val" id="grossRev">$0.00</div>
         <div class="kpi-sub" id="revSub">DFY + Micro-Tolls + CPL Co-Reg</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Net Operator Profit</div>
-        <div class="kpi-val" id="netProfit" style="color:var(--emerald-neon);">\$0.00</div>
+        <div class="kpi-val" id="netProfit" style="color:var(--emerald-neon);">$0.00</div>
         <div class="kpi-sub" id="finderSub">After Finder's Split Deduction</div>
       </div>
       <div class="kpi-card">
@@ -174,4 +174,262 @@
       <div class="kpi-card">
         <div class="kpi-label">Verified Leads & Claimants</div>
         <div class="kpi-val" id="totalLeadsCount">0</div>
-        <div class="kpi-sub" id="b2bEscrowVal">\$0 Est. B2B Batch Escrow Value</div>
+        <div class="kpi-sub" id="b2bEscrowVal">$0 Est. B2B Batch Escrow Value</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Top Converting Silo</div>
+        <div class="kpi-val" id="topSiloName" style="font-size:18px;margin-top:10px;">—</div>
+        <div class="kpi-sub" id="topSiloMetrics">Waiting for traffic & lead sync</div>
+      </div>
+    </div>
+
+    <div class="split-bar">
+      <div>
+        <strong style="color:var(--orange-bright);text-transform:uppercase;font-size:12px;letter-spacing:0.06em;">Finder's Split & Partner Payout Calculator:</strong>
+        <span style="font-size:13px;color:var(--muted-text);margin-left:8px;">Automatically calculates scout/finder commissions across deployed silos.</span>
+      </div>
+      <div class="split-controls">
+        <span>Finder's Cut %:</span>
+        <input type="number" id="finderPct" value="20" min="0" max="90" onchange="recalcMetrics()">
+        <span>| Partner Share: <strong id="finderDollar" style="color:var(--orange-glow);">$0.00</strong></span>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <input type="text" id="searchBox" class="input-box" placeholder="Filter live flights & dockets by slug, flight code, region, or niche..." oninput="renderTable()">
+      <select id="tierSelect" class="select-box" onchange="renderTable()">
+        <option value="ALL">All Monetization Tiers</option>
+        <option value="TIER_1_STATUTORY">Tier 1 ($29.00 Statutory DFY)</option>
+        <option value="TIER_2_LEDGER">Tier 2 ($4.99 Accountability Notice)</option>
+        <option value="TIER_3_POLL">Tier 3 ($1.99 Referendum Poll)</option>
+      </select>
+      <select id="nicheSelect" class="select-box" onchange="renderTable()">
+        <option value="ALL">All Sectors / Niches</option>
+        <option value="AVIATION">AVIATION (Flight Disruptions)</option>
+        <option value="FINANCE">FINANCE (Breaches & Settlements)</option>
+        <option value="OUTAGES">OUTAGES (Service & Grid Down)</option>
+        <option value="RECALLS">RECALLS (Product & Auto)</option>
+        <option value="TENANCY">TENANCY (Rent & Housing)</option>
+        <option value="POLITICS">POLITICS (Petitions & Policy)</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Live Indexed Silo / Docket</th>
+            <th>Sector</th>
+            <th>Monetization Tier</th>
+            <th>Region</th>
+            <th>50-Claimant Batch Escrow</th>
+            <th>Paid Sales</th>
+            <th>Watch 🔔</th>
+          </tr>
+        </thead>
+        <tbody id="siloTbody">
+          <tr><td colspan="7">Syncing live silos from /terminal/silos.json...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Data Bridge Modal -->
+  <div class="modal-bg" id="bridgeModal">
+    <div class="modal">
+      <h3>⚙️ Live Data Bridge & Push Alerts</h3>
+      <p>Paste your Make.com Scenario 4 Webhook URL below to merge live records from <strong>Leads_Ledger (201233)</strong> and <strong>Stripe</strong> with your automated GitHub silos (`silos.json` loads automatically).</p>
+      <label>Make Scenario 4 Bridge Webhook URL</label>
+      <input type="text" id="bridgeUrlInput" placeholder="https://hook.us2.make.com/...">
+      <label>Optional Filter Tag for Browser Push Notifications</label>
+      <input type="text" id="pushTagInput" placeholder="e.g. DAL, microsoft, recall (leave blank for all)">
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:8px;">
+        <button class="btn" onclick="toggleModal(false)">Close</button>
+        <button class="btn btn-green" onclick="saveBridgeConfig()">Save & Sync Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastBox"></div>
+
+  <script>
+    let silos = [];
+    let leads = [];
+    let simRev = 0;
+    let simLeads = 0;
+    let watchedIds = JSON.parse(localStorage.getItem('po_watched_silos') || '{}');
+
+    document.getElementById('bridgeUrlInput').value = localStorage.getItem('po_bridge_url') || '';
+    document.getElementById('pushTagInput').value = localStorage.getItem('po_push_tag') || '';
+
+    function toggleModal(show) {
+      document.getElementById('bridgeModal').classList.toggle('open', show);
+    }
+
+    function saveBridgeConfig() {
+      localStorage.setItem('po_bridge_url', document.getElementById('bridgeUrlInput').value.trim());
+      localStorage.setItem('po_push_tag', document.getElementById('pushTagInput').value.trim());
+      toggleModal(false);
+      showToast('⚡ Live Data Bridge Saved & Synced');
+      loadAllData();
+    }
+
+    function showToast(msg) {
+      const box = document.getElementById('toastBox');
+      const el = document.createElement('div');
+      el.className = 'toast';
+      el.innerHTML = '<span>🔥</span><span>' + msg + '</span>';
+      box.appendChild(el);
+      setTimeout(() => el.remove(), 4500);
+    }
+
+    function simulateEvent(type) {
+      if (!silos.length) return;
+      const pick = silos[Math.floor(Math.random() * Math.min(15, silos.length))];
+      const id = pick.slug || pick.id;
+      if (type === 'DFY') {
+        simRev += 29.00;
+        pick._paid = (pick._paid || 0) + 1;
+        showToast('+$29.00 DFY STATUTORY SALE // ' + id.toUpperCase());
+      } else if (type === 'EGO') {
+        simRev += 4.99;
+        pick._paid = (pick._paid || 0) + 1;
+        showToast('+$4.99 PRIORITY NOTICE DISPATCH // ' + id.toUpperCase());
+      } else {
+        simRev += 2.25;
+        simLeads += 1;
+        pick._leads = (pick._leads || 0) + 1;
+        showToast('+$2.25 FREE LEAD + CO-REG // ' + id.toUpperCase());
+      }
+      recalcMetrics();
+      renderTable();
+    }
+
+    function toggleWatch(id) {
+      watchedIds[id] = !watchedIds[id];
+      localStorage.setItem('po_watched_silos', JSON.stringify(watchedIds));
+      if (watchedIds[id] && 'Notification' in window && Notification.permission !== 'granted') {
+        Notification.requestPermission();
+      }
+      showToast(watchedIds[id] ? '🔔 Push Alerts ON for ' + id : '🔕 Push Alerts OFF for ' + id);
+      renderTable();
+    }
+
+    function recalcMetrics() {
+      let paidRev = 0;
+      let freeCount = 0;
+      leads.forEach(l => {
+        const d = l.data || l;
+        if (d.status === 'PAID' || d.flow_type === 'DFY_CHECKOUT') {
+          paidRev += d.tier === 'TIER_2_LEDGER' ? 4.99 : d.tier === 'TIER_3_POLL' ? 1.99 : 29.00;
+        } else {
+          freeCount++;
+          paidRev += 2.25;
+        }
+      });
+
+      const totalGross = paidRev + simRev;
+      const pct = parseFloat(document.getElementById('finderPct').value) || 0;
+      const finderCut = totalGross * (pct / 100);
+      const net = totalGross - finderCut;
+
+      document.getElementById('grossRev').textContent = '$' + totalGross.toFixed(2);
+      document.getElementById('netProfit').textContent = '$' + net.toFixed(2);
+      document.getElementById('finderDollar').textContent = '$' + finderCut.toFixed(2);
+
+      const flights = silos.filter(s => s.type === 'AVIATION').length;
+      const dockets = silos.length - flights;
+      document.getElementById('activeSilosCount').textContent = silos.length;
+      document.getElementById('siloBreakdown').textContent = flights + ' Aviation // ' + dockets + ' News Dockets';
+
+      const totalLeads = freeCount + simLeads;
+      document.getElementById('totalLeadsCount').textContent = totalLeads;
+      document.getElementById('b2bEscrowVal').textContent = '$' + (totalLeads * 45).toLocaleString() + ' Est. B2B Batch Pipeline';
+
+      if (silos.length > 0) {
+        const top = [...silos].sort((a, b) => ((b._paid || 0) * 29 + (b._leads || 0)) - ((a._paid || 0) * 29 + (a._leads || 0)))[0];
+        document.getElementById('topSiloName').textContent = (top.slug || top.id).slice(0, 26);
+        document.getElementById('topSiloMetrics').textContent = (top._paid || 0) + ' Paid // ' + (top._leads || 38) + '/50 Escrow';
+      }
+    }
+
+    function renderTable() {
+      const q = document.getElementById('searchBox').value.toLowerCase();
+      const tf = document.getElementById('tierSelect').value;
+      const nf = document.getElementById('nicheSelect').value;
+
+      const rows = silos.filter(s => {
+        const slug = (s.slug || s.id || '').toLowerCase();
+        const matchQ = !q || slug.includes(q) || (s.region || '').toLowerCase().includes(q);
+        const matchT = tf === 'ALL' || s.tier === tf;
+        const matchN = nf === 'ALL' || s.type === nf;
+        return matchQ && matchT && matchN;
+      });
+
+      const tbody = document.getElementById('siloTbody');
+      if (!rows.length) {
+        tbody.innerHTML = '<tr><td colspan="7">No matching silos found.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = rows.map(s => {
+        const id = s.slug || s.id;
+        const isFlight = s.type === 'AVIATION';
+        const url = '/' + (isFlight ? 'flight/' : 'docket/') + id.toLowerCase() + '/';
+        const bClass = s.tier === 'TIER_2_LEDGER' ? 'b-t2' : s.tier === 'TIER_3_POLL' ? 'b-t3' : 'b-t1';
+        const bText = s.tier === 'TIER_2_LEDGER' ? '$4.99 NOTICE' : s.tier === 'TIER_3_POLL' ? '$1.99 POLL' : '$29.00 STATUTORY';
+        const leadCnt = Math.min(50, 38 + (s._leads || 0));
+        const pct = Math.round((leadCnt / 50) * 100);
+        const isWatched = !!watchedIds[id];
+
+        return '<tr>' +
+          '<td><a class="silo-url" href="' + url + '" target="_blank">' + url + ' &nearr;</a></td>' +
+          '<td><strong>' + (s.type || 'OUTAGES') + '</strong></td>' +
+          '<td><span class="badge ' + bClass + '">' + bText + '</span></td>' +
+          '<td>' + (s.region || 'US') + '</td>' +
+          '<td><div style="font-size:11px;font-weight:700;">' + leadCnt + ' / 50 Claimants (' + pct + '%)</div>' +
+          '<div class="escrow-wrap"><div class="escrow-fill" style="width:' + pct + '%"></div></div></td>' +
+          '<td style="font-weight:900;color:var(--emerald-neon);">' + (s._paid || 0) + ' Paid</td>' +
+          '<td><button class="bell-btn ' + (isWatched ? 'active' : '') + '" onclick="toggleWatch(\'' + id + '\')">' + (isWatched ? '🔔 ON' : '🔕 OFF') + '</button></td>' +
+        '</tr>';
+      }).join('');
+    }
+
+    async function loadAllData() {
+      try {
+        const res = await fetch('/terminal/silos.json?t=' + Date.now());
+        const data = await res.json();
+        const rawList = Array.isArray(data.active_silos) && data.active_silos.length
+          ? data.active_silos
+          : Object.entries(data.deployed || {}).filter(([, v]) => v.status === 'LIVE').map(([k, v]) => ({ id: v.slug || k, ...v }));
+
+        silos = rawList.map(s => ({ ...s, _leads: s._leads || 0, _paid: s._paid || 0 }));
+
+        const bridgeUrl = localStorage.getItem('po_bridge_url');
+        if (bridgeUrl) {
+          const bRes = await fetch(bridgeUrl).catch(() => null);
+          if (bRes && bRes.ok) {
+            const bData = await bRes.json();
+            leads = bData.leads || [];
+            leads.forEach(l => {
+              const d = l.data || l;
+              const match = silos.find(s => (s.slug || s.id || '').toLowerCase() === (d.incident || '').toLowerCase());
+              if (match) {
+                if (d.status === 'PAID' || d.flow_type === 'DFY_CHECKOUT') match._paid++;
+                else match._leads++;
+              }
+            });
+          }
+        }
+        recalcMetrics();
+        renderTable();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    loadAllData();
+    setInterval(loadAllData, 20000);
+  </script>
+</body>
+</html>
