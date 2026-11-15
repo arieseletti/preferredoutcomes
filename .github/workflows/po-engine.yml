@@ -1,342 +1,41 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import crypto from 'node:crypto';
-
-const OPENAI_API_KEY = (process.env.OPENAI_API_KEY || '').trim();
-const FLIGHTAWARE_API_KEY = (process.env.FLIGHTAWARE_API_KEY || '').trim();
-const WEBHOOK_URL = 'https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp';
-const INDEXNOW_KEY = 'poindex2026key';
-const CURRENT_SCHEMA_VERSION = 3;
-
-if (!OPENAI_API_KEY) {
-  console.error('CRITICAL ERROR: OPENAI_API_KEY secret is missing!');
-  process.exit(1);
-}
-
-const BROWSER_HEADERS = {
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-  'Accept': 'application/rss+xml, application/xml, text/xml, */*'
-};
-
-const PEAK_POOLS = {
-  APAC_AU_WEST: ['YSSY', 'YMML', 'YBBN', 'NZAA', 'KLAX', 'CYVR', 'RJTT', 'RKSI'],
-  EU_UK_ME: ['EGLL', 'EGKK', 'LFPG', 'EDDF', 'EHAM', 'LEMD', 'LIRF', 'EIDW', 'LTFM', 'LLBG', 'OERK', 'OEJN', 'LSZH', 'EDDM'],
-  AMER_LATAM: ['CYYZ', 'CYUL', 'CYYC', 'CYVR', 'KJFK', 'KEWR', 'KATL', 'KORD', 'KDFW', 'KDEN', 'KLAX', 'SBGR', 'MMMX', 'SKBO']
-};
-
-const NEWS_FEEDS = [
-  'https://news.google.com/rss/search?q=Airbnb+refund+dispute+OR+VRBO+cancellation+OR+tenant+eviction+notice+OR+rent+abatement+OR+utility+rate+hike+OR+power+outage+compensation+when:12h&hl=en',
-  'https://news.google.com/rss/search?q=service+outage+refund+OR+network+down+compensation+OR+bank+account+freeze+OR+fintech+funds+locked+OR+insurance+claim+denial+lawsuit+when:12h&hl=en',
-  'https://news.google.com/rss/search?q=data+breach+settlement+claim+OR+urgent+product+recall+refund+OR+concert+event+cancellation+refund+OR+class+action+settlement+when:12h&hl=en',
-  'https://news.google.com/rss/search?q=public+petition+boycott+OR+corporate+backlash+scandal+OR+controversy+lawsuit+OR+viral+feud+outcry+when:12h&hl=en',
-  'https://news.google.com/rss/headlines/section/topic/NATION?hl=en-US&gl=US&ceid=US:en',
-  'https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en',
-  'https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en',
-  'https://news.google.com/rss?hl=en-GB&gl=GB&ceid=GB:en',
-  'https://news.google.com/rss?hl=en-AU&gl=AU&ceid=AU:en',
-  'https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de',
-  'https://news.google.com/rss?hl=fr&gl=FR&ceid=FR:fr',
-  'https://news.google.com/rss?hl=es&gl=ES&ceid=ES:es',
-  'https://news.google.com/rss?hl=pt-BR&gl=BR&ceid=BR:pt-419'
-];
-
-const STATE_PATH = 'terminal/silos.json';
-fs.mkdirSync('terminal', { recursive: true });
-
-let state = { schema_version: CURRENT_SCHEMA_VERSION, deployed: {}, active_silos: [], cursor: { APAC_AU_WEST: 0, EU_UK_ME: 0, AMER_LATAM: 0 }, last_flight_poll_ts: 0 };
-if (fs.existsSync(STATE_PATH)) {
-  try {
-    const loaded = JSON.parse(fs.readFileSync(STATE_PATH, 'utf8'));
-    if (loaded.schema_version === CURRENT_SCHEMA_VERSION) {
-      state = { ...state, ...loaded, cursor: { APAC_AU_WEST: 0, EU_UK_ME: 0, AMER_LATAM: 0, ...(loaded.cursor || {}) } };
-    } else {
-      console.log('Upgrading to Schema v3: wiping old flight/ and docket/ folders for clean rebuild...');
-      fs.rmSync('flight', { recursive: true, force: true });
-      fs.rmSync('docket', { recursive: true, force: true });
-    }
-  } catch {}
-}
-
-fs.mkdirSync('flight', { recursive: true });
-fs.mkdirSync('docket', { recursive: true });
-
-const escAttr = (str = '') =>
-  String(str).replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-async function callOpenAI(systemPrompt, userPrompt) {
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${OPENAI_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'gpt-4o-mini',
-      response_format: { type: 'json_object' },
-      temperature: 0.7,
-      max_tokens: 2500,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt }
+{
+  "name": "PO Global Discovery Engine",
+  "on": {
+    "schedule": [
+      { "cron": "*/30 * * * *" }
+    ],
+    "workflow_dispatch": {}
+  },
+  "permissions": {
+    "contents": "write"
+  },
+  "jobs": {
+    "deploy-silos": {
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "name": "Checkout repository",
+          "uses": "actions/checkout@v4",
+          "with": { "fetch-depth": 0 }
+        },
+        {
+          "name": "Setup Node.js 20",
+          "uses": "actions/setup-node@v4",
+          "with": { "node-version": "20" }
+        },
+        {
+          "name": "Run PO Engine",
+          "env": {
+            "OPENAI_API_KEY": "${{ secrets.OPENAI_API_KEY }}",
+            "FLIGHTAWARE_API_KEY": "${{ secrets.FLIGHTAWARE_API_KEY }}"
+          },
+          "run": "node scripts/po-engine.mjs"
+        },
+        {
+          "name": "Commit and Push Generated Pages",
+          "run": "git config user.name \"PO Automated Engine\" && git config user.email \"bot@preferredoutcomes.org\" && git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git && (git checkout main || git checkout -b main) && git add -A && if ! git diff --cached --quiet; then git commit -m \"Deploy automated aviation and global news silos\" && git pull --rebase origin main && git push origin main; else echo \"No new silos to commit.\"; fi"
+        }
       ]
-    })
-  });
-  if (!res.ok) throw new Error(`OpenAI HTTP ${res.status}: ${await res.text()}`);
-  const data = await res.json();
-  return JSON.parse(data.choices[0].message.content);
-}
-
-function buildLiveHtml({ langCode, pageTitle, metaDesc, badgeText, h1, aiAnswer, statusBarLeft, q1, a1, q2, a2, q3, a3, compareHeading, redTitle, redText, amberTitle, amberText, greenTitle, greenText, niche, incident, region, tier, namePh, inputPh, emailPh, ctaText, freeTitle, freeCta, freePh, coregText, freeBtn }) {
-  return `<!DOCTYPE html><html lang='${escAttr(langCode)}'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1.0'><title>${escAttr(pageTitle)} | Preferred Outcomes</title><meta name='description' content='${escAttr(metaDesc)}'></head><body style='background:#f8fafc;color:#0f172a;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;margin:0;padding:20px;line-height:1.65;'><div style='max-width:760px;margin:auto;background:#ffffff;border:1px solid #cbd5e1;border-radius:12px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);'><div style='display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #0f172a;padding-bottom:14px;margin-bottom:20px;flex-wrap:wrap;gap:8px;'><span style='font-weight:900;font-size:15px;letter-spacing:0.05em;'>P/O // PREFERRED OUTCOMES</span><span style='background:#dcfce7;color:#166534;padding:4px 10px;border-radius:4px;font-size:12px;font-weight:800;text-transform:uppercase;'>${escAttr(badgeText)}</span></div><h1 style='font-size:28px;line-height:1.25;margin:0 0 16px 0;color:#0f172a;'>${escAttr(h1)}</h1><div style='background:#f1f5f9;border-left:4px solid #0f172a;padding:16px;border-radius:4px;margin-bottom:20px;font-size:16px;font-weight:500;color:#1e293b;'>${escAttr(aiAnswer)}</div><div style='background:#0f172a;color:#ffffff;padding:12px 16px;border-radius:6px;font-size:13px;font-weight:700;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;'><span>${escAttr(statusBarLeft)}</span><span style='color:#4ade80;'>● LIVE</span></div><div itemscope itemtype='https://schema.org/FAQPage'><div itemscope itemprop='mainEntity' itemtype='https://schema.org/Question'><h2 itemprop='name' style='font-size:20px;color:#0f172a;margin-top:24px;'>${escAttr(q1)}</h2><div itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer'><p itemprop='text' style='color:#334155;font-size:16px;'>${escAttr(a1)}</p></div></div><div itemscope itemprop='mainEntity' itemtype='https://schema.org/Question'><h2 itemprop='name' style='font-size:20px;color:#0f172a;margin-top:24px;'>${escAttr(q2)}</h2><div itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer'><p itemprop='text' style='color:#334155;font-size:16px;'>${escAttr(a2)}</p></div></div><div itemscope itemprop='mainEntity' itemtype='https://schema.org/Question'><h2 itemprop='name' style='font-size:20px;color:#0f172a;margin-top:24px;'>${escAttr(q3)}</h2><div itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer'><p itemprop='text' style='color:#334155;font-size:16px;'>${escAttr(a3)}</p></div></div></div><h3 style='font-size:18px;color:#0f172a;margin-top:30px;margin-bottom:14px;'>${escAttr(compareHeading)}</h3><div style='display:flex;flex-direction:column;gap:14px;margin-bottom:24px;'><div style='background:#fef2f2;border:2px solid #ef4444;border-radius:8px;padding:16px;'><div style='color:#b91c1c;font-weight:800;font-size:13px;text-transform:uppercase;'>${escAttr(redTitle)}</div><p style='margin:6px 0 0 0;font-size:14px;color:#7f1d1d;'>${escAttr(redText)}</p></div><div style='background:#fffbeb;border:2px solid #f59e0b;border-radius:8px;padding:16px;'><div style='color:#b45309;font-weight:800;font-size:13px;text-transform:uppercase;'>${escAttr(amberTitle)}</div><p style='margin:6px 0 0 0;font-size:14px;color:#78350f;'>${escAttr(amberText)}</p></div><div style='background:#f0fdf4;border:2px solid #16a34a;border-radius:8px;padding:20px;'><div style='color:#15803d;font-weight:800;font-size:14px;text-transform:uppercase;'>${escAttr(greenTitle)}</div><p style='margin:6px 0 14px 0;font-size:14px;color:#14532d;'>${escAttr(greenText)}</p><form action='${WEBHOOK_URL}' method='GET' style='display:flex;flex-direction:column;gap:10px;'><input type='hidden' name='flow_type' value='DFY_CHECKOUT'><input type='hidden' name='niche' value='${escAttr(niche)}'><input type='hidden' name='incident' value='${escAttr(incident)}'><input type='hidden' name='region' value='${escAttr(region)}'><input type='hidden' name='tier' value='${escAttr(tier)}'><input type='text' name='name' required placeholder='${escAttr(namePh)}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'><input type='text' name='pnr' required placeholder='${escAttr(inputPh)}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'><input type='email' name='email' required placeholder='${escAttr(emailPh)}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'><button type='submit' style='padding:16px;background:#16a34a;color:#ffffff;font-weight:900;font-size:16px;border:none;border-radius:6px;cursor:pointer;'>${escAttr(ctaText)} &rarr;</button></form></div></div><div style='background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:20px;margin-top:24px;'><h4 style='margin:0 0 6px 0;font-size:16px;color:#0f172a;'>${escAttr(freeTitle)}</h4><p style='margin:0 0 14px 0;font-size:14px;color:#475569;'>${escAttr(freeCta)}</p><form action='${WEBHOOK_URL}' method='GET' style='display:flex;flex-direction:column;gap:10px;'><input type='hidden' name='flow_type' value='FREE_LEAD'><input type='hidden' name='niche' value='${escAttr(niche)}'><input type='hidden' name='incident' value='${escAttr(incident)}'><input type='hidden' name='region' value='${escAttr(region)}'><input type='hidden' name='tier' value='${escAttr(tier)}'><input type='text' name='name' required placeholder='${escAttr(namePh)}' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'><input type='email' name='email' required placeholder='${escAttr(emailPh)}' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'><input type='text' name='loss_impact' required placeholder='${escAttr(freePh)}' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'><label style='font-size:12px;color:#475569;display:flex;align-items:flex-start;gap:8px;'><input type='checkbox' name='coreg_optin' value='yes' checked style='margin-top:3px;'><span>${escAttr(coregText)}</span></label><button type='submit' style='padding:13px;background:#0f172a;color:#ffffff;font-weight:800;font-size:14px;border:none;border-radius:6px;cursor:pointer;'>${escAttr(freeBtn)}</button></form></div><div style='margin-top:28px;padding-top:16px;border-top:1px solid #e2e8f0;font-size:12px;color:#64748b;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;'><span>&copy; Preferred Outcomes Consumer Advocacy &amp; Public Sentiment Registry.</span><a href='/mandate/' style='color:#0f172a;font-weight:700;text-decoration:underline;'>Our Mandate / About</a></div></div></body></html>`;
-}
-
-const NEWS_SYSTEM = `You are a multi-lingual search-intent & GEO (Generative Engine Optimization) Direct-Response Advertorial Copywriter for Preferred Outcomes.
-1. Detect the primary country, region, and native language of the audience affected by the incoming news headline (e.g., English for US/CA/UK/AU, Spanish for ES/LATAM, Portuguese for BR, French for FR, German for DE). Write ALL visible copy in that native language.
-2. STRICT SKIP RULE: Set "skip": true if the article is about stock picking, IPO investing, financial market advice, weather, sports scores, or obituaries. NEVER offer investment advice, portfolio tools, or stock analysis. Only build pages for consumer refunds/outages/recalls (TIER_1_STATUTORY), corporate boycotts/policy petitions (TIER_2_LEDGER), or polarizing public controversies/cultural debates where citizens want to vote and comment (TIER_3_POLL).
-
-Output a strict JSON object with these EXACT keys and rules:
-- "skip": boolean (true if investing/stock/irrelevant news, false otherwise).
-- "lang_code": Two-letter ISO language code (e.g., "en", "es", "pt", "fr", "de").
-- "slug": Lowercase URL-safe slug in the native language (4 to 6 ASCII words with hyphens, e.g., "airbnb-host-cancellation-refund-claim").
-- "niche": Strictly one of: "TENANCY", "OUTAGES", "RECALLS", "FINANCE", "POLITICS", "CULTURE".
-- "region": Two-letter country/region code (e.g., "US", "CA", "UK", "EU", "BR", "ES", "FR", "DE", "GLOBAL").
-- "tier": Strictly one of:
-  * "TIER_1_STATUTORY" ($29.00) if consumers/tenants/customers are owed refunds, bill credits, rent abatements, data breach payouts, or statutory cash.
-  * "TIER_2_LEDGER" ($4.99) if it is a corporate boycott, policy fight, or institutional scandal where people want to sign a petition OR send an individual formal notice to decision-makers.
-  * "TIER_3_POLL" ($1.99) if it is a polarizing cultural debate, political clash, or viral controversy where people want to vote in a live referendum poll and pin their verified comment to the top of the page.
-- "badge_text": Translated status badge:
-  * If TIER_1_STATUTORY: "Active Compensation & Statutory Refund Window"
-  * If TIER_2_LEDGER: "Active Public Petition & Accountability Docket"
-  * If TIER_3_POLL: "Live Public Referendum & Verified Sentiment Poll"
-- "human_h1": High-converting, natural-language long-tail search headline in the native language matching exact user search intent (e.g., "Why Is [Company] Down Today & How to Force Your Full Statutory Bill Credit" or "[Topic] Controversy: Live Public Referendum Poll & Official Accountability Docket").
-- "ai_direct_answer": 3-sentence authoritative summary in the native language engineered for Google AI Overviews: state exactly what happened, who is impacted, and direct them to the automated claim dispatch, petition, or live poll below.
-- "q1_human": Conversational long-tail search question #1 in the native language ("What happened with... and who is affected?").
-- "a1_answer": Meaty, persuasive 4-sentence investigative advertorial paragraph answering Q1 with specific details, validating the reader's frustration, and citing the real-world impact.
-- "q2_human": Conversational search question #2 in the native language ("Am I owed compensation for..." or "Why are citizens demanding accountability over...").
-- "a2_answer": Meaty 4-sentence advertorial paragraph agitating the problem—exposing corporate stonewalling, fine-print loopholes, institutional gatekeeping, or media spin.
-- "q3_human": Conversational search question #3 in the native language ("How do I file a formal demand / register my official stance on the docket?").
-- "a3_answer": Persuasive 4-sentence paragraph introducing the Preferred Outcomes automated resolution and public ledger system below.
-- "ledger_counter_text": Translated live counter text:
-  * If TIER_1_STATUTORY: "38 of 50 Verified Claimants Registered for Batch #1 Legal Escrow"
-  * If TIER_2_LEDGER: "1,412 Verified Public Signatures Recorded on Official Docket"
-  * If TIER_3_POLL: "4,890 Verified Public Poll Votes Cast (Live Split: 54% Support / 46% Oppose)"
-- "compare_heading": Translated heading for "Compare Your 3 Action Pathways:" in the native language.
-- "red_option_title": Translated Option 1 title:
-  * If TIER_1_STATUTORY: "Option 1: Standard Customer Support Queues (Free)"
-  * If TIER_2_LEDGER: "Option 1: Unverified Social Media Complaints"
-  * If TIER_3_POLL: "Option 1: Unverified Comment Sections"
-- "red_option_text": 2 sentences in the native language explaining why Option 1 fails (buried by algorithms, ignored by bots, or auto-rejected without statutory citations).
-- "amber_option_title": Translated Option 2 title:
-  * If TIER_1_STATUTORY: "Option 2: Contingency Lawyers or Class Action Waits (35-50% Cut)"
-  * If TIER_2_LEDGER: "Option 2: Standard Group Petition Batch (Free — Below)"
-  * If TIER_3_POLL: "Option 2: Cast a Standard Unpinned Poll Vote (Free — Below)"
-- "amber_option_text": 2 sentences in the native language explaining Option 2 (slow multi-year wait or waiting in the standard unprioritized queue below).
-- "green_option_title": Translated Option 3 title:
-  * If TIER_1_STATUTORY: "Option 3: Done-For-You Statutory Claim Dispatch ($29.00 Flat — Keep 100%)"
-  * If TIER_2_LEDGER: "Option 3: Priority Individual Notice Dispatched in Your Name ($4.99 Instant Delivery)"
-  * If TIER_3_POLL: "Option 3: Pin Your Verified Statement to the Top of This Live Poll + Weighted Vote ($1.99)"
-- "green_option_text": 2 persuasive sentences in the native language:
-  * If TIER_1_STATUTORY: "Enter your details below and we automatically compile, cite the exact consumer protection statute, and dispatch your formal demand directly to the compliance desk on your behalf—with you CC'd."
-  * If TIER_2_LEDGER: "Skip the group batch wait. Enter your name and custom statement below and we immediately dispatch an individually cited Formal Accountability Notice directly to the executive board or decision-makers in your name."
-  * If TIER_3_POLL: "Want your take seen first? Pin your verified public comment and weighted vote to the top of this live referendum docket and receive the unredacted regional sentiment dossier."
-- "name_placeholder": Translated placeholder for "Your Full Name (or Public Display Name)".
-- "input_placeholder": Translated placeholder for:
-  * TIER_1_STATUTORY: "Target Company/Landlord Name + Your Booking/Account Ref & Loss Amount"
-  * TIER_2_LEDGER: "Target Entity/Board Name + Your Personal Grievance Statement"
-  * TIER_3_POLL: "Your Vote (Support / Oppose) + Your Public Comment to Pin at Top of Page"
-- "email_placeholder": Translated placeholder for "Your Email Address (for CC Proof of Service & Confirmation)".
-- "cta_button_text": Translated high-urgency button text with exact price:
-  * If TIER_1_STATUTORY: "AUTHORIZE & DISPATCH MY STATUTORY CLAIM — $29.00"
-  * If TIER_2_LEDGER: "DISPATCH PRIORITY INDIVIDUAL NOTICE IN MY NAME — $4.99"
-  * If TIER_3_POLL: "PIN MY VERIFIED COMMENT & WEIGHTED VOTE — $1.99"
-- "free_tool_title": Translated heading for the free option box below:
-  * If TIER_1_STATUTORY: "Not Ready for Instant Dispatch? Join the Free Batch-50 Claimant Escrow & Get the Evidence Checklist"
-  * If TIER_2_LEDGER: "Sign the Official Public Petition Ledger (100% Free) & Receive the Unredacted Case Brief"
-  * If TIER_3_POLL: "Cast Your Free Public Poll Vote & Unlock the Live Regional Sentiment Breakdown"
-- "free_tool_cta": 2-sentence persuasive invitation in the native language to register on the free public ledger below and receive the 1-page action brief and evidence checklist via email.
-- "free_input_placeholder": Translated placeholder for:
-  * TIER_1_STATUTORY: "Stated Loss Amount / Outage Duration / Target Company"
-  * TIER_2_LEDGER: "Your City/Region + Brief Reason for Signing Petition"
-  * TIER_3_POLL: "Your Vote (Support or Oppose) + Primary Concern"
-- "coreg_disclosure_text": Translated checkbox text for "Keep me updated with breaking settlement alerts, partner consumer briefs, and consolidated batch recovery notices."
-- "free_button_text": Translated submit button text for the free form:
-  * If TIER_1_STATUTORY: "Register Free Claim & Send Checklist"
-  * If TIER_2_LEDGER: "Add Free Signature & Send Case Brief"
-  * If TIER_3_POLL: "Cast Free Vote & Send Sentiment Report"`;
-
-const AVIATION_SYSTEM = `You are a multi-lingual search-intent & GEO (Generative Engine Optimization) Direct-Response Advertorial Copywriter for Preferred Outcomes.
-CRITICAL RULE: Every flight sent to you is a VERIFIED severe disruption (3+ hour delay or cancellation). NEVER say the flight is on-time. Always treat the flight as severely disrupted and eligible for statutory cash compensation or mandatory refunds.
-Detect the primary language of the origin airport and write persuasive, authoritative passenger compensation copy optimized for Google AI Overviews.
-Output strict JSON with exact keys:
-- "lang_code": ("en", "fr", "de", "es", "pt", etc.)
-- "jurisdiction": ("APPR" if origin starts with C, "UK261" if EG, "EU261" if LF/ED/EH/LE/LI/EI/LS, "ANAC400" if SB, else "US_DOT")
-- "statutory_cite": ("Canada APPR SOR/2019-150", "UK261 Regulation", "EU Regulation 261/2004", "Brazil ANAC 400", or "14 CFR Part 259")
-- "max_comp": ("$1,000 CAD", "£520 GBP", "€600 EUR", "R$ 4,000 BRL", or "Full Cash Refund + Hotel/Meal Coverage")
-- "badge_text": Translated "Verified Flight Disruption — Statutory Claim Window Active"
-- "seo_title": Conversational search headline including flight number and statutory payout amount
-- "human_h1": High-converting headline in native language for passengers on this disrupted flight
-- "ai_direct_answer": 3-sentence authoritative summary stating the flight disruption, exact statutory regulation, maximum payout owed, and how to dispatch a claim below
-- "ledger_counter_text": Translated "39 of 50 Passengers Registered for Consolidated Batch #1 Escrow"
-- "q1_human": Conversational question #1 ("Why was Flight [ident] delayed/cancelled and am I eligible for cash compensation?")
-- "a1_answer": 4-sentence investigative advertorial paragraph explaining airline liability under the statute
-- "q2_human": Conversational question #2 ("Why do airlines reject standard web forms or offer travel vouchers instead of cash?")
-- "a2_answer": 4-sentence advertorial paragraph exposing airline voucher traps and stonewalling tactics
-- "q3_human": Conversational question #3 ("How do I force the airline compliance desk to pay my full statutory claim?")
-- "a3_answer": 4-sentence paragraph introducing the Preferred Outcomes automated statutory dossier dispatch below
-- "compare_heading": Translated "Compare Your 3 Claim Recovery Options:"
-- "red_option_title": Translated "Option 1: Airline Customer Service Forms (Free)"
-- "red_option_text": 2 sentences on why airlines auto-reject un-cited passenger emails or trick passengers into signing away cash rights for vouchers
-- "amber_option_title": Translated "Option 2: Contingency Claim Agencies (35% to 50% Fee Cut)"
-- "amber_option_text": 2 sentences on why claim sharks take up to half your statutory payout for sending a template letter
-- "green_option_title": Translated "Option 3: Done-For-You Statutory Claim Dispatch ($29.00 Flat — Keep 100% of Your Payout)"
-- "green_option_text": 2 sentences explaining that we compile the telemetry, cite the exact aviation statute, and electronically serve the airline legal compliance desk with you CC'd
-- "name_placeholder": Translated "Passenger Full Legal Name"
-- "pnr_placeholder": Translated "6-Character Booking Reference (PNR)"
-- "email_placeholder": Translated "Your Email Address (for CC Proof of Service)"
-- "cta_button_text": Translated "AUTHORIZE & DISPATCH MY STATUTORY CLAIM — $29.00"
-- "free_tool_title": Translated "Not Ready for Instant Dispatch? Join the Free 50-Passenger Batch Escrow & Get the Evidence Checklist"
-- "free_tool_cta": 2 sentences inviting the passenger to register on the free flight manifest ledger and receive the 1-page statutory evidence checklist via email
-- "free_input_placeholder": Translated "Booking Ref (PNR) + Out-of-Pocket Expenses (Hotel/Meals)"
-- "coreg_disclosure_text": Translated "Keep me updated with flight audit alerts, partner passenger rights briefs, and batch settlement notices."
-- "free_button_text": Translated "Register Free on Flight Ledger & Send Checklist"`;
-
-const newUrls = [];
-const COMMERCIAL_RE = /^(B73|B38|B75|B76|B77|B78|A319|A320|A321|A33|A35|A220)/;
-
-// 1. FOLLOW-THE-SUN AVIATION ENGINE
-const msSinceLastFlightPoll = Date.now() - (state.last_flight_poll_ts || 0);
-if (FLIGHTAWARE_API_KEY && msSinceLastFlightPoll >= 110 * 60 * 1000) {
-  const utcHour = new Date().getUTCHours();
-  const poolKey = utcHour < 6 ? 'APAC_AU_WEST' : utcHour < 14 ? 'EU_UK_ME' : 'AMER_LATAM';
-  const pool = PEAK_POOLS[poolKey];
-  const idx = (state.cursor[poolKey] || 0) % pool.length;
-  const airport = pool[idx];
-  state.cursor[poolKey] = (idx + 1) % pool.length;
-  state.last_flight_poll_ts = Date.now();
-
-  const res = await fetch(`https://aeroapi.flightaware.com/aeroapi/airports/${airport}/flights/departures`, {
-    headers: { 'x-apikey': FLIGHTAWARE_API_KEY }
-  });
-  if (res.ok) {
-    const json = await res.json();
-    const departures = json.departures || [];
-    let deployedFromHub = 0;
-
-    for (const f of departures) {
-      if (deployedFromHub >= 8) break;
-      const ident = f.ident;
-      if (!ident || !COMMERCIAL_RE.test(f.aircraft_type || '')) continue;
-      const delaySec = Math.max(f.departure_delay || 0, f.arrival_delay || 0);
-      const isCancelled = f.cancelled === true || (f.status || '').toLowerCase().includes('cancel');
-      const isDelayed = delaySec >= 10800;
-      if (!isCancelled && !isDelayed) continue;
-
-      const prev = state.deployed[ident];
-      if (prev && prev.status === 'LIVE' && Date.now() - prev.ts < 48 * 3600 * 1000) continue;
-
-      const disruptionDesc = isCancelled ? 'CANCELLED' : `DELAYED BY ${Math.round(delaySec / 60)} MINUTES`;
-      const ai = await callOpenAI(AVIATION_SYSTEM, `Flight: ${ident} | Origin: ${f.origin?.code || airport} | Destination: ${f.destination?.code || ''} | Verified Disruption: ${disruptionDesc} | Delay Seconds: ${delaySec}`);
-      
-      const html = buildLiveHtml({
-        langCode: ai.lang_code || 'en',
-        pageTitle: ai.seo_title,
-        metaDesc: ai.ai_direct_answer,
-        badgeText: ai.badge_text,
-        h1: ai.human_h1,
-        aiAnswer: ai.ai_direct_answer,
-        statusBarLeft: `${ai.statutory_cite} // MAX: ${ai.max_comp} (${ai.ledger_counter_text})`,
-        q1: ai.q1_human, a1: ai.a1_answer,
-        q2: ai.q2_human, a2: ai.a2_answer,
-        q3: ai.q3_human, a3: ai.a3_answer,
-        compareHeading: ai.compare_heading,
-        redTitle: ai.red_option_title, redText: ai.red_option_text,
-        amberTitle: ai.amber_option_title, amberText: ai.amber_option_text,
-        greenTitle: ai.green_option_title, greenText: ai.green_option_text,
-        niche: 'AVIATION', incident: ident, region: ai.jurisdiction || 'US_DOT', tier: 'TIER_1_STATUTORY',
-        namePh: ai.name_placeholder, inputPh: ai.pnr_placeholder, emailPh: ai.email_placeholder, ctaText: ai.cta_button_text,
-        freeTitle: ai.free_tool_title, freeCta: ai.free_tool_cta, freePh: ai.free_input_placeholder, coregText: ai.coreg_disclosure_text, freeBtn: ai.free_button_text
-      });
-
-      const dir = path.join('flight', ident.toLowerCase());
-      fs.mkdirSync(dir, { recursive: true });
-      fs.writeFileSync(path.join(dir, 'index.html'), html);
-      state.deployed[ident] = { ts: Date.now(), status: 'LIVE', type: 'AVIATION', tier: 'TIER_1_STATUTORY', region: ai.jurisdiction };
-      newUrls.push(`https://preferredoutcomes.org/flight/${ident.toLowerCase()}/`);
-      deployedFromHub++;
     }
   }
-}
-
-// 2. SCAN & SEGMENT GLOBAL NEWS FEEDS
-let newsEvaluatedThisRun = 0;
-for (const feedUrl of NEWS_FEEDS) {
-  if (newsEvaluatedThisRun >= 35) break;
-  const res = await fetch(feedUrl, { headers: BROWSER_HEADERS });
-  if (!res.ok) continue;
-  const xml = await res.text();
-  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 10);
-
-  for (const match of items) {
-    if (newsEvaluatedThisRun >= 35) break;
-    const block = match[1];
-    const titleMatch = block.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/) || block.match(/<title>([\s\S]*?)<\/title>/);
-    const descMatch = block.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/) || block.match(/<description>([\s\S]*?)<\/description>/);
-    const title = (titleMatch?.[1] || '').replace(/<[^>]+>/g, '').trim();
-    const desc = (descMatch?.[1] || '').replace(/<[^>]+>/g, '').trim();
-    if (!title) continue;
-
-    const hash = crypto.createHash('md5').update(title).digest('hex').slice(0, 16);
-    if (state.deployed[hash]) continue;
-
-    newsEvaluatedThisRun++;
-    const ai = await callOpenAI(NEWS_SYSTEM, `Headline: ${title} | Details: ${desc}`);
-    if (ai.skip) {
-      state.deployed[hash] = { ts: Date.now(), status: 'SKIPPED' };
-      continue;
-    }
-
-    const slug = (ai.slug || hash).toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-    const html = buildLiveHtml({
-      langCode: ai.lang_code || 'en',
-      pageTitle: ai.human_h1,
-      metaDesc: ai.ai_direct_answer,
-      badgeText: ai.badge_text,
-      h1: ai.human_h1,
-      aiAnswer: ai.ai_direct_answer,
-      statusBarLeft: ai.ledger_counter_text,
-      q1: ai.q1_human, a1: ai.a1_answer,
-      q2: ai.q2_human, a2: ai.a2_answer,
-      q3: ai.q3_human, a3: ai.a3_answer,
-      compareHeading: ai.compare_heading,
-      redTitle: ai.red_option_title, redText: ai.red_option_text,
-      amberTitle: ai.amber_option_title, amberText: ai.amber_option_text,
-      greenTitle: ai.green_option_title, greenText: ai.green_option_text,
-      niche: ai.niche || 'CULTURE', incident: slug, region: ai.region || 'GLOBAL', tier: ai.tier || 'TIER_2_LEDGER',
-      namePh: ai.name_placeholder, inputPh: ai.input_placeholder, emailPh: ai.email_placeholder, ctaText: ai.cta_button_text,
-      freeTitle: ai.free_tool_title, freeCta: ai.free_tool_cta, freePh: ai.free_input_placeholder, coregText: ai.coreg_disclosure_text, freeBtn: ai.free_button_text
-    });
-
-    const dir = path.join('docket', slug);
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), html);
-    state.deployed[hash] = { ts: Date.now(), status: 'LIVE', slug, type: ai.niche, tier: ai.tier, region: ai.region };
-    newUrls.push(`https://preferredoutcomes.org/docket/${slug}/`);
-  }
-}
-
-state.schema_version = CURRENT_SCHEMA_VERSION;
-state.active_silos = Object.entries(state.deployed)
-  .filter(([, val]) => val.status === 'LIVE')
-  .sort((a, b) => b[1].ts - a[1].ts)
-  .slice(0, 100)
-  .map(([key, val]) => ({ id: val.slug || key, ...val }));
-
-fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
-
-if (newUrls.length > 0) {
-  await fetch('https://api.indexnow.org/indexnow', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ host: 'preferredoutcomes.org', key: INDEXNOW_KEY, urlList: newUrls.slice(0, 1000) })
-  }).catch(() => {});
 }
