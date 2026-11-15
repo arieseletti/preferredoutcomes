@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P/O // Live Silo Command Terminal</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230f172a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' fill='%234ade80' font-family='sans-serif' font-weight='900' font-size='44'%3EP/O%3C/text%3E%3C/svg%3E">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #090d16;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand { font-size: 18px; font-weight: 900; letter-spacing: 0.06em; color: #ffffff; }
+    .brand span { color: #4ade80; }
+    .status-pill {
+      background: #052e16;
+      border: 1px solid #16a34a;
+      color: #4ade80;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .card-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: 700; }
+    .card-val { font-size: 28px; font-weight: 900; margin-top: 6px; color: #ffffff; }
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    input, select {
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    input { flex: 1; min-width: 240px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid #1e293b;
+      font-size: 13px;
+    }
+    th { background: #1e293b; color: #94a3b8; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+    tr:hover { background: #131c31; }
+    a.silo-link { color: #38bdf8; text-decoration: none; font-weight: 700; }
+    a.silo-link:hover { text-decoration: underline; }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .t1 { background: #052e16; color: #4ade80; border: 1px solid #16a34a; }
+    .t2 { background: #451a03; color: #fbbf24; border: 1px solid #d97706; }
+    .t3 { background: #1e1b4b; color: #818cf8; border: 1px solid #4f46e5; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">P/O // <span>GLOBAL DISCOVERY TERMINAL</span></div>
+      <div class="status-pill" id="schemaStatus">● ENGINE ONLINE</div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="card-label">Active Live Silos</div><div class="card-val" id="totalCount">0</div></div>
+      <div class="card"><div class="card-label">Tier 1 ($29 Statutory)</div><div class="card-val" id="t1Count">0</div></div>
+      <div class="card"><div class="card-label">Tier 2 ($4.99 Ledger)</div><div class="card-val" id="t2Count">0</div></div>
+      <div class="card"><div class="card-label">Tier 3 ($1.99 Poll)</div><div class="card-val" id="t3Count">0</div></div>
+      <div class="card"><div class="card-label">Aviation Dispatches</div><div class="card-val" id="flightCount">0</div></div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search by slug, flight number, or keyword...">
+      <select id="tierFilter">
+        <option value="ALL">All Tiers</option>
+        <option value="TIER_1_STATUTORY">Tier 1 ($29.00 Statutory)</option>
+        <option value="TIER_2_LEDGER">Tier 2 ($4.99 Ledger)</option>
+        <option value="TIER_3_POLL">Tier 3 ($1.99 Poll)</option>
+      </select>
+      <select id="nicheFilter">
+        <option value="ALL">All Niches</option>
+        <option value="AVIATION">AVIATION</option>
+        <option value="OUTAGES">OUTAGES</option>
+        <option value="RECALLS">RECALLS</option>
+        <option value="FINANCE">FINANCE</option>
+        <option value="TENANCY">TENANCY</option>
+        <option value="POLITICS">POLITICS</option>
+        <option value="CULTURE">CULTURE</option>
+      </select>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Live Silo / Docket URL</th>
+          <th>Niche</th>
+          <th>Monetization Tier</th>
+          <th>Region</th>
+          <th>Deployed</th>
+        </tr>
+      </thead>
+      <tbody id="siloTable">
+        <tr><td colspan="5">Loading live telemetry from silos.json...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let allSilos = [];
+
+    function formatTime(ts) {
+      if (!ts) return '—';
+      const mins = Math.round((Date.now() - ts) / 60000);
+      if (mins < 1) return 'Just now';
+      if (mins < 60) return mins + 'm ago';
+      const hrs = Math.round(mins / 60);
+      if (hrs < 24) return hrs + 'h ago';
+      return Math.round(hrs / 24) + 'd ago';
+    }
+
+    function tierBadge(tier) {
+      if (tier === 'TIER_2_LEDGER') return '<span class="badge t2">$4.99 LEDGER</span>';
+      if (tier === 'TIER_3_POLL') return '<span class="badge t3">$1.99 POLL</span>';
+      return '<span class="badge t1">$29.00 STATUTORY</span>';
+    }
+
+    function render() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const tf = document.getElementById('tierFilter').value;
+      const nf = document.getElementById('nicheFilter').value;
+
+      const filtered = allSilos.filter(s => {
+        const id = (s.id || s.slug || '').toLowerCase();
+        const matchQ = !q || id.includes(q) || (s.type || '').toLowerCase().includes(q);
+        const matchT = tf === 'ALL' || s.tier === tf;
+        const matchN = nf === 'ALL' || s.type === nf;
+        return matchQ && matchT && matchN;
+      });
+
+      const tbody = document.getElementById('siloTable');
+      if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5">No matching silos found.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(s => {
+        const isFlight = s.type === 'AVIATION';
+        const folder = isFlight ? 'flight' : 'docket';
+        const slug = (s.slug || s.id || '').toLowerCase();
+        const url = '/' + folder + '/' + slug + '/';
+        return '<tr>' +
+          '<td><a class="silo-link" href="' + url + '" target="_blank">' + url + ' &nearr;</a></td>' +
+          '<td>' + (s.type || 'OUTAGES') + '</td>' +
+          '<td>' + tierBadge(s.tier) + '</td>' +
+          '<td>' + (s.region || 'US') + '</td>' +
+          '<td>' + formatTime(s.ts) + '</td>' +
+        '</tr>';
+      }).join('');
+    }
+
+    async function init() {
+      try {
+        const res = await fetch('/terminal/silos.json?t=' + Date.now());
+        const data = await res.json();
+        document.getElementById('schemaStatus').textContent = '● SCHEMA V' + (data.schema_version || 7) + ' ONLINE';
+
+        const list = Array.isArray(data.active_silos) && data.active_silos.length > 0
+          ? data.active_silos
+          : Object.entries(data.deployed || {})
+              .filter(([, v]) => v.status === 'LIVE')
+              .map(([k, v]) => ({ id: v.slug || k, ...v }));
+
+        allSilos = list.sort((a, b) => (b.ts || 0) - (a.ts || 0));
+
+        document.getElementById('totalCount').textContent = allSilos.length;
+        document.getElementById('t1Count').textContent = allSilos.filter(s => s.tier === 'TIER_1_STATUTORY').length;
+        document.getElementById('t2Count').textContent = allSilos.filter(s => s.tier === 'TIER_2_LEDGER').length;
+        document.getElementById('t3Count').textContent = allSilos.filter(s => s.tier === 'TIER_3_POLL').length;
+        document.getElementById('flightCount').textContent = allSilos.filter(s => s.type === 'AVIATION').length;
+
+        render();
+      } catch (e) {
+        document.getElementById('siloTable').innerHTML = '<tr><td colspan="5">Waiting for first silos.json sync...</td></tr>';
+      }
+    }
+
+    document.getElementById('searchInput').addEventListener('input', render);
+    document.getElementById('tierFilter').addEventListener('change', render);
+    document.getElementById('nicheFilter').addEventListener('change', render);
+    init();
+  </script>
+</body>
+</html>
