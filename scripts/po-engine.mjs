@@ -6,7 +6,7 @@ const OPENAI_API_KEY = (process.env.OPENAI_API_KEY || '').trim();
 const FLIGHTAWARE_API_KEY = (process.env.FLIGHTAWARE_API_KEY || '').trim();
 const WEBHOOK_URL = `https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp`;
 const INDEXNOW_KEY = `poindex2026key`;
-const CURRENT_SCHEMA_VERSION = 6;
+const CURRENT_SCHEMA_VERSION = 7;
 
 if (!OPENAI_API_KEY) {
   console.error(`CRITICAL ERROR: OPENAI_API_KEY secret is missing!`);
@@ -38,14 +38,7 @@ const NEWS_FEEDS = [
   `https://news.google.com/rss/search?q=Airbnb+refund+dispute+OR+VRBO+cancellation+OR+tenant+eviction+OR+rent+abatement+OR+landlord+lawsuit+when:7d&hl=en-US&gl=US&ceid=US:en`,
   `https://news.google.com/rss/search?q=utility+rate+hike+OR+power+outage+compensation+OR+water+advisory+claim+OR+billing+error+when:7d&hl=en-US&gl=US&ceid=US:en`,
   `https://news.google.com/rss/search?q=insurance+claim+denial+lawsuit+OR+healthcare+billing+dispute+OR+medical+data+breach+when:7d&hl=en-US&gl=US&ceid=US:en`,
-  `https://news.google.com/rss/search?q=flight+cancelled+passengers+stranded+OR+airline+refund+fine+OR+baggage+fee+dispute+when:7d&hl=en-US&gl=US&ceid=US:en`,
-  `https://news.google.com/rss/search?q=ticket+cancellation+refund+OR+concert+cancelled+refund+OR+subscription+cancellation+lawsuit+when:7d&hl=en-US&gl=US&ceid=US:en`,
-  `https://news.google.com/rss/search?q=public+petition+boycott+OR+corporate+backlash+scandal+OR+consumer+boycott+when:3d&hl=en-US&gl=US&ceid=US:en`,
-  `https://news.google.com/rss/search?q=city+council+controversy+OR+school+board+petition+OR+tax+hike+backlash+OR+zoning+protest+when:3d&hl=en-US&gl=US&ceid=US:en`,
-  `https://news.google.com/rss/search?q=viral+controversy+outcry+OR+public+debate+backlash+OR+policy+feud+when:2d&hl=en-US&gl=US&ceid=US:en`,
-  `https://news.google.com/rss/search?q=compensation+claim+OR+consumer+refund+OR+ombudsman+complaint+OR+outage+when:7d&hl=en-GB&gl=GB&ceid=GB:en`,
-  `https://news.google.com/rss/search?q=class+action+Canada+OR+outage+refund+Canada+OR+tenant+board+dispute+when:7d&hl=en-CA&gl=CA&ceid=CA:en`,
-  `https://news.google.com/rss/search?q=ACCC+refund+OR+compensation+claim+Australia+OR+outage+refund+when:7d&hl=en-AU&gl=AU&ceid=AU:en`
+  `https://news.google.com/rss/search?q=flight+cancelled+passengers+stranded+OR+airline+refund+fine+OR+baggage+fee+dispute+when:7d&hl=en-US&gl=US&ceid=US:en`
 ];
 
 const STATE_PATH = `terminal/silos.json`;
@@ -74,7 +67,7 @@ if (fs.existsSync(STATE_PATH)) {
         }
       };
     } else {
-      console.log(`Upgrading to Schema v6: hard-resetting state...`);
+      console.log(`Upgrading to Schema v7: resetting state...`);
       fs.rmSync(`flight`, { recursive: true, force: true });
       fs.rmSync(`docket`, { recursive: true, force: true });
     }
@@ -125,7 +118,7 @@ const TIER_TEMPLATES = {
     amberText: `Scroll down to the free registry box below to add your name to the group petition batch, which dispatches as a consolidated manifest once the milestone counter hits 1,500 signatures.`,
     greenTitle: `Option 3: Priority Individual Notice Dispatched in Your Own Name ($4.99 Instant Delivery)`,
     greenText: `Refuse to wait for the group batch? Enter your name and personal grievance statement below and we will immediately format, cite, and electronically dispatch an individually indexed Formal Accountability Notice directly to the executive board or decision-makers in your own name today.`,
-    namePh: `Your Full Name (or Verified Citizen Signatory Name)`,
+    namePh: `Your Full Legal Name (or Verified Citizen Signatory Name)`,
     inputPh: `Target Entity/Board Name + Your Personal Statement to Dispatch`,
     emailPh: `Your Email Address (for CC Dispatch Confirmation)`,
     ctaText: `DISPATCH PRIORITY INDIVIDUAL NOTICE IN MY NAME — $4.99`,
@@ -173,7 +166,8 @@ async function callOpenAI(systemPrompt, userPrompt) {
         { role: `system`, content: systemPrompt },
         { role: `user`, content: userPrompt }
       ]
-    })
+    }),
+    signal: AbortSignal.timeout(25000)
   });
   if (!res.ok) throw new Error(`OpenAI HTTP ${res.status}: ${await res.text()}`);
   const data = await res.json();
@@ -296,7 +290,8 @@ if (FLIGHTAWARE_API_KEY && (existingFlights.length < 5 || msSinceLastFlightPoll 
 
     const flightUrl = `https://aeroapi.flightaware.com/aeroapi/airports/${airport}/flights?type=Airline`;
     const res = await fetch(flightUrl, {
-      headers: { 'x-apikey': FLIGHTAWARE_API_KEY }
+      headers: { 'x-apikey': FLIGHTAWARE_API_KEY },
+      signal: AbortSignal.timeout(25000)
     });
     if (!res.ok) continue;
     const json = await res.json();
@@ -374,17 +369,17 @@ if (FLIGHTAWARE_API_KEY && (existingFlights.length < 5 || msSinceLastFlightPoll 
   }
 }
 
-// 2. SCAN & SEGMENT GLOBAL NEWS FEEDS
+// 2. SCAN & SEGMENT GLOBAL NEWS FEEDS (Capped at 25 per run for lightning speed)
 let newsEvaluatedThisRun = 0;
 for (const feedUrl of NEWS_FEEDS) {
-  if (newsEvaluatedThisRun >= 60) break;
-  const res = await fetch(feedUrl, { headers: BROWSER_HEADERS });
+  if (newsEvaluatedThisRun >= 25) break;
+  const res = await fetch(feedUrl, { headers: BROWSER_HEADERS, signal: AbortSignal.timeout(25000) });
   if (!res.ok) continue;
   const xml = await res.text();
-  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 15);
+  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 10);
 
   for (const match of items) {
-    if (newsEvaluatedThisRun >= 60) break;
+    if (newsEvaluatedThisRun >= 25) break;
     const block = match[1];
     const titleMatch = block.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/) || block.match(/<title>([\s\S]*?)<\/title>/);
     const descMatch = block.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/) || block.match(/<description>([\s\S]*?)<\/description>/);
@@ -449,6 +444,18 @@ state.active_silos = Object.entries(state.deployed)
   .slice(0, 200)
   .map(([key, val]) => ({ id: val.slug || key, ...val }));
 
+// 3. GENERATE SITEMAP.XML FOR GOOGLE SEARCH CONSOLE
+let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+for (const val of state.active_silos) {
+  const fullUrl = val.type === `AVIATION` 
+    ? `https://preferredoutcomes.org/flight/${val.id}/` 
+    : `https://preferredoutcomes.org/docket/${val.id}/`;
+  sitemapXml += `  <url><loc>${fullUrl}</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>\n`;
+}
+sitemapXml += `</urlset>`;
+fs.writeFileSync(`sitemap.xml`, sitemapXml);
+console.log(`Generated sitemap.xml with ${state.active_silos.length} URLs.`);
+
 fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
 console.log(`Run complete. Deployed ${newUrls.length} new pages.`);
 
@@ -460,6 +467,7 @@ if (newUrls.length > 0) {
       host: `preferredoutcomes.org`,
       key: INDEXNOW_KEY,
       urlList: newUrls.slice(0, 1000)
-    })
+    }),
+    signal: AbortSignal.timeout(10000)
   }).catch(() => {});
 }
