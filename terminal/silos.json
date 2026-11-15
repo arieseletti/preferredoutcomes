@@ -1,37 +1,65 @@
 {
-  "schema_version": 6,
+  "schema_version": 7,
   "deployed": {
-    "AAL199": {
-      "ts": 1794774448976,
+    "POE737": {
+      "ts": 1794778453866,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "DAL2049": {
+      "ts": 1794778469942,
       "status": "LIVE",
       "type": "AVIATION",
       "tier": "TIER_1_STATUTORY",
       "region": "US_DOT"
     },
-    "AAL393": {
-      "ts": 1794774457419,
+    "RPA4343": {
+      "ts": 1794778479358,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "JBU904": {
+      "ts": 1794778488900,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "DAL1422": {
+      "ts": 1794778499108,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "DAL546": {
+      "ts": 1794778508773,
       "status": "LIVE",
       "type": "AVIATION",
       "tier": "TIER_1_STATUTORY",
       "region": "US_DOT"
     },
     "AMX409": {
-      "ts": 1794774466066,
+      "ts": 1794778518009,
       "status": "LIVE",
       "type": "AVIATION",
       "tier": "TIER_1_STATUTORY",
       "region": "US_DOT"
     },
     "61daa68c0e192a7a": {
-      "ts": 1794774475166,
+      "ts": 1794778525834,
       "status": "LIVE",
       "slug": "class-action-settlements-november-2026",
       "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
+      "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "22804564ec4d4330": {
-      "ts": 1794774482210,
+      "ts": 1794778533895,
       "status": "LIVE",
       "slug": "att-settlement-payout-details",
       "type": "FINANCE",
@@ -39,15 +67,15 @@
       "region": "US"
     },
     "3e821ad9d8dab868": {
-      "ts": 1794774489039,
+      "ts": 1794778542542,
       "status": "LIVE",
-      "slug": "hair-relaxer-lawsuit-settlement",
+      "slug": "hair-relaxer-lawsuit-update",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "38934faa1dbed218": {
-      "ts": 1794774496945,
+      "ts": 1794778550536,
       "status": "LIVE",
       "slug": "grayback-forestry-data-breach",
       "type": "FINANCE",
@@ -55,7 +83,7 @@
       "region": "US"
     },
     "8adaba6884630f7d": {
-      "ts": 1794774505398,
+      "ts": 1794778558867,
       "status": "LIVE",
       "slug": "att-data-breach-settlement",
       "type": "FINANCE",
@@ -63,55 +91,55 @@
       "region": "US"
     },
     "0855cb94b4059b5d": {
-      "ts": 1794774518207,
+      "ts": 1794778566682,
       "status": "LIVE",
-      "slug": "att-settlement-payout-explained",
+      "slug": "att-settlement-payout-5000",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "26b78982a7c6f2f9": {
-      "ts": 1794774526102,
+      "ts": 1794778575760,
       "status": "LIVE",
-      "slug": "google-android-settlement-update",
+      "slug": "google-android-data-settlement",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "f8417cd06c75d620": {
-      "ts": 1794774534166,
+      "ts": 1794778584034,
       "status": "LIVE",
-      "slug": "college-students-settlement-checks",
+      "slug": "college-settlement-checks-students",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "cdce08218a40e0c8": {
-      "ts": 1794774541429,
+      "ts": 1794778591803,
       "status": "LIVE",
-      "slug": "cvs-settlement-claim-deadline",
+      "slug": "cvs-settlement-deadline-alert",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "25aa31c0c357da69": {
-      "ts": 1794774549484,
+      "ts": 1794778599953,
       "status": "LIVE",
-      "slug": "shellpoint-gmfs-insurance-settlement",
+      "slug": "shellpoint-gmfs-settlement-issues",
       "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
+      "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "6d6c197fd56c3fca": {
-      "ts": 1794774556961,
+      "ts": 1794778608013,
       "status": "LIVE",
-      "slug": "amazon-recall-text-scam",
+      "slug": "amazon-recall-scam-alert",
       "type": "RECALLS",
-      "tier": "TIER_2_LEDGER",
+      "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "0d343387a25bc52d": {
-      "ts": 1794774564186,
+      "ts": 1794778616970,
       "status": "LIVE",
       "slug": "sharper-image-fire-pit-recall",
       "type": "RECALLS",
@@ -119,15 +147,15 @@
       "region": "US"
     },
     "1800fc2faa93381d": {
-      "ts": 1794774571946,
+      "ts": 1794778626026,
       "status": "LIVE",
-      "slug": "nio-fake-airbag-recall-scam",
+      "slug": "fake-airbag-recall-scam",
       "type": "RECALLS",
       "tier": "TIER_1_STATUTORY",
-      "region": "US"
+      "region": "GLOBAL"
     },
     "e1e8659867d20b9c": {
-      "ts": 1794774580473,
+      "ts": 1794778635754,
       "status": "LIVE",
       "slug": "bodum-french-press-recall",
       "type": "RECALLS",
@@ -135,15 +163,15 @@
       "region": "US"
     },
     "84c8099bc7e7666f": {
-      "ts": 1794774587669,
+      "ts": 1794778644514,
       "status": "LIVE",
-      "slug": "smoked-seafood-recalls-risk",
+      "slug": "smoked-seafood-recalls-fda",
       "type": "RECALLS",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "4fad56abb583f97c": {
-      "ts": 1794774595183,
+      "ts": 1794778653116,
       "status": "LIVE",
       "slug": "bmw-recall-720k-vehicles",
       "type": "RECALLS",
@@ -151,7 +179,7 @@
       "region": "US"
     },
     "b1f3d0daa9157f77": {
-      "ts": 1794774605363,
+      "ts": 1794778661236,
       "status": "LIVE",
       "slug": "sharper-image-fire-pit-recall",
       "type": "RECALLS",
@@ -159,79 +187,39 @@
       "region": "US"
     },
     "2bcc6074b06e205b": {
-      "ts": 1794774614769,
+      "ts": 1794778669560,
       "status": "LIVE",
-      "slug": "amazon-walmart-play-set-recall",
+      "slug": "play-set-recall-amazon-walmart",
       "type": "RECALLS",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "bca2e6ae14405584": {
-      "ts": 1794774622067,
+      "ts": 1794778676996,
       "status": "LIVE",
       "slug": "latest-product-recalls-alerts",
       "type": "RECALLS",
       "tier": "TIER_1_STATUTORY",
       "region": "GLOBAL"
     },
-    "ae5bb1d1b6902fb4": {
-      "ts": 1794774630376,
-      "status": "LIVE",
-      "slug": "nursing-pillows-safety-warning",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
     "f38709421c4a4e02": {
-      "ts": 1794774638916,
+      "ts": 1794778685436,
       "status": "LIVE",
       "slug": "clearlife-nasal-spray-lawsuit",
       "type": "RECALLS",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
-    "614741c3ee1c0679": {
-      "ts": 1794774647519,
-      "status": "LIVE",
-      "slug": "little-giant-ladder-lawsuit",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "ebe5c27cc9ee82e7": {
-      "ts": 1794774654761,
-      "status": "LIVE",
-      "slug": "bose-s1-battery-lawsuit",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "b51eb6ec5b0a706e": {
-      "ts": 1794774663235,
-      "status": "LIVE",
-      "slug": "ego-trimmer-lawsuit-details",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "1ee6d70252f43348": {
-      "ts": 1794774671318,
-      "status": "LIVE",
-      "slug": "playset-lawsuit-injury-recall",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
     "56aad4240c8607ef": {
-      "ts": 1794774680556,
+      "ts": 1794778693621,
       "status": "LIVE",
       "slug": "microsoft-365-outage-credits",
       "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
     },
     "a3166051b2f7a68e": {
-      "ts": 1794774686911,
+      "ts": 1794778702053,
       "status": "LIVE",
       "slug": "microsoft-outlook-downtime-compensation",
       "type": "OUTAGES",
@@ -239,1260 +227,61 @@
       "region": "US"
     },
     "5f004b903d2a3c70": {
-      "ts": 1794774694343,
+      "ts": 1794778710441,
       "status": "LIVE",
       "slug": "microsoft-outage-compensation-claims",
       "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
+      "tier": "TIER_2_LEDGER",
       "region": "GLOBAL"
     },
     "cae9f9d105dbf5cf": {
-      "ts": 1794774704155,
+      "ts": 1794778718120,
       "status": "LIVE",
-      "slug": "microsoft-outlook-credit-opportunity",
+      "slug": "microsoft-outlook-credit-claims",
       "type": "OUTAGES",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     "903cc108200ee948": {
-      "ts": 1794774711423,
-      "status": "LIVE",
-      "slug": "microsoft-365-service-outage",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "a569a2af5fad4ed0": {
-      "ts": 1794774719050,
-      "status": "LIVE",
-      "slug": "microsoft-365-outage-rebate",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "b5064a700e4cdb4b": {
-      "ts": 1794774727377,
+      "ts": 1794778726091,
       "status": "LIVE",
       "slug": "microsoft-365-outage-compensation",
       "type": "OUTAGES",
       "tier": "TIER_2_LEDGER",
-      "region": "CA"
-    },
-    "563200d4106681af": {
-      "ts": 1794774735282,
-      "status": "LIVE",
-      "slug": "microsoft-outlook-credit-claims",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
       "region": "US"
-    },
-    "d1fcc52ccc3dadd0": {
-      "ts": 1794774743496,
-      "status": "LIVE",
-      "slug": "microsoft-outage-compensation-claims",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "0243d5a1aff1de59": {
-      "ts": 1794774750797,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-consumer-rights",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "cfd81b63ada52664": {
-      "ts": 1794774759608,
-      "status": "LIVE",
-      "slug": "microsoft-365-outage-recovery",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "ab779be140e200c3": {
-      "ts": 1794774766989,
-      "status": "LIVE",
-      "slug": "us-ground-stop-flight-issues",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "3021deaaeedc6e40": {
-      "ts": 1794774775409,
-      "status": "LIVE",
-      "slug": "microsoft-outlook-outage-explained",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "65f99dea21109423": {
-      "ts": 1794774782988,
-      "status": "LIVE",
-      "slug": "us-air-traffic-email-blackouts",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "f6669f7546a93442": {
-      "ts": 1794774792033,
-      "status": "LIVE",
-      "slug": "optimum-west-virginia-outage",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "c19647b2c175bc5d": {
-      "ts": 1794774800760,
-      "status": "LIVE",
-      "slug": "alabama-power-fenn-church-case",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "1f4aa9a93d5e39b1": {
-      "ts": 1794774809116,
-      "status": "LIVE",
-      "slug": "hospitals-ai-financial-crisis",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "ed50f34e6c08877e": {
-      "ts": 1794774817140,
-      "status": "SKIPPED"
-    },
-    "5c49857755b67eea": {
-      "ts": 1794774825673,
-      "status": "LIVE",
-      "slug": "experian-healthcare-ai-push",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "69db4d381fdf6248": {
-      "ts": 1794774835180,
-      "status": "LIVE",
-      "slug": "medicare-patient-debt-denial",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "fadfc1283ad056d9": {
-      "ts": 1794774843879,
-      "status": "LIVE",
-      "slug": "trump-legal-challenges-tracker",
-      "type": "POLITICS",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "4e9b3e88524a0c82": {
-      "ts": 1794774852831,
-      "status": "LIVE",
-      "slug": "depo-provera-lawsuit-settlement",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "90a7796df6c778ee": {
-      "ts": 1794774862469,
-      "status": "LIVE",
-      "slug": "remitwright-medical-billing-scandal",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "da622bd4095b66d3": {
-      "ts": 1794774870036,
-      "status": "LIVE",
-      "slug": "ai-medical-billing-impact",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "d9c0c38fffed746a": {
-      "ts": 1794774878517,
-      "status": "LIVE",
-      "slug": "airline-ground-stop-cancel-flight",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "9472124027d4049c": {
-      "ts": 1794774885764,
-      "status": "LIVE",
-      "slug": "airline-schedule-change-refund",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "5ff91a3ffb3f06fb": {
-      "ts": 1794774893758,
-      "status": "LIVE",
-      "slug": "flight-cancelations-ground-stop",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "4c4b43e71e3717be": {
-      "ts": 1794774901818,
-      "status": "LIVE",
-      "slug": "dubai-middle-east-flight-disruptions",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    "ab05227de742ad1a": {
-      "ts": 1794774909720,
-      "status": "LIVE",
-      "slug": "eu-flight-delay-compensation",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "EU"
-    },
-    "4cd3b450f95a65e1": {
-      "ts": 1794774917597,
-      "status": "LIVE",
-      "slug": "spain-strike-air-passengers",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    "2fca05759507aca4": {
-      "ts": 1794774925712,
-      "status": "LIVE",
-      "slug": "aeromexico-pilots-strike-implications",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "3fe9170cac53f7fd": {
-      "ts": 1794774934320,
-      "status": "LIVE",
-      "slug": "airline-itinerary-change-issue",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    "c03f8102270a4716": {
-      "ts": 1794774941551,
-      "status": "SKIPPED"
-    },
-    "64d4be0c30c18fc9": {
-      "ts": 1794774949108,
-      "status": "SKIPPED"
-    },
-    "25e38ec66d330303": {
-      "ts": 1794774958413,
-      "status": "LIVE",
-      "slug": "southwest-airlines-flight-delay",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "UAL2396": {
-      "ts": 1794775100660,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "GJS4561": {
-      "ts": 1794775109565,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "AAL3204": {
-      "ts": 1794775117765,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "FFT125": {
-      "ts": 1794775133003,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "DAL1002": {
-      "ts": 1794775140880,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "DAL1474": {
-      "ts": 1794775150558,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "DAL2451": {
-      "ts": 1794775158994,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "AAL1696": {
-      "ts": 1794775167230,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "SKW5603": {
-      "ts": 1794775180719,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "SKW5790": {
-      "ts": 1794775188941,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    "d08e582105930035": {
-      "ts": 1794775197861,
-      "status": "LIVE",
-      "slug": "simplicity-crib-recall-warning",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "4f6c133070cb46fa": {
-      "ts": 1794775207182,
-      "status": "LIVE",
-      "slug": "microsoft-outlook-widespread-outage",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "747addebe9c77642": {
-      "ts": 1794775216563,
-      "status": "LIVE",
-      "slug": "obesity-care-insurance-coverage",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "139eb7187116c6d1": {
-      "ts": 1794775224463,
-      "status": "LIVE",
-      "slug": "faa-ends-ground-stop-delays",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "a18a73928035b414": {
-      "ts": 1794775232724,
-      "status": "LIVE",
-      "slug": "viral-travel-lawsuit-2026",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "206c347d010202b7": {
-      "ts": 1794775240434,
-      "status": "LIVE",
-      "slug": "airline-flight-suspension-issues",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    "bca6cf9678422b6c": {
-      "ts": 1794775248417,
-      "status": "LIVE",
-      "slug": "indigo-flight-cancellations-riyadh",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    "b56cf79d23863e29": {
-      "ts": 1794775256034,
-      "status": "LIVE",
-      "slug": "spicejet-flights-dubai-suspended",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    "f9c025e78f856085": {
-      "ts": 1794775263321,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-flight-refunds",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "6e3e2a0bef567bc4": {
-      "ts": 1794775270763,
-      "status": "LIVE",
-      "slug": "flight-canceled-passengers-know",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "07d2fee2d58dc9a7": {
-      "ts": 1794775278428,
-      "status": "LIVE",
-      "slug": "faa-flight-cancellation-refunds",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "435f504b3b8b7e79": {
-      "ts": 1794775285839,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-flight-refunds",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "fb60ca347a0d7977": {
-      "ts": 1794775293022,
-      "status": "LIVE",
-      "slug": "flight-cancellations-what-airlines-owe",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "61dcf94c482bb964": {
-      "ts": 1794775301003,
-      "status": "LIVE",
-      "slug": "flight-ground-stop-rebooking-options",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "2edd256cf13abdbc": {
-      "ts": 1794775310093,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-refunds",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "d4af8994e2f233eb": {
-      "ts": 1794775317813,
-      "status": "LIVE",
-      "slug": "amazon-prime-refunds-cancellation",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "d87d4f336ad05e9c": {
-      "ts": 1794775325292,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-flight-cancellations",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "c6e111b582005c6a": {
-      "ts": 1794775332974,
-      "status": "LIVE",
-      "slug": "new-york-ag-sues-evolutions",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "a14549f9ac7b0d6c": {
-      "ts": 1794775340773,
-      "status": "LIVE",
-      "slug": "sechskies-concert-cancellation-defamation",
-      "type": "CULTURE",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    "142672e2a9c5e4a7": {
-      "ts": 1794775347082,
-      "status": "LIVE",
-      "slug": "amazon-prime-cancellation-issues",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "50d0eca2facf95da": {
-      "ts": 1794775354702,
-      "status": "LIVE",
-      "slug": "hempstead-school-bus-ticket-lawsuit",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "af8848ceb825c994": {
-      "ts": 1794775362618,
-      "status": "LIVE",
-      "slug": "soccer-lawsuit-settlement-filing",
-      "type": "POLITICS",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    "1696804db43446a1": {
-      "ts": 1794775369362,
-      "status": "LIVE",
-      "slug": "us-ground-stop-flight-cancellations",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    "786414a5833d9690": {
-      "ts": 1794775377425,
-      "status": "LIVE",
-      "slug": "microsoft-365-outage-uae",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    "1e8b3626b8244d52": {
-      "ts": 1794775385079,
-      "status": "LIVE",
-      "slug": "microsoft-365-outage-credits",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "c0187f70e5eec3f0": {
-      "ts": 1794775392188,
-      "status": "LIVE",
-      "slug": "restaurant-service-charge-liability",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    "0945f1ee7f8c2f7a": {
-      "ts": 1794775399482,
-      "status": "LIVE",
-      "slug": "second-hand-smartphone-failure",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    "1c5c05f66a5daa57": {
-      "ts": 1794775407260,
-      "status": "LIVE",
-      "slug": "flipkart-coconut-oil-ad-fine",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    "772345d0a5049df3": {
-      "ts": 1794775413892,
-      "status": "LIVE",
-      "slug": "iphone-12-second-hand-issues",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    "2f35fc083d004df9": {
-      "ts": 1794775423837,
-      "status": "LIVE",
-      "slug": "canada-labour-code-amendments",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    "3c6358a4e9a906c4": {
-      "ts": 1794775432006,
-      "status": "LIVE",
-      "slug": "class-action-lawsuit-against-loblaw",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    "10ef08f9548a79c0": {
-      "ts": 1794775439025,
-      "status": "LIVE",
-      "slug": "canada-sues-stellantis-jeep-production",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    "a788ee9c2e153a56": {
-      "ts": 1794775446816,
-      "status": "LIVE",
-      "slug": "canadian-firing-settlement-issues",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    "b6e76d1e71f42b95": {
-      "ts": 1794775454074,
-      "status": "LIVE",
-      "slug": "urgent-recall-kitchen-item",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
     }
   },
   "active_silos": [
     {
-      "id": "urgent-recall-kitchen-item",
-      "ts": 1794775454074,
+      "id": "microsoft-365-outage-compensation",
+      "ts": 1794778726091,
       "status": "LIVE",
-      "slug": "urgent-recall-kitchen-item",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "canadian-firing-settlement-issues",
-      "ts": 1794775446816,
-      "status": "LIVE",
-      "slug": "canadian-firing-settlement-issues",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    {
-      "id": "canada-sues-stellantis-jeep-production",
-      "ts": 1794775439025,
-      "status": "LIVE",
-      "slug": "canada-sues-stellantis-jeep-production",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    {
-      "id": "class-action-lawsuit-against-loblaw",
-      "ts": 1794775432006,
-      "status": "LIVE",
-      "slug": "class-action-lawsuit-against-loblaw",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    {
-      "id": "canada-labour-code-amendments",
-      "ts": 1794775423837,
-      "status": "LIVE",
-      "slug": "canada-labour-code-amendments",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    {
-      "id": "iphone-12-second-hand-issues",
-      "ts": 1794775413892,
-      "status": "LIVE",
-      "slug": "iphone-12-second-hand-issues",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "flipkart-coconut-oil-ad-fine",
-      "ts": 1794775407260,
-      "status": "LIVE",
-      "slug": "flipkart-coconut-oil-ad-fine",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "second-hand-smartphone-failure",
-      "ts": 1794775399482,
-      "status": "LIVE",
-      "slug": "second-hand-smartphone-failure",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "restaurant-service-charge-liability",
-      "ts": 1794775392188,
-      "status": "LIVE",
-      "slug": "restaurant-service-charge-liability",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "microsoft-365-outage-credits",
-      "ts": 1794775385079,
-      "status": "LIVE",
-      "slug": "microsoft-365-outage-credits",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "microsoft-365-outage-uae",
-      "ts": 1794775377425,
-      "status": "LIVE",
-      "slug": "microsoft-365-outage-uae",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "us-ground-stop-flight-cancellations",
-      "ts": 1794775369362,
-      "status": "LIVE",
-      "slug": "us-ground-stop-flight-cancellations",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "CA"
-    },
-    {
-      "id": "soccer-lawsuit-settlement-filing",
-      "ts": 1794775362618,
-      "status": "LIVE",
-      "slug": "soccer-lawsuit-settlement-filing",
-      "type": "POLITICS",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "hempstead-school-bus-ticket-lawsuit",
-      "ts": 1794775354702,
-      "status": "LIVE",
-      "slug": "hempstead-school-bus-ticket-lawsuit",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "amazon-prime-cancellation-issues",
-      "ts": 1794775347082,
-      "status": "LIVE",
-      "slug": "amazon-prime-cancellation-issues",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "sechskies-concert-cancellation-defamation",
-      "ts": 1794775340773,
-      "status": "LIVE",
-      "slug": "sechskies-concert-cancellation-defamation",
-      "type": "CULTURE",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "new-york-ag-sues-evolutions",
-      "ts": 1794775332974,
-      "status": "LIVE",
-      "slug": "new-york-ag-sues-evolutions",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "faa-ground-stop-flight-cancellations",
-      "ts": 1794775325292,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-flight-cancellations",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "amazon-prime-refunds-cancellation",
-      "ts": 1794775317813,
-      "status": "LIVE",
-      "slug": "amazon-prime-refunds-cancellation",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "faa-ground-stop-refunds",
-      "ts": 1794775310093,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-refunds",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "flight-ground-stop-rebooking-options",
-      "ts": 1794775301003,
-      "status": "LIVE",
-      "slug": "flight-ground-stop-rebooking-options",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "flight-cancellations-what-airlines-owe",
-      "ts": 1794775293022,
-      "status": "LIVE",
-      "slug": "flight-cancellations-what-airlines-owe",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "faa-ground-stop-flight-refunds",
-      "ts": 1794775285839,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-flight-refunds",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "faa-flight-cancellation-refunds",
-      "ts": 1794775278428,
-      "status": "LIVE",
-      "slug": "faa-flight-cancellation-refunds",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "flight-canceled-passengers-know",
-      "ts": 1794775270763,
-      "status": "LIVE",
-      "slug": "flight-canceled-passengers-know",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "faa-ground-stop-flight-refunds",
-      "ts": 1794775263321,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-flight-refunds",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "spicejet-flights-dubai-suspended",
-      "ts": 1794775256034,
-      "status": "LIVE",
-      "slug": "spicejet-flights-dubai-suspended",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "indigo-flight-cancellations-riyadh",
-      "ts": 1794775248417,
-      "status": "LIVE",
-      "slug": "indigo-flight-cancellations-riyadh",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "airline-flight-suspension-issues",
-      "ts": 1794775240434,
-      "status": "LIVE",
-      "slug": "airline-flight-suspension-issues",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "viral-travel-lawsuit-2026",
-      "ts": 1794775232724,
-      "status": "LIVE",
-      "slug": "viral-travel-lawsuit-2026",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "faa-ends-ground-stop-delays",
-      "ts": 1794775224463,
-      "status": "LIVE",
-      "slug": "faa-ends-ground-stop-delays",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "obesity-care-insurance-coverage",
-      "ts": 1794775216563,
-      "status": "LIVE",
-      "slug": "obesity-care-insurance-coverage",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "microsoft-outlook-widespread-outage",
-      "ts": 1794775207182,
-      "status": "LIVE",
-      "slug": "microsoft-outlook-widespread-outage",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "simplicity-crib-recall-warning",
-      "ts": 1794775197861,
-      "status": "LIVE",
-      "slug": "simplicity-crib-recall-warning",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "SKW5790",
-      "ts": 1794775188941,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "SKW5603",
-      "ts": 1794775180719,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "AAL1696",
-      "ts": 1794775167230,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "DAL2451",
-      "ts": 1794775158994,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "DAL1474",
-      "ts": 1794775150558,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "DAL1002",
-      "ts": 1794775140880,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "FFT125",
-      "ts": 1794775133003,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "AAL3204",
-      "ts": 1794775117765,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "GJS4561",
-      "ts": 1794775109565,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "UAL2396",
-      "ts": 1794775100660,
-      "status": "LIVE",
-      "type": "AVIATION",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US_DOT"
-    },
-    {
-      "id": "southwest-airlines-flight-delay",
-      "ts": 1794774958413,
-      "status": "LIVE",
-      "slug": "southwest-airlines-flight-delay",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "airline-itinerary-change-issue",
-      "ts": 1794774934320,
-      "status": "LIVE",
-      "slug": "airline-itinerary-change-issue",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "aeromexico-pilots-strike-implications",
-      "ts": 1794774925712,
-      "status": "LIVE",
-      "slug": "aeromexico-pilots-strike-implications",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "spain-strike-air-passengers",
-      "ts": 1794774917597,
-      "status": "LIVE",
-      "slug": "spain-strike-air-passengers",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "eu-flight-delay-compensation",
-      "ts": 1794774909720,
-      "status": "LIVE",
-      "slug": "eu-flight-delay-compensation",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "EU"
-    },
-    {
-      "id": "dubai-middle-east-flight-disruptions",
-      "ts": 1794774901818,
-      "status": "LIVE",
-      "slug": "dubai-middle-east-flight-disruptions",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "GLOBAL"
-    },
-    {
-      "id": "flight-cancelations-ground-stop",
-      "ts": 1794774893758,
-      "status": "LIVE",
-      "slug": "flight-cancelations-ground-stop",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "airline-schedule-change-refund",
-      "ts": 1794774885764,
-      "status": "LIVE",
-      "slug": "airline-schedule-change-refund",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "airline-ground-stop-cancel-flight",
-      "ts": 1794774878517,
-      "status": "LIVE",
-      "slug": "airline-ground-stop-cancel-flight",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "ai-medical-billing-impact",
-      "ts": 1794774870036,
-      "status": "LIVE",
-      "slug": "ai-medical-billing-impact",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "remitwright-medical-billing-scandal",
-      "ts": 1794774862469,
-      "status": "LIVE",
-      "slug": "remitwright-medical-billing-scandal",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "depo-provera-lawsuit-settlement",
-      "ts": 1794774852831,
-      "status": "LIVE",
-      "slug": "depo-provera-lawsuit-settlement",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "trump-legal-challenges-tracker",
-      "ts": 1794774843879,
-      "status": "LIVE",
-      "slug": "trump-legal-challenges-tracker",
-      "type": "POLITICS",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "medicare-patient-debt-denial",
-      "ts": 1794774835180,
-      "status": "LIVE",
-      "slug": "medicare-patient-debt-denial",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "experian-healthcare-ai-push",
-      "ts": 1794774825673,
-      "status": "LIVE",
-      "slug": "experian-healthcare-ai-push",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "hospitals-ai-financial-crisis",
-      "ts": 1794774809116,
-      "status": "LIVE",
-      "slug": "hospitals-ai-financial-crisis",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "alabama-power-fenn-church-case",
-      "ts": 1794774800760,
-      "status": "LIVE",
-      "slug": "alabama-power-fenn-church-case",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "optimum-west-virginia-outage",
-      "ts": 1794774792033,
-      "status": "LIVE",
-      "slug": "optimum-west-virginia-outage",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "us-air-traffic-email-blackouts",
-      "ts": 1794774782988,
-      "status": "LIVE",
-      "slug": "us-air-traffic-email-blackouts",
-      "type": "POLITICS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "microsoft-outlook-outage-explained",
-      "ts": 1794774775409,
-      "status": "LIVE",
-      "slug": "microsoft-outlook-outage-explained",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "us-ground-stop-flight-issues",
-      "ts": 1794774766989,
-      "status": "LIVE",
-      "slug": "us-ground-stop-flight-issues",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "microsoft-365-outage-recovery",
-      "ts": 1794774759608,
-      "status": "LIVE",
-      "slug": "microsoft-365-outage-recovery",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "faa-ground-stop-consumer-rights",
-      "ts": 1794774750797,
-      "status": "LIVE",
-      "slug": "faa-ground-stop-consumer-rights",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "microsoft-outage-compensation-claims",
-      "ts": 1794774743496,
-      "status": "LIVE",
-      "slug": "microsoft-outage-compensation-claims",
+      "slug": "microsoft-365-outage-compensation",
       "type": "OUTAGES",
       "tier": "TIER_2_LEDGER",
       "region": "US"
     },
     {
       "id": "microsoft-outlook-credit-claims",
-      "ts": 1794774735282,
+      "ts": 1794778718120,
       "status": "LIVE",
       "slug": "microsoft-outlook-credit-claims",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "microsoft-365-outage-compensation",
-      "ts": 1794774727377,
-      "status": "LIVE",
-      "slug": "microsoft-365-outage-compensation",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "CA"
-    },
-    {
-      "id": "microsoft-365-outage-rebate",
-      "ts": 1794774719050,
-      "status": "LIVE",
-      "slug": "microsoft-365-outage-rebate",
-      "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "microsoft-365-service-outage",
-      "ts": 1794774711423,
-      "status": "LIVE",
-      "slug": "microsoft-365-service-outage",
-      "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "microsoft-outlook-credit-opportunity",
-      "ts": 1794774704155,
-      "status": "LIVE",
-      "slug": "microsoft-outlook-credit-opportunity",
       "type": "OUTAGES",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
       "id": "microsoft-outage-compensation-claims",
-      "ts": 1794774694343,
+      "ts": 1794778710441,
       "status": "LIVE",
       "slug": "microsoft-outage-compensation-claims",
       "type": "OUTAGES",
-      "tier": "TIER_1_STATUTORY",
+      "tier": "TIER_2_LEDGER",
       "region": "GLOBAL"
     },
     {
       "id": "microsoft-outlook-downtime-compensation",
-      "ts": 1794774686911,
+      "ts": 1794778702053,
       "status": "LIVE",
       "slug": "microsoft-outlook-downtime-compensation",
       "type": "OUTAGES",
@@ -1501,52 +290,16 @@
     },
     {
       "id": "microsoft-365-outage-credits",
-      "ts": 1794774680556,
+      "ts": 1794778693621,
       "status": "LIVE",
       "slug": "microsoft-365-outage-credits",
       "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "playset-lawsuit-injury-recall",
-      "ts": 1794774671318,
-      "status": "LIVE",
-      "slug": "playset-lawsuit-injury-recall",
-      "type": "RECALLS",
       "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "ego-trimmer-lawsuit-details",
-      "ts": 1794774663235,
-      "status": "LIVE",
-      "slug": "ego-trimmer-lawsuit-details",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "bose-s1-battery-lawsuit",
-      "ts": 1794774654761,
-      "status": "LIVE",
-      "slug": "bose-s1-battery-lawsuit",
-      "type": "FINANCE",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
-      "id": "little-giant-ladder-lawsuit",
-      "ts": 1794774647519,
-      "status": "LIVE",
-      "slug": "little-giant-ladder-lawsuit",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
+      "region": "GLOBAL"
     },
     {
       "id": "clearlife-nasal-spray-lawsuit",
-      "ts": 1794774638916,
+      "ts": 1794778685436,
       "status": "LIVE",
       "slug": "clearlife-nasal-spray-lawsuit",
       "type": "RECALLS",
@@ -1554,17 +307,8 @@
       "region": "US"
     },
     {
-      "id": "nursing-pillows-safety-warning",
-      "ts": 1794774630376,
-      "status": "LIVE",
-      "slug": "nursing-pillows-safety-warning",
-      "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
-      "region": "US"
-    },
-    {
       "id": "latest-product-recalls-alerts",
-      "ts": 1794774622067,
+      "ts": 1794778676996,
       "status": "LIVE",
       "slug": "latest-product-recalls-alerts",
       "type": "RECALLS",
@@ -1572,17 +316,17 @@
       "region": "GLOBAL"
     },
     {
-      "id": "amazon-walmart-play-set-recall",
-      "ts": 1794774614769,
+      "id": "play-set-recall-amazon-walmart",
+      "ts": 1794778669560,
       "status": "LIVE",
-      "slug": "amazon-walmart-play-set-recall",
+      "slug": "play-set-recall-amazon-walmart",
       "type": "RECALLS",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
       "id": "sharper-image-fire-pit-recall",
-      "ts": 1794774605363,
+      "ts": 1794778661236,
       "status": "LIVE",
       "slug": "sharper-image-fire-pit-recall",
       "type": "RECALLS",
@@ -1591,7 +335,7 @@
     },
     {
       "id": "bmw-recall-720k-vehicles",
-      "ts": 1794774595183,
+      "ts": 1794778653116,
       "status": "LIVE",
       "slug": "bmw-recall-720k-vehicles",
       "type": "RECALLS",
@@ -1599,17 +343,17 @@
       "region": "US"
     },
     {
-      "id": "smoked-seafood-recalls-risk",
-      "ts": 1794774587669,
+      "id": "smoked-seafood-recalls-fda",
+      "ts": 1794778644514,
       "status": "LIVE",
-      "slug": "smoked-seafood-recalls-risk",
+      "slug": "smoked-seafood-recalls-fda",
       "type": "RECALLS",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
       "id": "bodum-french-press-recall",
-      "ts": 1794774580473,
+      "ts": 1794778635754,
       "status": "LIVE",
       "slug": "bodum-french-press-recall",
       "type": "RECALLS",
@@ -1617,17 +361,17 @@
       "region": "US"
     },
     {
-      "id": "nio-fake-airbag-recall-scam",
-      "ts": 1794774571946,
+      "id": "fake-airbag-recall-scam",
+      "ts": 1794778626026,
       "status": "LIVE",
-      "slug": "nio-fake-airbag-recall-scam",
+      "slug": "fake-airbag-recall-scam",
       "type": "RECALLS",
       "tier": "TIER_1_STATUTORY",
-      "region": "US"
+      "region": "GLOBAL"
     },
     {
       "id": "sharper-image-fire-pit-recall",
-      "ts": 1794774564186,
+      "ts": 1794778616970,
       "status": "LIVE",
       "slug": "sharper-image-fire-pit-recall",
       "type": "RECALLS",
@@ -1635,62 +379,62 @@
       "region": "US"
     },
     {
-      "id": "amazon-recall-text-scam",
-      "ts": 1794774556961,
+      "id": "amazon-recall-scam-alert",
+      "ts": 1794778608013,
       "status": "LIVE",
-      "slug": "amazon-recall-text-scam",
+      "slug": "amazon-recall-scam-alert",
       "type": "RECALLS",
-      "tier": "TIER_2_LEDGER",
+      "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
-      "id": "shellpoint-gmfs-insurance-settlement",
-      "ts": 1794774549484,
+      "id": "shellpoint-gmfs-settlement-issues",
+      "ts": 1794778599953,
       "status": "LIVE",
-      "slug": "shellpoint-gmfs-insurance-settlement",
-      "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
-      "region": "US"
-    },
-    {
-      "id": "cvs-settlement-claim-deadline",
-      "ts": 1794774541429,
-      "status": "LIVE",
-      "slug": "cvs-settlement-claim-deadline",
+      "slug": "shellpoint-gmfs-settlement-issues",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
-      "id": "college-students-settlement-checks",
-      "ts": 1794774534166,
+      "id": "cvs-settlement-deadline-alert",
+      "ts": 1794778591803,
       "status": "LIVE",
-      "slug": "college-students-settlement-checks",
+      "slug": "cvs-settlement-deadline-alert",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
-      "id": "google-android-settlement-update",
-      "ts": 1794774526102,
+      "id": "college-settlement-checks-students",
+      "ts": 1794778584034,
       "status": "LIVE",
-      "slug": "google-android-settlement-update",
+      "slug": "college-settlement-checks-students",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
-      "id": "att-settlement-payout-explained",
-      "ts": 1794774518207,
+      "id": "google-android-data-settlement",
+      "ts": 1794778575760,
       "status": "LIVE",
-      "slug": "att-settlement-payout-explained",
+      "slug": "google-android-data-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "att-settlement-payout-5000",
+      "ts": 1794778566682,
+      "status": "LIVE",
+      "slug": "att-settlement-payout-5000",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
       "id": "att-data-breach-settlement",
-      "ts": 1794774505398,
+      "ts": 1794778558867,
       "status": "LIVE",
       "slug": "att-data-breach-settlement",
       "type": "FINANCE",
@@ -1699,7 +443,7 @@
     },
     {
       "id": "grayback-forestry-data-breach",
-      "ts": 1794774496945,
+      "ts": 1794778550536,
       "status": "LIVE",
       "slug": "grayback-forestry-data-breach",
       "type": "FINANCE",
@@ -1707,17 +451,17 @@
       "region": "US"
     },
     {
-      "id": "hair-relaxer-lawsuit-settlement",
-      "ts": 1794774489039,
+      "id": "hair-relaxer-lawsuit-update",
+      "ts": 1794778542542,
       "status": "LIVE",
-      "slug": "hair-relaxer-lawsuit-settlement",
+      "slug": "hair-relaxer-lawsuit-update",
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
       "id": "att-settlement-payout-details",
-      "ts": 1794774482210,
+      "ts": 1794778533895,
       "status": "LIVE",
       "slug": "att-settlement-payout-details",
       "type": "FINANCE",
@@ -1726,42 +470,74 @@
     },
     {
       "id": "class-action-settlements-november-2026",
-      "ts": 1794774475166,
+      "ts": 1794778525834,
       "status": "LIVE",
       "slug": "class-action-settlements-november-2026",
       "type": "FINANCE",
-      "tier": "TIER_2_LEDGER",
+      "tier": "TIER_1_STATUTORY",
       "region": "US"
     },
     {
       "id": "AMX409",
-      "ts": 1794774466066,
+      "ts": 1794778518009,
       "status": "LIVE",
       "type": "AVIATION",
       "tier": "TIER_1_STATUTORY",
       "region": "US_DOT"
     },
     {
-      "id": "AAL393",
-      "ts": 1794774457419,
+      "id": "DAL546",
+      "ts": 1794778508773,
       "status": "LIVE",
       "type": "AVIATION",
       "tier": "TIER_1_STATUTORY",
       "region": "US_DOT"
     },
     {
-      "id": "AAL199",
-      "ts": 1794774448976,
+      "id": "DAL1422",
+      "ts": 1794778499108,
       "status": "LIVE",
       "type": "AVIATION",
       "tier": "TIER_1_STATUTORY",
       "region": "US_DOT"
+    },
+    {
+      "id": "JBU904",
+      "ts": 1794778488900,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "RPA4343",
+      "ts": 1794778479358,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "DAL2049",
+      "ts": 1794778469942,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "POE737",
+      "ts": 1794778453866,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
     }
   ],
   "cursor": {
     "APAC_AU_WEST": 0,
     "EU_UK_ME": 0,
-    "AMER_LATAM": 8
+    "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 1794775087325
+  "last_flight_poll_ts": 1794778441204
 }
