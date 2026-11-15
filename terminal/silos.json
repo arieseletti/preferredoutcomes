@@ -1,6 +1,259 @@
 {
-  "deployed": {},
-  "active_silos": [],
+  "deployed": {
+    "ROU1927": {
+      "ts": 1794768609727,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2283": {
+      "ts": 1794768627337,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "8382054c2e8f3b0e": {
+      "ts": 1794768642396,
+      "slug": "ukraine-nato-swap-idea",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "98ea2a2c922adfca": {
+      "ts": 1794768648718,
+      "slug": "viaje-papa-peru-amazonas",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "PE"
+    },
+    "4c280814bcece6c2": {
+      "ts": 1794768658091,
+      "slug": "protest-v-prague-2023",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CZ"
+    },
+    "cb871fabfd9960b4": {
+      "ts": 1794768662974,
+      "slug": "climate-crisis-action",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "98208befb1cd016a": {
+      "ts": 1794768667775,
+      "slug": "grizzly-bear-controversy",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "CA"
+    },
+    "7d4c52ad503b38e2": {
+      "ts": 1794768672872,
+      "slug": "southeast-asia-summit-conflicts",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "AS"
+    },
+    "b78d26ac5823ac0c": {
+      "ts": 1794768678862,
+      "slug": "israel-kidnaps-generals",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "IL"
+    },
+    "d7e2f4688770bd21": {
+      "ts": 1794768684572,
+      "slug": "trump-asia-trip-momentum",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "81245efa1dfa123c": {
+      "ts": 1794768689880,
+      "slug": "faa-ground-stop-frustration",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "383a485e62b6a789": {
+      "ts": 1794768694787,
+      "slug": "nvidia-downfall-jensen",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    "0c541a34ebb41934": {
+      "ts": 1794768700000,
+      "slug": "anthropic-ipo-investors-guide",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "c89684037370c86c": {
+      "ts": 1794768707652,
+      "slug": "nvidia-dramatic-shakeup",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "209cdf0f2be1ed2f": {
+      "ts": 1794768714570,
+      "slug": "ev-ceos-federal-support",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "68335bf7b657c68c": {
+      "ts": 1794768720086,
+      "slug": "nvidia-401k-scandal",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "e053f90fd236673a": {
+      "ts": 1794768724991,
+      "slug": "technology-outages-chaos",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    }
+  },
+  "active_silos": [
+    {
+      "id": "technology-outages-chaos",
+      "ts": 1794768724991,
+      "slug": "technology-outages-chaos",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "nvidia-401k-scandal",
+      "ts": 1794768720086,
+      "slug": "nvidia-401k-scandal",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "ev-ceos-federal-support",
+      "ts": 1794768714570,
+      "slug": "ev-ceos-federal-support",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "nvidia-dramatic-shakeup",
+      "ts": 1794768707652,
+      "slug": "nvidia-dramatic-shakeup",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "anthropic-ipo-investors-guide",
+      "ts": 1794768700000,
+      "slug": "anthropic-ipo-investors-guide",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "nvidia-downfall-jensen",
+      "ts": 1794768694787,
+      "slug": "nvidia-downfall-jensen",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    {
+      "id": "faa-ground-stop-frustration",
+      "ts": 1794768689880,
+      "slug": "faa-ground-stop-frustration",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "trump-asia-trip-momentum",
+      "ts": 1794768684572,
+      "slug": "trump-asia-trip-momentum",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "israel-kidnaps-generals",
+      "ts": 1794768678862,
+      "slug": "israel-kidnaps-generals",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "IL"
+    },
+    {
+      "id": "southeast-asia-summit-conflicts",
+      "ts": 1794768672872,
+      "slug": "southeast-asia-summit-conflicts",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "AS"
+    },
+    {
+      "id": "grizzly-bear-controversy",
+      "ts": 1794768667775,
+      "slug": "grizzly-bear-controversy",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "CA"
+    },
+    {
+      "id": "climate-crisis-action",
+      "ts": 1794768662974,
+      "slug": "climate-crisis-action",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "protest-v-prague-2023",
+      "ts": 1794768658091,
+      "slug": "protest-v-prague-2023",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CZ"
+    },
+    {
+      "id": "viaje-papa-peru-amazonas",
+      "ts": 1794768648718,
+      "slug": "viaje-papa-peru-amazonas",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "PE"
+    },
+    {
+      "id": "ukraine-nato-swap-idea",
+      "ts": 1794768642396,
+      "slug": "ukraine-nato-swap-idea",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "AAL2283",
+      "ts": 1794768627337,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "ROU1927",
+      "ts": 1794768609727,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    }
+  ],
   "cursor": {
     "APAC_AU_WEST": 0,
     "EU_UK_ME": 0,
