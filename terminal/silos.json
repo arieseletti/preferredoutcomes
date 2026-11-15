@@ -1,11 +1,47 @@
 {
-  "schema_version": 4,
-  "deployed": {},
-  "active_silos": [],
+  "schema_version": 5,
+  "deployed": {
+    "31979ca730e64192": {
+      "ts": 1794773162422,
+      "status": "LIVE",
+      "slug": "complete-entertainment-lawsuit-settlement-guide",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "3f5331e307f09509": {
+      "ts": 1794773172953,
+      "status": "LIVE",
+      "slug": "renkim-data-breach-settlement-claims",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    }
+  },
+  "active_silos": [
+    {
+      "id": "renkim-data-breach-settlement-claims",
+      "ts": 1794773172953,
+      "status": "LIVE",
+      "slug": "renkim-data-breach-settlement-claims",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "complete-entertainment-lawsuit-settlement-guide",
+      "ts": 1794773162422,
+      "status": "LIVE",
+      "slug": "complete-entertainment-lawsuit-settlement-guide",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    }
+  ],
   "cursor": {
     "APAC_AU_WEST": 0,
     "EU_UK_ME": 0,
-    "AMER_LATAM": 1
+    "AMER_LATAM": 3
   },
-  "last_flight_poll_ts": 1794772749365
+  "last_flight_poll_ts": 1794773151399
 }
