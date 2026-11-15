@@ -1,69 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://preferredoutcomes.org/docket/aeromexico-pilots-strike-issue/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/spain-strike-air-passengers/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/eu-flight-delay-compensation/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/dubai-middle-east-flight-disruption/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/flight-canceled-ground-stop/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/airline-schedule-change-cash/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/airline-ground-stop-cancellation/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/ai-medical-billing-issues/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/endurance-lawsuit-update-november-2026/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/remitwright-medical-billing-scams/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/depo-provera-lawsuit-settlement/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/trump-administration-legal-challenges/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/hospitals-deny-medical-claims/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/experian-healthcare-ai-push/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/ai-failure-hospitals-finances/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/alabama-power-fenn-church-crew/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/chandler-utility-rate-changes/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-outlook-email-outage/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-outage-consumer-recourse/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-outlook-credit-claims/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-365-outage-compensation/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-365-outage-rebate/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/sequoia-equities-security-settlement/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/healthcare-privacy-settlement-payouts/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/AAL2926/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/GJS4394/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/UAL2183/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/UAL1811/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/UAL638/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/DAL2052/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/DAL2417/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/AAL1008/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/DAL524/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/UAL3883/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-365-outage-compensation/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-outlook-credit-claims/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/microsoft-365-downtime-compensation/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/microsoft-outlook-credit-outage/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-outage-compensation-claims/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-outlook-downtime-compensation/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/microsoft-outlook-compensation-claims/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-365-outage-credits/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/clearlife-nasal-spray-lawsuit/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/latest-product-recalls-alerts/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/play-set-recall-amazon-walmart/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/simplicity-crib-recall-alert/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/amazon-walmart-playset-recall/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/sharper-image-fire-pit-recall/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/bmw-recall-720k-vehicles/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/smoked-seafood-recalls-fda/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/bmw-recall-affects-vehicles/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/fda-smoked-seafood-recalls/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/bodum-french-press-recall/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/fake-airbag-recall-scam/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/nio-warns-fake-airbag-scam/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/sharper-image-fire-pit-recall/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/amazon-recall-scam-alert/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/shellpoint-gmfs-settlement-issues/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/cvs-settlement-deadline-alert/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/college-settlement-checks-students/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/google-android-data-settlement/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/sequoia-equities-security-deposit/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/college-settlement-checks-8500/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/johnson-controls-data-breach-settlement/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/healthcare-privacy-settlement-payout/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/google-android-settlement-impact/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/att-settlement-payout-5000/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/att-data-breach-settlement/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/grayback-forestry-data-breach/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/hair-relaxer-lawsuit-update/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/att-settlement-payout-details/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/att-settlement-payouts-texas/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/class-action-settlements-november-2026/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/AMX409/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/DAL546/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/DAL1422/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/JBU904/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/RPA4343/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/DAL2049/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/POE737/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/QFA7583/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/DAL1908/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/ACA564/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/ROU1603/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/JIA5667/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/EDV5504/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/UAL608/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/ROU1928/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/FLE621/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
 </urlset>

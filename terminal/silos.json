@@ -1,0 +1,573 @@
+{
+  "schema_version": 7,
+  "deployed": {
+    "FLE621": {
+      "ts": 1794786132127,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "ROU1928": {
+      "ts": 1794786141973,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "UAL608": {
+      "ts": 1794786150251,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "EDV5504": {
+      "ts": 1794786158976,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "JIA5667": {
+      "ts": 1794786167838,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "ROU1603": {
+      "ts": 1794786178653,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "ACA564": {
+      "ts": 1794786190254,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "DAL1908": {
+      "ts": 1794786201482,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "QFA7583": {
+      "ts": 1794786209683,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "61daa68c0e192a7a": {
+      "ts": 1794786217871,
+      "status": "LIVE",
+      "slug": "class-action-settlements-november-2026",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "22804564ec4d4330": {
+      "ts": 1794786227513,
+      "status": "LIVE",
+      "slug": "att-settlement-payouts-texas",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "38934faa1dbed218": {
+      "ts": 1794786236170,
+      "status": "LIVE",
+      "slug": "grayback-forestry-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "8adaba6884630f7d": {
+      "ts": 1794786244158,
+      "status": "LIVE",
+      "slug": "att-data-breach-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "0855cb94b4059b5d": {
+      "ts": 1794786251321,
+      "status": "LIVE",
+      "slug": "att-settlement-payout-5000",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "26b78982a7c6f2f9": {
+      "ts": 1794786259040,
+      "status": "LIVE",
+      "slug": "google-android-settlement-impact",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "632d693e40ef28d3": {
+      "ts": 1794786267106,
+      "status": "LIVE",
+      "slug": "healthcare-privacy-settlement-payout",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "827305084df1fa02": {
+      "ts": 1794786275478,
+      "status": "LIVE",
+      "slug": "johnson-controls-data-breach-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "f8417cd06c75d620": {
+      "ts": 1794786283419,
+      "status": "LIVE",
+      "slug": "college-settlement-checks-8500",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "f7b635d109fe573d": {
+      "ts": 1794786292353,
+      "status": "LIVE",
+      "slug": "sequoia-equities-security-deposit",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "6d6c197fd56c3fca": {
+      "ts": 1794786299663,
+      "status": "LIVE",
+      "slug": "amazon-recall-scam-alert",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "0d343387a25bc52d": {
+      "ts": 1794786307532,
+      "status": "LIVE",
+      "slug": "sharper-image-fire-pit-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "1800fc2faa93381d": {
+      "ts": 1794786316200,
+      "status": "LIVE",
+      "slug": "nio-warns-fake-airbag-scam",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    "e1e8659867d20b9c": {
+      "ts": 1794786324786,
+      "status": "LIVE",
+      "slug": "bodum-french-press-recall",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "84c8099bc7e7666f": {
+      "ts": 1794786334358,
+      "status": "LIVE",
+      "slug": "fda-smoked-seafood-recalls",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "4fad56abb583f97c": {
+      "ts": 1794786342461,
+      "status": "LIVE",
+      "slug": "bmw-recall-affects-vehicles",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "b1f3d0daa9157f77": {
+      "ts": 1794786351080,
+      "status": "LIVE",
+      "slug": "sharper-image-fire-pit-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "2bcc6074b06e205b": {
+      "ts": 1794786359266,
+      "status": "LIVE",
+      "slug": "amazon-walmart-playset-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "d08e582105930035": {
+      "ts": 1794786368404,
+      "status": "LIVE",
+      "slug": "simplicity-crib-recall-alert",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "bca2e6ae14405584": {
+      "ts": 1794786376362,
+      "status": "LIVE",
+      "slug": "latest-product-recalls-alerts",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    "56aad4240c8607ef": {
+      "ts": 1794786385674,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-credits",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "a3166051b2f7a68e": {
+      "ts": 1794786396426,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-compensation-claims",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "5f004b903d2a3c70": {
+      "ts": 1794786404306,
+      "status": "LIVE",
+      "slug": "microsoft-outage-compensation-claims",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "cae9f9d105dbf5cf": {
+      "ts": 1794786411546,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-credit-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "903cc108200ee948": {
+      "ts": 1794786418822,
+      "status": "LIVE",
+      "slug": "microsoft-365-downtime-compensation",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    }
+  },
+  "active_silos": [
+    {
+      "id": "microsoft-365-downtime-compensation",
+      "ts": 1794786418822,
+      "status": "LIVE",
+      "slug": "microsoft-365-downtime-compensation",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outlook-credit-outage",
+      "ts": 1794786411546,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-credit-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outage-compensation-claims",
+      "ts": 1794786404306,
+      "status": "LIVE",
+      "slug": "microsoft-outage-compensation-claims",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "microsoft-outlook-compensation-claims",
+      "ts": 1794786396426,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-compensation-claims",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-365-outage-credits",
+      "ts": 1794786385674,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-credits",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "latest-product-recalls-alerts",
+      "ts": 1794786376362,
+      "status": "LIVE",
+      "slug": "latest-product-recalls-alerts",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    {
+      "id": "simplicity-crib-recall-alert",
+      "ts": 1794786368404,
+      "status": "LIVE",
+      "slug": "simplicity-crib-recall-alert",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "amazon-walmart-playset-recall",
+      "ts": 1794786359266,
+      "status": "LIVE",
+      "slug": "amazon-walmart-playset-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "sharper-image-fire-pit-recall",
+      "ts": 1794786351080,
+      "status": "LIVE",
+      "slug": "sharper-image-fire-pit-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "bmw-recall-affects-vehicles",
+      "ts": 1794786342461,
+      "status": "LIVE",
+      "slug": "bmw-recall-affects-vehicles",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "fda-smoked-seafood-recalls",
+      "ts": 1794786334358,
+      "status": "LIVE",
+      "slug": "fda-smoked-seafood-recalls",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "bodum-french-press-recall",
+      "ts": 1794786324786,
+      "status": "LIVE",
+      "slug": "bodum-french-press-recall",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "nio-warns-fake-airbag-scam",
+      "ts": 1794786316200,
+      "status": "LIVE",
+      "slug": "nio-warns-fake-airbag-scam",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "sharper-image-fire-pit-recall",
+      "ts": 1794786307532,
+      "status": "LIVE",
+      "slug": "sharper-image-fire-pit-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "amazon-recall-scam-alert",
+      "ts": 1794786299663,
+      "status": "LIVE",
+      "slug": "amazon-recall-scam-alert",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "sequoia-equities-security-deposit",
+      "ts": 1794786292353,
+      "status": "LIVE",
+      "slug": "sequoia-equities-security-deposit",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "college-settlement-checks-8500",
+      "ts": 1794786283419,
+      "status": "LIVE",
+      "slug": "college-settlement-checks-8500",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "johnson-controls-data-breach-settlement",
+      "ts": 1794786275478,
+      "status": "LIVE",
+      "slug": "johnson-controls-data-breach-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "healthcare-privacy-settlement-payout",
+      "ts": 1794786267106,
+      "status": "LIVE",
+      "slug": "healthcare-privacy-settlement-payout",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "google-android-settlement-impact",
+      "ts": 1794786259040,
+      "status": "LIVE",
+      "slug": "google-android-settlement-impact",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "att-settlement-payout-5000",
+      "ts": 1794786251321,
+      "status": "LIVE",
+      "slug": "att-settlement-payout-5000",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "att-data-breach-settlement",
+      "ts": 1794786244158,
+      "status": "LIVE",
+      "slug": "att-data-breach-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "grayback-forestry-data-breach",
+      "ts": 1794786236170,
+      "status": "LIVE",
+      "slug": "grayback-forestry-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "att-settlement-payouts-texas",
+      "ts": 1794786227513,
+      "status": "LIVE",
+      "slug": "att-settlement-payouts-texas",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "class-action-settlements-november-2026",
+      "ts": 1794786217871,
+      "status": "LIVE",
+      "slug": "class-action-settlements-november-2026",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "QFA7583",
+      "ts": 1794786209683,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "DAL1908",
+      "ts": 1794786201482,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "ACA564",
+      "ts": 1794786190254,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    {
+      "id": "ROU1603",
+      "ts": 1794786178653,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "JIA5667",
+      "ts": 1794786167838,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "EDV5504",
+      "ts": 1794786158976,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "UAL608",
+      "ts": 1794786150251,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "ROU1928",
+      "ts": 1794786141973,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    {
+      "id": "FLE621",
+      "ts": 1794786132127,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    }
+  ],
+  "cursor": {
+    "APAC_AU_WEST": 0,
+    "EU_UK_ME": 0,
+    "AMER_LATAM": 5
+  },
+  "last_flight_poll_ts": 1794786119750
+}
