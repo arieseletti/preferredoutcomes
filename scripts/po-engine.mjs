@@ -6,7 +6,7 @@ const OPENAI_API_KEY = (process.env.OPENAI_API_KEY || '').trim();
 const FLIGHTAWARE_API_KEY = (process.env.FLIGHTAWARE_API_KEY || '').trim();
 const WEBHOOK_URL = 'https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp';
 const INDEXNOW_KEY = 'poindex2026key';
-const CURRENT_SCHEMA_VERSION = 4;
+const CURRENT_SCHEMA_VERSION = 5;
 
 if (!OPENAI_API_KEY) {
   console.error('CRITICAL ERROR: OPENAI_API_KEY secret is missing!');
@@ -25,10 +25,11 @@ const PEAK_POOLS = {
 };
 
 const NEWS_FEEDS = [
-  'https://news.google.com/rss/search?q=Airbnb+refund+dispute+OR+VRBO+cancellation+OR+tenant+eviction+notice+OR+rent+abatement+OR+utility+rate+hike+OR+power+outage+compensation+when:12h&hl=en',
-  'https://news.google.com/rss/search?q=service+outage+refund+OR+network+down+compensation+OR+bank+account+freeze+OR+fintech+funds+locked+OR+insurance+claim+denial+lawsuit+when:12h&hl=en',
-  'https://news.google.com/rss/search?q=data+breach+settlement+claim+OR+urgent+product+recall+refund+OR+concert+event+cancellation+refund+OR+class+action+settlement+when:12h&hl=en',
-  'https://news.google.com/rss/search?q=public+petition+boycott+OR+corporate+backlash+scandal+OR+controversy+lawsuit+OR+viral+feud+outcry+when:12h&hl=en'
+  'https://news.google.com/rss/search?q=Airbnb+refund+dispute+OR+VRBO+cancellation+OR+tenant+eviction+notice+OR+rent+abatement+OR+utility+rate+hike+OR+power+outage+compensation+when:24h&hl=en',
+  'https://news.google.com/rss/search?q=service+outage+refund+OR+network+down+compensation+OR+bank+account+freeze+OR+fintech+funds+locked+OR+insurance+claim+denial+lawsuit+when:24h&hl=en',
+  'https://news.google.com/rss/search?q=data+breach+settlement+claim+OR+urgent+product+recall+refund+OR+concert+event+cancellation+refund+OR+class+action+settlement+when:24h&hl=en',
+  'https://news.google.com/rss/search?q=public+petition+boycott+OR+corporate+backlash+scandal+OR+controversy+lawsuit+OR+viral+feud+outcry+when:24h&hl=en',
+  'https://news.google.com/rss/search?q=airline+delay+compensation+OR+billing+error+lawsuit+OR+subscription+trap+refund+OR+junk+fees+settlement+when:24h&hl=en'
 ];
 
 const STATE_PATH = 'terminal/silos.json';
@@ -41,7 +42,7 @@ if (fs.existsSync(STATE_PATH)) {
     if (loaded.schema_version === CURRENT_SCHEMA_VERSION) {
       state = { ...state, ...loaded, cursor: { APAC_AU_WEST: 0, EU_UK_ME: 0, AMER_LATAM: 0, ...(loaded.cursor || {}) } };
     } else {
-      console.log('Upgrading to Schema v4: wiping old flight/ and docket/ folders...');
+      console.log('Upgrading to Schema v5: resetting state and folders...');
       fs.rmSync('flight', { recursive: true, force: true });
       fs.rmSync('docket', { recursive: true, force: true });
     }
@@ -50,11 +51,12 @@ if (fs.existsSync(STATE_PATH)) {
 
 fs.mkdirSync('flight', { recursive: true });
 fs.mkdirSync('docket', { recursive: true });
+fs.writeFileSync('flight/.gitkeep', '');
+fs.writeFileSync('docket/.gitkeep', '');
 
 const escAttr = (str = '') =>
   String(str).replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-// HARDCODED HIGH-CONVERTING UI TEMPLATES BY TIER (Eliminates AI Hallucination)
 const TIER_TEMPLATES = {
   TIER_1_STATUTORY: {
     badgeText: 'Active Statutory Claim & Refund Window',
@@ -147,7 +149,7 @@ function buildLiveHtml({ langCode, pageTitle, metaDesc, badgeText, h1, aiAnswer,
 
 const NEWS_SYSTEM = `You are an investigative Direct-Response Consumer Advocacy & GEO Copywriter for Preferred Outcomes.
 Given a breaking news headline, write hard-hitting, authoritative investigative copy explaining the incident, why affected consumers/citizens are getting stonewalled, and how to take action below.
-STRICT SKIP RULE: Set "skip": true if the headline is about stock picking, IPO investing, market trading, sports, weather, or obituaries. Only accept real consumer refunds/outages/data breaches/recalls (TIER_1_STATUTORY), corporate boycotts/petitions (TIER_2_LEDGER), or major public controversies (TIER_3_POLL).
+Set "skip": true ONLY if the headline is pure sports scores, weather forecasts, stock ticker predictions, or celebrity gossip with zero consumer/public accountability angle. For ALL consumer disputes, outages, breaches, recalls, fees, cancellations, petitions, boycotts, or policy controversies, set "skip": false.
 
 Output a strict JSON object with ONLY these 12 keys:
 - "skip": boolean
@@ -184,29 +186,33 @@ Output a strict JSON object with ONLY these 11 keys:
 - "a3_answer": 4 sentences introducing the Preferred Outcomes $29 flat-fee statutory dispatch and the free 50-passenger batch escrow below.`;
 
 const newUrls = [];
-const COMMERCIAL_RE = /^(B73|B38|B75|B76|B77|B78|A319|A320|A321|A33|A35|A220)/;
+const COMMERCIAL_RE = /^(B73|B38|B75|B76|B77|B78|A319|A320|A321|A33|A35|A220|E17|E19|CRJ)/;
 
 // 1. FOLLOW-THE-SUN AVIATION ENGINE
+const existingFlights = fs.readdirSync('flight').filter(f => f !== '.gitkeep');
 const msSinceLastFlightPoll = Date.now() - (state.last_flight_poll_ts || 0);
-if (FLIGHTAWARE_API_KEY && msSinceLastFlightPoll >= 110 * 60 * 1000) {
+if (FLIGHTAWARE_API_KEY && (existingFlights.length === 0 || msSinceLastFlightPoll >= 55 * 60 * 1000)) {
   const utcHour = new Date().getUTCHours();
   const poolKey = utcHour < 6 ? 'APAC_AU_WEST' : utcHour < 14 ? 'EU_UK_ME' : 'AMER_LATAM';
   const pool = PEAK_POOLS[poolKey];
-  const idx = (state.cursor[poolKey] || 0) % pool.length;
-  const airport = pool[idx];
-  state.cursor[poolKey] = (idx + 1) % pool.length;
   state.last_flight_poll_ts = Date.now();
 
-  const res = await fetch(`https://aeroapi.flightaware.com/aeroapi/airports/${airport}/flights/departures`, {
-    headers: { 'x-apikey': FLIGHTAWARE_API_KEY }
-  });
-  if (res.ok) {
+  let totalFlightsDeployed = 0;
+  for (let hubAttempt = 0; hubAttempt < 3 && totalFlightsDeployed < 6; hubAttempt++) {
+    const idx = (state.cursor[poolKey] || 0) % pool.length;
+    const airport = pool[idx];
+    state.cursor[poolKey] = (idx + 1) % pool.length;
+    console.log(`[Aviation] Polling hub ${airport}...`);
+
+    const res = await fetch(`https://aeroapi.flightaware.com/aeroapi/airports/${airport}/flights/departures`, {
+      headers: { 'x-apikey': FLIGHTAWARE_API_KEY }
+    });
+    if (!res.ok) continue;
     const json = await res.json();
     const departures = json.departures || [];
-    let deployedFromHub = 0;
 
     for (const f of departures) {
-      if (deployedFromHub >= 8) break;
+      if (totalFlightsDeployed >= 6) break;
       const ident = f.ident;
       if (!ident || !COMMERCIAL_RE.test(f.aircraft_type || '')) continue;
       const delaySec = Math.max(f.departure_delay || 0, f.arrival_delay || 0);
@@ -218,6 +224,7 @@ if (FLIGHTAWARE_API_KEY && msSinceLastFlightPoll >= 110 * 60 * 1000) {
       if (prev && prev.status === 'LIVE' && Date.now() - prev.ts < 48 * 3600 * 1000) continue;
 
       const disruptionDesc = isCancelled ? 'CANCELLED' : `DELAYED BY ${Math.round(delaySec / 60)} MINUTES`;
+      console.log(`[Aviation] Deploying ${ident} (${disruptionDesc})...`);
       const ai = await callOpenAI(AVIATION_SYSTEM, `Flight: ${ident} | Origin: ${f.origin?.code || airport} | Destination: ${f.destination?.code || ''} | Verified Disruption: ${disruptionDesc} | Delay Seconds: ${delaySec}`);
       const tpl = TIER_TEMPLATES.TIER_1_STATUTORY;
 
@@ -256,7 +263,7 @@ if (FLIGHTAWARE_API_KEY && msSinceLastFlightPoll >= 110 * 60 * 1000) {
       fs.writeFileSync(path.join(dir, 'index.html'), html);
       state.deployed[ident] = { ts: Date.now(), status: 'LIVE', type: 'AVIATION', tier: 'TIER_1_STATUTORY', region: ai.jurisdiction };
       newUrls.push(`https://preferredoutcomes.org/flight/${ident.toLowerCase()}/`);
-      deployedFromHub++;
+      totalFlightsDeployed++;
     }
   }
 }
@@ -264,14 +271,14 @@ if (FLIGHTAWARE_API_KEY && msSinceLastFlightPoll >= 110 * 60 * 1000) {
 // 2. SCAN & SEGMENT GLOBAL NEWS FEEDS
 let newsEvaluatedThisRun = 0;
 for (const feedUrl of NEWS_FEEDS) {
-  if (newsEvaluatedThisRun >= 25) break;
+  if (newsEvaluatedThisRun >= 35) break;
   const res = await fetch(feedUrl, { headers: BROWSER_HEADERS });
   if (!res.ok) continue;
   const xml = await res.text();
-  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 8);
+  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 12);
 
   for (const match of items) {
-    if (newsEvaluatedThisRun >= 25) break;
+    if (newsEvaluatedThisRun >= 35) break;
     const block = match[1];
     const titleMatch = block.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/) || block.match(/<title>([\s\S]*?)<\/title>/);
     const descMatch = block.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/) || block.match(/<description>([\s\S]*?)<\/description>/);
@@ -292,6 +299,7 @@ for (const feedUrl of NEWS_FEEDS) {
     const tierKey = TIER_TEMPLATES[ai.tier] ? ai.tier : 'TIER_1_STATUTORY';
     const tpl = TIER_TEMPLATES[tierKey];
     const slug = (ai.slug || hash).toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    console.log(`[News] Deploying docket/${slug} (${tierKey})...`);
 
     const html = buildLiveHtml({
       langCode: 'en',
@@ -329,6 +337,7 @@ state.active_silos = Object.entries(state.deployed)
   .map(([key, val]) => ({ id: val.slug || key, ...val }));
 
 fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
+console.log(`Run complete. Deployed ${newUrls.length} new pages.`);
 
 if (newUrls.length > 0) {
   await fetch('https://api.indexnow.org/indexnow', {
