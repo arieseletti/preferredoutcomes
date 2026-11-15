@@ -77,7 +77,6 @@ async function callOpenAI(systemPrompt, userPrompt) {
 
 function buildLiveHtml({ langCode, pageTitle, metaDesc, badgeText, h1, aiAnswer, statusBarLeft, q1, a1, q2, a2, q3, a3, compareHeading, greenTitle, greenText, niche, incident, region, tier, namePh, inputPh, emailPh, ctaText, freeTitle, freeCta, freePh, coregText, freeBtn }) {
   
-  // Clean Paid Action Box routing through Make.com Scenario 2 -> Stripe Checkout
   const actionBoxHtml = `
     <div style='background:#f0fdf4;border:2px solid #16a34a;border-radius:8px;padding:20px;margin-bottom:24px;'>
       <div style='color:#15803d;font-weight:800;font-size:14px;text-transform:uppercase;'>${escAttr(greenTitle)}</div>
@@ -238,7 +237,7 @@ state.active_silos = Object.entries(state.deployed)
 
 fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
 
-if (newUrls.length > 0). {
+if (newUrls.length > 0) {
   await fetch('https://api.indexnow.org/indexnow', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
