@@ -36,7 +36,7 @@ jobs:
           git checkout main || git checkout -b main
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "Deploy automated aviation and global news silos [skip ci]"
+            git commit -m "Deploy automated aviation and global news silos"
             git pull --rebase origin main
             git push origin main
           else
