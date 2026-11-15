@@ -1,246 +1,44 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import crypto from 'node:crypto';
+name: PO Global Discovery Engine
 
-const OPENAI_API_KEY = (process.env.OPENAI_API_KEY || '').trim();
-const FLIGHTAWARE_API_KEY = (process.env.FLIGHTAWARE_API_KEY || '').trim();
-const WEBHOOK_URL = 'https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp';
-const INDEXNOW_KEY = 'poindex2026key';
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
 
-if (!OPENAI_API_KEY) {
-  console.error('CRITICAL ERROR: OPENAI_API_KEY secret is missing!');
-  process.exit(1);
-}
+permissions:
+  contents: write
 
-const BROWSER_HEADERS = {
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-  'Accept': 'application/rss+xml, application/xml, text/xml, */*'
-};
+jobs:
+  deploy-silos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-const PEAK_POOLS = {
-  APAC_AU_WEST: ['YSSY', 'YMML', 'YBBN', 'NZAA', 'KLAX', 'CYVR', 'RJTT', 'RKSI'],
-  EU_UK_ME: ['EGLL', 'EGKK', 'LFPG', 'EDDF', 'EHAM', 'LEMD', 'LIRF', 'EIDW', 'LTFM', 'LLBG', 'OERK', 'OEJN', 'LSZH', 'EDDM'],
-  AMER_LATAM: ['CYYZ', 'CYUL', 'CYYC', 'CYVR', 'KJFK', 'KEWR', 'KATL', 'KORD', 'KDFW', 'KDEN', 'KLAX', 'SBGR', 'MMMX', 'SKBO']
-};
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-const NEWS_FEEDS = [
-  'https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en',
-  'https://news.google.com/rss/headlines/section/topic/NATION?hl=en-US&gl=US&ceid=US:en',
-  'https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en',
-  'https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en',
-  'https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en',
-  'https://news.google.com/rss/headlines/section/topic/GB?hl=en-GB&gl=GB&ceid=GB:en',
-  'https://news.google.com/rss/search?q=Airbnb+refund+OR+tenant+eviction+OR+rent+abatement+OR+power+outage+compensation+when:4h',
-  'https://news.google.com/rss/search?q=service+outage+refund+OR+bank+account+freeze+OR+insurance+claim+denial+when:4h',
-  'https://news.google.com/rss/search?q=data+breach+settlement+OR+urgent+product+recall+refund+OR+class+action+when:4h',
-  'https://news.google.com/rss/search?q=public+petition+boycott+OR+corporate+backlash+scandal+OR+controversy+lawsuit+when:4h'
-];
+      - name: Run PO Engine
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FLIGHTAWARE_API_KEY: ${{ secrets.FLIGHTAWARE_API_KEY }}
+        run: node scripts/po-engine.mjs
 
-const STATE_PATH = 'terminal/silos.json';
-fs.mkdirSync('terminal', { recursive: true });
-fs.mkdirSync('flight', { recursive: true });
-fs.mkdirSync('docket', { recursive: true });
-
-let state = { deployed: {}, active_silos: [], cursor: { APAC_AU_WEST: 0, EU_UK_ME: 0, AMER_LATAM: 0 }, last_flight_poll_ts: 0 };
-if (fs.existsSync(STATE_PATH)) {
-  try {
-    const loaded = JSON.parse(fs.readFileSync(STATE_PATH, 'utf8'));
-    state = { ...state, ...loaded, cursor: { APAC_AU_WEST: 0, EU_UK_ME: 0, AMER_LATAM: 0, ...(loaded.cursor || {}) } };
-  } catch {}
-}
-
-const escAttr = (str = '') =>
-  String(str).replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-async function callOpenAI(systemPrompt, userPrompt) {
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${OPENAI_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'gpt-4o-mini',
-      response_format: { type: 'json_object' },
-      temperature: 0.8,
-      max_tokens: 2048,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt }
-      ]
-    })
-  });
-  if (!res.ok) throw new Error(`OpenAI HTTP ${res.status}: ${await res.text()}`);
-  const data = await res.json();
-  return JSON.parse(data.choices[0].message.content);
-}
-
-function buildLiveHtml({ langCode, pageTitle, metaDesc, badgeText, h1, aiAnswer, statusBarLeft, q1, a1, q2, a2, q3, a3, compareHeading, greenTitle, greenText, niche, incident, region, tier, namePh, inputPh, emailPh, ctaText, freeTitle, freeCta, freePh, coregText, freeBtn }) {
-  
-  const actionBoxHtml = `
-    <div style='background:#f0fdf4;border:2px solid #16a34a;border-radius:8px;padding:20px;margin-bottom:24px;'>
-      <div style='color:#15803d;font-weight:800;font-size:14px;text-transform:uppercase;'>${escAttr(greenTitle)}</div>
-      <p style='margin:6px 0 14px 0;font-size:14px;color:#14532d;'>${escAttr(greenText)}</p>
-      <form action='${WEBHOOK_URL}' method='GET' style='display:flex;flex-direction:column;gap:10px;'>
-        <input type='hidden' name='flow_type' value='DFY_CHECKOUT'>
-        <input type='hidden' name='niche' value='${escAttr(niche)}'>
-        <input type='hidden' name='incident' value='${escAttr(incident)}'>
-        <input type='hidden' name='region' value='${escAttr(region)}'>
-        <input type='hidden' name='tier' value='${escAttr(tier)}'>
-        <input type='text' name='name' required placeholder='${escAttr(namePh)}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
-        <input type='text' name='pnr' required placeholder='${escAttr(inputPh)}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
-        <input type='email' name='email' required placeholder='${escAttr(emailPh)}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
-        <button type='submit' style='padding:16px;background:#16a34a;color:#ffffff;font-weight:900;font-size:16px;border:none;border-radius:6px;cursor:pointer;'>${escAttr(ctaText)} &rarr;</button>
-      </form>
-    </div>`;
-
-  return `<!DOCTYPE html><html lang='${escAttr(langCode)}'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1.0'><title>${escAttr(pageTitle)} | Preferred Outcomes</title><meta name='description' content='${escAttr(metaDesc)}'></head><body style='background:#f8fafc;color:#0f172a;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;margin:0;padding:20px;line-height:1.6;'><div style='max-width:760px;margin:auto;background:#ffffff;border:1px solid #cbd5e1;border-radius:12px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);'><div style='display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #0f172a;padding-bottom:14px;margin-bottom:20px;flex-wrap:wrap;gap:8px;'><span style='font-weight:900;font-size:15px;letter-spacing:0.05em;'>P/O // PREFERRED OUTCOMES</span><span style='background:#dcfce7;color:#166534;padding:4px 10px;border-radius:4px;font-size:12px;font-weight:800;text-transform:uppercase;'>${escAttr(badgeText)}</span></div><h1 style='font-size:28px;line-height:1.25;margin:0 0 16px 0;color:#0f172a;'>${escAttr(h1)}</h1><div style='background:#f1f5f9;border-left:4px solid #0f172a;padding:16px;border-radius:4px;margin-bottom:20px;font-size:16px;font-weight:500;color:#1e293b;'>${escAttr(aiAnswer)}</div><div style='background:#0f172a;color:#ffffff;padding:12px 16px;border-radius:6px;font-size:13px;font-weight:700;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;'><span>${escAttr(statusBarLeft)}</span><span style='color:#4ade80;'>● LIVE</span></div><div itemscope itemtype='https://schema.org/FAQPage'><div itemscope itemprop='mainEntity' itemtype='https://schema.org/Question'><h2 itemprop='name' style='font-size:20px;color:#0f172a;margin-top:24px;'>${escAttr(q1)}</h2><div itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer'><p itemprop='text' style='color:#334155;font-size:16px;'>${escAttr(a1)}</p></div></div><div itemscope itemprop='mainEntity' itemtype='https://schema.org/Question'><h2 itemprop='name' style='font-size:20px;color:#0f172a;margin-top:24px;'>${escAttr(q2)}</h2><div itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer'><p itemprop='text' style='color:#334155;font-size:16px;'>${escAttr(a2)}</p></div></div><div itemscope itemprop='mainEntity' itemtype='https://schema.org/Question'><h2 itemprop='name' style='font-size:20px;color:#0f172a;margin-top:24px;'>${escAttr(q3)}</h2><div itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer'><p itemprop='text' style='color:#334155;font-size:16px;'>${escAttr(a3)}</p></div></div></div><h3 style='font-size:18px;color:#0f172a;margin-top:30px;margin-bottom:14px;'>${escAttr(compareHeading)}</h3>${actionBoxHtml}<div style='background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:20px;margin-top:24px;'><h4 style='margin:0 0 6px 0;font-size:16px;color:#0f172a;'>${escAttr(freeTitle)}</h4><p style='margin:0 0 14px 0;font-size:14px;color:#475569;'>${escAttr(freeCta)}</p><form action='${WEBHOOK_URL}' method='GET' style='display:flex;flex-direction:column;gap:10px;'><input type='hidden' name='flow_type' value='FREE_LEAD'><input type='hidden' name='niche' value='${escAttr(niche)}'><input type='hidden' name='incident' value='${escAttr(incident)}'><input type='hidden' name='region' value='${escAttr(region)}'><input type='hidden' name='tier' value='${escAttr(tier)}'><input type='text' name='name' required placeholder='${escAttr(namePh)}' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'><input type='email' name='email' required placeholder='${escAttr(emailPh)}' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'><input type='text' name='loss_impact' required placeholder='${escAttr(freePh)}' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'><label style='font-size:12px;color:#475569;display:flex;align-items:flex-start;gap:8px;'><input type='checkbox' name='coreg_optin' value='yes' checked style='margin-top:3px;'><span>${escAttr(coregText)}</span></label><button type='submit' style='padding:13px;background:#0f172a;color:#ffffff;font-weight:800;font-size:14px;border:none;border-radius:6px;cursor:pointer;'>${escAttr(freeBtn)}</button></form></div><div style='margin-top:28px;padding-top:16px;border-top:1px solid #e2e8f0;font-size:12px;color:#64748b;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;'><span>&copy; Preferred Outcomes Consumer Advocacy &amp; Public Sentiment Registry.</span><a href='/mandate/' style='color:#0f172a;font-weight:700;text-decoration:underline;'>Our Mandate / About</a></div></div></body></html>`;
-}
-
-const NEWS_SYSTEM = `You are an elite, multi-lingual Direct-Response Advertorial Copywriter, Consumer Advocate, and GEO Strategist for Preferred Outcomes.
-STRICT COMPLIANCE & TONE RULES:
-1. NEVER provide financial advice, stock buying recommendations, or personal investment counseling. Frame market/corporate news strictly around consumer rights, corporate accountability, and risk auditing.
-2. Maintain an objective, neutral advocacy tone on sensitive topics.
-3. SCAN & SEGMENT ALL NEWS INTO TIERS:
-   - "TIER_1_STATUTORY" ($29.00 demand/refund): Consumer refund, fee dispute, utility outage, data breach, recall, or contract failure.
-   - "TIER_2_LEDGER" ($4.99 petition/notice): Corporate accountability, petition, policy battle, or regulatory inquiry.
-   - "TIER_3_POLL" ($1.99 referendum poll): Cultural debate, geopolitical/diplomatic development, or public controversy where citizens pay $1.99 to pin their verified statement and weighted vote.
-   - Set "skip": true ONLY for weather forecasts, sports scores, or obituaries.
-Output strict JSON with exact keys: skip (boolean), lang_code, slug (4-6 lowercase ASCII words with hyphens), niche ("TENANCY"|"OUTAGES"|"RECALLS"|"FINANCE"|"POLITICS"|"CULTURE"), region (2-letter code), tier ("TIER_1_STATUTORY"|"TIER_2_LEDGER"|"TIER_3_POLL"), badge_text, human_h1, ai_direct_answer, q1_human, a1_answer, q2_human, a2_answer, q3_human, a3_answer, ledger_counter_text, compare_heading, green_option_title, green_option_text, name_placeholder, input_placeholder, email_placeholder, cta_button_text, free_tool_title, free_tool_cta, free_input_placeholder, coreg_disclosure_text, free_button_text.`;
-
-const AVIATION_SYSTEM = `You are an elite, multi-lingual Direct-Response Advertorial Copywriter, Consumer Advocate, and GEO Strategist for Preferred Outcomes.
-Output strict JSON with exact keys: lang_code, jurisdiction, statutory_cite, max_comp, badge_text, seo_title, human_h1, ai_direct_answer, ledger_counter_text, q1_human, a1_answer, q2_human, a2_answer, q3_human, a3_answer, compare_heading, green_option_title, green_option_text, name_placeholder, pnr_placeholder, email_placeholder, cta_button_text, free_tool_title, free_tool_cta, free_input_placeholder, coreg_disclosure_text, free_button_text.`;
-
-const newUrls = [];
-const COMMERCIAL_RE = /^(B73|B38|B75|B76|B77|B78|A319|A320|A321|A33|A35|A220)/;
-
-// 1. FOLLOW-THE-SUN AVIATION ENGINE
-const msSinceLastFlightPoll = Date.now() - (state.last_flight_poll_ts || 0);
-if (FLIGHTAWARE_API_KEY && msSinceLastFlightPoll >= 110 * 60 * 1000) {
-  const utcHour = new Date().getUTCHours();
-  const poolKey = utcHour < 6 ? 'APAC_AU_WEST' : utcHour < 14 ? 'EU_UK_ME' : 'AMER_LATAM';
-  const pool = PEAK_POOLS[poolKey];
-  const idx = (state.cursor[poolKey] || 0) % pool.length;
-  const airport = pool[idx];
-  state.cursor[poolKey] = (idx + 1) % pool.length;
-  state.last_flight_poll_ts = Date.now();
-
-  const res = await fetch(`https://aeroapi.flightaware.com/aeroapi/airports/${airport}/flights/departures`, {
-    headers: { 'x-apikey': FLIGHTAWARE_API_KEY }
-  });
-  if (res.ok) {
-    const json = await res.json();
-    const departures = json.departures || [];
-    let deployedFromHub = 0;
-
-    for (const f of departures) {
-      if (deployedFromHub >= 8) break;
-      const ident = f.ident;
-      if (!ident || !COMMERCIAL_RE.test(f.aircraft_type || '')) continue;
-      const isCancelled = (f.status || '').toLowerCase().includes('cancelled');
-      const isDelayed = (f.departure_delay || 0) >= 10800;
-      if (!isCancelled && !isDelayed) continue;
-
-      const prev = state.deployed[ident];
-      if (prev && prev.status === 'LIVE' && Date.now() - prev.ts < 48 * 3600 * 1000) continue;
-
-      const ai = await callOpenAI(AVIATION_SYSTEM, `Flight: ${ident} | Origin: ${f.origin?.code || airport} | Destination: ${f.destination?.code || ''} | Status: ${f.status} | Delay Seconds: ${f.departure_delay || 0}`);
-      
-      const html = buildLiveHtml({
-        langCode: ai.lang_code || 'en',
-        pageTitle: ai.seo_title,
-        metaDesc: ai.ai_direct_answer,
-        badgeText: ai.badge_text,
-        h1: ai.human_h1,
-        aiAnswer: ai.ai_direct_answer,
-        statusBarLeft: `${ai.statutory_cite} // MAX: ${ai.max_comp} (${ai.ledger_counter_text})`,
-        q1: ai.q1_human, a1: ai.a1_answer,
-        q2: ai.q2_human, a2: ai.a2_answer,
-        q3: ai.q3_human, a3: ai.a3_answer,
-        compareHeading: ai.compare_heading,
-        greenTitle: ai.green_option_title, greenText: ai.green_option_text,
-        niche: 'AVIATION', incident: ident, region: ai.jurisdiction || 'US_DOT', tier: 'TIER_1_STATUTORY',
-        namePh: ai.name_placeholder, inputPh: ai.pnr_placeholder, emailPh: ai.email_placeholder, ctaText: ai.cta_button_text,
-        freeTitle: ai.free_tool_title, freeCta: ai.free_tool_cta, freePh: ai.free_input_placeholder, coregText: ai.coreg_disclosure_text, freeBtn: ai.free_button_text
-      });
-
-      const dir = path.join('flight', ident.toLowerCase());
-      fs.mkdirSync(dir, { recursive: true });
-      fs.writeFileSync(path.join(dir, 'index.html'), html);
-      state.deployed[ident] = { ts: Date.now(), status: 'LIVE', type: 'AVIATION', tier: 'TIER_1_STATUTORY', region: ai.jurisdiction };
-      newUrls.push(`https://preferredoutcomes.org/flight/${ident.toLowerCase()}/`);
-      deployedFromHub++;
-    }
-  }
-}
-
-// 2. SCAN & SEGMENT GLOBAL NEWS FEEDS
-let newsEvaluatedThisRun = 0;
-for (const feedUrl of NEWS_FEEDS) {
-  if (newsEvaluatedThisRun >= 20) break;
-  const res = await fetch(feedUrl, { headers: BROWSER_HEADERS });
-  if (!res.ok) continue;
-  const xml = await res.text();
-  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 5);
-
-  for (const match of items) {
-    if (newsEvaluatedThisRun >= 20) break;
-    const block = match[1];
-    const titleMatch = block.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/) || block.match(/<title>([\s\S]*?)<\/title>/);
-    const descMatch = block.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/) || block.match(/<description>([\s\S]*?)<\/description>/);
-    const title = (titleMatch?.[1] || '').replace(/<[^>]+>/g, '').trim();
-    const desc = (descMatch?.[1] || '').replace(/<[^>]+>/g, '').trim();
-    if (!title) continue;
-
-    const hash = crypto.createHash('md5').update(title).digest('hex').slice(0, 16);
-    if (state.deployed[hash]) continue;
-
-    newsEvaluatedThisRun++;
-    const ai = await callOpenAI(NEWS_SYSTEM, `Headline: ${title} | Details: ${desc}`);
-    if (ai.skip) {
-      state.deployed[hash] = { ts: Date.now(), status: 'SKIPPED' };
-      continue;
-    }
-
-    const slug = (ai.slug || hash).toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-    const html = buildLiveHtml({
-      langCode: ai.lang_code || 'en',
-      pageTitle: ai.human_h1,
-      metaDesc: ai.ai_direct_answer,
-      badgeText: ai.badge_text,
-      h1: ai.human_h1,
-      aiAnswer: ai.ai_direct_answer,
-      statusBarLeft: ai.ledger_counter_text,
-      q1: ai.q1_human, a1: ai.a1_answer,
-      q2: ai.q2_human, a2: ai.a2_answer,
-      q3: ai.q3_human, a3: ai.a3_answer,
-      compareHeading: ai.compare_heading,
-      greenTitle: ai.green_option_title, greenText: ai.green_option_text,
-      niche: ai.niche || 'CULTURE', incident: slug, region: ai.region || 'GLOBAL', tier: ai.tier || 'TIER_2_LEDGER',
-      namePh: ai.name_placeholder, inputPh: ai.input_placeholder, emailPh: ai.email_placeholder, ctaText: ai.cta_button_text,
-      freeTitle: ai.free_tool_title, freeCta: ai.free_tool_cta, freePh: ai.free_input_placeholder, coregText: ai.coreg_disclosure_text, freeBtn: ai.free_button_text
-    });
-
-    const dir = path.join('docket', slug);
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), html);
-    state.deployed[hash] = { ts: Date.now(), status: 'LIVE', slug, type: ai.niche, tier: ai.tier, region: ai.region };
-    newUrls.push(`https://preferredoutcomes.org/docket/${slug}/`);
-  }
-}
-
-state.active_silos = Object.entries(state.deployed)
-  .filter(([, val]) => val.status === 'LIVE')
-  .sort((a, b) => b[1].ts - a[1].ts)
-  .slice(0, 100)
-  .map(([key, val]) => ({ id: val.slug || key, ...val }));
-
-fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
-
-if (newUrls.length > 0) {
-  await fetch('https://api.indexnow.org/indexnow', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ host: 'preferredoutcomes.org', key: INDEXNOW_KEY, urlList: newUrls.slice(0, 1000) })
-  }).catch(() => {});
-}
+      - name: Commit and Push Generated Pages
+        run: |
+          git config user.name "PO Automated Engine"
+          git config user.email "bot@preferredoutcomes.org"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git checkout main || git checkout -b main
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Deploy automated aviation and global news silos [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No new silos to commit."
+          fi
