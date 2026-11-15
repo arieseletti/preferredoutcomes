@@ -116,9 +116,260 @@
       "type": "OUTAGES",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
+    },
+    "UAL2143": {
+      "ts": 1794771512165,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "DAL2052": {
+      "ts": 1794771521862,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "b8a96da414f49c15": {
+      "ts": 1794771539092,
+      "slug": "protesty-czech-media-funding",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CZ"
+    },
+    "73fc31fe1cbdbc1b": {
+      "ts": 1794771545385,
+      "slug": "macron-unite-francophonie",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    "c4a5835fedbe8211": {
+      "ts": 1794771553191,
+      "slug": "ai-cheating-tax-exam",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "KR"
+    },
+    "bd1e3bd3ec2cd8e1": {
+      "ts": 1794771558906,
+      "slug": "nvidia-earnings-action-page",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "d3e7bd1706477f2a": {
+      "ts": 1794771564906,
+      "slug": "military-fire-victims-support",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "584a39b8cc74a833": {
+      "ts": 1794771572269,
+      "slug": "housing-crisis-in-quebec",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "10d3e96df0792791": {
+      "ts": 1794771578267,
+      "slug": "mike-morrice-green-party-leader",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "eef3a684fbf66804": {
+      "ts": 1794771583624,
+      "slug": "rainforest-protection-fund",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    "3fea778baaf42824": {
+      "ts": 1794771588748,
+      "slug": "climate-commitment-accusations",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    "db8b0b2993eeb219": {
+      "ts": 1794771594053,
+      "slug": "end-homelessness-now",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "fcfb040d293bb3eb": {
+      "ts": 1794771599464,
+      "slug": "west-end-crash-action",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "217f58e7ba0581d7": {
+      "ts": 1794771604482,
+      "slug": "carneys-debt-bet",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "ab1f636ed9afcc2e": {
+      "ts": 1794771610997,
+      "slug": "age-of-consent-law-change",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GB"
+    },
+    "930d5d20df309bbe": {
+      "ts": 1794771616325,
+      "slug": "scotland-ice-alerts",
+      "type": "CULTURE",
+      "tier": "TIER_2_LEDGER",
+      "region": "GB"
+    },
+    "ef0dfd07a361842f": {
+      "ts": 1794771621258,
+      "slug": "leeds-police-pursuit-crash",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GB"
     }
   },
   "active_silos": [
+    {
+      "id": "leeds-police-pursuit-crash",
+      "ts": 1794771621258,
+      "slug": "leeds-police-pursuit-crash",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GB"
+    },
+    {
+      "id": "scotland-ice-alerts",
+      "ts": 1794771616325,
+      "slug": "scotland-ice-alerts",
+      "type": "CULTURE",
+      "tier": "TIER_2_LEDGER",
+      "region": "GB"
+    },
+    {
+      "id": "age-of-consent-law-change",
+      "ts": 1794771610997,
+      "slug": "age-of-consent-law-change",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GB"
+    },
+    {
+      "id": "carneys-debt-bet",
+      "ts": 1794771604482,
+      "slug": "carneys-debt-bet",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "west-end-crash-action",
+      "ts": 1794771599464,
+      "slug": "west-end-crash-action",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "end-homelessness-now",
+      "ts": 1794771594053,
+      "slug": "end-homelessness-now",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "climate-commitment-accusations",
+      "ts": 1794771588748,
+      "slug": "climate-commitment-accusations",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    {
+      "id": "rainforest-protection-fund",
+      "ts": 1794771583624,
+      "slug": "rainforest-protection-fund",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    {
+      "id": "mike-morrice-green-party-leader",
+      "ts": 1794771578267,
+      "slug": "mike-morrice-green-party-leader",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "housing-crisis-in-quebec",
+      "ts": 1794771572269,
+      "slug": "housing-crisis-in-quebec",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "military-fire-victims-support",
+      "ts": 1794771564906,
+      "slug": "military-fire-victims-support",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "nvidia-earnings-action-page",
+      "ts": 1794771558906,
+      "slug": "nvidia-earnings-action-page",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "ai-cheating-tax-exam",
+      "ts": 1794771553191,
+      "slug": "ai-cheating-tax-exam",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "KR"
+    },
+    {
+      "id": "macron-unite-francophonie",
+      "ts": 1794771545385,
+      "slug": "macron-unite-francophonie",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    {
+      "id": "protesty-czech-media-funding",
+      "ts": 1794771539092,
+      "slug": "protesty-czech-media-funding",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CZ"
+    },
+    {
+      "id": "DAL2052",
+      "ts": 1794771521862,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "UAL2143",
+      "ts": 1794771512165,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "technology-outages-chaos",
       "ts": 1794768724991,
