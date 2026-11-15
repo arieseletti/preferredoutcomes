@@ -30,10 +30,11 @@ jobs:
         run: |
           git config user.name "PO Automated Engine"
           git config user.email "bot@preferredoutcomes.org"
-          git add flight/ docket/ terminal/
+          git add -A
           if ! git diff --cached --quiet; then
             git commit -m "Deploy automated aviation and global news silos [skip ci]"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           else
             echo "No new silos to commit."
           fi
