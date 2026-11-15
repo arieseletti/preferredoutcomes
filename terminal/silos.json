@@ -1,4 +1,244 @@
 {
-  "deployed": {},
-  "active_silos": []
+  "deployed": {
+    "UAL2034": {
+      "ts": 1794762443835,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "e6b3c8b55ffae702": {
+      "ts": 1794762453498,
+      "slug": "nato-exchange-ukraine-territory",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "d3e7bd1706477f2a": {
+      "ts": 1794762459771,
+      "slug": "canadian-soldier-fire-tragedy",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "2efbf1ca7b59a7fc": {
+      "ts": 1794762465552,
+      "slug": "papa-leo-xiv-peru",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "PE"
+    },
+    "cb871fabfd9960b4": {
+      "ts": 1794762469973,
+      "slug": "climate-summit-protest-urgent",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    "7d4c52ad503b38e2": {
+      "ts": 1794762475427,
+      "slug": "southeast-asia-summit-conflicts",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "73fc31fe1cbdbc1b": {
+      "ts": 1794762482009,
+      "slug": "crise-francophonie-cameroun",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CM"
+    },
+    "8f3600762c4778d4": {
+      "ts": 1794762487983,
+      "slug": "blame-israeli-hostage-controversy",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    "d7e2f4688770bd21": {
+      "ts": 1794762493666,
+      "slug": "trump-asia-trip-impact",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    "580d8f7bec078c2f": {
+      "ts": 1794762499285,
+      "slug": "jensen-huang-nvidia-downfall",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "81245efa1dfa123c": {
+      "ts": 1794762504716,
+      "slug": "faa-ground-stop-issue",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "0c541a34ebb41934": {
+      "ts": 1794762510807,
+      "slug": "anthropic-ipo-investor-concerns",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "209cdf0f2be1ed2f": {
+      "ts": 1794762517041,
+      "slug": "ev-federal-support-future",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "e053f90fd236673a": {
+      "ts": 1794762523050,
+      "slug": "grounded-jets-outage-crisis",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "1ce34bd2853699c0": {
+      "ts": 1794762529077,
+      "slug": "death-drives-americans-debt",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "68335bf7b657c68c": {
+      "ts": 1794762535350,
+      "slug": "nvidia-401k-scam",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    }
+  },
+  "active_silos": [
+    {
+      "id": "nvidia-401k-scam",
+      "ts": 1794762535350,
+      "slug": "nvidia-401k-scam",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "death-drives-americans-debt",
+      "ts": 1794762529077,
+      "slug": "death-drives-americans-debt",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "grounded-jets-outage-crisis",
+      "ts": 1794762523050,
+      "slug": "grounded-jets-outage-crisis",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "ev-federal-support-future",
+      "ts": 1794762517041,
+      "slug": "ev-federal-support-future",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "anthropic-ipo-investor-concerns",
+      "ts": 1794762510807,
+      "slug": "anthropic-ipo-investor-concerns",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "faa-ground-stop-issue",
+      "ts": 1794762504716,
+      "slug": "faa-ground-stop-issue",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "jensen-huang-nvidia-downfall",
+      "ts": 1794762499285,
+      "slug": "jensen-huang-nvidia-downfall",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "trump-asia-trip-impact",
+      "ts": 1794762493666,
+      "slug": "trump-asia-trip-impact",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    {
+      "id": "blame-israeli-hostage-controversy",
+      "ts": 1794762487983,
+      "slug": "blame-israeli-hostage-controversy",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    {
+      "id": "crise-francophonie-cameroun",
+      "ts": 1794762482009,
+      "slug": "crise-francophonie-cameroun",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "CM"
+    },
+    {
+      "id": "southeast-asia-summit-conflicts",
+      "ts": 1794762475427,
+      "slug": "southeast-asia-summit-conflicts",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "climate-summit-protest-urgent",
+      "ts": 1794762469973,
+      "slug": "climate-summit-protest-urgent",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    {
+      "id": "papa-leo-xiv-peru",
+      "ts": 1794762465552,
+      "slug": "papa-leo-xiv-peru",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "PE"
+    },
+    {
+      "id": "canadian-soldier-fire-tragedy",
+      "ts": 1794762459771,
+      "slug": "canadian-soldier-fire-tragedy",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "nato-exchange-ukraine-territory",
+      "ts": 1794762453498,
+      "slug": "nato-exchange-ukraine-territory",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "UAL2034",
+      "ts": 1794762443835,
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    }
+  ]
 }
