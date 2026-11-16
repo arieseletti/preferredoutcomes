@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://preferredoutcomes.org/docket/us-flight-ground-stop-incident/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/vodafone-outage-reports-uk/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/mullinax-ford-data-breach/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/renkim-corp-data-breach/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/AAL1020/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/ENY3930/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/AAL1121/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/DAL336/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/flight-canceled-or-delayed/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-365-outage-consumers-impacted/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/faa-ground-stop-consumer-rights/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>

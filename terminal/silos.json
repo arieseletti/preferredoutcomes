@@ -952,9 +952,137 @@
       "type": "OUTAGES",
       "tier": "TIER_2_LEDGER",
       "region": "US"
+    },
+    "DAL336": {
+      "ts": 1794848920972,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL1121": {
+      "ts": 1794848933849,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "ENY3930": {
+      "ts": 1794848944969,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL1020": {
+      "ts": 1794848954112,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "496603bfbe19c69d": {
+      "ts": 1794848968025,
+      "status": "LIVE",
+      "slug": "renkim-corp-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "8d9d19efb9465040": {
+      "ts": 1794848977037,
+      "status": "LIVE",
+      "slug": "mullinax-ford-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "992ef37744b5343c": {
+      "ts": 1794848987295,
+      "status": "LIVE",
+      "slug": "vodafone-outage-reports-uk",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    "ab779be140e200c3": {
+      "ts": 1794848994652,
+      "status": "LIVE",
+      "slug": "us-flight-ground-stop-incident",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
     }
   },
   "active_silos": [
+    {
+      "id": "us-flight-ground-stop-incident",
+      "ts": 1794848994652,
+      "status": "LIVE",
+      "slug": "us-flight-ground-stop-incident",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "vodafone-outage-reports-uk",
+      "ts": 1794848987295,
+      "status": "LIVE",
+      "slug": "vodafone-outage-reports-uk",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    {
+      "id": "mullinax-ford-data-breach",
+      "ts": 1794848977037,
+      "status": "LIVE",
+      "slug": "mullinax-ford-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "renkim-corp-data-breach",
+      "ts": 1794848968025,
+      "status": "LIVE",
+      "slug": "renkim-corp-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "AAL1020",
+      "ts": 1794848954112,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "ENY3930",
+      "ts": 1794848944969,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL1121",
+      "ts": 1794848933849,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "DAL336",
+      "ts": 1794848920972,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "flight-canceled-or-delayed",
       "ts": 1794843513877,
@@ -2023,7 +2151,7 @@
   "cursor": {
     "APAC_AU_WEST": 3,
     "EU_UK_ME": 1,
-    "AMER_LATAM": 9
+    "AMER_LATAM": 0
   },
-  "last_flight_poll_ts": 1794843336926
+  "last_flight_poll_ts": 1794848906021
 }
