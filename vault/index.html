@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>P/O // Master Silo Vault (Private Directory)</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23080503' stroke='%23FF6B00' stroke-width='6'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' fill='%23FF6B00' font-family='sans-serif' font-weight='900' font-size='44'%3EP/O%3C/text%3E%3C/svg%3E">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #080503;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      padding: 24px 16px;
+    }
+    .wrap { max-width: 1140px; margin: 0 auto; }
+    .header {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid rgba(255, 107, 0, 0.3);
+      padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
+    }
+    .title { font-size: 18px; font-weight: 900; color: #ffffff; letter-spacing: 0.05em; }
+    .title span { color: #FF6B00; }
+    .stats { display: flex; gap: 10px; flex-wrap: wrap; font-size: 12px; font-weight: 800; }
+    .pill {
+      padding: 6px 12px; border-radius: 8px;
+      background: #160a04; border: 1px solid rgba(255, 107, 0, 0.4); color: #FF851B;
+    }
+    .controls {
+      display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap;
+    }
+    input, select {
+      background: #110804; border: 1px solid rgba(255, 107, 0, 0.35);
+      color: #ffffff; padding: 11px 14px; border-radius: 8px; font-size: 13px;
+    }
+    input { flex: 1; min-width: 240px; }
+    .list { display: flex; flex-direction: column; gap: 8px; }
+    .row {
+      display: flex; justify-content: space-between; align-items: center;
+      background: linear-gradient(128deg, #0d0704 0%, #160a04 65%, rgba(255, 102, 0, 0.15) 100%);
+      border: 1px solid rgba(255, 115, 0, 0.28);
+      padding: 12px 16px; border-radius: 10px; gap: 12px; flex-wrap: wrap;
+    }
+    .row:hover { border-color: #FF6B00; }
+    .row-left { display: flex; flex-direction: column; gap: 4px; }
+    a.page-link {
+      color: #FF851B; font-size: 15px; font-weight: 800; text-decoration: none;
+    }
+    a.page-link:hover { color: #00ff66; text-decoration: underline; }
+    .meta { font-size: 11px; color: #a8a29e; display: flex; gap: 10px; flex-wrap: wrap; }
+    .row-actions { display: flex; gap: 8px; align-items: center; }
+    .btn {
+      padding: 7px 12px; border-radius: 6px; font-size: 11px; font-weight: 800;
+      cursor: pointer; border: 1px solid rgba(255, 107, 0, 0.4);
+      background: #1c0c04; color: #ffedd5; text-decoration: none;
+    }
+    .btn:hover { background: #FF6B00; color: #000000; }
+    .btn-open { background: #FF6B00; color: #000000; border-color: #FF851B; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="title">P/O // <span>PRIVATE SILO VAULT</span></div>
+      <div class="stats">
+        <div class="pill" id="totalPill">0 Total Pages</div>
+        <div class="pill" id="flightPill">0 Flights</div>
+        <div class="pill" id="docketPill">0 News Dockets</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="qInput" placeholder="Search any article word, flight number, or region..." oninput="render()">
+      <select id="typeSelect" onchange="render()">
+        <option value="ALL">All Categories</option>
+        <option value="AVIATION">✈️ Flights Only</option>
+        <option value="FINANCE">💳 Finance & Breaches</option>
+        <option value="OUTAGES">📡 Outages</option>
+        <option value="RECALLS">🚗 Recalls</option>
+        <option value="TENANCY">🏠 Tenancy & Airbnb</option>
+        <option value="POLITICS">⚖️ Petitions & Politics</option>
+      </select>
+      <select id="tierSelect" onchange="render()">
+        <option value="ALL">All Price Tiers</option>
+        <option value="TIER_1_STATUTORY">$29.00 Statutory</option>
+        <option value="TIER_2_LEDGER">$4.99 Notice</option>
+        <option value="TIER_3_POLL">$1.99 Poll</option>
+      </select>
+    </div>
+
+    <div class="list" id="vaultList">Loading live pages from /terminal/silos.json...</div>
+  </div>
+
+  <script>
+    let items = [];
+
+    function timeAgo(ts) {
+      if (!ts) return '';
+      const mins = Math.max(1, Math.round((Date.now() - ts) / 60000));
+      if (mins < 60) return mins + 'm ago';
+      const hrs = Math.round(mins / 60);
+      return hrs < 24 ? hrs + 'h ago' : Math.round(hrs / 24) + 'd ago';
+    }
+
+    function copyUrl(url, btn) {
+      navigator.clipboard.writeText(window.location.origin + url);
+      const old = btn.textContent;
+      btn.textContent = '✓ COPIED';
+      setTimeout(() => btn.textContent = old, 1500);
+    }
+
+    function render() {
+      const q = document.getElementById('qInput').value.toLowerCase();
+      const t = document.getElementById('typeSelect').value;
+      const tr = document.getElementById('tierSelect').value;
+
+      const filtered = items.filter(x => {
+        const matchQ = !q || x.id.toLowerCase().includes(q) || (x.region || '').toLowerCase().includes(q) || (x.type || '').toLowerCase().includes(q);
+        const matchT = t === 'ALL' || x.type === t;
+        const matchTr = tr === 'ALL' || x.tier === tr;
+        return matchQ && matchT && matchTr;
+      });
+
+      const box = document.getElementById('vaultList');
+      if (!filtered.length) {
+        box.innerHTML = '<div class="row">No matching pages found.</div>';
+        return;
+      }
+
+      box.innerHTML = filtered.map(x => {
+        const isFlight = x.type === 'AVIATION';
+        const slug = (x.slug || x.id || '').toLowerCase();
+        const url = '/' + (isFlight ? 'flight/' : 'docket/') + slug + '/';
+        const price = x.tier === 'TIER_2_LEDGER' ? '$4.99 Notice' : x.tier === 'TIER_3_POLL' ? '$1.99 Poll' : '$29.00 Statutory';
+
+        return '<div class="row">' +
+          '<div class="row-left">' +
+            '<a class="page-link" href="' + url + '" target="_blank">' + url + '</a>' +
+            '<div class="meta">' +
+              '<span><strong>Sector:</strong> ' + (x.type || 'DOCKET') + '</span>' +
+              '<span>• <strong>Tier:</strong> ' + price + '</span>' +
+              '<span>• <strong>Region:</strong> ' + (x.region || 'US') + '</span>' +
+              '<span>• <strong>Built:</strong> ' + timeAgo(x.ts) + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="row-actions">' +
+            '<button class="btn" onclick="copyUrl(\'' + url + '\', this)">Copy Link</button>' +
+            '<a class="btn btn-open" href="' + url + '" target="_blank">Open Page &nearr;</a>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    async function load() {
+      const res = await fetch('/terminal/silos.json?t=' + Date.now());
+      const data = await res.json();
+      const raw = Object.entries(data.deployed || {})
+        .filter(([, v]) => v.status === 'LIVE')
+        .map(([k, v]) => ({ id: v.slug || k, ...v }))
+        .sort((a, b) => (b.ts || 0) - (a.ts || 0));
+
+      items = raw;
+      const flights = items.filter(x => x.type === 'AVIATION').length;
+      document.getElementById('totalPill').textContent = items.length + ' Total Live Pages';
+      document.getElementById('flightPill').textContent = flights + ' Flights';
+      document.getElementById('docketPill').textContent = (items.length - flights) + ' News Dockets';
+      render();
+    }
+    load();
+  </script>
+</body>
+</html>
