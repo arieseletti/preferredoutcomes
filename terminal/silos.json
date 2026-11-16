@@ -1,11 +1,472 @@
 {
-  "schema_version": 8,
-  "deployed": {},
-  "active_silos": [],
+  "schema_version": 7,
+  "deployed": {
+    "AAL1973": {
+      "ts": 1794864583876,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "JBU9": {
+      "ts": 1794864598418,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2045": {
+      "ts": 1794864608236,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2462": {
+      "ts": 1794864617178,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "24d50de6a8c4fe47": {
+      "ts": 1794864625971,
+      "status": "LIVE",
+      "slug": "att-settlement-payout-2023",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "61daa68c0e192a7a": {
+      "ts": 1794864636940,
+      "status": "LIVE",
+      "slug": "class-action-settlements-november-2026",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "22804564ec4d4330": {
+      "ts": 1794864645519,
+      "status": "LIVE",
+      "slug": "att-settlement-payout-details",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "102628f7dda8eca5": {
+      "ts": 1794864654596,
+      "status": "LIVE",
+      "slug": "johnson-controls-data-breach-claims",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "496603bfbe19c69d": {
+      "ts": 1794864664622,
+      "status": "LIVE",
+      "slug": "renkim-corp-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "8adaba6884630f7d": {
+      "ts": 1794864673616,
+      "status": "LIVE",
+      "slug": "att-data-breach-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "8d9d19efb9465040": {
+      "ts": 1794864683162,
+      "status": "LIVE",
+      "slug": "mullinax-ford-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "83c8098c01af447f": {
+      "ts": 1794864692719,
+      "status": "LIVE",
+      "slug": "lakeside-pediatric-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "cab72bd71cb85eea": {
+      "ts": 1794864703048,
+      "status": "LIVE",
+      "slug": "nemours-foundation-erisa-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "8c89f1a88c46b1ec": {
+      "ts": 1794864711953,
+      "status": "LIVE",
+      "slug": "merchant-of-tennis-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "a91c1ed9405a4e95": {
+      "ts": 1794864721012,
+      "status": "LIVE",
+      "slug": "food-recalls-nc-thanksgiving",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "6d6c197fd56c3fca": {
+      "ts": 1794864731252,
+      "status": "LIVE",
+      "slug": "amazon-recall-scam-alert",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "0d343387a25bc52d": {
+      "ts": 1794864741532,
+      "status": "LIVE",
+      "slug": "sharper-image-fire-pit-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "1800fc2faa93381d": {
+      "ts": 1794864750374,
+      "status": "LIVE",
+      "slug": "nio-fake-airbag-recall-scam",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "4fad56abb583f97c": {
+      "ts": 1794864759017,
+      "status": "LIVE",
+      "slug": "bmw-recall-720k-vehicles",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "b1f3d0daa9157f77": {
+      "ts": 1794864769084,
+      "status": "LIVE",
+      "slug": "sharper-image-fire-pit-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "1c8ea9e6430d0250": {
+      "ts": 1794864778062,
+      "status": "LIVE",
+      "slug": "shein-baby-toy-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    "2bcc6074b06e205b": {
+      "ts": 1794864785982,
+      "status": "LIVE",
+      "slug": "amazon-walmart-playset-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "d08e582105930035": {
+      "ts": 1794864794706,
+      "status": "LIVE",
+      "slug": "simplicity-crib-recall-alert",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "bca2e6ae14405584": {
+      "ts": 1794864803785,
+      "status": "LIVE",
+      "slug": "latest-product-recalls-safety-alerts",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    "21a0666662ea58bf": {
+      "ts": 1794864815287,
+      "status": "LIVE",
+      "slug": "ending-health-insurance-denials",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "800cc20d18675d42": {
+      "ts": 1794864824453,
+      "status": "LIVE",
+      "slug": "google-cloud-gemini-healthcare",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "ed50f34e6c08877e": {
+      "ts": 1794864834111,
+      "status": "SKIPPED"
+    },
+    "90a7796df6c778ee": {
+      "ts": 1794864842632,
+      "status": "SKIPPED"
+    },
+    "69db4d381fdf6248": {
+      "ts": 1794864851797,
+      "status": "LIVE",
+      "slug": "hospitals-denied-claims-debt",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    }
+  },
+  "active_silos": [
+    {
+      "id": "hospitals-denied-claims-debt",
+      "ts": 1794864851797,
+      "status": "LIVE",
+      "slug": "hospitals-denied-claims-debt",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "google-cloud-gemini-healthcare",
+      "ts": 1794864824453,
+      "status": "LIVE",
+      "slug": "google-cloud-gemini-healthcare",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "ending-health-insurance-denials",
+      "ts": 1794864815287,
+      "status": "LIVE",
+      "slug": "ending-health-insurance-denials",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "latest-product-recalls-safety-alerts",
+      "ts": 1794864803785,
+      "status": "LIVE",
+      "slug": "latest-product-recalls-safety-alerts",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    {
+      "id": "simplicity-crib-recall-alert",
+      "ts": 1794864794706,
+      "status": "LIVE",
+      "slug": "simplicity-crib-recall-alert",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "amazon-walmart-playset-recall",
+      "ts": 1794864785982,
+      "status": "LIVE",
+      "slug": "amazon-walmart-playset-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "shein-baby-toy-recall",
+      "ts": 1794864778062,
+      "status": "LIVE",
+      "slug": "shein-baby-toy-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "sharper-image-fire-pit-recall",
+      "ts": 1794864769084,
+      "status": "LIVE",
+      "slug": "sharper-image-fire-pit-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "bmw-recall-720k-vehicles",
+      "ts": 1794864759017,
+      "status": "LIVE",
+      "slug": "bmw-recall-720k-vehicles",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "nio-fake-airbag-recall-scam",
+      "ts": 1794864750374,
+      "status": "LIVE",
+      "slug": "nio-fake-airbag-recall-scam",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "sharper-image-fire-pit-recall",
+      "ts": 1794864741532,
+      "status": "LIVE",
+      "slug": "sharper-image-fire-pit-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "amazon-recall-scam-alert",
+      "ts": 1794864731252,
+      "status": "LIVE",
+      "slug": "amazon-recall-scam-alert",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "food-recalls-nc-thanksgiving",
+      "ts": 1794864721012,
+      "status": "LIVE",
+      "slug": "food-recalls-nc-thanksgiving",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "merchant-of-tennis-data-breach",
+      "ts": 1794864711953,
+      "status": "LIVE",
+      "slug": "merchant-of-tennis-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "nemours-foundation-erisa-settlement",
+      "ts": 1794864703048,
+      "status": "LIVE",
+      "slug": "nemours-foundation-erisa-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "lakeside-pediatric-data-breach",
+      "ts": 1794864692719,
+      "status": "LIVE",
+      "slug": "lakeside-pediatric-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "mullinax-ford-data-breach",
+      "ts": 1794864683162,
+      "status": "LIVE",
+      "slug": "mullinax-ford-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "att-data-breach-settlement",
+      "ts": 1794864673616,
+      "status": "LIVE",
+      "slug": "att-data-breach-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "renkim-corp-data-breach",
+      "ts": 1794864664622,
+      "status": "LIVE",
+      "slug": "renkim-corp-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "johnson-controls-data-breach-claims",
+      "ts": 1794864654596,
+      "status": "LIVE",
+      "slug": "johnson-controls-data-breach-claims",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "att-settlement-payout-details",
+      "ts": 1794864645519,
+      "status": "LIVE",
+      "slug": "att-settlement-payout-details",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "class-action-settlements-november-2026",
+      "ts": 1794864636940,
+      "status": "LIVE",
+      "slug": "class-action-settlements-november-2026",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "att-settlement-payout-2023",
+      "ts": 1794864625971,
+      "status": "LIVE",
+      "slug": "att-settlement-payout-2023",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "AAL2462",
+      "ts": 1794864617178,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL2045",
+      "ts": 1794864608236,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "JBU9",
+      "ts": 1794864598418,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL1973",
+      "ts": 1794864583876,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    }
+  ],
   "cursor": {
     "APAC_AU_WEST": 0,
     "EU_UK_ME": 0,
-    "AMER_LATAM": 0
+    "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 0
+  "last_flight_poll_ts": 1794864569711
 }
