@@ -640,9 +640,193 @@
       "type": "FINANCE",
       "tier": "TIER_2_LEDGER",
       "region": "GLOBAL"
+    },
+    "VOZ559": {
+      "ts": 1794808233180,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "MAS6204": {
+      "ts": 1794808241451,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "QFA449": {
+      "ts": 1794808250162,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "QLK1515": {
+      "ts": 1794808258413,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "VOZ842": {
+      "ts": 1794808269169,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "QFA443": {
+      "ts": 1794808277488,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "QLK1592": {
+      "ts": 1794808286516,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "VOZ1220": {
+      "ts": 1794808294671,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "QFA120": {
+      "ts": 1794808302373,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "QLK1263": {
+      "ts": 1794808311183,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "fb9d89efadda90c9": {
+      "ts": 1794808321004,
+      "status": "LIVE",
+      "slug": "seeeyewear-tcpa-settlement-details",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "b5bdbfdcfdde188f": {
+      "ts": 1794808329739,
+      "status": "LIVE",
+      "slug": "cvs-settlement-deadline-today",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
     }
   },
   "active_silos": [
+    {
+      "id": "cvs-settlement-deadline-today",
+      "ts": 1794808329739,
+      "status": "LIVE",
+      "slug": "cvs-settlement-deadline-today",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "seeeyewear-tcpa-settlement-details",
+      "ts": 1794808321004,
+      "status": "LIVE",
+      "slug": "seeeyewear-tcpa-settlement-details",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "QLK1263",
+      "ts": 1794808311183,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "QFA120",
+      "ts": 1794808302373,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "VOZ1220",
+      "ts": 1794808294671,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "QLK1592",
+      "ts": 1794808286516,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "QFA443",
+      "ts": 1794808277488,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "VOZ842",
+      "ts": 1794808269169,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "QLK1515",
+      "ts": 1794808258413,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "QFA449",
+      "ts": 1794808250162,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "MAS6204",
+      "ts": 1794808241451,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "VOZ559",
+      "ts": 1794808233180,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "aeromexico-cancellations-refund",
       "ts": 1794802044987,
@@ -1355,9 +1539,9 @@
     }
   ],
   "cursor": {
-    "APAC_AU_WEST": 7,
+    "APAC_AU_WEST": 3,
     "EU_UK_ME": 0,
     "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 1794801913483
+  "last_flight_poll_ts": 1794808220954
 }
