@@ -803,9 +803,75 @@
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "CA"
+    },
+    "KNE18": {
+      "ts": 1794830546023,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "1c8ea9e6430d0250": {
+      "ts": 1794830566758,
+      "status": "LIVE",
+      "slug": "shein-baby-toy-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    "f061ae7679db9cc8": {
+      "ts": 1794830578904,
+      "status": "LIVE",
+      "slug": "carnival-cruise-tequila-lawsuit",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "0b0e5d7817392169": {
+      "ts": 1794830589744,
+      "status": "LIVE",
+      "slug": "faa-ground-stop-refunds-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
     }
   },
   "active_silos": [
+    {
+      "id": "faa-ground-stop-refunds-rights",
+      "ts": 1794830589744,
+      "status": "LIVE",
+      "slug": "faa-ground-stop-refunds-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "carnival-cruise-tequila-lawsuit",
+      "ts": 1794830578904,
+      "status": "LIVE",
+      "slug": "carnival-cruise-tequila-lawsuit",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "shein-baby-toy-recall",
+      "ts": 1794830566758,
+      "status": "LIVE",
+      "slug": "shein-baby-toy-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "KNE18",
+      "ts": 1794830546023,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "westjet-flight-cancellation-claims",
       "ts": 1794825474773,
@@ -1704,8 +1770,8 @@
   ],
   "cursor": {
     "APAC_AU_WEST": 3,
-    "EU_UK_ME": 10,
+    "EU_UK_ME": 1,
     "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 1794825426131
+  "last_flight_poll_ts": 1794830535509
 }
