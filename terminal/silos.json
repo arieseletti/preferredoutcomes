@@ -1071,9 +1071,163 @@
       "type": "OUTAGES",
       "tier": "TIER_2_LEDGER",
       "region": "US"
+    },
+    "GJS4193": {
+      "ts": 1794857431134,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "UAL215": {
+      "ts": 1794857454221,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL316": {
+      "ts": 1794857468838,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL670": {
+      "ts": 1794857477649,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "JIA5296": {
+      "ts": 1794857488572,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "SKW4747": {
+      "ts": 1794857501755,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "SKW3876": {
+      "ts": 1794857509130,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "ATN3358": {
+      "ts": 1794857519805,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "854a1b582368d218": {
+      "ts": 1794857529862,
+      "status": "LIVE",
+      "slug": "johnson-johnson-talcum-lawsuit",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "4cd3b450f95a65e1": {
+      "ts": 1794857540860,
+      "status": "LIVE",
+      "slug": "spain-strike-air-passengers",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
     }
   },
   "active_silos": [
+    {
+      "id": "spain-strike-air-passengers",
+      "ts": 1794857540860,
+      "status": "LIVE",
+      "slug": "spain-strike-air-passengers",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "johnson-johnson-talcum-lawsuit",
+      "ts": 1794857529862,
+      "status": "LIVE",
+      "slug": "johnson-johnson-talcum-lawsuit",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "ATN3358",
+      "ts": 1794857519805,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "SKW3876",
+      "ts": 1794857509130,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "SKW4747",
+      "ts": 1794857501755,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "JIA5296",
+      "ts": 1794857488572,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL670",
+      "ts": 1794857477649,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL316",
+      "ts": 1794857468838,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "UAL215",
+      "ts": 1794857454221,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "GJS4193",
+      "ts": 1794857431134,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "flight-cancellation-delays-guide",
       "ts": 1794853459937,
@@ -2277,7 +2431,7 @@
   "cursor": {
     "APAC_AU_WEST": 3,
     "EU_UK_ME": 1,
-    "AMER_LATAM": 5
+    "AMER_LATAM": 10
   },
-  "last_flight_poll_ts": 1794853375549
+  "last_flight_poll_ts": 1794857417135
 }
