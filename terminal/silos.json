@@ -551,9 +551,199 @@
     "d139259260d2e288": {
       "ts": 1794796705106,
       "status": "SKIPPED"
+    },
+    "SKW6346": {
+      "ts": 1794801931715,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "UAL1558": {
+      "ts": 1794801940809,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "SKW6324": {
+      "ts": 1794801957198,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "ASA713": {
+      "ts": 1794801966505,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "SWA2671": {
+      "ts": 1794801976221,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL1433": {
+      "ts": 1794801985496,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "UAL1777": {
+      "ts": 1794801995457,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "0a5ea78f7388c3f6": {
+      "ts": 1794802008003,
+      "status": "LIVE",
+      "slug": "advocate-aurora-erisa-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "21a0666662ea58bf": {
+      "ts": 1794802018243,
+      "status": "LIVE",
+      "slug": "health-insurance-denials-investigation",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "1f4aa9a93d5e39b1": {
+      "ts": 1794802026666,
+      "status": "LIVE",
+      "slug": "hospitals-ai-finance-failure",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "94d690e521f31f38": {
+      "ts": 1794802035862,
+      "status": "LIVE",
+      "slug": "yuma-medical-center-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "c490026fd99b5ea9": {
+      "ts": 1794802044987,
+      "status": "LIVE",
+      "slug": "aeromexico-cancellations-refund",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
     }
   },
   "active_silos": [
+    {
+      "id": "aeromexico-cancellations-refund",
+      "ts": 1794802044987,
+      "status": "LIVE",
+      "slug": "aeromexico-cancellations-refund",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "yuma-medical-center-data-breach",
+      "ts": 1794802035862,
+      "status": "LIVE",
+      "slug": "yuma-medical-center-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "hospitals-ai-finance-failure",
+      "ts": 1794802026666,
+      "status": "LIVE",
+      "slug": "hospitals-ai-finance-failure",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "health-insurance-denials-investigation",
+      "ts": 1794802018243,
+      "status": "LIVE",
+      "slug": "health-insurance-denials-investigation",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "advocate-aurora-erisa-settlement",
+      "ts": 1794802008003,
+      "status": "LIVE",
+      "slug": "advocate-aurora-erisa-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "UAL1777",
+      "ts": 1794801995457,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL1433",
+      "ts": 1794801985496,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "SWA2671",
+      "ts": 1794801976221,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "ASA713",
+      "ts": 1794801966505,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "SKW6324",
+      "ts": 1794801957198,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "UAL1558",
+      "ts": 1794801940809,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "SKW6346",
+      "ts": 1794801931715,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "airline-ground-stop-cancellations",
       "ts": 1794796696400,
@@ -1165,9 +1355,9 @@
     }
   ],
   "cursor": {
-    "APAC_AU_WEST": 2,
+    "APAC_AU_WEST": 7,
     "EU_UK_ME": 0,
     "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 1794796581831
+  "last_flight_poll_ts": 1794801913483
 }
