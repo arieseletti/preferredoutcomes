@@ -159,10 +159,10 @@
         <span class="animate-pulse">((●))</span> FOLLOW-THE-SUN ACTIVE
       </div>
       <p class="text-[11px] text-stone-300 mt-1.5 leading-relaxed">
-        Polling <strong class="text-white">36 Global Airports</strong> &amp; <strong class="text-white">14 Global Feeds</strong> via <span class="text-[#FF851B] font-semibold">Schema v8 Engine</span>.
+        Polling <strong class="text-white">14 Global Hubs</strong> &amp; <strong class="text-white">22 Global Feeds</strong> via <span class="text-[#FF851B] font-semibold">Schema v10 Engine</span>.
       </p>
       <div class="flex items-center justify-between text-[10px] font-mono-tech text-orange-300/90 mt-3 pt-2 border-t border-orange-500/20">
-        <span>EU • LATAM • ME • NA</span>
+        <span>EU • LATAM • APAC • NA</span>
         <span class="text-emerald-400 font-bold">0 CREDITS</span>
       </div>
     </div>
@@ -287,7 +287,6 @@
           </div>
         </div>
 
-        <!-- 5 Aligned Clickable X-Axis Labels Matching the 5 SVG Dots -->
         <div id="velocity-xaxis" class="grid grid-cols-5 text-center text-[10px] font-mono-tech text-stone-400 pt-2 border-t border-orange-500/20"></div>
       </div>
 
@@ -346,7 +345,6 @@
             </button>
           </div>
 
-          <!-- Collapsible Voice Studio Controls (ElevenLabs + System Voices + Speed down to 0.50x) -->
           <div id="voice-studio-drawer" class="hidden mt-3 p-3 rounded-xl bg-[#090402] border border-orange-500/35 space-y-2.5 text-xs">
             <div>
               <label class="block text-[10px] font-mono-tech uppercase text-stone-400 mb-1">ElevenLabs Voice Preset (Or Device Voice)</label>
@@ -379,18 +377,18 @@
       </div>
     </section>
 
-    <!-- POTENTIAL AUDITOR (Dynamic Algorithmic Scorer) -->
+    <!-- POTENTIAL AUDITOR (5-Scenario Algorithmic Scorer + 1-Click Deploy Trigger) -->
     <section id="potential-auditor" class="po-panel rounded-2xl p-5 sm:p-6">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
           <div class="flex items-center gap-2"><span class="text-[#FF7300] text-lg">⚡</span><h2 class="text-base sm:text-lg font-black tracking-wide text-white uppercase">LIVE OPPORTUNITY &amp; POTENTIAL AUDITOR</h2></div>
-          <p class="text-xs text-stone-400 mt-0.5">Type any breaking headline, company, or flight code below to check if <code class="text-orange-300">silos.json</code> already covers it and calculate its dynamic statutory / poll yield.</p>
+          <p class="text-xs text-stone-400 mt-0.5">Type any breaking headline, product release, company, or flight code below to check coverage and calculate its exact monetization angle.</p>
         </div>
-        <span class="self-start sm:self-auto px-3 py-1 rounded-full text-[11px] font-mono-tech font-semibold bg-[#1c0c04] border border-orange-500/35 text-[#FF851B]">Algorithmic Coverage &amp; Yield Scorer</span>
+        <span class="self-start sm:self-auto px-3 py-1 rounded-full text-[11px] font-mono-tech font-semibold bg-[#1c0c04] border border-orange-500/35 text-[#FF851B]">5-Scenario Algorithmic Scorer</span>
       </div>
 
       <div class="mt-4 flex flex-col sm:flex-row gap-3">
-        <input id="audit-input" type="text" placeholder="Type any flight code, company, outage, or viral controversy to audit..." class="flex-1 px-4 py-3 rounded-xl bg-[#080402] border border-orange-500/35 text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#FF7300]" onkeydown="if(event.key === 'Enter') runPotentialAudit()">
+        <input id="audit-input" type="text" placeholder="Type any flight code, company, product release, or viral controversy to audit..." class="flex-1 px-4 py-3 rounded-xl bg-[#080402] border border-orange-500/35 text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#FF7300]" onkeydown="if(event.key === 'Enter') runPotentialAudit()">
         <button onclick="runPotentialAudit()" class="btn-bright-orange px-6 py-3 rounded-xl text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shrink-0"><span>🔍</span> AUDIT POTENTIAL</button>
       </div>
 
@@ -420,7 +418,7 @@
         <table class="w-full text-left border-collapse min-w-[920px]">
           <thead>
             <tr class="border-b border-orange-500/20 text-[10px] font-mono-tech uppercase tracking-wider text-stone-400">
-              <th class="py-3 px-3">Product / Flight / Article Silo</th>
+              <th class="py-3 px-3">Product / Flight / Article Silo (English Title)</th>
               <th class="py-3 px-3">Unified Master List ID</th>
               <th class="py-3 px-3">Location &amp; Sector</th>
               <th class="py-3 px-3">Monetization Vehicle</th>
@@ -474,9 +472,6 @@
   </div>
 
   <script>
-    // =========================================================================
-    // 1. PWA INSTALLER FOR SAMSUNG S21 & DESKTOP
-    // =========================================================================
     let deferredInstallPrompt = null;
     (function setupPWA() {
       const iconUrl = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='36' fill='%23080503' stroke='%23FF6B00' stroke-width='12'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' fill='%23FF6B00' font-family='sans-serif' font-weight='900' font-size='84'%3EP/O%3C/text%3E%3C/svg%3E";
@@ -513,9 +508,6 @@
       }
     }
 
-    // =========================================================================
-    // 2. ZERO-CREDIT LIVE SILOS.JSON SYNC & UNIFIED MASTER LIST ENGINE
-    // =========================================================================
     let currentSortMode = 'conv';
     let currentChartTF = '30D';
     let selectedNodeIndex = 4;
@@ -529,13 +521,16 @@
       if (item.type === 'AVIATION') {
         return `Flight ${(item.id || '').toUpperCase()} (${item.region || 'US_DOT'} Disruption)`;
       }
+      if (item.english_title) {
+        return `[${item.region || 'GL'}] ${item.english_title}`;
+      }
       const words = (item.slug || item.id || '').split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-      return `Docket: ${words}`;
+      return `[${item.region || 'GL'}] ${words}`;
     }
 
     async function syncLiveSilosJson(manualSyncClicked = false) {
       try {
-        const res = await fetch('/terminal/silos.json?t=' + Date.now());
+        const res = await fetch('/terminal/silos.json?t=' + Date.now(), { cache: 'no-store' });
         if (!res.ok) return;
         const data = await res.json();
 
@@ -576,10 +571,9 @@
           };
         });
 
-        // ONLY call Make Bridge when user explicitly clicks "Sync Live Data" (0 background credit drain)
         const bridgeUrl = localStorage.getItem('po_bridge_url');
         if (manualSyncClicked && bridgeUrl) {
-          const bRes = await fetch(bridgeUrl).catch(() => null);
+          const bRes = await fetch(bridgeUrl, { cache: 'no-store' }).catch(() => null);
           if (bRes && bRes.ok) {
             const bJson = await bRes.json();
             const leadsArr = bJson.leads || [];
@@ -632,7 +626,6 @@
       document.getElementById('kpi-batches-ready').textContent = `${batchesOver50} Batches > 50`;
       document.getElementById('kpi-escrow-val').textContent = '$' + (realFreeLeadsTotal * 50).toLocaleString();
 
-      // Dynamic Donut Chart
       const total = Math.max(1, silosData.length);
       const naCount = silosData.filter(s => ['US', 'US_DOT', 'CA', 'APPR', 'NA'].includes(s.regionCode)).length;
       const euCount = silosData.filter(s => ['EU', 'EU261', 'UK', 'UK261', 'DE', 'FR', 'ES'].includes(s.regionCode)).length;
@@ -676,9 +669,6 @@
       renderLeaderboard();
     }
 
-    // =========================================================================
-    // 3. 5-POINT ALIGNED & CLICKABLE VELOCITY GRAPH
-    // =========================================================================
     const X_COORDS = [25, 137, 250, 362, 475];
 
     function getChartDataForWindow(tf) {
@@ -692,7 +682,6 @@
             ? ['DAY 1', 'DAY 2', 'DAY 4', 'DAY 6', 'TODAY']
             : ['WEEK 1', 'WEEK 2', 'WEEK 3', 'WEEK 4', 'LIVE NOW'];
 
-      // Count how many silos were active up to each of the 5 time checkpoints
       const counts = [0, 1, 2, 3, 4].map(idx => {
         const cutoff = now - spanMs + ((spanMs / 4) * idx);
         return silosData.filter(s => (s.ts || now) <= cutoff).length;
@@ -729,7 +718,6 @@
       document.getElementById('chart-callout-label').textContent = `${tf} WINDOW • ${labels[selectedNodeIndex]}`;
       document.getElementById('chart-callout-val').textContent = `$${realGrossRevenue.toFixed(2)} • ${activePt[2]} Active Silos`;
 
-      // Render 5 clickable SVG circles
       document.getElementById('velocity-nodes').innerHTML = pts.map((pt, i) => `
         <circle cx="${pt[0]}" cy="${pt[1]}" r="${i === selectedNodeIndex ? 7 : 5}"
           fill="${i === selectedNodeIndex ? '#FF6B00' : '#090503'}"
@@ -738,7 +726,6 @@
         </circle>
       `).join('');
 
-      // Render 5 aligned clickable X-axis buttons directly underneath
       document.getElementById('velocity-xaxis').innerHTML = labels.map((lbl, i) => `
         <button onclick="switchVelocityChart('${currentChartTF}', ${i})"
           class="py-1 rounded transition ${i === selectedNodeIndex ? 'text-[#FF7700] font-extrabold bg-orange-950/40' : 'text-stone-400 hover:text-white'}">
@@ -747,9 +734,6 @@
       `).join('');
     }
 
-    // =========================================================================
-    // 4. ALGORITHMIC POTENTIAL AUDITOR (DYNAMIC SCORING & YIELD)
-    // =========================================================================
     function loadPresetAudit(text) {
       document.getElementById('audit-input').value = text;
       runPotentialAudit();
@@ -763,36 +747,45 @@
       const words = qLower.split(/[^a-z0-9]+/).filter(w => w.length >= 4);
       const existing = silosData.find(s => qLower.includes(s.id) || qLower.includes(s.masterId) || words.some(w => s.id.includes(w)));
 
-      // Dynamic Algorithmic Scoring based on statutory, mass-impact, or viral triggers
-      let tierLabel = 'TIER 2: $4.99 Priority Accountability Notice + Petition Ledger';
-      let baseScore = 76;
-      let estVisitors = 480;
+      let tierLabel = 'TIER 2 ($4.99): Executive Accountability Notice + Petition Ledger';
+      let playStrategy = 'Frame around corporate/policy accountability: free petition builds the email segment; $4.99 dispatches a formal individual notice to decision-makers.';
+      let baseScore = 78;
+      let estVisitors = 520;
       let unitVal = 4.99;
-      let convEst = 0.085;
+      let convEst = 0.075;
 
-      const isTier1 = /(flight|delay|cancel|outage|down|airbnb|landlord|deposit|refund|breach|settlement|frozen|recall|credit|billing)/i.test(qLower);
-      const isTier3 = /(divorce|feud|scandal|celeb|viral|tiktok|poll|boycott|referee|verdict|backlash|drama)/i.test(qLower);
+      const isTier1 = /(flight|delay|cancel|outage|down|airbnb|landlord|tenant|deposit|refund|breach|settlement|frozen|recall|credit|billing|overcharge)/i.test(qLower);
+      const isReleaseHype = /(confirm|release|2026|2027|launch|trailer|remake|sequel|gta|metal gear|iphone|ps6|switch|tour|tickets|drop|edition)/i.test(qLower);
+      const isTier3Drama = /(divorce|feud|scandal|celeb|viral|tiktok|poll|boycott|referee|verdict|backlash|drama|cheating|fired)/i.test(qLower);
 
       if (isTier1) {
-        tierLabel = 'TIER 1: $29.00 Pre-Cited Statutory Dispatch + 50-Claimant B2B Escrow';
-        baseScore = 88;
+        tierLabel = 'TIER 1 ($29.00): Pre-Cited Statutory Claim Dispatch + 50-Claimant B2B Escrow';
+        playStrategy = 'High individual cash recovery intent. Offer free Evidence Checklist to build 50-lead legal batch ($1,500+ B2B) + $29 instant statutory demand dispatch.';
+        baseScore = 90;
         unitVal = 29.00;
         convEst = 0.048;
-        estVisitors = 620;
-      } else if (isTier3) {
-        tierLabel = 'TIER 3: $1.99 Pinned Referendum Poll + High-Velocity Lead Capture';
-        baseScore = 84;
+        estVisitors = 640;
+      } else if (isReleaseHype) {
+        tierLabel = 'TIER 2/3 ($4.99 Notice / $1.99 Poll): Studio Direction Petition + Amazon Collector Drop Alert List';
+        playStrategy = 'Long-tail evergreen search horizon (6–18 mos). Capture rabid fan emails via "Collector\'s Edition & Pre-Order Stock Alerts" + auto-injected Amazon Affiliate search button + $4.99 Studio Executive Notice.';
+        baseScore = 83;
+        unitVal = 4.99;
+        convEst = 0.095;
+        estVisitors = 1150;
+      } else if (isTier3Drama) {
+        tierLabel = 'TIER 3 ($1.99): Polarized Public Referendum Poll + Weighted Statement';
+        playStrategy = 'High-velocity social debate. Use blind aggregate vote tally bar for instant social proof + $1.99 weighted vote & statement filing.';
+        baseScore = 85;
         unitVal = 1.99;
-        convEst = 0.145;
-        estVisitors = 1850;
+        convEst = 0.14;
+        estVisitors = 1800;
       }
 
-      // Deterministic variance from query hash so every distinct headline gets its own true calculation
       let hashNum = 0;
       for (let i = 0; i < qLower.length; i++) hashNum = ((hashNum << 5) - hashNum) + qLower.charCodeAt(i);
-      const variance = Math.abs(hashNum) % 11;
+      const variance = Math.abs(hashNum) % 9;
       const finalScore = Math.min(98, baseScore + variance);
-      const visitorMult = 0.75 + ((Math.abs(hashNum >> 3) % 90) / 100);
+      const visitorMult = 0.8 + ((Math.abs(hashNum >> 3) % 80) / 100);
       const est24hYield = Math.round(estVisitors * visitorMult * convEst * unitVal);
       const finderSplit = (est24hYield * 0.15).toFixed(2);
 
@@ -800,36 +793,37 @@
       box.innerHTML = `
         <div class="po-card rounded-xl p-5 border border-orange-500/50">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-            <div class="space-y-2">
+            <div class="space-y-2 max-w-2xl">
               <div class="flex flex-wrap items-center gap-2">
                 <span class="px-2.5 py-1 rounded text-xs font-mono-tech font-black bg-[#FF6B00] text-black">VIABILITY SCORE: ${finalScore}/100</span>
                 ${existing
                   ? `<span class="px-2.5 py-1 rounded text-xs font-mono-tech font-bold bg-amber-950 border border-amber-500/40 text-amber-300">● ALREADY COVERED (${existing.slug}) — MASTER LIST: ${existing.masterId.toUpperCase()}</span>`
-                  : `<span class="px-2.5 py-1 rounded text-xs font-mono-tech font-bold bg-emerald-950 border border-emerald-500/40 text-emerald-300">✓ UNCOVERED GAP — ELIGIBLE FOR SILO DEPLOYMENT</span>`
+                  : `<span class="px-2.5 py-1 rounded text-xs font-mono-tech font-bold bg-emerald-950 border border-emerald-500/40 text-emerald-300">✓ UNCOVERED GAP — READY FOR DEPLOYMENT</span>`
                 }
               </div>
               <h3 class="text-base font-extrabold text-white">${rawQuery}</h3>
-              <div class="text-xs text-stone-300">Assigned Vehicle: <strong class="text-[#FF851B]">${tierLabel}</strong></div>
+              <div class="text-xs text-stone-300">Recommended Vehicle: <strong class="text-[#FF851B]">${tierLabel}</strong></div>
+              <div class="text-xs text-stone-400 leading-relaxed"><strong>Execution Angle:</strong> ${playStrategy}</div>
             </div>
-            <div class="flex flex-wrap items-center gap-4 shrink-0">
+            <div class="flex flex-wrap items-center gap-3 shrink-0">
               <div class="bg-[#090402] px-3.5 py-2 rounded-lg border border-orange-500/25">
-                <div class="text-[10px] font-mono-tech uppercase text-stone-400">PROJECTED 24H YIELD</div>
+                <div class="text-[10px] font-mono-tech uppercase text-stone-400">PROJECTED 30D YIELD</div>
                 <div class="text-base font-mono-tech font-black text-white">$${est24hYield.toLocaleString()}.00</div>
               </div>
               <div class="bg-[#090402] px-3.5 py-2 rounded-lg border border-emerald-500/30">
                 <div class="text-[10px] font-mono-tech uppercase text-emerald-400">15% FINDER SPLIT</div>
                 <div class="text-base font-mono-tech font-black text-emerald-300">$${finderSplit}</div>
               </div>
-              ${existing ? `<a href="${existing.slug}" target="_blank" class="btn-bright-orange px-5 py-3 rounded-xl text-xs uppercase">OPEN LIVE SILO ↗</a>` : ''}
+              ${existing
+                ? `<a href="${existing.slug}" target="_blank" class="btn-bright-orange px-5 py-3 rounded-xl text-xs uppercase">OPEN LIVE SILO ↗</a>`
+                : `<a href="https://github.com/arieseletti/preferredoutcomes/actions/workflows/po-engine.yml" target="_blank" class="btn-bright-orange px-5 py-3 rounded-xl text-xs uppercase">🚀 TRIGGER ENGINE DEPLOY ↗</a>`
+              }
             </div>
           </div>
         </div>
       `;
     }
 
-    // =========================================================================
-    // 5. LEADERBOARD TABLE
-    // =========================================================================
     function renderLeaderboard() {
       const tbody = document.getElementById('leaderboard-rows');
       let filtered = [...silosData];
@@ -916,9 +910,6 @@
       showSilentToast(target.watched ? `🔔 PUSH WATCHLIST ENABLED: ${target.title}` : `🔕 PUSH ALERTS MUTED: ${target.title}`, target.watched ? 'orange' : 'neutral');
     }
 
-    // =========================================================================
-    // 6. ELEVENLABS NEURAL TTS + DEVICE VOICE STUDIO (SPEED DOWN TO 0.50x)
-    // =========================================================================
     let currentAudio = null;
 
     function toggleVoiceDrawer() {
@@ -1080,7 +1071,6 @@
       document.getElementById('voice-pitch').value = savedPitch;
       updateVoiceSliders();
       populateSystemVoices();
-      // Loads free GitHub silos.json once on startup (0 Make credits used)
       syncLiveSilosJson(false);
     });
   </script>
