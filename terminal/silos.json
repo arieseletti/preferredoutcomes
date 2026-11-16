@@ -772,9 +772,75 @@
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "GLOBAL"
+    },
+    "TAM8120": {
+      "ts": 1794825440214,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "ANAC400"
+    },
+    "a91c1ed9405a4e95": {
+      "ts": 1794825454936,
+      "status": "LIVE",
+      "slug": "food-recalls-nc-residents",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "800cc20d18675d42": {
+      "ts": 1794825465715,
+      "status": "LIVE",
+      "slug": "gemini-healthcare-google-cloud",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "35d14bac23689cb9": {
+      "ts": 1794825474773,
+      "status": "LIVE",
+      "slug": "westjet-flight-cancellation-claims",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
     }
   },
   "active_silos": [
+    {
+      "id": "westjet-flight-cancellation-claims",
+      "ts": 1794825474773,
+      "status": "LIVE",
+      "slug": "westjet-flight-cancellation-claims",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "gemini-healthcare-google-cloud",
+      "ts": 1794825465715,
+      "status": "LIVE",
+      "slug": "gemini-healthcare-google-cloud",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "food-recalls-nc-residents",
+      "ts": 1794825454936,
+      "status": "LIVE",
+      "slug": "food-recalls-nc-residents",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "TAM8120",
+      "ts": 1794825440214,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "ANAC400"
+    },
     {
       "id": "aeromexico-cancellation-refunds",
       "ts": 1794818241882,
@@ -1638,8 +1704,8 @@
   ],
   "cursor": {
     "APAC_AU_WEST": 3,
-    "EU_UK_ME": 5,
+    "EU_UK_ME": 10,
     "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 1794818168921
+  "last_flight_poll_ts": 1794825426131
 }
