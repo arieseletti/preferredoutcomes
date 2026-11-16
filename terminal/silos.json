@@ -220,9 +220,501 @@
       "type": "FINANCE",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
+    },
+    "AAL531": {
+      "ts": 1794867471571,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "GTI8237": {
+      "ts": 1794867481616,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "SKW5054": {
+      "ts": 1794867489762,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2679": {
+      "ts": 1794867502154,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2529": {
+      "ts": 1794867509957,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2181": {
+      "ts": 1794867518158,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "JIA5367": {
+      "ts": 1794867526899,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2046": {
+      "ts": 1794867534908,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "EVA697": {
+      "ts": 1794867543102,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "4972860001e67d29": {
+      "ts": 1794867555741,
+      "status": "LIVE",
+      "slug": "food-recalls-nc-thanksgiving",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "a3166051b2f7a68e": {
+      "ts": 1794867564243,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-compensation-claim",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "cae9f9d105dbf5cf": {
+      "ts": 1794867573759,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-outage-credit",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "5f004b903d2a3c70": {
+      "ts": 1794867581655,
+      "status": "LIVE",
+      "slug": "microsoft-outage-compensation-claims",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "903cc108200ee948": {
+      "ts": 1794867590212,
+      "status": "LIVE",
+      "slug": "microsoft-365-downtime-refunds",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "f5d0dcdd295d1c11": {
+      "ts": 1794867599300,
+      "status": "LIVE",
+      "slug": "2026-network-outages-report",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "b5064a700e4cdb4b": {
+      "ts": 1794867608215,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-claim",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "d1fcc52ccc3dadd0": {
+      "ts": 1794867617004,
+      "status": "LIVE",
+      "slug": "microsoft-outage-consumer-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "563200d4106681af": {
+      "ts": 1794867626955,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-outage-credits",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "cfd81b63ada52664": {
+      "ts": 1794867635896,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-issues",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "992ef37744b5343c": {
+      "ts": 1794867644532,
+      "status": "LIVE",
+      "slug": "vodafone-outage-uk-consumers",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    "5931fc98f7c2a3bb": {
+      "ts": 1794867654131,
+      "status": "LIVE",
+      "slug": "flight-delay-compensation-guide",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "f760d6834f6e8ed7": {
+      "ts": 1794867662110,
+      "status": "LIVE",
+      "slug": "airline-ground-stop-cancellation",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "139eb7187116c6d1": {
+      "ts": 1794867671224,
+      "status": "LIVE",
+      "slug": "faa-nationwide-ground-stop-delays",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "35d14bac23689cb9": {
+      "ts": 1794867680174,
+      "status": "LIVE",
+      "slug": "westjet-flight-cancellation-issue",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "8b3ceeaf301ba4bc": {
+      "ts": 1794867688841,
+      "status": "LIVE",
+      "slug": "flight-cancellation-consumer-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "5ff91a3ffb3f06fb": {
+      "ts": 1794867697195,
+      "status": "LIVE",
+      "slug": "flight-cancelation-ground-stop",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "4c4b43e71e3717be": {
+      "ts": 1794867705512,
+      "status": "LIVE",
+      "slug": "dubai-middle-east-flight-disruption",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    "ab05227de742ad1a": {
+      "ts": 1794867716351,
+      "status": "LIVE",
+      "slug": "eu-flight-delay-compensation",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "EU"
+    },
+    "a86b5b4dbdc89d36": {
+      "ts": 1794867724671,
+      "status": "LIVE",
+      "slug": "aeromexico-cancellations-refund",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    "28d438e8cfd3becf": {
+      "ts": 1794867732126,
+      "status": "LIVE",
+      "slug": "flight-cancellation-consumer-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
     }
   },
   "active_silos": [
+    {
+      "id": "flight-cancellation-consumer-rights",
+      "ts": 1794867732126,
+      "status": "LIVE",
+      "slug": "flight-cancellation-consumer-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "aeromexico-cancellations-refund",
+      "ts": 1794867724671,
+      "status": "LIVE",
+      "slug": "aeromexico-cancellations-refund",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "eu-flight-delay-compensation",
+      "ts": 1794867716351,
+      "status": "LIVE",
+      "slug": "eu-flight-delay-compensation",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "EU"
+    },
+    {
+      "id": "dubai-middle-east-flight-disruption",
+      "ts": 1794867705512,
+      "status": "LIVE",
+      "slug": "dubai-middle-east-flight-disruption",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "flight-cancelation-ground-stop",
+      "ts": 1794867697195,
+      "status": "LIVE",
+      "slug": "flight-cancelation-ground-stop",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "flight-cancellation-consumer-rights",
+      "ts": 1794867688841,
+      "status": "LIVE",
+      "slug": "flight-cancellation-consumer-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "westjet-flight-cancellation-issue",
+      "ts": 1794867680174,
+      "status": "LIVE",
+      "slug": "westjet-flight-cancellation-issue",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "faa-nationwide-ground-stop-delays",
+      "ts": 1794867671224,
+      "status": "LIVE",
+      "slug": "faa-nationwide-ground-stop-delays",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "airline-ground-stop-cancellation",
+      "ts": 1794867662110,
+      "status": "LIVE",
+      "slug": "airline-ground-stop-cancellation",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "flight-delay-compensation-guide",
+      "ts": 1794867654131,
+      "status": "LIVE",
+      "slug": "flight-delay-compensation-guide",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "vodafone-outage-uk-consumers",
+      "ts": 1794867644532,
+      "status": "LIVE",
+      "slug": "vodafone-outage-uk-consumers",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    {
+      "id": "microsoft-365-outage-issues",
+      "ts": 1794867635896,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-issues",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outlook-outage-credits",
+      "ts": 1794867626955,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-outage-credits",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outage-consumer-rights",
+      "ts": 1794867617004,
+      "status": "LIVE",
+      "slug": "microsoft-outage-consumer-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-365-outage-claim",
+      "ts": 1794867608215,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-claim",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "2026-network-outages-report",
+      "ts": 1794867599300,
+      "status": "LIVE",
+      "slug": "2026-network-outages-report",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-365-downtime-refunds",
+      "ts": 1794867590212,
+      "status": "LIVE",
+      "slug": "microsoft-365-downtime-refunds",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outage-compensation-claims",
+      "ts": 1794867581655,
+      "status": "LIVE",
+      "slug": "microsoft-outage-compensation-claims",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outlook-outage-credit",
+      "ts": 1794867573759,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-outage-credit",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outlook-compensation-claim",
+      "ts": 1794867564243,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-compensation-claim",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "food-recalls-nc-thanksgiving",
+      "ts": 1794867555741,
+      "status": "LIVE",
+      "slug": "food-recalls-nc-thanksgiving",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "EVA697",
+      "ts": 1794867543102,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL2046",
+      "ts": 1794867534908,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "JIA5367",
+      "ts": 1794867526899,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL2181",
+      "ts": 1794867518158,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL2529",
+      "ts": 1794867509957,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL2679",
+      "ts": 1794867502154,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "SKW5054",
+      "ts": 1794867489762,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "GTI8237",
+      "ts": 1794867481616,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL531",
+      "ts": 1794867471571,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "hospitals-denied-claims-debt",
       "ts": 1794864851797,
@@ -466,7 +958,7 @@
   "cursor": {
     "APAC_AU_WEST": 0,
     "EU_UK_ME": 0,
-    "AMER_LATAM": 5
+    "AMER_LATAM": 10
   },
-  "last_flight_poll_ts": 1794864569711
+  "last_flight_poll_ts": 1794867445023
 }
