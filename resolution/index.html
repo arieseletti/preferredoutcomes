@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate &amp; Legal Resolution Desk | Preferred Outcomes</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f1f5f9; color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; padding: 32px 16px; }
+    .card { max-width: 720px; margin: 0 auto; background: #fff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 32px; box-shadow: 0 8px 24px rgba(15,23,42,0.06); }
+    .badge { display: inline-block; background: #0f172a; color: #4ade80; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; margin-bottom: 12px; }
+    h1 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+    p { color: #334155; font-size: 15px; margin-bottom: 14px; }
+    .box { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin: 20px 0; }
+    input { width: 100%; padding: 12px; border: 1px solid #94a3b8; border-radius: 6px; font-size: 14px; margin-bottom: 12px; }
+    button { width: 100%; padding: 15px; background: #16a34a; color: #fff; font-weight: 900; font-size: 15px; border: none; border-radius: 6px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="badge">B2B Pre-Litigation &amp; Compliance Routing</span>
+    <h1>Direct Corporate Claim &amp; Dispute Resolution Feed</h1>
+    <p>
+      When consumers, passengers, or account holders experience service disruptions or billing disputes, public docket filings often escalate into formal regulatory complaints, bank chargebacks, or consolidated legal batches.
+    </p>
+    <p>
+      <strong>Direct Resolution Routing ($99.00 USD / Month)</strong> allows verified corporate compliance and customer experience teams to receive all claimant submissions from their designated docket in real time—resolving disputes privately with the customer before external escalation.
+    </p>
+
+    <div class="box">
+      <div style="font-size:13px;font-weight:800;color:#0f172a;margin-bottom:10px;">
+        ACTIVE DOCKET SELECTED: <span id="docketLabel" style="color:#16a34a;">GENERAL CORPORATE INTAKE</span>
+      </div>
+      <form action="https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp" method="GET">
+        <input type="hidden" name="flow_type" value="B2B_CORPORATE_SUB">
+        <input type="hidden" name="niche" value="B2B_RESOLUTION">
+        <input type="hidden" name="incident" id="incidentInput" value="corporate-intake">
+        <input type="hidden" name="tier" value="TIER_B2B_99">
+        <input type="text" name="name" required placeholder="Company Name &amp; Authorized Officer Name">
+        <input type="email" name="email" required placeholder="Internal Compliance / Resolution Desk Email (Where Claims Will Route)">
+        <input type="text" name="pnr" required placeholder="Target Docket URL or Brand Name Covered">
+        <button type="submit">Activate Direct Resolution Routing — $99.00 / Month &rarr;</button>
+      </form>
+    </div>
+    <a href="/" style="font-size:13px;color:#475569;text-decoration:underline;">&larr; Return to Preferred Outcomes Registry</a>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const d = params.get('docket') || params.get('ref');
+    if (d) {
+      document.getElementById('docketLabel').textContent = d.toUpperCase();
+      document.getElementById('incidentInput').value = d.toLowerCase();
+    }
+  </script>
+</body>
+</html>
