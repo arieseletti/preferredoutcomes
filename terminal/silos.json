@@ -468,9 +468,182 @@
       "type": "OUTAGES",
       "tier": "TIER_1_STATUTORY",
       "region": "GLOBAL"
+    },
+    "ACA566": {
+      "ts": 1794796594477,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "WJA318": {
+      "ts": 1794796604654,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "WJA714": {
+      "ts": 1794796614546,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "WJA1057": {
+      "ts": 1794796623350,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "PTA511": {
+      "ts": 1794796635358,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "KAL284": {
+      "ts": 1794796645031,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "MXD178": {
+      "ts": 1794796659160,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "QFA433": {
+      "ts": 1794796667402,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "VOZ314": {
+      "ts": 1794796676888,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "c7d068db5fb4f2af": {
+      "ts": 1794796685538,
+      "status": "LIVE",
+      "slug": "once-upon-a-farm-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "f760d6834f6e8ed7": {
+      "ts": 1794796696400,
+      "status": "LIVE",
+      "slug": "airline-ground-stop-cancellations",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "d139259260d2e288": {
+      "ts": 1794796705106,
+      "status": "SKIPPED"
     }
   },
   "active_silos": [
+    {
+      "id": "airline-ground-stop-cancellations",
+      "ts": 1794796696400,
+      "status": "LIVE",
+      "slug": "airline-ground-stop-cancellations",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "once-upon-a-farm-recall",
+      "ts": 1794796685538,
+      "status": "LIVE",
+      "slug": "once-upon-a-farm-recall",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "VOZ314",
+      "ts": 1794796676888,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "QFA433",
+      "ts": 1794796667402,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "MXD178",
+      "ts": 1794796659160,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "KAL284",
+      "ts": 1794796645031,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    {
+      "id": "PTA511",
+      "ts": 1794796635358,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "WJA1057",
+      "ts": 1794796623350,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "WJA714",
+      "ts": 1794796614546,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    {
+      "id": "WJA318",
+      "ts": 1794796604654,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    {
+      "id": "ACA566",
+      "ts": 1794796594477,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
     {
       "id": "uae-flights-cancellations-delays",
       "ts": 1794791826882,
@@ -992,9 +1165,9 @@
     }
   ],
   "cursor": {
-    "APAC_AU_WEST": 5,
+    "APAC_AU_WEST": 2,
     "EU_UK_ME": 0,
     "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 1794791567310
+  "last_flight_poll_ts": 1794796581831
 }
