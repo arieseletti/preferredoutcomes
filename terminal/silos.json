@@ -726,9 +726,107 @@
       "type": "FINANCE",
       "tier": "TIER_2_LEDGER",
       "region": "US"
+    },
+    "AAL70": {
+      "ts": 1794818189153,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "KLM1215": {
+      "ts": 1794818202082,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "EU261"
+    },
+    "24d50de6a8c4fe47": {
+      "ts": 1794818212265,
+      "status": "LIVE",
+      "slug": "att-settlement-payout-guide",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "d21ba689b6e5200e": {
+      "ts": 1794818222287,
+      "status": "LIVE",
+      "slug": "healthcare-payments-2000",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "8d873b254f985884": {
+      "ts": 1794818231474,
+      "status": "LIVE",
+      "slug": "faa-ground-stop-flight-cancellations",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "a86b5b4dbdc89d36": {
+      "ts": 1794818241882,
+      "status": "LIVE",
+      "slug": "aeromexico-cancellation-refunds",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
     }
   },
   "active_silos": [
+    {
+      "id": "aeromexico-cancellation-refunds",
+      "ts": 1794818241882,
+      "status": "LIVE",
+      "slug": "aeromexico-cancellation-refunds",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "faa-ground-stop-flight-cancellations",
+      "ts": 1794818231474,
+      "status": "LIVE",
+      "slug": "faa-ground-stop-flight-cancellations",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "healthcare-payments-2000",
+      "ts": 1794818222287,
+      "status": "LIVE",
+      "slug": "healthcare-payments-2000",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "att-settlement-payout-guide",
+      "ts": 1794818212265,
+      "status": "LIVE",
+      "slug": "att-settlement-payout-guide",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "KLM1215",
+      "ts": 1794818202082,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "EU261"
+    },
+    {
+      "id": "AAL70",
+      "ts": 1794818189153,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "cvs-settlement-deadline-today",
       "ts": 1794808329739,
@@ -1540,8 +1638,8 @@
   ],
   "cursor": {
     "APAC_AU_WEST": 3,
-    "EU_UK_ME": 0,
+    "EU_UK_ME": 5,
     "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 1794808220954
+  "last_flight_poll_ts": 1794818168921
 }
