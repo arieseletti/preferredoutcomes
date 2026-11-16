@@ -1012,9 +1012,135 @@
       "type": "OUTAGES",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
+    },
+    "AIE722": {
+      "ts": 1794853389312,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "DAL9772": {
+      "ts": 1794853404048,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "JBU1009": {
+      "ts": 1794853412624,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "DAL1942": {
+      "ts": 1794853422327,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2850": {
+      "ts": 1794853431261,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "83c8098c01af447f": {
+      "ts": 1794853440423,
+      "status": "LIVE",
+      "slug": "lakeside-pediatric-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "5931fc98f7c2a3bb": {
+      "ts": 1794853452138,
+      "status": "LIVE",
+      "slug": "flight-delay-compensation-know",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "28d438e8cfd3becf": {
+      "ts": 1794853459937,
+      "status": "LIVE",
+      "slug": "flight-cancellation-delays-guide",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
     }
   },
   "active_silos": [
+    {
+      "id": "flight-cancellation-delays-guide",
+      "ts": 1794853459937,
+      "status": "LIVE",
+      "slug": "flight-cancellation-delays-guide",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "flight-delay-compensation-know",
+      "ts": 1794853452138,
+      "status": "LIVE",
+      "slug": "flight-delay-compensation-know",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "lakeside-pediatric-data-breach",
+      "ts": 1794853440423,
+      "status": "LIVE",
+      "slug": "lakeside-pediatric-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "AAL2850",
+      "ts": 1794853431261,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "DAL1942",
+      "ts": 1794853422327,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "JBU1009",
+      "ts": 1794853412624,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "DAL9772",
+      "ts": 1794853404048,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AIE722",
+      "ts": 1794853389312,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
     {
       "id": "us-flight-ground-stop-incident",
       "ts": 1794848994652,
@@ -2151,7 +2277,7 @@
   "cursor": {
     "APAC_AU_WEST": 3,
     "EU_UK_ME": 1,
-    "AMER_LATAM": 0
+    "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 1794848906021
+  "last_flight_poll_ts": 1794853375549
 }
