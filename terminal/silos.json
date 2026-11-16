@@ -263,9 +263,436 @@
       "type": "OUTAGES",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
+    },
+    "QFA3": {
+      "ts": 1794791579634,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "QFA604": {
+      "ts": 1794791594044,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2812": {
+      "ts": 1794791607883,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "3e821ad9d8dab868": {
+      "ts": 1794791617928,
+      "status": "LIVE",
+      "slug": "hair-relaxer-lawsuit-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "a569a2af5fad4ed0": {
+      "ts": 1794791626688,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-reimbursement",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "b5064a700e4cdb4b": {
+      "ts": 1794791635383,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-compensation",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "563200d4106681af": {
+      "ts": 1794791643738,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-credit-claims",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "d1fcc52ccc3dadd0": {
+      "ts": 1794791654249,
+      "status": "LIVE",
+      "slug": "microsoft-outage-money-know",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "aaba92c701083ad6": {
+      "ts": 1794791663021,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-email-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "c19647b2c175bc5d": {
+      "ts": 1794791674436,
+      "status": "LIVE",
+      "slug": "alabama-power-fenn-church-judgment",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "ed50f34e6c08877e": {
+      "ts": 1794791683029,
+      "status": "SKIPPED"
+    },
+    "90a7796df6c778ee": {
+      "ts": 1794791692537,
+      "status": "LIVE",
+      "slug": "remitwright-medical-billing-issues",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "69db4d381fdf6248": {
+      "ts": 1794791701215,
+      "status": "LIVE",
+      "slug": "medicare-patient-denial-claims",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "fadfc1283ad056d9": {
+      "ts": 1794791710982,
+      "status": "LIVE",
+      "slug": "trump-administration-legal-challenges",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "4e9b3e88524a0c82": {
+      "ts": 1794791721716,
+      "status": "LIVE",
+      "slug": "depo-provera-lawsuit-update",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "e517133c53e0f925": {
+      "ts": 1794791729699,
+      "status": "LIVE",
+      "slug": "endurance-lawsuit-consumer-action",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "da622bd4095b66d3": {
+      "ts": 1794791737740,
+      "status": "LIVE",
+      "slug": "ai-in-medical-billing-issues",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "d9c0c38fffed746a": {
+      "ts": 1794791746551,
+      "status": "LIVE",
+      "slug": "airline-ground-stop-cancellation",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "139eb7187116c6d1": {
+      "ts": 1794791755870,
+      "status": "LIVE",
+      "slug": "faa-ends-ground-stop-delays",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "9472124027d4049c": {
+      "ts": 1794791763627,
+      "status": "LIVE",
+      "slug": "airline-schedule-change-cash",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "5ff91a3ffb3f06fb": {
+      "ts": 1794791772467,
+      "status": "LIVE",
+      "slug": "flight-cancelled-ground-stop",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "4c4b43e71e3717be": {
+      "ts": 1794791781184,
+      "status": "LIVE",
+      "slug": "dubai-flight-disruption-news",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    "ab05227de742ad1a": {
+      "ts": 1794791790342,
+      "status": "LIVE",
+      "slug": "eu-flight-delay-compensation",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "EU"
+    },
+    "2fca05759507aca4": {
+      "ts": 1794791800021,
+      "status": "LIVE",
+      "slug": "aeromexico-pilots-strike-issues",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "3fe9170cac53f7fd": {
+      "ts": 1794791809593,
+      "status": "LIVE",
+      "slug": "airline-itinerary-change-consumer-rights",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    "c03f8102270a4716": {
+      "ts": 1794791817769,
+      "status": "SKIPPED"
+    },
+    "64d4be0c30c18fc9": {
+      "ts": 1794791826882,
+      "status": "LIVE",
+      "slug": "uae-flights-cancellations-delays",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
     }
   },
   "active_silos": [
+    {
+      "id": "uae-flights-cancellations-delays",
+      "ts": 1794791826882,
+      "status": "LIVE",
+      "slug": "uae-flights-cancellations-delays",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "airline-itinerary-change-consumer-rights",
+      "ts": 1794791809593,
+      "status": "LIVE",
+      "slug": "airline-itinerary-change-consumer-rights",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "aeromexico-pilots-strike-issues",
+      "ts": 1794791800021,
+      "status": "LIVE",
+      "slug": "aeromexico-pilots-strike-issues",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "eu-flight-delay-compensation",
+      "ts": 1794791790342,
+      "status": "LIVE",
+      "slug": "eu-flight-delay-compensation",
+      "type": "CULTURE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "EU"
+    },
+    {
+      "id": "dubai-flight-disruption-news",
+      "ts": 1794791781184,
+      "status": "LIVE",
+      "slug": "dubai-flight-disruption-news",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "flight-cancelled-ground-stop",
+      "ts": 1794791772467,
+      "status": "LIVE",
+      "slug": "flight-cancelled-ground-stop",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "airline-schedule-change-cash",
+      "ts": 1794791763627,
+      "status": "LIVE",
+      "slug": "airline-schedule-change-cash",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "faa-ends-ground-stop-delays",
+      "ts": 1794791755870,
+      "status": "LIVE",
+      "slug": "faa-ends-ground-stop-delays",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "airline-ground-stop-cancellation",
+      "ts": 1794791746551,
+      "status": "LIVE",
+      "slug": "airline-ground-stop-cancellation",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "ai-in-medical-billing-issues",
+      "ts": 1794791737740,
+      "status": "LIVE",
+      "slug": "ai-in-medical-billing-issues",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "endurance-lawsuit-consumer-action",
+      "ts": 1794791729699,
+      "status": "LIVE",
+      "slug": "endurance-lawsuit-consumer-action",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "depo-provera-lawsuit-update",
+      "ts": 1794791721716,
+      "status": "LIVE",
+      "slug": "depo-provera-lawsuit-update",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "trump-administration-legal-challenges",
+      "ts": 1794791710982,
+      "status": "LIVE",
+      "slug": "trump-administration-legal-challenges",
+      "type": "POLITICS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "medicare-patient-denial-claims",
+      "ts": 1794791701215,
+      "status": "LIVE",
+      "slug": "medicare-patient-denial-claims",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "remitwright-medical-billing-issues",
+      "ts": 1794791692537,
+      "status": "LIVE",
+      "slug": "remitwright-medical-billing-issues",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "alabama-power-fenn-church-judgment",
+      "ts": 1794791674436,
+      "status": "LIVE",
+      "slug": "alabama-power-fenn-church-judgment",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outlook-email-outage",
+      "ts": 1794791663021,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-email-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outage-money-know",
+      "ts": 1794791654249,
+      "status": "LIVE",
+      "slug": "microsoft-outage-money-know",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-outlook-credit-claims",
+      "ts": 1794791643738,
+      "status": "LIVE",
+      "slug": "microsoft-outlook-credit-claims",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-365-outage-compensation",
+      "ts": 1794791635383,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-compensation",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "microsoft-365-outage-reimbursement",
+      "ts": 1794791626688,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-reimbursement",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "hair-relaxer-lawsuit-settlement",
+      "ts": 1794791617928,
+      "status": "LIVE",
+      "slug": "hair-relaxer-lawsuit-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "AAL2812",
+      "ts": 1794791607883,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "QFA604",
+      "ts": 1794791594044,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "QFA3",
+      "ts": 1794791579634,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "microsoft-365-downtime-compensation",
       "ts": 1794786418822,
@@ -565,9 +992,9 @@
     }
   ],
   "cursor": {
-    "APAC_AU_WEST": 0,
+    "APAC_AU_WEST": 5,
     "EU_UK_ME": 0,
     "AMER_LATAM": 5
   },
-  "last_flight_poll_ts": 1794786119750
+  "last_flight_poll_ts": 1794791567310
 }
