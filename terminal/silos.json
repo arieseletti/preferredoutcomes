@@ -1143,9 +1143,54 @@
       "type": "OUTAGES",
       "tier": "TIER_2_LEDGER",
       "region": "GLOBAL"
+    },
+    "AAL1285": {
+      "ts": 1794862011915,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "LPE2945": {
+      "ts": 1794862023616,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "ANAC400"
+    },
+    "TAM3639": {
+      "ts": 1794862033022,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "ANAC400"
     }
   },
   "active_silos": [
+    {
+      "id": "TAM3639",
+      "ts": 1794862033022,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "ANAC400"
+    },
+    {
+      "id": "LPE2945",
+      "ts": 1794862023616,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "ANAC400"
+    },
+    {
+      "id": "AAL1285",
+      "ts": 1794862011915,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
     {
       "id": "spain-strike-air-passengers",
       "ts": 1794857540860,
@@ -2431,7 +2476,7 @@
   "cursor": {
     "APAC_AU_WEST": 3,
     "EU_UK_ME": 1,
-    "AMER_LATAM": 10
+    "AMER_LATAM": 1
   },
-  "last_flight_poll_ts": 1794857417135
+  "last_flight_poll_ts": 1794861996623
 }
