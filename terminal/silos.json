@@ -834,9 +834,261 @@
       "type": "OUTAGES",
       "tier": "TIER_1_STATUTORY",
       "region": "US"
+    },
+    "RPA3606": {
+      "ts": 1794843351871,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
+    "GJS4618": {
+      "ts": 1794843361027,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "SWA590": {
+      "ts": 1794843378943,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "SKW5977": {
+      "ts": 1794843394926,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL2656": {
+      "ts": 1794843404548,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL1226": {
+      "ts": 1794843419432,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "JIA5551": {
+      "ts": 1794843432022,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL1702": {
+      "ts": 1794843440540,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL3142": {
+      "ts": 1794843450448,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "AAL621": {
+      "ts": 1794843458636,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    "102628f7dda8eca5": {
+      "ts": 1794843467677,
+      "status": "LIVE",
+      "slug": "johnson-controls-data-breach-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "cab72bd71cb85eea": {
+      "ts": 1794843476731,
+      "status": "LIVE",
+      "slug": "nemours-foundation-erisa-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "4972860001e67d29": {
+      "ts": 1794843486099,
+      "status": "LIVE",
+      "slug": "food-recalls-nc-thanksgiving",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "0243d5a1aff1de59": {
+      "ts": 1794843494897,
+      "status": "LIVE",
+      "slug": "faa-ground-stop-consumer-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "cfd81b63ada52664": {
+      "ts": 1794843503850,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-consumers-impacted",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "8b3ceeaf301ba4bc": {
+      "ts": 1794843513877,
+      "status": "LIVE",
+      "slug": "flight-canceled-or-delayed",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
     }
   },
   "active_silos": [
+    {
+      "id": "flight-canceled-or-delayed",
+      "ts": 1794843513877,
+      "status": "LIVE",
+      "slug": "flight-canceled-or-delayed",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-365-outage-consumers-impacted",
+      "ts": 1794843503850,
+      "status": "LIVE",
+      "slug": "microsoft-365-outage-consumers-impacted",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "faa-ground-stop-consumer-rights",
+      "ts": 1794843494897,
+      "status": "LIVE",
+      "slug": "faa-ground-stop-consumer-rights",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "food-recalls-nc-thanksgiving",
+      "ts": 1794843486099,
+      "status": "LIVE",
+      "slug": "food-recalls-nc-thanksgiving",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "nemours-foundation-erisa-settlement",
+      "ts": 1794843476731,
+      "status": "LIVE",
+      "slug": "nemours-foundation-erisa-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "johnson-controls-data-breach-settlement",
+      "ts": 1794843467677,
+      "status": "LIVE",
+      "slug": "johnson-controls-data-breach-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "AAL621",
+      "ts": 1794843458636,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL3142",
+      "ts": 1794843450448,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL1702",
+      "ts": 1794843440540,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "JIA5551",
+      "ts": 1794843432022,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL1226",
+      "ts": 1794843419432,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "AAL2656",
+      "ts": 1794843404548,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "SKW5977",
+      "ts": 1794843394926,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "SWA590",
+      "ts": 1794843378943,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "GJS4618",
+      "ts": 1794843361027,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US_DOT"
+    },
+    {
+      "id": "RPA3606",
+      "ts": 1794843351871,
+      "status": "LIVE",
+      "type": "AVIATION",
+      "tier": "TIER_1_STATUTORY",
+      "region": "APPR"
+    },
     {
       "id": "faa-ground-stop-refunds-rights",
       "ts": 1794830589744,
@@ -1771,7 +2023,7 @@
   "cursor": {
     "APAC_AU_WEST": 3,
     "EU_UK_ME": 1,
-    "AMER_LATAM": 5
+    "AMER_LATAM": 9
   },
-  "last_flight_poll_ts": 1794830535509
+  "last_flight_poll_ts": 1794843336926
 }
