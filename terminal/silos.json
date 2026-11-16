@@ -451,9 +451,1757 @@
       "type": "OUTAGES",
       "tier": "TIER_2_LEDGER",
       "region": "US"
+    },
+    "92f4805d9e7c476b": {
+      "ts": 1794870578283,
+      "status": "LIVE",
+      "slug": "microsoft-confirms-services-restored",
+      "master_id": "microsoft-365-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    "aef4720e1592de4a": {
+      "ts": 1794870578344,
+      "status": "LIVE",
+      "slug": "microsoft-global-outage-bug-identified",
+      "master_id": "microsoft-365-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "AU"
+    },
+    "b866e73580ae6335": {
+      "ts": 1794870578772,
+      "status": "LIVE",
+      "slug": "park-dental-data-breach-settlement",
+      "master_id": "park-dental-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "1c32f63bd8620df4": {
+      "ts": 1794870578794,
+      "status": "LIVE",
+      "slug": "restaurant-owner-fined-rat-infestation",
+      "master_id": "restaurant-rat-infestation",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    "da45a65cdd04338e": {
+      "ts": 1794870578852,
+      "status": "LIVE",
+      "slug": "bridgerton-star-boycotts-hbo",
+      "master_id": "bridgerton-hbo-boycott",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "28c692736a77a3fe": {
+      "ts": 1794870578904,
+      "status": "LIVE",
+      "slug": "jpmorgan-chase-online-banking-delays",
+      "master_id": "jpmorgan-chase-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "NA"
+    },
+    "46236ae2009766ed": {
+      "ts": 1794870578941,
+      "status": "LIVE",
+      "slug": "mobilisation-17-novembre-trains-ports",
+      "master_id": "mobilisation-gr-ve",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    "6398e4b44b975f3e": {
+      "ts": 1794870579197,
+      "status": "LIVE",
+      "slug": "caixa-fora-do-ar-pix-indisponivel",
+      "master_id": "caixa-pix-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "BR"
+    },
+    "3b64fd77bc10719c": {
+      "ts": 1794870579219,
+      "status": "LIVE",
+      "slug": "machine-gun-kelly-backlash-homophobic-tweet",
+      "master_id": "machine-gun-kelly-backlash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "f566da807d0491bd": {
+      "ts": 1794870579245,
+      "status": "LIVE",
+      "slug": "sindicatos-huelga-ferrocarril-seguridad",
+      "master_id": "sindicatos-huelga",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    "273d52ce10d601de": {
+      "ts": 1794870579781,
+      "status": "LIVE",
+      "slug": "profeco-quejas-consumidores-buen-fin",
+      "master_id": "profeco-quejas",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    "10b152fe2e207926": {
+      "ts": 1794870580381,
+      "status": "LIVE",
+      "slug": "sciopero-trenitalia-novembre-2026",
+      "master_id": "trenitalia-sciopero",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    "41e8a37a03733dc8": {
+      "ts": 1794870584933,
+      "status": "LIVE",
+      "slug": "microsoft-outage-cause-revealed",
+      "master_id": "microsoft-365-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "AU"
+    },
+    "1ecf72d0920a1065": {
+      "ts": 1794870585183,
+      "status": "LIVE",
+      "slug": "new-leader-chosen-jackson-county-library",
+      "master_id": "jackson-county-library-leadership",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "3a52abb1e6ade0fd": {
+      "ts": 1794870585287,
+      "status": "LIVE",
+      "slug": "universal-credits-high-court-ruling",
+      "master_id": "universal-credits-tax-precedent",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "ee1824a07aa072f4": {
+      "ts": 1794870585418,
+      "status": "LIVE",
+      "slug": "landlord-charged-murder-disabled-tenant",
+      "master_id": "landlord-murder-tenant",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "0a8d13e45b21d589": {
+      "ts": 1794870585419,
+      "status": "LIVE",
+      "slug": "martha-kalifatidis-breaks-silence",
+      "master_id": "martha-kalifatidis-backlash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "294b5c2cf030fb09": {
+      "ts": 1794870585699,
+      "status": "LIVE",
+      "slug": "buen-fin-2026-profeco-inconformidades",
+      "master_id": "profeco-buen-fin",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    "7f6c4c89f6e0acc1": {
+      "ts": 1794870585734,
+      "status": "LIVE",
+      "slug": "outlook-falha-global-microsoft",
+      "master_id": "microsoft-outlook-falha",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "BR"
+    },
+    "01c8b62f82996866": {
+      "ts": 1794870585819,
+      "status": "LIVE",
+      "slug": "repsol-inicia-via-judicial-apagon",
+      "master_id": "repsol-apagon",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    "62d69176bd79f582": {
+      "ts": 1794870585940,
+      "status": "LIVE",
+      "slug": "costway-high-chairs-recall-safety",
+      "master_id": "costway-high-chair-recall",
+      "type": "RECALLS",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "09c26f960132804e": {
+      "ts": 1794870586143,
+      "status": "LIVE",
+      "slug": "greve-transports-attentes-novembre",
+      "master_id": "greve-transports",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    "8ad86e986868fe81": {
+      "ts": 1794870586194,
+      "status": "LIVE",
+      "slug": "huelga-trenes-servicios-minimos",
+      "master_id": "tren-huelga",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    "1744c8f864410020": {
+      "ts": 1794870586473,
+      "status": "LIVE",
+      "slug": "sciopero-generale-20-novembre-torino",
+      "master_id": "sciopero-generale-manifestazione",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    "dffc70eeeb58418f": {
+      "ts": 1794870590828,
+      "status": "LIVE",
+      "slug": "hampshire-council-tax-rise",
+      "master_id": "hampshire-council-tax",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "31dc37ee4fa2b1a0": {
+      "ts": 1794870591093,
+      "status": "LIVE",
+      "slug": "new-york-couple-neighbour-threats",
+      "master_id": "new-york-neighbour-threats",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "27e344de1a34f804": {
+      "ts": 1794870591108,
+      "status": "LIVE",
+      "slug": "customers-major-us-banks-report-outages",
+      "master_id": "microsoft-365-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "NA"
+    },
+    "eeaf2d8691061c15": {
+      "ts": 1794870591196,
+      "status": "LIVE",
+      "slug": "youth-atv-recall-crash-hazard",
+      "master_id": "youth-atv-recall",
+      "type": "RECALLS",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "43a26052a75db799": {
+      "ts": 1794870591294,
+      "status": "LIVE",
+      "slug": "housing-associations-dispute-dalmarnock-report",
+      "master_id": "dalmarnock-village-dispute",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    "bebb7ca2b19fb8db": {
+      "ts": 1794870591310,
+      "status": "LIVE",
+      "slug": "simpsons-predict-power-outage-uk",
+      "master_id": "simpsons-power-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "UK"
+    },
+    "86d11f7cdb4b33dd": {
+      "ts": 1794870591407,
+      "status": "LIVE",
+      "slug": "appel-national-greve-charente-maritime",
+      "master_id": "greve-charente-maritime",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    "a3f458fb63036319": {
+      "ts": 1794870591530,
+      "status": "LIVE",
+      "slug": "trump-jensen-huang-toxic-masculinity",
+      "master_id": "trump-toxic-masculinity",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "b8caeea457f264b3": {
+      "ts": 1794870591551,
+      "status": "LIVE",
+      "slug": "repsol-demanda-iberdrola-endesa",
+      "master_id": "repsol-apagon",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    "a03ebf7affcc1c14": {
+      "ts": 1794870591605,
+      "status": "LIVE",
+      "slug": "mullinax-ford-data-breach-settlement",
+      "master_id": "mullinax-ford-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "bf6cb63001889164": {
+      "ts": 1794870591689,
+      "status": "LIVE",
+      "slug": "microsoft-365-fora-do-ar-alemanha",
+      "master_id": "microsoft-365-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "BR"
+    },
+    "0e7565bbf720c1bf": {
+      "ts": 1794870591766,
+      "status": "LIVE",
+      "slug": "huelga-ferroviaria-seguridad-laboral",
+      "master_id": "huelga-ferroviaria",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    "1246e7a1057b0f6b": {
+      "ts": 1794870595798,
+      "status": "LIVE",
+      "slug": "dollar-general-class-action-settlement",
+      "master_id": "dollar-general-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "426fbc0159207951": {
+      "ts": 1794870595851,
+      "status": "LIVE",
+      "slug": "lsu-lane-kiffin-backlash-texas-loss",
+      "master_id": "lane-kiffin-backlash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "258e93dbd2de97eb": {
+      "ts": 1794870595937,
+      "status": "LIVE",
+      "slug": "california-voters-ban-wealth-taxes",
+      "master_id": "california-wealth-tax-ban",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "ccd0676df5002e56": {
+      "ts": 1794870595982,
+      "status": "LIVE",
+      "slug": "viral-udaipur-livestream-consent-debate",
+      "master_id": "udaipur-livestream-debate",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "5d1c4ef79e1eac27": {
+      "ts": 1794870596147,
+      "status": "LIVE",
+      "slug": "customers-us-big-banks-account-issues",
+      "master_id": "big-banks-account-issues",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "NA"
+    },
+    "eb08a03da0f8d3e3": {
+      "ts": 1794870596161,
+      "status": "LIVE",
+      "slug": "privy-council-dismisses-dindial-appeal",
+      "master_id": "dindial-hardware-appeal",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    "69729afe8d667a75": {
+      "ts": 1794870596218,
+      "status": "LIVE",
+      "slug": "medline-reports-additional-deaths-injuries",
+      "master_id": "medline-bed-recall",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "b5d80c502730f5f4": {
+      "ts": 1794870596237,
+      "status": "LIVE",
+      "slug": "united-airlines-widespread-system-outage",
+      "master_id": "united-airlines-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "AU"
+    },
+    "383de6d224a296d0": {
+      "ts": 1794870596308,
+      "status": "LIVE",
+      "slug": "california-demanda-openai-riesgos-publico",
+      "master_id": "california-openai-demand",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    "7cbc37c5a592a667": {
+      "ts": 1794870596395,
+      "status": "LIVE",
+      "slug": "united-airlines-falla-sistemas",
+      "master_id": "united-airlines-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "MX"
+    },
+    "c4c582466edd3787": {
+      "ts": 1794870596537,
+      "status": "LIVE",
+      "slug": "can-mold-make-you-kill",
+      "master_id": "mold-health-risk",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    "8723a0ddee3f0cd0": {
+      "ts": 1794870598042,
+      "status": "LIVE",
+      "slug": "sciopero-generale-20-novembre",
+      "master_id": "sciopero-generale",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    "9688d03163cc6680": {
+      "ts": 1794870602138,
+      "status": "LIVE",
+      "slug": "rising-rents-pushing-out-young-couples",
+      "master_id": "rising-rents-perth",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "AU"
+    },
+    "3355a8f18874d4d4": {
+      "ts": 1794870602258,
+      "status": "LIVE",
+      "slug": "microsoft-falla-servicio-365",
+      "master_id": "microsoft-365-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "MX"
+    },
+    "a40ce647911a08b3": {
+      "ts": 1794870602263,
+      "status": "LIVE",
+      "slug": "new-online-outage-map-elk-energy",
+      "master_id": "elk-energy-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "NA"
+    },
+    "a0832a5291074d15": {
+      "ts": 1794870602264,
+      "status": "LIVE",
+      "slug": "sheringham-protestors-cost-council",
+      "master_id": "sheringham-bus-shelter",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    "26bc130ec8b2638c": {
+      "ts": 1794870602426,
+      "status": "LIVE",
+      "slug": "police-ban-protests-paris-schools",
+      "master_id": "paris-protest-ban",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "4bd08b7216eb222f": {
+      "ts": 1794870602524,
+      "status": "LIVE",
+      "slug": "is-boracay-really-this-crowded",
+      "master_id": "boracay-crowd-photos",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "f8726ab81556fc8a": {
+      "ts": 1794870602678,
+      "status": "LIVE",
+      "slug": "huelga-trenes-valencia-noviembre",
+      "master_id": "tren-huelga",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    "bddcbb9f1fec0550": {
+      "ts": 1794870602725,
+      "status": "LIVE",
+      "slug": "truffa-finto-carabiniere-anziano-ucciso",
+      "master_id": "truffa-finto-carabiniere",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    "27a28ee96e21e6ab": {
+      "ts": 1794870603771,
+      "status": "LIVE",
+      "slug": "who-can-claim-2500-lakeside-settlement",
+      "master_id": "lakeside-pediatric-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "71460514dacf1cca": {
+      "ts": 1794870604087,
+      "status": "LIVE",
+      "slug": "china-primeiro-voo-tripulado-eletrico",
+      "master_id": "china-voo-eletrico",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "BR"
+    },
+    "90bd0e5d084fb050": {
+      "ts": 1794870604219,
+      "status": "LIVE",
+      "slug": "greve-manifestations-17-novembre",
+      "master_id": "greve-manifestations",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    "d51d5c0734af353b": {
+      "ts": 1794870604419,
+      "status": "LIVE",
+      "slug": "bose-recalls-s1-pro-battery-packs",
+      "master_id": "bose-recall",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "a5680ea23b2f6dbd": {
+      "ts": 1794870608426,
+      "status": "LIVE",
+      "slug": "mumbai-woman-lunch-viral-post",
+      "master_id": "mumbai-woman-lunch",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "df910e8ec706dbf7": {
+      "ts": 1794870608660,
+      "status": "LIVE",
+      "slug": "cvs-settlement-deadline-claim",
+      "master_id": "cvs-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    "30e0f632305e509e": {
+      "ts": 1794870608734,
+      "status": "LIVE",
+      "slug": "united-airlines-widespread-system-outage",
+      "master_id": "united-airlines-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "AU"
+    },
+    "13c6945082ee98f4": {
+      "ts": 1794870608860,
+      "status": "LIVE",
+      "slug": "servicios-minimos-66-rodalies-huelga",
+      "master_id": "rodalies-huelga",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    "fe9ef61c00c49356": {
+      "ts": 1794870609006,
+      "status": "LIVE",
+      "slug": "karanka-zanja-polemica-lamine-yamal",
+      "master_id": "karanka-lamine-yamal",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    "a9269cbb6cd2d918": {
+      "ts": 1794870609110,
+      "status": "LIVE",
+      "slug": "greve-du-17-novembre-paris",
+      "master_id": "greve-manifestation-paris",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    "6820cd6ef63ee46e": {
+      "ts": 1794870609145,
+      "status": "LIVE",
+      "slug": "papa-leao-xiv-voo-cabine-pilotos",
+      "master_id": "papa-leao-voo",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "BR"
+    },
+    "855480ec536cfd2e": {
+      "ts": 1794870609326,
+      "status": "LIVE",
+      "slug": "sciopero-trasporti-novembre-lombardia",
+      "master_id": "trasporti-sciopero",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    "a578bb4ea3eb0c14": {
+      "ts": 1794870609554,
+      "status": "LIVE",
+      "slug": "worldwide-microsoft-outage-nhs-patients",
+      "master_id": "microsoft-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    "7cf7e8f5de2eb5d2": {
+      "ts": 1794870610018,
+      "status": "LIVE",
+      "slug": "mike-vrabel-backlash-pre-game-celebration",
+      "master_id": "mike-vrabel-backlash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "e78d4b49795932cb": {
+      "ts": 1794870610943,
+      "status": "LIVE",
+      "slug": "supermercado-culiacan-canasta-basica-cara",
+      "master_id": "supermercado-culiacan",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    "dea8ca2c2534efff": {
+      "ts": 1794870612912,
+      "status": "LIVE",
+      "slug": "man-arrested-for-roommate-murder",
+      "master_id": "hallandale-beach-murder",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "1285199642f76609": {
+      "ts": 1794870616631,
+      "status": "LIVE",
+      "slug": "tech-chaos-hits-us-again",
+      "master_id": "major-airline-outage",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "AU"
+    },
+    "0f4082722845a07d": {
+      "ts": 1794870616667,
+      "status": "LIVE",
+      "slug": "save-our-community-hubs-petition",
+      "master_id": "community-hubs-petition",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "58976da5a7652a95": {
+      "ts": 1794870616748,
+      "status": "LIVE",
+      "slug": "the-bank-outage-may-have-nothing-to-do-with-your-bank",
+      "master_id": "bank-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    "c85c7aaee522c29f": {
+      "ts": 1794870616867,
+      "status": "LIVE",
+      "slug": "chase-bank-of-america-fora-do-ar",
+      "master_id": "chase-bank-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "BR"
+    },
+    "0f43939b2d284c08": {
+      "ts": 1794870616984,
+      "status": "LIVE",
+      "slug": "raffi-audit-rans-contract-controversy",
+      "master_id": "raffi-rans-contract",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "5a8996d7b8ad72b3": {
+      "ts": 1794870617028,
+      "status": "LIVE",
+      "slug": "bank-outage-customers-access-funds",
+      "master_id": "bank-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "NA"
+    },
+    "8e21069137286aa1": {
+      "ts": 1794870617059,
+      "status": "LIVE",
+      "slug": "bancos-eeuu-caidas-servicio-informatico",
+      "master_id": "bancos-caidas-servicio",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    "28e27047c2604718": {
+      "ts": 1794870617191,
+      "status": "LIVE",
+      "slug": "gm-lawsuit-brake-failure-recall",
+      "master_id": "gm-brake-failure",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    "8bcf912832839698": {
+      "ts": 1794870617242,
+      "status": "LIVE",
+      "slug": "marcas-retiran-publicidad-tiktok",
+      "master_id": "tiktok-publicidad-retirada",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    "6545e1c7491ffdfa": {
+      "ts": 1794870617530,
+      "status": "LIVE",
+      "slug": "united-airlines-falla-general-sistemas",
+      "master_id": "united-airlines-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "MX"
+    },
+    "54eba0a3dc357fde": {
+      "ts": 1794870617594,
+      "status": "LIVE",
+      "slug": "greve-du-17-novembre-mobilisation",
+      "master_id": "greve-17-novembre",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    "40cbdf78b414c003": {
+      "ts": 1794870618792,
+      "status": "LIVE",
+      "slug": "telangana-high-court-gst-cancellation",
+      "master_id": "telangana-gst-cancellation",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "dee06f41cce58408": {
+      "ts": 1794870622660,
+      "status": "LIVE",
+      "slug": "cvs-class-action-settlement-deadline",
+      "master_id": "cvs-class-action",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    "e51a0e9af1baf87d": {
+      "ts": 1794870622692,
+      "status": "LIVE",
+      "slug": "bcp-council-tax-increase-16-percent",
+      "master_id": "bcp-council-tax-increase",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "802e978cf431e617": {
+      "ts": 1794870622798,
+      "status": "LIVE",
+      "slug": "judge-allows-tenant-appeal-mould-claim",
+      "master_id": "tenant-appeal-mould",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    "b22cf4ef46a43c29": {
+      "ts": 1794870622834,
+      "status": "LIVE",
+      "slug": "us-mother-retrial-childrens-deaths",
+      "master_id": "mother-retrial",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    "88f7982f058d8121": {
+      "ts": 1794870622860,
+      "status": "LIVE",
+      "slug": "high-speed-rail-housing-dispute",
+      "master_id": "high-speed-rail-dispute",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    "d6ef084aa152fd9d": {
+      "ts": 1794870623019,
+      "status": "LIVE",
+      "slug": "sciopero-trasporti-roma-rischio",
+      "master_id": "roma-transport-strike",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    "6583af36784e7ce7": {
+      "ts": 1794870623048,
+      "status": "LIVE",
+      "slug": "investor-notice-once-upon-a-farm",
+      "master_id": "once-upon-a-farm-recall",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    "e3f992434672e789": {
+      "ts": 1794870623085,
+      "status": "LIVE",
+      "slug": "indignacion-en-paises-bajos",
+      "master_id": "indignacion-paises-bajos",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
     }
   },
   "active_silos": [
+    {
+      "id": "indignacion-en-paises-bajos",
+      "ts": 1794870623085,
+      "status": "LIVE",
+      "slug": "indignacion-en-paises-bajos",
+      "master_id": "indignacion-paises-bajos",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    {
+      "id": "investor-notice-once-upon-a-farm",
+      "ts": 1794870623048,
+      "status": "LIVE",
+      "slug": "investor-notice-once-upon-a-farm",
+      "master_id": "once-upon-a-farm-recall",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "sciopero-trasporti-roma-rischio",
+      "ts": 1794870623019,
+      "status": "LIVE",
+      "slug": "sciopero-trasporti-roma-rischio",
+      "master_id": "roma-transport-strike",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    {
+      "id": "high-speed-rail-housing-dispute",
+      "ts": 1794870622860,
+      "status": "LIVE",
+      "slug": "high-speed-rail-housing-dispute",
+      "master_id": "high-speed-rail-dispute",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    {
+      "id": "us-mother-retrial-childrens-deaths",
+      "ts": 1794870622834,
+      "status": "LIVE",
+      "slug": "us-mother-retrial-childrens-deaths",
+      "master_id": "mother-retrial",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "judge-allows-tenant-appeal-mould-claim",
+      "ts": 1794870622798,
+      "status": "LIVE",
+      "slug": "judge-allows-tenant-appeal-mould-claim",
+      "master_id": "tenant-appeal-mould",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "bcp-council-tax-increase-16-percent",
+      "ts": 1794870622692,
+      "status": "LIVE",
+      "slug": "bcp-council-tax-increase-16-percent",
+      "master_id": "bcp-council-tax-increase",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "cvs-class-action-settlement-deadline",
+      "ts": 1794870622660,
+      "status": "LIVE",
+      "slug": "cvs-class-action-settlement-deadline",
+      "master_id": "cvs-class-action",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "telangana-high-court-gst-cancellation",
+      "ts": 1794870618792,
+      "status": "LIVE",
+      "slug": "telangana-high-court-gst-cancellation",
+      "master_id": "telangana-gst-cancellation",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "greve-du-17-novembre-mobilisation",
+      "ts": 1794870617594,
+      "status": "LIVE",
+      "slug": "greve-du-17-novembre-mobilisation",
+      "master_id": "greve-17-novembre",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    {
+      "id": "united-airlines-falla-general-sistemas",
+      "ts": 1794870617530,
+      "status": "LIVE",
+      "slug": "united-airlines-falla-general-sistemas",
+      "master_id": "united-airlines-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "MX"
+    },
+    {
+      "id": "marcas-retiran-publicidad-tiktok",
+      "ts": 1794870617242,
+      "status": "LIVE",
+      "slug": "marcas-retiran-publicidad-tiktok",
+      "master_id": "tiktok-publicidad-retirada",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    {
+      "id": "gm-lawsuit-brake-failure-recall",
+      "ts": 1794870617191,
+      "status": "LIVE",
+      "slug": "gm-lawsuit-brake-failure-recall",
+      "master_id": "gm-brake-failure",
+      "type": "RECALLS",
+      "tier": "TIER_1_STATUTORY",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "bancos-eeuu-caidas-servicio-informatico",
+      "ts": 1794870617059,
+      "status": "LIVE",
+      "slug": "bancos-eeuu-caidas-servicio-informatico",
+      "master_id": "bancos-caidas-servicio",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    {
+      "id": "bank-outage-customers-access-funds",
+      "ts": 1794870617028,
+      "status": "LIVE",
+      "slug": "bank-outage-customers-access-funds",
+      "master_id": "bank-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "NA"
+    },
+    {
+      "id": "raffi-audit-rans-contract-controversy",
+      "ts": 1794870616984,
+      "status": "LIVE",
+      "slug": "raffi-audit-rans-contract-controversy",
+      "master_id": "raffi-rans-contract",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "chase-bank-of-america-fora-do-ar",
+      "ts": 1794870616867,
+      "status": "LIVE",
+      "slug": "chase-bank-of-america-fora-do-ar",
+      "master_id": "chase-bank-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "BR"
+    },
+    {
+      "id": "the-bank-outage-may-have-nothing-to-do-with-your-bank",
+      "ts": 1794870616748,
+      "status": "LIVE",
+      "slug": "the-bank-outage-may-have-nothing-to-do-with-your-bank",
+      "master_id": "bank-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    {
+      "id": "save-our-community-hubs-petition",
+      "ts": 1794870616667,
+      "status": "LIVE",
+      "slug": "save-our-community-hubs-petition",
+      "master_id": "community-hubs-petition",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "tech-chaos-hits-us-again",
+      "ts": 1794870616631,
+      "status": "LIVE",
+      "slug": "tech-chaos-hits-us-again",
+      "master_id": "major-airline-outage",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "AU"
+    },
+    {
+      "id": "man-arrested-for-roommate-murder",
+      "ts": 1794870612912,
+      "status": "LIVE",
+      "slug": "man-arrested-for-roommate-murder",
+      "master_id": "hallandale-beach-murder",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "supermercado-culiacan-canasta-basica-cara",
+      "ts": 1794870610943,
+      "status": "LIVE",
+      "slug": "supermercado-culiacan-canasta-basica-cara",
+      "master_id": "supermercado-culiacan",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    {
+      "id": "mike-vrabel-backlash-pre-game-celebration",
+      "ts": 1794870610018,
+      "status": "LIVE",
+      "slug": "mike-vrabel-backlash-pre-game-celebration",
+      "master_id": "mike-vrabel-backlash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "worldwide-microsoft-outage-nhs-patients",
+      "ts": 1794870609554,
+      "status": "LIVE",
+      "slug": "worldwide-microsoft-outage-nhs-patients",
+      "master_id": "microsoft-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    {
+      "id": "sciopero-trasporti-novembre-lombardia",
+      "ts": 1794870609326,
+      "status": "LIVE",
+      "slug": "sciopero-trasporti-novembre-lombardia",
+      "master_id": "trasporti-sciopero",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    {
+      "id": "papa-leao-xiv-voo-cabine-pilotos",
+      "ts": 1794870609145,
+      "status": "LIVE",
+      "slug": "papa-leao-xiv-voo-cabine-pilotos",
+      "master_id": "papa-leao-voo",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "BR"
+    },
+    {
+      "id": "greve-du-17-novembre-paris",
+      "ts": 1794870609110,
+      "status": "LIVE",
+      "slug": "greve-du-17-novembre-paris",
+      "master_id": "greve-manifestation-paris",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    {
+      "id": "karanka-zanja-polemica-lamine-yamal",
+      "ts": 1794870609006,
+      "status": "LIVE",
+      "slug": "karanka-zanja-polemica-lamine-yamal",
+      "master_id": "karanka-lamine-yamal",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    {
+      "id": "servicios-minimos-66-rodalies-huelga",
+      "ts": 1794870608860,
+      "status": "LIVE",
+      "slug": "servicios-minimos-66-rodalies-huelga",
+      "master_id": "rodalies-huelga",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    {
+      "id": "united-airlines-widespread-system-outage",
+      "ts": 1794870608734,
+      "status": "LIVE",
+      "slug": "united-airlines-widespread-system-outage",
+      "master_id": "united-airlines-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "AU"
+    },
+    {
+      "id": "cvs-settlement-deadline-claim",
+      "ts": 1794870608660,
+      "status": "LIVE",
+      "slug": "cvs-settlement-deadline-claim",
+      "master_id": "cvs-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "mumbai-woman-lunch-viral-post",
+      "ts": 1794870608426,
+      "status": "LIVE",
+      "slug": "mumbai-woman-lunch-viral-post",
+      "master_id": "mumbai-woman-lunch",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "bose-recalls-s1-pro-battery-packs",
+      "ts": 1794870604419,
+      "status": "LIVE",
+      "slug": "bose-recalls-s1-pro-battery-packs",
+      "master_id": "bose-recall",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "greve-manifestations-17-novembre",
+      "ts": 1794870604219,
+      "status": "LIVE",
+      "slug": "greve-manifestations-17-novembre",
+      "master_id": "greve-manifestations",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    {
+      "id": "china-primeiro-voo-tripulado-eletrico",
+      "ts": 1794870604087,
+      "status": "LIVE",
+      "slug": "china-primeiro-voo-tripulado-eletrico",
+      "master_id": "china-voo-eletrico",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "BR"
+    },
+    {
+      "id": "who-can-claim-2500-lakeside-settlement",
+      "ts": 1794870603771,
+      "status": "LIVE",
+      "slug": "who-can-claim-2500-lakeside-settlement",
+      "master_id": "lakeside-pediatric-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "truffa-finto-carabiniere-anziano-ucciso",
+      "ts": 1794870602725,
+      "status": "LIVE",
+      "slug": "truffa-finto-carabiniere-anziano-ucciso",
+      "master_id": "truffa-finto-carabiniere",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    {
+      "id": "huelga-trenes-valencia-noviembre",
+      "ts": 1794870602678,
+      "status": "LIVE",
+      "slug": "huelga-trenes-valencia-noviembre",
+      "master_id": "tren-huelga",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    {
+      "id": "is-boracay-really-this-crowded",
+      "ts": 1794870602524,
+      "status": "LIVE",
+      "slug": "is-boracay-really-this-crowded",
+      "master_id": "boracay-crowd-photos",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "police-ban-protests-paris-schools",
+      "ts": 1794870602426,
+      "status": "LIVE",
+      "slug": "police-ban-protests-paris-schools",
+      "master_id": "paris-protest-ban",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "sheringham-protestors-cost-council",
+      "ts": 1794870602264,
+      "status": "LIVE",
+      "slug": "sheringham-protestors-cost-council",
+      "master_id": "sheringham-bus-shelter",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    {
+      "id": "new-online-outage-map-elk-energy",
+      "ts": 1794870602263,
+      "status": "LIVE",
+      "slug": "new-online-outage-map-elk-energy",
+      "master_id": "elk-energy-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "NA"
+    },
+    {
+      "id": "microsoft-falla-servicio-365",
+      "ts": 1794870602258,
+      "status": "LIVE",
+      "slug": "microsoft-falla-servicio-365",
+      "master_id": "microsoft-365-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "MX"
+    },
+    {
+      "id": "rising-rents-pushing-out-young-couples",
+      "ts": 1794870602138,
+      "status": "LIVE",
+      "slug": "rising-rents-pushing-out-young-couples",
+      "master_id": "rising-rents-perth",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "AU"
+    },
+    {
+      "id": "sciopero-generale-20-novembre",
+      "ts": 1794870598042,
+      "status": "LIVE",
+      "slug": "sciopero-generale-20-novembre",
+      "master_id": "sciopero-generale",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    {
+      "id": "can-mold-make-you-kill",
+      "ts": 1794870596537,
+      "status": "LIVE",
+      "slug": "can-mold-make-you-kill",
+      "master_id": "mold-health-risk",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    {
+      "id": "united-airlines-falla-sistemas",
+      "ts": 1794870596395,
+      "status": "LIVE",
+      "slug": "united-airlines-falla-sistemas",
+      "master_id": "united-airlines-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "MX"
+    },
+    {
+      "id": "california-demanda-openai-riesgos-publico",
+      "ts": 1794870596308,
+      "status": "LIVE",
+      "slug": "california-demanda-openai-riesgos-publico",
+      "master_id": "california-openai-demand",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    {
+      "id": "united-airlines-widespread-system-outage",
+      "ts": 1794870596237,
+      "status": "LIVE",
+      "slug": "united-airlines-widespread-system-outage",
+      "master_id": "united-airlines-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "AU"
+    },
+    {
+      "id": "medline-reports-additional-deaths-injuries",
+      "ts": 1794870596218,
+      "status": "LIVE",
+      "slug": "medline-reports-additional-deaths-injuries",
+      "master_id": "medline-bed-recall",
+      "type": "RECALLS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "privy-council-dismisses-dindial-appeal",
+      "ts": 1794870596161,
+      "status": "LIVE",
+      "slug": "privy-council-dismisses-dindial-appeal",
+      "master_id": "dindial-hardware-appeal",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    {
+      "id": "customers-us-big-banks-account-issues",
+      "ts": 1794870596147,
+      "status": "LIVE",
+      "slug": "customers-us-big-banks-account-issues",
+      "master_id": "big-banks-account-issues",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "NA"
+    },
+    {
+      "id": "viral-udaipur-livestream-consent-debate",
+      "ts": 1794870595982,
+      "status": "LIVE",
+      "slug": "viral-udaipur-livestream-consent-debate",
+      "master_id": "udaipur-livestream-debate",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "california-voters-ban-wealth-taxes",
+      "ts": 1794870595937,
+      "status": "LIVE",
+      "slug": "california-voters-ban-wealth-taxes",
+      "master_id": "california-wealth-tax-ban",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "lsu-lane-kiffin-backlash-texas-loss",
+      "ts": 1794870595851,
+      "status": "LIVE",
+      "slug": "lsu-lane-kiffin-backlash-texas-loss",
+      "master_id": "lane-kiffin-backlash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "dollar-general-class-action-settlement",
+      "ts": 1794870595798,
+      "status": "LIVE",
+      "slug": "dollar-general-class-action-settlement",
+      "master_id": "dollar-general-settlement",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "huelga-ferroviaria-seguridad-laboral",
+      "ts": 1794870591766,
+      "status": "LIVE",
+      "slug": "huelga-ferroviaria-seguridad-laboral",
+      "master_id": "huelga-ferroviaria",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    {
+      "id": "microsoft-365-fora-do-ar-alemanha",
+      "ts": 1794870591689,
+      "status": "LIVE",
+      "slug": "microsoft-365-fora-do-ar-alemanha",
+      "master_id": "microsoft-365-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "BR"
+    },
+    {
+      "id": "mullinax-ford-data-breach-settlement",
+      "ts": 1794870591605,
+      "status": "LIVE",
+      "slug": "mullinax-ford-data-breach-settlement",
+      "master_id": "mullinax-ford-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "US"
+    },
+    {
+      "id": "repsol-demanda-iberdrola-endesa",
+      "ts": 1794870591551,
+      "status": "LIVE",
+      "slug": "repsol-demanda-iberdrola-endesa",
+      "master_id": "repsol-apagon",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    {
+      "id": "trump-jensen-huang-toxic-masculinity",
+      "ts": 1794870591530,
+      "status": "LIVE",
+      "slug": "trump-jensen-huang-toxic-masculinity",
+      "master_id": "trump-toxic-masculinity",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "appel-national-greve-charente-maritime",
+      "ts": 1794870591407,
+      "status": "LIVE",
+      "slug": "appel-national-greve-charente-maritime",
+      "master_id": "greve-charente-maritime",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    {
+      "id": "simpsons-predict-power-outage-uk",
+      "ts": 1794870591310,
+      "status": "LIVE",
+      "slug": "simpsons-predict-power-outage-uk",
+      "master_id": "simpsons-power-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "UK"
+    },
+    {
+      "id": "housing-associations-dispute-dalmarnock-report",
+      "ts": 1794870591294,
+      "status": "LIVE",
+      "slug": "housing-associations-dispute-dalmarnock-report",
+      "master_id": "dalmarnock-village-dispute",
+      "type": "TENANCY",
+      "tier": "TIER_2_LEDGER",
+      "region": "UK"
+    },
+    {
+      "id": "youth-atv-recall-crash-hazard",
+      "ts": 1794870591196,
+      "status": "LIVE",
+      "slug": "youth-atv-recall-crash-hazard",
+      "master_id": "youth-atv-recall",
+      "type": "RECALLS",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "customers-major-us-banks-report-outages",
+      "ts": 1794870591108,
+      "status": "LIVE",
+      "slug": "customers-major-us-banks-report-outages",
+      "master_id": "microsoft-365-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "NA"
+    },
+    {
+      "id": "new-york-couple-neighbour-threats",
+      "ts": 1794870591093,
+      "status": "LIVE",
+      "slug": "new-york-couple-neighbour-threats",
+      "master_id": "new-york-neighbour-threats",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "hampshire-council-tax-rise",
+      "ts": 1794870590828,
+      "status": "LIVE",
+      "slug": "hampshire-council-tax-rise",
+      "master_id": "hampshire-council-tax",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "sciopero-generale-20-novembre-torino",
+      "ts": 1794870586473,
+      "status": "LIVE",
+      "slug": "sciopero-generale-20-novembre-torino",
+      "master_id": "sciopero-generale-manifestazione",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    {
+      "id": "huelga-trenes-servicios-minimos",
+      "ts": 1794870586194,
+      "status": "LIVE",
+      "slug": "huelga-trenes-servicios-minimos",
+      "master_id": "tren-huelga",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    {
+      "id": "greve-transports-attentes-novembre",
+      "ts": 1794870586143,
+      "status": "LIVE",
+      "slug": "greve-transports-attentes-novembre",
+      "master_id": "greve-transports",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    {
+      "id": "costway-high-chairs-recall-safety",
+      "ts": 1794870585940,
+      "status": "LIVE",
+      "slug": "costway-high-chairs-recall-safety",
+      "master_id": "costway-high-chair-recall",
+      "type": "RECALLS",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "repsol-inicia-via-judicial-apagon",
+      "ts": 1794870585819,
+      "status": "LIVE",
+      "slug": "repsol-inicia-via-judicial-apagon",
+      "master_id": "repsol-apagon",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    {
+      "id": "outlook-falha-global-microsoft",
+      "ts": 1794870585734,
+      "status": "LIVE",
+      "slug": "outlook-falha-global-microsoft",
+      "master_id": "microsoft-outlook-falha",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "BR"
+    },
+    {
+      "id": "buen-fin-2026-profeco-inconformidades",
+      "ts": 1794870585699,
+      "status": "LIVE",
+      "slug": "buen-fin-2026-profeco-inconformidades",
+      "master_id": "profeco-buen-fin",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    {
+      "id": "martha-kalifatidis-breaks-silence",
+      "ts": 1794870585419,
+      "status": "LIVE",
+      "slug": "martha-kalifatidis-breaks-silence",
+      "master_id": "martha-kalifatidis-backlash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "landlord-charged-murder-disabled-tenant",
+      "ts": 1794870585418,
+      "status": "LIVE",
+      "slug": "landlord-charged-murder-disabled-tenant",
+      "master_id": "landlord-murder-tenant",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "CA"
+    },
+    {
+      "id": "universal-credits-high-court-ruling",
+      "ts": 1794870585287,
+      "status": "LIVE",
+      "slug": "universal-credits-high-court-ruling",
+      "master_id": "universal-credits-tax-precedent",
+      "type": "POLITICS",
+      "tier": "TIER_2_LEDGER",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "new-leader-chosen-jackson-county-library",
+      "ts": 1794870585183,
+      "status": "LIVE",
+      "slug": "new-leader-chosen-jackson-county-library",
+      "master_id": "jackson-county-library-leadership",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "microsoft-outage-cause-revealed",
+      "ts": 1794870584933,
+      "status": "LIVE",
+      "slug": "microsoft-outage-cause-revealed",
+      "master_id": "microsoft-365-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "AU"
+    },
+    {
+      "id": "sciopero-trenitalia-novembre-2026",
+      "ts": 1794870580381,
+      "status": "LIVE",
+      "slug": "sciopero-trenitalia-novembre-2026",
+      "master_id": "trenitalia-sciopero",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    {
+      "id": "profeco-quejas-consumidores-buen-fin",
+      "ts": 1794870579781,
+      "status": "LIVE",
+      "slug": "profeco-quejas-consumidores-buen-fin",
+      "master_id": "profeco-quejas",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    {
+      "id": "sindicatos-huelga-ferrocarril-seguridad",
+      "ts": 1794870579245,
+      "status": "LIVE",
+      "slug": "sindicatos-huelga-ferrocarril-seguridad",
+      "master_id": "sindicatos-huelga",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    {
+      "id": "machine-gun-kelly-backlash-homophobic-tweet",
+      "ts": 1794870579219,
+      "status": "LIVE",
+      "slug": "machine-gun-kelly-backlash-homophobic-tweet",
+      "master_id": "machine-gun-kelly-backlash",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "caixa-fora-do-ar-pix-indisponivel",
+      "ts": 1794870579197,
+      "status": "LIVE",
+      "slug": "caixa-fora-do-ar-pix-indisponivel",
+      "master_id": "caixa-pix-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "BR"
+    },
+    {
+      "id": "mobilisation-17-novembre-trains-ports",
+      "ts": 1794870578941,
+      "status": "LIVE",
+      "slug": "mobilisation-17-novembre-trains-ports",
+      "master_id": "mobilisation-gr-ve",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "FR"
+    },
+    {
+      "id": "jpmorgan-chase-online-banking-delays",
+      "ts": 1794870578904,
+      "status": "LIVE",
+      "slug": "jpmorgan-chase-online-banking-delays",
+      "master_id": "jpmorgan-chase-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "NA"
+    },
+    {
+      "id": "bridgerton-star-boycotts-hbo",
+      "ts": 1794870578852,
+      "status": "LIVE",
+      "slug": "bridgerton-star-boycotts-hbo",
+      "master_id": "bridgerton-hbo-boycott",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "GLOBAL"
+    },
+    {
+      "id": "restaurant-owner-fined-rat-infestation",
+      "ts": 1794870578794,
+      "status": "LIVE",
+      "slug": "restaurant-owner-fined-rat-infestation",
+      "master_id": "restaurant-rat-infestation",
+      "type": "TENANCY",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
+    {
+      "id": "park-dental-data-breach-settlement",
+      "ts": 1794870578772,
+      "status": "LIVE",
+      "slug": "park-dental-data-breach-settlement",
+      "master_id": "park-dental-data-breach",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-global-outage-bug-identified",
+      "ts": 1794870578344,
+      "status": "LIVE",
+      "slug": "microsoft-global-outage-bug-identified",
+      "master_id": "microsoft-365-outage",
+      "type": "FINANCE",
+      "tier": "TIER_1_STATUTORY",
+      "region": "AU"
+    },
+    {
+      "id": "microsoft-confirms-services-restored",
+      "ts": 1794870578283,
+      "status": "LIVE",
+      "slug": "microsoft-confirms-services-restored",
+      "master_id": "microsoft-365-outage",
+      "type": "OUTAGES",
+      "tier": "TIER_1_STATUTORY",
+      "region": "UK"
+    },
     {
       "id": "flight-cancellation-consumer-rights",
       "ts": 1794867732126,
@@ -960,5 +2708,6 @@
     "EU_UK_ME": 0,
     "AMER_LATAM": 10
   },
-  "last_flight_poll_ts": 1794867445023
+  "last_flight_poll_ts": 1794867445023,
+  "airport_cursor": 1
 }
