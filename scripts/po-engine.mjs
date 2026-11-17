@@ -24,7 +24,7 @@ const ALL_AIRPORTS = [
   { code: 'LEMD', region: 'EU261', lang: 'Spanish', lang_code: 'es' },
   { code: 'SBGR', region: 'ANAC_BR', lang: 'Portuguese (pt-BR)', lang_code: 'pt' },
   { code: 'CYYZ', region: 'APPR', lang: 'English', lang_code: 'en' },
-  { code: 'CYVR', region: 'APPR', lang: 'English', lang_code: 'en' },
+  { code: 'CYVR', region: 'APPR', lang_code: 'en', lang: 'English' },
   { code: 'KJFK', region: 'US_DOT', lang: 'English', lang_code: 'en' },
   { code: 'KATL', region: 'US_DOT', lang: 'English', lang_code: 'en' },
   { code: 'KLAX', region: 'US_DOT', lang: 'English', lang_code: 'en' },
@@ -94,13 +94,17 @@ function buildOmnibusFeedMatrix() {
 
 const OMNIBUS_FEEDS = buildOmnibusFeedMatrix();
 
-// 100% HARDCODED CONVERSION BOXES (Titles, Explanations, Inputs & Buttons — AI Cannot Touch or Break These)
+// 100% NATIVE-LANGUAGE HARDCODED CONVERSION PACKS ACROSS ALL 6 LANGUAGES (EN, PT, ES, DE, FR, IT)
 const TIER_CONVERSION_PACKS = {
   en: {
+    stancePrompt: 'Select Your Official Referendum Stance (Any Side Eligible)...',
+    stanceA: 'Position A: Strongly Support / Demand Full Accountability & Investigation',
+    stanceB: 'Position B: Strongly Oppose / Reject Allegations or Policy Change',
+    stanceC: 'Position C: Demand Independent Third-Party Audit & Full Transparency',
     TIER_1_STATUTORY: {
       heading: 'Compare Your 3 Claim & Compensation Recovery Options:',
       redTitle: 'OPTION 1: FILE SOLO VIA STANDARD COMPANY WEB FORM (72% REJECTION RISK)',
-      redText: 'Corporations, airlines, and property platforms routinely reject unrepresented consumer claims using boilerplate excuses or push restrictive travel vouchers that waive your right to cash.',
+      redText: 'Corporations, airlines, and property platforms routinely reject unrepresented consumer claims using boilerplate excuses or push restrictive vouchers that waive your right to cash.',
       amberTitle: 'OPTION 2: THIRD-PARTY CLAIM AGENCIES (LOSES 35% TO 50% OF YOUR PAYOUT)',
       amberText: 'Middleman claim sharks take 3 to 6 months to process routine demands and pocket up to half of your statutory refund or settlement check just for submitting a template letter.',
       greenTitle: 'OPTION 3: DONE-FOR-YOU PRE-CITED STATUTORY DEMAND DISPATCH ($29.00 FLAT — YOU KEEP 100%)',
@@ -140,7 +144,7 @@ const TIER_CONVERSION_PACKS = {
       greenTitle: 'OPTION 3: VERIFIED PRIORITY STATEMENT + 10X WEIGHTED REFERENDUM BALLOT ($1.99 FLAT)',
       greenText: 'What you get for $1.99: Whether you strongly agree, strongly disagree, or demand an independent investigation, your verified ballot counts with 10x referendum weight AND your personal statement is permanently recorded on the Official Public Sentiment Dossier transmitted to media desks, analysts, and stakeholders.',
       namePlaceholder: 'Your Name or Verified Display Handle',
-      inputPlaceholder: 'State Your Position (Agree / Disagree / Neutral) & Your Public Statement to Record',
+      inputPlaceholder: 'Write Your Public Statement to Record on the Official Referendum Dossier',
       emailPlaceholder: 'Your Email Address (For Your Verified Referendum Receipt & Dossier Copy)',
       ctaBtn: 'Record My Verified Statement & 10x Weighted Vote — $1.99',
       freeTitle: 'Cast a Free Unweighted Vote & Get Live Docket / Release Alerts',
@@ -150,10 +154,14 @@ const TIER_CONVERSION_PACKS = {
     }
   },
   pt: {
+    stancePrompt: 'Selecione Sua Posição Oficial no Referendo (Qualquer Lado Elegível)...',
+    stanceA: 'Posição A: Apoio Totalmente / Exijo Investigação e Responsabilização',
+    stanceB: 'Posição B: Discordo Totalmente / Rejeito as Acusações ou Mudança',
+    stanceC: 'Posição C: Exijo Auditoria Independente e Transparência Total',
     TIER_1_STATUTORY: {
       heading: 'Compare Suas 3 Opções para Exigir Reembolso e Indenização:',
       redTitle: 'OPÇÃO 1: FORMULÁRIO PADRÃO DA EMPRESA (72% DE RISCO DE RECUSA)',
-      redText: 'Empresas e companhias aéreas frequentemente negam pedidos individuais sem fundamentação legal ou empurram vouchers restritivos para evitar o pagamento em dinheiro.',
+      redText: 'Empresas e companhias aéreas frequentemente negam pedidos individuais sem fundamentação legal ou oferecem vouchers restritivos para evitar o pagamento em dinheiro.',
       amberTitle: 'OPÇÃO 2: AGÊNCIAS INTERMEDIÁRIAS (COBRAM DE 35% A 50% DO SEU VALOR)',
       amberText: 'Empresas intermediárias levam meses e ficam com até metade da sua indenização apenas para enviar uma notificação padrão.',
       greenTitle: 'OPÇÃO 3: DESPACHO DE NOTIFICAÇÃO FORMAL PRÉ-FUNDAMENTADA ($29.00 FIXOS — FIQUE COM 100%)',
@@ -193,7 +201,7 @@ const TIER_CONVERSION_PACKS = {
       greenTitle: 'OPÇÃO 3: DECLARAÇÃO VERIFICADA + VOTO COM PESO 10X NO DOSSIÊ PÚBLICO ($1.99 FIXOS)',
       greenText: 'O que você recebe por $1.99: Independentemente de você concordar, discordar ou exigir investigação, seu voto verificado tem peso 10x no painel oficial e sua declaração pessoal é gravada no Dossiê de Opinião Pública enviado à imprensa e partes envolvidas.',
       namePlaceholder: 'Seu Nome ou Identificação',
-      inputPlaceholder: 'Sua Posição (Concordo / Discordo / Investigar) e Seu Comentário para o Dossiê',
+      inputPlaceholder: 'Escreva Sua Declaração Pública para Gravar no Dossiê Oficial',
       emailPlaceholder: 'Seu E-mail (Para Receber o Recibo Oficial do Dossiê)',
       ctaBtn: 'Registrar Declaração Verificada e Voto 10x — $1.99',
       freeTitle: 'Registre um Voto Gratuito (Peso 1x) e Receba Alertas Desta Pauta',
@@ -201,17 +209,240 @@ const TIER_CONVERSION_PACKS = {
       freeInputPlaceholder: 'Sua Cidade e Sua Opinião Resumida',
       freeBtn: 'Registrar Voto Gratuito ($0.00)'
     }
+  },
+  es: {
+    stancePrompt: 'Seleccione Su Postura Oficial en el Referéndum (Cualquier Lado Elegible)...',
+    stanceA: 'Postura A: Apoyo Totalmente / Exijo Investigación y Responsabilidad',
+    stanceB: 'Postura B: En Total Desacuerdo / Rechazo las Acusaciones o Medida',
+    stanceC: 'Postura C: Exijo Auditoría Independiente y Transparencia Total',
+    TIER_1_STATUTORY: {
+      heading: 'Compare Sus 3 Opciones de Reembolso e Indemnización:',
+      redTitle: 'OPCIÓN 1: FORMULARIO WEB ESTÁNDAR DE LA EMPRESA (72% DE RIESGO DE RECHAZO)',
+      redText: 'Las aerolíneas, bancos y plataformas suelen rechazar reclamaciones individuales sin respaldo normativo u ofrecen bonos restrictivos que anulan su derecho a efectivo.',
+      amberTitle: 'OPCIÓN 2: AGENCIAS INTERMEDIARIAS (PIERDE DEL 35% AL 50% EN COMISIONES)',
+      amberText: 'Los intermediarios tardan de 3 a 6 meses y se quedan con hasta la mitad de su indemnización solo por enviar una carta estándar.',
+      greenTitle: 'OPCIÓN 3: DESPACHO DE RECLAMACIÓN FORMAL PRE-CITADA ($29.00 FIJOS — CONSERVE EL 100%)',
+      greenText: 'Lo que recibe por $29.00: Preparamos su reclamación formal citando la normativa aplicable y la enviamos electrónicamente al departamento de cumplimiento de la empresa en su nombre (con copia oficial de acuse en su correo) para que usted conserve el 100% de su dinero.',
+      namePlaceholder: 'Su Nombre Completo',
+      inputPlaceholder: 'Código de Reserva / Cuenta e Importe Estimado del Perjuicio',
+      emailPlaceholder: 'Su Correo Electrónico (Para Recibir Su Copia Oficial en CC)',
+      ctaBtn: 'Enviar Mi Reclamación Formal Ahora — $29.00',
+      freeTitle: '¿Prefiere Esperar? Únase al Lote Colectivo Gratuito de 50 Afectados',
+      freeCta: 'Ingrese sus datos abajo para recibir gratis la Guía de Conservación de Pruebas y asegurar su lugar en el lote colectivo de 50 reclamantes.',
+      freeInputPlaceholder: 'Su Ciudad y Resumen del Problema o Pérdida',
+      freeBtn: 'Recibir Guía Gratuita y Registrar Mi Caso ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Compare Sus 3 Opciones de Acción y Escalada Institucional:',
+      redTitle: 'OPCIÓN 1: QUEJARSE EN REDES SOCIALES (IMPACTO INSTITUCIONAL CERO)',
+      redText: 'Los comentarios en redes sociales carecen de validez administrativa y son ignorados por juntas directivas, ministerios y organismos reguladores.',
+      amberTitle: 'OPCIÓN 2: COLA DE PETICIÓN COLECTIVA GRATUITA (ESPERA AL LOTE DE 50 FIRMAS)',
+      amberText: 'Sumar su nombre a la lista gratuita registra su apoyo, pero permanece en espera hasta completar el lote de 50 firmantes.',
+      greenTitle: 'OPCIÓN 3: NOTIFICACIÓN EJECUTIVA INDIVIDUAL ENVIADA EN SU NOMBRE HOY ($4.99 FIJOS)',
+      greenText: 'Lo que recibe por $4.99: Formateamos y transmitimos hoy mismo una Notificación Formal Individual con sello de tiempo en su nombre directamente a la junta directiva, ministerio u organismo competente, con copia oficial enviada a su correo.',
+      namePlaceholder: 'Su Nombre Completo',
+      inputPlaceholder: 'Su Postura (A Favor / En Contra / Exigir Auditoría) y Su Declaración Formal',
+      emailPlaceholder: 'Su Correo Electrónico (Para Recibir Copia de la Notificación)',
+      ctaBtn: 'Enviar Mi Notificación Formal Individual — $4.99',
+      freeTitle: 'Sume Su Firma al Registro Colectivo Gratuito de Este Expediente',
+      freeCta: 'Registre su firma gratuita en el expediente público y reciba actualizaciones oficiales.',
+      freeInputPlaceholder: 'Su Ciudad y Por Qué Este Tema le Afecta',
+      freeBtn: 'Registrar Mi Firma Gratuita ($0.00)'
+    },
+    TIER_3_POLL: {
+      heading: 'Cómo Participar en el Referéndum Público Oficial:',
+      redTitle: 'OPCIÓN 1: COMENTARIOS EN REDES SOCIALES (ENTERRADOS POR EL ALGORITMO)',
+      redText: 'Las secciones de comentarios estándar están saturadas de bots y filtros algorítmicos que ocultan su opinión en minutos.',
+      amberTitle: 'OPCIÓN 2: VOTO BÁSICO NO PONDERADO (SIN DECLARACIÓN DESTACADA)',
+      amberText: 'Emitir un voto gratuito al final de la página suma 1 punto básico sin publicar ni certificar su argumento personal.',
+      greenTitle: 'OPCIÓN 3: DECLARACIÓN VERIFICADA + VOTO PONDERADO 10X EN EL EXPEDIENTE ($1.99 FIJOS)',
+      greenText: 'Lo que recibe por $1.99: Ya sea que esté a favor, en contra o exija una investigación, su voto verificado cuenta con peso 10x y su declaración personal queda registrada permanentemente en el Dossier Oficial de Opinión Pública enviado a medios y partes interesadas.',
+      namePlaceholder: 'Su Nombre o Alias Verificado',
+      inputPlaceholder: 'Escriba Su Declaración Pública para Registrar en el Dossier Oficial',
+      emailPlaceholder: 'Su Correo Electrónico (Para Recibir Su Recibo Oficial)',
+      ctaBtn: 'Registrar Declaración Verificada y Voto 10x — $1.99',
+      freeTitle: 'Emita un Voto Gratuito (Peso 1x) y Reciba Alertas del Caso',
+      freeCta: 'Sume su voto gratuito al marcador general y reciba alertas de nuevas actualizaciones.',
+      freeInputPlaceholder: 'Su Ciudad y Su Opinión en 1 Frase',
+      freeBtn: 'Emitir Voto Gratuito ($0.00)'
+    }
+  },
+  de: {
+    stancePrompt: 'Wählen Sie Ihre Offizielle Position im Referendum (Jede Seite Wählbar)...',
+    stanceA: 'Position A: Volle Zustimmung / Forderung nach Aufklärung & Konsequenzen',
+    stanceB: 'Position B: Strikte Ablehnung / Gegen die Vorwürfe oder Maßnahme',
+    stanceC: 'Position C: Forderung nach Unabhängiger Prüfung & Transparenz',
+    TIER_1_STATUTORY: {
+      heading: 'Vergleichen Sie Ihre 3 Optionen zur Rückerstattung & Entschädigung:',
+      redTitle: 'OPTION 1: STANDARD-WEBFORMULAR DES UNTERNEHMENS (72% ABLEHNUNGSRISIKO)',
+      redText: 'Konzerne und Fluggesellschaften lehnen unvertretene Kundenanträge häufig mit Standardtextbausteinen ab oder drängen auf restriktive Gutscheine statt Barauszahlung.',
+      amberTitle: 'OPTION 2: INKASSO- & ANSPRUCHSPORTALE (35% BIS 50% GEBÜHRENABZUG)',
+      amberText: 'Drittanbieter benötigen oft Monate und behalten bis zur Hälfte Ihrer gesetzlichen Entschädigung als Provision ein.',
+      greenTitle: 'OPTION 3: DIREKTER VERSAND IHRER RECHTLICH FUNDIERTEN FORDERUNG ($29.00 PAUSCHAL — 100% BEHALTEN)',
+      greenText: 'Was Sie für $29.00 erhalten: Wir erstellen Ihre formelle Zahlungsaufforderung unter Nennung der einschlägigen Verbrauchernormen und übermitteln diese elektronisch in Ihrem Namen direkt an die Rechts- und Compliance-Abteilung (mit offizieller Kopie im CC an Sie), sodass Sie 100% Ihrer Auszahlung behalten.',
+      namePlaceholder: 'Ihr Vollständiger Name',
+      inputPlaceholder: 'Buchungs- / Kontonummer & Geschätzter Schadensbetrag',
+      emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Offizielle Zustellkopie)',
+      ctaBtn: 'Formelle Forderung Jetzt Versenden — $29.00',
+      freeTitle: 'Noch Nicht Versenden? Kostenlos in die 50-Personen-Sammelakte Eintragen',
+      freeCta: 'Tragen Sie sich unten ein, um die kostenlose Beweis-Checkliste zu erhalten und Ihren Platz in der 50-Personen-Sammelakte zu sichern.',
+      freeInputPlaceholder: 'Ihre Stadt & Kurze Beschreibung des Vorfalls oder Schadens',
+      freeBtn: 'Kostenlose Checkliste Anfordern & Fall Registrieren ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Vergleichen Sie Ihre 3 Optionen zur Offiziellen Eskalation:',
+      redTitle: 'OPTION 1: KOMMENTARE IN SOZIALEN NETZWERKEN (KEINE OFFIZIELLE WIRKUNG)',
+      redText: 'Unverifizierte Beiträge in sozialen Medien haben keinerlei verwaltungsrechtliches Gewicht und werden von Vorständen und Behörden ignoriert.',
+      amberTitle: 'OPTION 2: KOSTENLOSE SAMMELLISTE (WARTET AUF 50 UNTERZEICHNER)',
+      amberText: 'Ihr Eintrag in die kostenlose Liste unten wird gespeichert, jedoch erst nach Erreichen von 50 Unterschriften gebündelt übermittelt.',
+      greenTitle: 'OPTION 3: PRIORISIERTE INDIVIDUELLE MITTEILUNG IN IHREM NAMEN HEUTE ($4.99 PAUSCHAL)',
+      greenText: 'Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle Stellungnahme in Ihrem Namen direkt an den Vorstand, das Ministerium oder die Aufsichtsstelle—inklusive Kopie an Ihr E-Mail-Postfach.',
+      namePlaceholder: 'Ihr Vollständiger Name',
+      inputPlaceholder: 'Ihre Position (Dafür / Dagegen / Prüfung Fordern) & Ihre Stellungnahme',
+      emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Versandbestätigung)',
+      ctaBtn: 'Individuelle Offizielle Mitteilung Senden — $4.99',
+      freeTitle: 'Tragen Sie Ihren Namen Kostenlos in das Öffentliche Register Ein',
+      freeCta: 'Registrieren Sie Ihre kostenlose Unterschrift im Sammelregister und erhalten Sie Updates.',
+      freeInputPlaceholder: 'Ihre Stadt & Warum Dieses Thema Wichtig Ist',
+      freeBtn: 'Kostenlose Unterschrift Registrieren ($0.00)'
+    },
+    TIER_3_POLL: {
+      heading: 'So Nehmen Sie am Offiziellen Öffentlichen Meinungsregister Teil:',
+      redTitle: 'OPTION 1: UNVERIFIZIERTE KOMMENTARSPALTEN (GEHEN IM ALGORITHMUS UNTER)',
+      redText: 'Standard-Kommentarspalten werden von Bots geflutet und durch Algorithmen gefiltert, sodass Ihre Meinung nach wenigen Minuten verschwindet.',
+      amberTitle: 'OPTION 2: EINFACHE STIMME OHNE GEWICHTUNG (OHNE STELLUNGNAHME)',
+      amberText: 'Eine kostenlose Stimme unten zählt als einfacher Punkt im Balken, ohne Ihre persönliche Begründung im Dossier zu veröffentlichen.',
+      greenTitle: 'OPTION 3: VERIFIZIERTE STELLUNGNAHME + 10-FACH GEWICHTETE STIMME ($1.99 PAUSCHAL)',
+      greenText: 'Was Sie für $1.99 erhalten: Egal ob Sie zustimmen, widersprechen oder eine Untersuchung fordern—Ihre verifizierte Stimme zählt mit 10-facher Gewichtung und Ihre persönliche Stellungnahme wird dauerhaft im offiziellen Meinungsdossier für Medien und Entscheidungsträger protokolliert.',
+      namePlaceholder: 'Ihr Name oder Verifiziertes Profil',
+      inputPlaceholder: 'Ihre Öffentliche Stellungnahme für das Offizielle Meinungsdossier',
+      emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihren Offiziellen Beleg)',
+      ctaBtn: 'Verifizierte Stellungnahme & 10x Stimme Absenden — $1.99',
+      freeTitle: 'Kostenlose 1x Stimme Abgeben & Dossier-Updates Erhalten',
+      freeCta: 'Geben Sie eine kostenlose Stimme ab und erhalten Sie Benachrichtigungen bei neuen Entwicklungen.',
+      freeInputPlaceholder: 'Ihre Stadt & Ihre Kurze Meinung',
+      freeBtn: 'Kostenlose Stimme Abgeben ($0.00)'
+    }
+  },
+  fr: {
+    stancePrompt: 'Sélectionnez Votre Position Officielle au Référendum (Tout Camp Éligible)...',
+    stanceA: 'Position A : Soutien Total / Demande d’Enquête et de Responsabilité',
+    stanceB: 'Position B : Opposition Ferme / Rejet des Allégations ou de la Mesure',
+    stanceC: 'Position C : Demande d’Audit Indépendant et de Transparence Totale',
+    TIER_1_STATUTORY: {
+      heading: 'Comparez Vos 3 Options de Remboursement et d’Indemnisation :',
+      redTitle: 'OPTION 1 : FORMULAIRE CLIENT STANDARD (72 % DE RISQUE DE REJET)',
+      redText: 'Les compagnies aériennes, banques et plateformes rejettent fréquemment les réclamations individuelles non citées ou imposent des avoirs restrictifs au lieu d’un remboursement en espèces.',
+      amberTitle: 'OPTION 2 : AGENCES INTERMÉDIAIRES (PRÉLÈVENT 35 % À 50 % DE COMMISSION)',
+      amberText: 'Les intermédiaires prennent de 3 à 6 mois et retiennent jusqu’à la moitié de votre indemnisation légale pour envoyer un simple courrier type.',
+      greenTitle: 'OPTION 3 : ENVOI DIRECT DE VOTRE MISE EN DEMEURE PRÉ-CITÉE ($29.00 FIXES — GARDEZ 100 %)',
+      greenText: 'Ce que vous obtenez pour $29.00 : Nous préparons votre demande formelle citant les textes réglementaires exacts et la transmettons électroniquement au service conformité en votre nom (avec copie officielle en CC sur votre e-mail) afin que vous conserviez 100 % de votre remboursement.',
+      namePlaceholder: 'Votre Nom Complet',
+      inputPlaceholder: 'Référence de Réservation / Compte et Montant Estimé du Préjudice',
+      emailPlaceholder: 'Votre Adresse E-mail (Pour Recevoir Votre Copie Officielle en CC)',
+      ctaBtn: 'Envoyer Ma Demande Officielle Maintenant — $29.00',
+      freeTitle: 'Pas Prêt Aujourd’hui ? Rejoignez Gratuitement le Lot Collectif de 50 Réclamants',
+      freeCta: 'Inscrivez vos coordonnées ci-dessous pour recevoir gratuitement la Checklist des Preuves et réserver votre place dans le lot collectif de 50 dossiers.',
+      freeInputPlaceholder: 'Votre Ville et Résumé de la Perturbation ou Perte',
+      freeBtn: 'Recevoir la Checklist Gratuite et Enregistrer Mon Cas ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Comparez Vos 3 Options d’Action et de Notification Officielle :',
+      redTitle: 'OPTION 1 : RÉSEAUX SOCIAUX (AUCUN IMPACT INSTITUTIONNEL)',
+      redText: 'Les publications sur les réseaux sociaux n’ont aucune valeur administrative et sont ignorées par les conseils d’administration, ministères et régulateurs.',
+      amberTitle: 'OPTION 2 : PÉTITION COLLECTIVE GRATUITE (ATTEND LE QUOTA DE 50 SIGNATURES)',
+      amberText: 'Ajouter votre nom à la liste gratuite ci-dessous enregistre votre soutien, mais attend que le lot de 50 signataires soit complet avant transmission.',
+      greenTitle: 'OPTION 3 : NOTIFICATION OFFICIELLE INDIVIDUELLE ENVOYÉE EN VOTRE NOM ($4.99 FIXES)',
+      greenText: 'Ce que vous obtenez pour $4.99 : Nous formatons et transmettons dès aujourd’hui une Notification Officielle Individuelle horodatée en votre nom directement à la direction, au ministère ou à l’autorité compétente—avec copie officielle envoyée sur votre boîte mail.',
+      namePlaceholder: 'Votre Nom Complet',
+      inputPlaceholder: 'Votre Position (Pour / Contre / Audit) et Votre Déclaration Officielle',
+      emailPlaceholder: 'Votre Adresse E-mail (Pour Recevoir Votre Copie de Notification)',
+      ctaBtn: 'Envoyer Ma Notification Individuelle — $4.99',
+      freeTitle: 'Ajoutez Gratuitement Votre Nom au Registre Collectif de Ce Dossier',
+      freeCta: 'Enregistrez votre signature gratuite sur le dossier public et recevez les mises à jour officielles.',
+      freeInputPlaceholder: 'Votre Ville et Pourquoi Ce Sujet Vous Concerne',
+      freeBtn: 'Enregistrer Ma Signature Gratuite ($0.00)'
+    },
+    TIER_3_POLL: {
+      heading: 'Comment Participer au Référendum Public Officiel :',
+      redTitle: 'OPTION 1 : COMMENTAIRES NON VÉRIFIÉS (NOYÉS PAR LES ALGORITHMES)',
+      redText: 'Les sections de commentaires classiques sont saturées de robots et filtrées par les algorithmes, faisant disparaître votre avis en quelques minutes.',
+      amberTitle: 'OPTION 2 : VOTE SIMPLE NON PONDÉRÉ (SANS DÉCLARATION ÉPINGLÉE)',
+      amberText: 'Un vote gratuit en bas de page ajoute 1 point simple à la barre globale sans publier ni certifier votre déclaration personnelle.',
+      greenTitle: 'OPTION 3 : DÉCLARATION VÉRIFIÉE + VOTE PONDÉRÉ 10X AU DOSSIER OFFICIEL ($1.99 FIXES)',
+      greenText: 'Ce que vous obtenez pour $1.99 : Que vous soyez d’accord, opposé ou que vous exigiez une enquête, votre vote vérifié compte avec un poids 10x et votre déclaration personnelle est inscrite de façon permanente au Dossier Officiel d’Opinion Publique transmis aux médias et décideurs.',
+      namePlaceholder: 'Votre Nom ou Pseudonyme Vérifié',
+      inputPlaceholder: 'Rédigez Votre Déclaration Publique à Inscrire au Dossier Officiel',
+      emailPlaceholder: 'Votre Adresse E-mail (Pour Recevoir Votre Reçu Officiel)',
+      ctaBtn: 'Publier Ma Déclaration Vérifiée & Vote 10x — $1.99',
+      freeTitle: 'Exprimez un Vote Gratuit (Poids 1x) et Recevez les Alertes du Dossier',
+      freeCta: 'Ajoutez votre vote gratuit au compteur général et recevez les alertes sur ce sujet.',
+      freeInputPlaceholder: 'Votre Ville et Votre Avis en 1 Phrase',
+      freeBtn: 'Valider Mon Vote Gratuit ($0.00)'
+    }
+  },
+  it: {
+    stancePrompt: 'Seleziona la Tua Posizione Ufficiale nel Referendum (Ogni Posizione Ammessa)...',
+    stanceA: 'Posizione A: Pieno Supporto / Richiesta di Indagine e Responsabilità',
+    stanceB: 'Posizione B: Ferma Opposizione / Rifiuto delle Accuse o della Misura',
+    stanceC: 'Posizione C: Richiesta di Audit Indipendente e Piena Trasparenza',
+    TIER_1_STATUTORY: {
+      heading: 'Confronta le Tue 3 Opzioni di Rimborso e Risarcimento:',
+      redTitle: 'OPZIONE 1: MODULO DI RECLAMO STANDARD (72% DI RISCHIO DI RIFIUTO)',
+      redText: 'Le aziende, compagnie di trasporto e piattaforme respingono spesso i reclami individuali non citati o offrono voucher restrittivi al posto del rimborso in denaro.',
+      amberTitle: 'OPZIONE 2: AGENZIE INTERMEDIARIE (TRATTENGONO DAL 35% AL 50% DI COMMISSIONE)',
+      amberText: 'Gli intermediari impiegano mesi e trattengono fino alla metà del tuo risarcimento legale solo per inviare una lettera precompilata.',
+      greenTitle: 'OPZIONE 3: INVIO DIRETTO DELLA DIFFIDA FORMALE PRE-CITATA ($29.00 FISSI — TIENI IL 100%)',
+      greenText: 'Cosa ottieni per $29.00: Prepariamo la tua richiesta formale citando le normative vigenti a tutela del consumatore e la trasmettiamo elettronicamente a tuo nome direttamente all’ufficio conformità dell’azienda (con copia ufficiale in CC sulla tua email), così trattieni il 100% del rimborso.',
+      namePlaceholder: 'Il Tuo Nome e Cognome Completo',
+      inputPlaceholder: 'Codice Prenotazione / Biglietto / Conto e Importo Stimato del Danno',
+      emailPlaceholder: 'Il Tuo Indirizzo Email (Per Ricevere la Copia Ufficiale in CC)',
+      ctaBtn: 'Invia Ora la Mia Richiesta Formale di Rimborso — $29.00',
+      freeTitle: 'Preferisci Aspettare? Unisciti Gratuitamente al Lotto Collettivo di 50 Ricorrenti',
+      freeCta: 'Inserisci i tuoi dati qui sotto per ricevere gratis la Checklist di Conservazione delle Prove e bloccare il tuo posto nel lotto collettivo da 50 pratiche.',
+      freeInputPlaceholder: 'La Tua Città e Breve Riepilogo del Disservizio o Perdita',
+      freeBtn: 'Ricevi Checklist Gratuita e Registra il Mio Caso ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Confronta le Tue 3 Opzioni di Azione e Notifica Istituzionale:',
+      redTitle: 'OPZIONE 1: SFOGARSI SUI SOCIAL MEDIA (IMPATTO ISTITUZIONALE ZERO)',
+      redText: 'I commenti non verificati sui social media non hanno alcun valore amministrativo e vengono ignorati da consigli di amministrazione, ministeri ed enti regolatori.',
+      amberTitle: 'OPZIONE 2: CODA PETIZIONE COLLETTIVA GRATUITA (ATTENDE IL LOTTO DI 50 FIRME)',
+      amberText: 'Aggiungere il tuo nome alla lista gratuita qui sotto registra la tua adesione, ma resta in attesa finché non viene raggiunto il blocco di 50 firmatari.',
+      greenTitle: 'OPZIONE 3: NOTIFICA ESECUTIVA INDIVIDUALE INVIATA A TUO NOME OGGI ($4.99 FISSI)',
+      greenText: 'Cosa ottieni per $4.99: Formattiamo e trasmettiamo oggi stesso una Notifica Formale Individuale con marca temporale a tuo nome direttamente alla direzione, al ministero o all’organo di vigilanza—con copia ufficiale inviata alla tua casella email.',
+      namePlaceholder: 'Il Tuo Nome e Cognome',
+      inputPlaceholder: 'La Tua Posizione (Favorevole / Contrario / Richiesta Audit) e il Tuo Messaggio Formale',
+      emailPlaceholder: 'Il Tuo Indirizzo Email (Per Ricevere la Copia della Notifica)',
+      ctaBtn: 'Invia la Mia Notifica Formale Individuale — $4.99',
+      freeTitle: 'Aggiungi Gratuitamente il Tuo Nome al Registro Collettivo di Questo Fascicolo',
+      freeCta: 'Registra la tua firma gratuita nel fascicolo pubblico e ricevi aggiornamenti ufficiali.',
+      freeInputPlaceholder: 'La Tua Città e Perché Questo Tema Ti Riguarda',
+      freeBtn: 'Registra la Mia Firma Gratuita ($0.00)'
+    },
+    TIER_3_POLL: {
+      heading: 'Come Partecipare al Referendum Pubblico Ufficiale:',
+      redTitle: 'OPZIONE 1: COMMENTI SOCIAL NON VERIFICATI (NASCOSTI DAGLI ALGORITMI)',
+      redText: 'Le normali sezioni commenti sono invase dai bot e penalizzate dagli algoritmi, facendo sparire la tua opinione in pochi minuti.',
+      amberTitle: 'OPZIONE 2: VOTO BASE NON PONDERATO (SENZA DICHIARAZIONE IN EVIDENZA)',
+      amberText: 'Un voto gratuito a fondo pagina aggiunge solo 1 punto base alla barra generale senza certificare né pubblicare la tua dichiarazione.',
+      greenTitle: 'OPZIONE 3: DICHIARAZIONE VERIFICATA + VOTO PONDERATO 10X NEL DOSSIER ($1.99 FISSI)',
+      greenText: 'Cosa ottieni per $1.99: Che tu sia favorevole, contrario o chieda un’indagine, il tuo voto verificato vale con peso 10x e la tua dichiarazione personale viene registrata permanentemente nel Dossier Ufficiale dell’Opinione Pubblica inviato a media e decisori.',
+      namePlaceholder: 'Il Tuo Nome o Identificativo Verificato',
+      inputPlaceholder: 'Scrivi la Tua Dichiarazione Pubblica da Registrare nel Dossier Ufficiale',
+      emailPlaceholder: 'Il Tuo Indirizzo Email (Per Ricevere la Ricevuta Ufficiale)',
+      ctaBtn: 'Invia Dichiarazione Verificata e Voto 10x — $1.99',
+      freeTitle: 'Esprimi un Voto Gratuito (Peso 1x) e Ricevi Aggiornamenti sul Dossier',
+      freeCta: 'Aggiungi il tuo voto gratuito al conteggio generale e ricevi avvisi sui nuovi sviluppi.',
+      freeInputPlaceholder: 'La Tua Città e la Tua Opinione in 1 Frase',
+      freeBtn: 'Registra Voto Gratuito ($0.00)'
+    }
   }
 };
 
-// Map Spanish, German, French, Italian to English structure with localized labels
-['es', 'de', 'fr', 'it'].forEach(lc => {
-  TIER_CONVERSION_PACKS[lc] = TIER_CONVERSION_PACKS.en;
-});
-
 function loadState() {
   let state = {
-    schema_version: 13,
+    schema_version: 14,
     deployed: {},
     active_silos: [],
     airport_cursor: 0,
@@ -225,9 +456,9 @@ function loadState() {
     } catch (e) {}
   }
 
-  // SELF-HEALING UPGRADE: Wipe all old pre-v13 /docket/ folders once so zero broken "BICYCLE" or "Totally agree" pages survive
-  if (state.schema_version !== 13) {
-    console.log('[Upgrade v13] Purging old pre-v13 docket pages so 100% of articles use v13 advertorial & conversion boxes...');
+  // Self-healing purge: removes any pre-v14 docket pages once so 100% of live pages have native v14 conversion packs & full advertorials
+  if (state.schema_version !== 14) {
+    console.log('[Upgrade v14] Purging old pre-v14 docket pages so 100% of live pages use full native v14 advertorial & conversion packs...');
     const docketRoot = path.join(process.cwd(), 'docket');
     if (fs.existsSync(docketRoot)) {
       fs.rmSync(docketRoot, { recursive: true, force: true });
@@ -237,7 +468,7 @@ function loadState() {
       if (v.type === 'AVIATION') keptFlights[k] = v;
     }
     state.deployed = keptFlights;
-    state.schema_version = 13;
+    state.schema_version = 14;
     state.feed_cursor = 0;
   }
 
@@ -302,7 +533,8 @@ function buildSiloHtml(d, isFlight) {
   const pageSlug = (d.slug || d.ident || 'docket').toLowerCase();
   const langKey = (d.lang_code || 'en').slice(0, 2).toLowerCase();
   const tierKey = d.tier || 'TIER_2_LEDGER';
-  const pack = (TIER_CONVERSION_PACKS[langKey] || TIER_CONVERSION_PACKS.en)[tierKey] || TIER_CONVERSION_PACKS.en.TIER_2_LEDGER;
+  const langGroup = TIER_CONVERSION_PACKS[langKey] || TIER_CONVERSION_PACKS.en;
+  const pack = langGroup[tierKey] || langGroup.TIER_2_LEDGER;
 
   const hashByte = crypto.createHash('md5').update(pageSlug).digest()[0];
   const slotCount = 29 + (hashByte % 16);
@@ -336,10 +568,10 @@ function buildSiloHtml(d, isFlight) {
 
   const stanceSelectorHtml = isPoll
     ? `<select name='stance' required style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;background:#ffffff;color:#0f172a;font-weight:700;'>
-         <option value='' disabled selected>Select Your Official Referendum Stance (Any Side Eligible)...</option>
-         <option value='SUPPORT_ACTION'>Position A: Strongly Support / Demand Full Accountability &amp; Investigation</option>
-         <option value='OPPOSE_ACTION'>Position B: Strongly Oppose / Reject Allegations or Policy Change</option>
-         <option value='INDEPENDENT_AUDIT'>Position C: Demand Independent Third-Party Audit &amp; Full Transparency</option>
+         <option value='' disabled selected>${langGroup.stancePrompt}</option>
+         <option value='SUPPORT_ACTION'>${langGroup.stanceA}</option>
+         <option value='OPPOSE_ACTION'>${langGroup.stanceB}</option>
+         <option value='INDEPENDENT_AUDIT'>${langGroup.stanceC}</option>
        </select>`
     : '';
 
@@ -458,10 +690,11 @@ function buildSiloHtml(d, isFlight) {
 
 const MASTER_SYSTEM_PROMPT = `You are an elite long-tail SEO investigative journalist and consumer advocacy advertorial writer.
 CRITICAL RULES:
-1. NEVER write one-sentence answers. Every paragraph in "advertorial_paragraphs" and every answer ("a1_answer", "a2_answer", "a3_answer") MUST be 4 to 5 full, detailed sentences (at least 65 words per paragraph/answer) packed with specific context, regulatory/financial stakes, and actionable insights.
+1. NEVER write one-sentence answers. Every paragraph in "advertorial_paragraphs" and every answer ("a1_answer", "a2_answer", "a3_answer") MUST be 4 to 5 full, detailed sentences (at least 65 words per paragraph/answer) packed with specific context, regulatory/financial stakes, and actionable insights in the requested Language.
 2. NEVER use the words "automated", "bot", or "AI".
 3. LONG-TAIL GOOGLE SEARCH HEADLINES:
-   - "seo_title" and "human_h1" MUST be written the exact way real people search on Google when looking for answers, refunds, petitions, or fallout from this news event (e.g. "Megaspeed Nvidia Chip Investigation: What the Export Probe Means & Public Accountability Docket" or "Rome Friday Transport Strike: How Commuters & Tourists Claim Ticket Refunds & Delay Compensation").
+   - "seo_title" and "human_h1" MUST be written in the requested Language the exact way real people search on Google when looking for answers, refunds, petitions, or fallout from this news event.
+   - "english_title" MUST always be written in clear English so the operator dashboard reads in English.
 4. MONETIZATION TIER ROUTING:
    - "TIER_1_STATUTORY" ($29.00): Direct consumer financial loss (flights, transit strikes, telecom/software outages, Airbnb/landlord disputes, bank account freezes, billing errors, product recalls).
    - "TIER_2_LEDGER" ($4.99): Government/corporate policy decisions, investigations (like corporate probes/scandals), rate hikes, school/labor strikes, municipal rules, or institutional actions where citizens want to send a formal $4.99 notice or sign a petition.
@@ -477,20 +710,20 @@ Return a strict JSON object in the requested Language with:
 - "region": ("US", "CA", "UK", "EU", "BR", "ES", "MX", "DE", "FR", "AU", or "GLOBAL")
 - "tier": ("TIER_1_STATUTORY", "TIER_2_LEDGER", or "TIER_3_POLL")
 - "badge_text": (2-to-3 word authoritative status badge in the target language)
-- "seo_title": (Long-tail Google search title, 50-65 chars)
-- "human_h1": (Compelling long-tail search headline)
-- "ai_direct_answer": (3-sentence executive summary of the event, who is affected, and the active docket options)
+- "seo_title": (Long-tail Google search title in the target language, 50-65 chars)
+- "human_h1": (Compelling long-tail search headline in the target language)
+- "ai_direct_answer": (3-sentence executive summary of the event, who is affected, and the active docket options in the target language)
 - "advertorial_paragraphs": [
-    "Paragraph 1 (4-5 detailed sentences breaking down the exact news catalyst, the entities involved, and why thousands of people are searching for answers right now)...",
-    "Paragraph 2 (4-5 detailed sentences analyzing the regulatory, financial, or institutional stakes behind the scenes that mainstream coverage glosses over)...",
-    "Paragraph 3 (4-5 detailed sentences explaining the specific rights, escalation channels, or public referendum leverage available to affected citizens, customers, or stakeholders)..."
+    "Paragraph 1 (4-5 detailed sentences in the target language breaking down the exact news catalyst, the entities involved, and why thousands of people are searching for answers right now)...",
+    "Paragraph 2 (4-5 detailed sentences in the target language analyzing the regulatory, financial, or institutional stakes behind the scenes that mainstream coverage glosses over)...",
+    "Paragraph 3 (4-5 detailed sentences in the target language explaining the specific rights, escalation channels, or public referendum leverage available to affected citizens, customers, or stakeholders)..."
   ]
-- "q1_human": (Long-tail search question 1)
-- "a1_answer": (4-5 detailed sentences answering Q1 thoroughly)
-- "q2_human": (Long-tail search question 2)
-- "a2_answer": (4-5 detailed sentences answering Q2 thoroughly)
-- "q3_human": (Long-tail search question 3)
-- "a3_answer": (4-5 detailed sentences answering Q3 thoroughly)`;
+- "q1_human": (Long-tail search question 1 in the target language)
+- "a1_answer": (4-5 detailed sentences answering Q1 thoroughly in the target language)
+- "q2_human": (Long-tail search question 2 in the target language)
+- "a2_answer": (4-5 detailed sentences answering Q2 thoroughly in the target language)
+- "q3_human": (Long-tail search question 3 in the target language)
+- "a3_answer": (4-5 detailed sentences answering Q3 thoroughly in the target language)`;
 
 async function pollGlobalAviation(state, newUrls) {
   if (!FLIGHTAWARE_API_KEY) return;
@@ -512,7 +745,7 @@ async function pollGlobalAviation(state, newUrls) {
       const disrupted = allFlights.filter(f => {
         if (!f.ident || f.ident.length < 4) return false;
         const ident = f.ident.toLowerCase();
-        if (state.deployed[ident] && state.deployed[ident].v13) return false;
+        if (state.deployed[ident] && state.deployed[ident].v14) return false;
         const delaySec = Math.max(f.departure_delay || 0, f.arrival_delay || 0);
         return f.cancelled === true || delaySec >= 10800;
       }).slice(0, 5);
@@ -540,7 +773,7 @@ async function pollGlobalAviation(state, newUrls) {
         state.deployed[ident] = {
           ts: Date.now(),
           status: 'LIVE',
-          v13: true,
+          v14: true,
           slug: ident,
           master_id: ident,
           english_title: parsed.english_title || `Flight ${ident.toUpperCase()} (${hub.region} Compensation)`,
@@ -549,7 +782,7 @@ async function pollGlobalAviation(state, newUrls) {
           region: hub.region
         };
         newUrls.push(`${SITE_URL}/flight/${ident}/`);
-        console.log(`Deployed v13 Flight [${hub.region}]: /flight/${ident}/`);
+        console.log(`Deployed v14 Flight [${hub.region}]: /flight/${ident}/`);
       }
     } catch (e) {
       console.error('Aviation poll error:', e.message);
@@ -609,7 +842,7 @@ async function processGlobalNews(state, newUrls) {
     if (uniqueQueue.length >= 72) break;
   }
 
-  console.log(`[Omnibus v13] Generating ${uniqueQueue.length} full-length advertorial dockets...`);
+  console.log(`[Omnibus v14] Generating ${uniqueQueue.length} full-length native advertorial dockets...`);
 
   const BATCH_SIZE = 12;
   for (let i = 0; i < uniqueQueue.length; i += BATCH_SIZE) {
@@ -617,10 +850,10 @@ async function processGlobalNews(state, newUrls) {
     await Promise.all(chunk.map(async ({ rawTitle, hashId, feed }) => {
       const parsed = await callOpenAI(
         MASTER_SYSTEM_PROMPT,
-        `Headline: "${rawTitle}" | Suggested Category: ${feed.niche} | Region: ${feed.region} | Language: ${feed.lang}`
+        `Headline: "${rawTitle}" | Suggested Category: ${feed.niche} | Region: ${feed.region} | Language: ${feed.lang} (lang_code: ${feed.lang_code})`
       );
 
-      if (!parsed || !parsed.slug) return;
+      if (!parsed || !parsed.slug || !Array.isArray(parsed.advertorial_paragraphs) || parsed.advertorial_paragraphs.length < 2) return;
 
       const cleanSlug = parsed.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
       const cleanMaster = (parsed.master_incident_id || cleanSlug).toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
@@ -639,7 +872,7 @@ async function processGlobalNews(state, newUrls) {
       state.deployed[hashId] = {
         ts: Date.now(),
         status: 'LIVE',
-        v13: true,
+        v14: true,
         slug: cleanSlug,
         master_id: cleanMaster,
         english_title: parsed.english_title || cleanSlug.replace(/-/g, ' '),
@@ -649,7 +882,7 @@ async function processGlobalNews(state, newUrls) {
       };
 
       newUrls.push(`${SITE_URL}/docket/${cleanSlug}/`);
-      console.log(`Deployed v13 [${parsed.tier}] (${feed.region} - ${parsed.niche}): /docket/${cleanSlug}/`);
+      console.log(`Deployed v14 [${parsed.tier}] (${feed.region} - ${parsed.niche}): /docket/${cleanSlug}/`);
     }));
   }
 }
