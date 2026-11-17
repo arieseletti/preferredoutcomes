@@ -44,7 +44,7 @@ jobs:
           git config user.email "bot@preferredoutcomes.org"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "Deploy v14 global advertorial silos [skip ci]"
+            git commit -m "Deploy v14 global advertorial silos and update silos.json"
             git pull --rebase -X theirs origin main || true
             git push origin main
           else
