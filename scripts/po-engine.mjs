@@ -456,20 +456,17 @@ function loadState() {
     } catch (e) {}
   }
 
-  // Self-healing purge: removes any pre-v14 docket pages once so 100% of live pages have native v14 conversion packs & full advertorials
   if (state.schema_version !== 14) {
-    console.log('[Upgrade v14] Purging old pre-v14 docket pages so 100% of live pages use full native v14 advertorial & conversion packs...');
+    console.log('[Upgrade v14] Purging ALL old pre-v14 docket and flight pages for a 100% clean v14 rebuild...');
     const docketRoot = path.join(process.cwd(), 'docket');
-    if (fs.existsSync(docketRoot)) {
-      fs.rmSync(docketRoot, { recursive: true, force: true });
-    }
-    const keptFlights = {};
-    for (const [k, v] of Object.entries(state.deployed || {})) {
-      if (v.type === 'AVIATION') keptFlights[k] = v;
-    }
-    state.deployed = keptFlights;
+    const flightRoot = path.join(process.cwd(), 'flight');
+    if (fs.existsSync(docketRoot)) fs.rmSync(docketRoot, { recursive: true, force: true });
+    if (fs.existsSync(flightRoot)) fs.rmSync(flightRoot, { recursive: true, force: true });
+    state.deployed = {};
+    state.active_silos = [];
     state.schema_version = 14;
     state.feed_cursor = 0;
+    state.airport_cursor = 0;
   }
 
   return state;
