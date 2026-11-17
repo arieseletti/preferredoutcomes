@@ -47,7 +47,6 @@ function buildOmnibusFeedMatrix() {
     { region: 'EU', lang: 'Italian', lang_code: 'it', hl: 'it', gl: 'IT', ceid: 'IT:it' }
   ];
 
-  // Replaced raw clinical HEALTH/SCIENCE feeds with Top Headlines + All Major Commercial/Civic/Cultural Categories
   const topics = [
     { topic: 'BUSINESS', defaultNiche: 'FINANCE' },
     { topic: 'TECHNOLOGY', defaultNiche: 'OUTAGES' },
@@ -60,7 +59,6 @@ function buildOmnibusFeedMatrix() {
   const feeds = [];
 
   for (const loc of locales) {
-    // 1. High-Intent Consumer Refunds, Outages, Flights, Tenancy & Recalls
     feeds.push({
       niche: 'OUTAGES',
       region: loc.region,
@@ -68,7 +66,6 @@ function buildOmnibusFeedMatrix() {
       lang_code: loc.lang_code,
       url: `https://news.google.com/rss/search?q=(outage+OR+refund+OR+lawsuit+OR+strike+OR+cancelled+OR+compensation+OR+Airbnb+OR+tenant+OR+recall)+when:7d&hl=${loc.hl}&gl=${loc.gl}&ceid=${loc.ceid}`
     });
-    // 2. Viral Controversies, Backlash, Investigations, Verdicts & Boycotts
     feeds.push({
       niche: 'CULTURE',
       region: loc.region,
@@ -76,7 +73,6 @@ function buildOmnibusFeedMatrix() {
       lang_code: loc.lang_code,
       url: `https://news.google.com/rss/search?q=(controversy+OR+backlash+OR+scandal+OR+boycott+OR+investigation+OR+verdict+OR+feud)+when:7d&hl=${loc.hl}&gl=${loc.gl}&ceid=${loc.ceid}`
     });
-    // 3. Mainstream Top Breaking Headlines for Every Country
     feeds.push({
       niche: 'POLITICS',
       region: loc.region,
@@ -84,7 +80,6 @@ function buildOmnibusFeedMatrix() {
       lang_code: loc.lang_code,
       url: `https://news.google.com/rss?hl=${loc.hl}&gl=${loc.gl}&ceid=${loc.ceid}`
     });
-    // 4. Product Recalls, Class Actions & Consumer Safety (Non-Clinical)
     feeds.push({
       niche: 'RECALLS',
       region: loc.region,
@@ -287,7 +282,7 @@ const TIER_CONVERSION_PACKS = {
       amberTitle: 'OPCIÓN 2: VOTO BÁSICO NO PONDERADO (SIN DECLARACIÓN DESTACADA)',
       amberText: 'Emitir un voto gratuito al final de la página suma 1 punto básico sin publicar ni certificar su argumento personal.',
       greenTitle: 'OPCIÓN 3: DECLARACIÓN VERIFICADA + VOTO PONDERADO 10X EN EL EXPEDIENTE ($1.99)',
-      greenText: 'Lo que recibe por $1.99: Ya sea que esté a favor, en contra o exija una investigación, su voto verificado cuenta con peso 10x y su declaración personal queda registrada permanentemente en el Dossier Oficial de Opinión Pública enviado a medios y partes interesadas.',
+      greenText: 'Lo que recibe por $1.99: Ya sea que esté a favor, en contra o exija una investigación independiente, su voto verificado cuenta con peso 10x y su declaración personal queda registrada permanentemente en el Dossier Oficial de Opinión Pública enviado a medios, analistas y partes interesadas.',
       namePlaceholder: 'Su Nombre o Alias Verificado',
       inputPlaceholder: 'Escriba Su Declaración Pública para Registrar en el Dossier Oficial',
       emailPlaceholder: 'Su Correo Electrónico (Para Recibir Su Recibo Oficial)',
@@ -318,7 +313,7 @@ const TIER_CONVERSION_PACKS = {
       greenText: 'Was Sie für $29.00 erhalten: Wir erstellen Ihre formelle Schutz- und Zahlungsaufforderung unter Nennung der einschlägigen Verbrauchernormen und übermitteln diese elektronisch in Ihrem Namen direkt an die Rechts- und Compliance-Abteilung (mit offizieller Kopie im CC an Sie), sodass Sie 100% Ihrer Summe behalten.',
       namePlaceholder: 'Ihr Vollständiger Name',
       inputPlaceholder: 'Konto- / Referenznummer & Betroffener Betrag',
-      emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Offizielle Zustellkopie)',
+      emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Offizielle Übermittlungsbestätigung)',
       ctaBtn: 'Formelle Forderung Jetzt Versenden — $29.00',
       freeTitle: 'Lieber Abwarten? Kostenlos in die 50-Personen-Sammelakte Eintragen',
       freeCta: 'Tragen Sie sich unten ein, um die kostenlose Nachweis- und Schutz-Checkliste zu erhalten und Ihren Platz in der 50-Personen-Sammelakte zu sichern.',
@@ -335,7 +330,7 @@ const TIER_CONVERSION_PACKS = {
       greenText: 'Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle Stellungnahme in Ihrem Namen direkt an den Vorstand, die Aufsichtsstelle oder das zuständige Gremium—inklusive Kopie an Ihr E-Mail-Postfach.',
       namePlaceholder: 'Ihr Vollständiger Name',
       inputPlaceholder: 'Ihre Position (Prüfung Fordern / Dafür / Dagegen) & Ihre Stellungnahme',
-      emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Versandbestätigung)',
+      emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Offizielle Übermittlungsbestätigung)',
       ctaBtn: 'Individuelle Offizielle Mitteilung Senden — $4.99',
       freeTitle: 'Tragen Sie Ihren Namen Kostenlos in das Öffentliche Sammelregister Ein',
       freeCta: 'Registrieren Sie Ihre kostenlose Unterschrift im Sammelregister und erhalten Sie Updates.',
@@ -367,7 +362,7 @@ const TIER_CONVERSION_PACKS = {
     stanceB: 'Position B : Opposition Ferme / Rejet des Allégations ou de la Mesure',
     stanceC: 'Position C : Demande d’Audit Indépendant et de Transparence Totale',
     amzDefaultHeader: 'Ressources Recommandées, Guides et Équipements Essentiels',
-    amzSubPrefix: 'Voir les Livros, Guides et Articles les Mieux Notés :',
+    amzSubPrefix: 'Voir les Livres, Guides et Articles les Mieux Notés :',
     amzBtnText: 'Voir sur Amazon',
     coregNote: 'Je souhaite également recevoir gratuitement les alertes de règlement, les notes partenaires et les mises à jour du dossier collectif (désinscription à tout moment).',
     TIER_1_STATUTORY: {
@@ -505,22 +500,90 @@ function loadState() {
   return state;
 }
 
-// Removes existing clinical disease/eating-disorder pages and fixes "banking authorities" / "Lotto" / "FLAT" in place
+// Helper that builds the conversion section (<h3... through the end of the free lead form) so existing pages can be cleanly upgraded in place
+function buildConversionSectionHtml(langKey, tierKey, niche, masterIncident, region) {
+  const langGroup = TIER_CONVERSION_PACKS[langKey] || TIER_CONVERSION_PACKS.en;
+  const pack = langGroup[tierKey] || langGroup.TIER_2_LEDGER;
+  const isPoll = tierKey === 'TIER_3_POLL';
+
+  const stanceSelectorHtml = isPoll
+    ? `<select name='stance' required style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;background:#ffffff;color:#0f172a;font-weight:700;'>
+         <option value='' disabled selected>${langGroup.stancePrompt}</option>
+         <option value='SUPPORT_ACTION'>${langGroup.stanceA}</option>
+         <option value='OPPOSE_ACTION'>${langGroup.stanceB}</option>
+         <option value='INDEPENDENT_AUDIT'>${langGroup.stanceC}</option>
+       </select>`
+    : '';
+
+  return `<h3 style='font-size:19px;color:#0f172a;margin-top:34px;margin-bottom:14px;font-weight:900;'>${pack.heading}</h3>
+    <div style='display:flex;flex-direction:column;gap:14px;margin-bottom:24px;'>
+      <div style='background:#fef2f2;border:2px solid #ef4444;border-radius:8px;padding:16px;'>
+        <div style='color:#b91c1c;font-weight:800;font-size:13px;text-transform:uppercase;'>${pack.redTitle}</div>
+        <p style='margin:6px 0 0 0;font-size:14.5px;color:#7f1d1d;'>${pack.redText}</p>
+      </div>
+      <div style='background:#fffbeb;border:2px solid #f59e0b;border-radius:8px;padding:16px;'>
+        <div style='color:#b45309;font-weight:800;font-size:13px;text-transform:uppercase;'>${pack.amberTitle}</div>
+        <p style='margin:6px 0 0 0;font-size:14.5px;color:#78350f;'>${pack.amberText}</p>
+      </div>
+      <div style='background:#f0fdf4;border:2px solid #16a34a;border-radius:8px;padding:22px;'>
+        <div style='color:#15803d;font-weight:800;font-size:13.5px;text-transform:uppercase;'>${pack.greenTitle}</div>
+        <p style='margin:8px 0 16px 0;font-size:14.5px;color:#14532d;line-height:1.65;'>${pack.greenText}</p>
+        <form action='${MAKE_WEBHOOK_URL}' method='GET' style='display:flex;flex-direction:column;gap:10px;'>
+          <input type='hidden' name='flow_type' value='DFY_CHECKOUT'>
+          <input type='hidden' name='niche' value='${niche}'>
+          <input type='hidden' name='incident' value='${masterIncident}'>
+          <input type='hidden' name='tier' value='${tierKey}'>
+          <input type='hidden' name='region' value='${region}'>
+          ${stanceSelectorHtml}
+          <input type='text' name='name' required placeholder='${pack.namePlaceholder}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
+          <input type='text' name='pnr' required placeholder='${pack.inputPlaceholder}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
+          <input type='email' name='email' required placeholder='${pack.emailPlaceholder}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
+          <button type='submit' style='padding:16px;background:#16a34a;color:#ffffff;font-weight:900;font-size:16px;border:none;border-radius:6px;cursor:pointer;'>${pack.ctaBtn} &rarr;</button>
+        </form>
+      </div>
+    </div>
+
+    <div style='background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:20px;margin-top:24px;'>
+      <h4 style='margin:0 0 6px 0;font-size:16px;color:#0f172a;'>${pack.freeTitle}</h4>
+      <p style='margin:0 0 14px 0;font-size:14px;color:#475569;'>${pack.freeCta}</p>
+      <form action='${MAKE_WEBHOOK_URL}' method='GET' style='display:flex;flex-direction:column;gap:10px;'>
+        <input type='hidden' name='flow_type' value='FREE_LEAD'>
+        <input type='hidden' name='niche' value='${niche}'>
+        <input type='hidden' name='incident' value='${masterIncident}'>
+        <input type='hidden' name='tier' value='${tierKey}'>
+        <input type='hidden' name='region' value='${region}'>
+        <div style='display:flex;gap:10px;flex-wrap:wrap;'>
+          <input type='text' name='signer_name' required placeholder='${pack.namePlaceholder}' style='flex:1;min-width:180px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+          <input type='email' name='email' required placeholder='${pack.emailPlaceholder}' style='flex:1;min-width:200px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+        </div>
+        <input type='text' name='loss_impact' required placeholder='${pack.freeInputPlaceholder}' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+        <label style='display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#64748b;cursor:pointer;'>
+          <input type='checkbox' name='coreg_optin' value='yes' checked style='margin-top:3px;'>
+          <span>${langGroup.coregNote}</span>
+        </label>
+        <button type='submit' style='padding:13px;background:#0f172a;color:#ffffff;font-weight:800;font-size:14px;border:none;border-radius:6px;cursor:pointer;'>${pack.freeBtn}</button>
+      </form>
+    </div>`;
+}
+
+// Retroactively purges clinical disease pages, re-routes intelligence/military/geopolitical pages to $1.99 TIER_3_POLL, and fixes German/Italian/Spanish/French text on all existing pages
 function patchAndCleanExistingFiles(state) {
   const clinicalRegex = /(anorexia|bulimia|leukemia|leukaemie|onkopedia|pirtobrutinib|chemotherapy|chimiotherapie|cancer-treatment|tumor|alzheimer|carcinoma)/i;
+  const geoIntelRegex = /(intelligence-services|servicios-de-inteligencia|servizi-di-intelligence|nachrichtendienst|renseignement|caida-infraestructuras|military|pentagon|nato|otan|espionage|espionaje|cia|nsa|missile|warfare)/i;
   const docketRoot = path.join(process.cwd(), 'docket');
 
-  // 1. Purge any clinical disease folders from /docket/ and mark their state as SKIPPED
   if (fs.existsSync(docketRoot)) {
     for (const sub of fs.readdirSync(docketRoot)) {
       const fullSub = path.join(docketRoot, sub);
       const indexFile = path.join(fullSub, 'index.html');
-      let shouldRemove = clinicalRegex.test(sub);
-      if (!shouldRemove && fs.existsSync(indexFile)) {
-        const titleMatch = fs.readFileSync(indexFile, 'utf8').match(/<title>(.*?)<\/title>/i);
-        if (titleMatch && clinicalRegex.test(titleMatch[1])) shouldRemove = true;
-      }
-      if (shouldRemove) {
+      if (!fs.existsSync(indexFile)) continue;
+
+      const htmlContent = fs.readFileSync(indexFile, 'utf8');
+      const titleMatch = htmlContent.match(/<title>(.*?)<\/title>/i);
+      const titleText = titleMatch ? titleMatch[1] : '';
+
+      // 1. Delete clinical disease/oncology pages
+      if (clinicalRegex.test(sub) || clinicalRegex.test(titleText)) {
         fs.rmSync(fullSub, { recursive: true, force: true });
         for (const [k, v] of Object.entries(state.deployed || {})) {
           if (v.slug === sub || v.master_id === sub) {
@@ -528,24 +591,35 @@ function patchAndCleanExistingFiles(state) {
           }
         }
         console.log(`[Clinical Purge] Removed sensitive medical page: /docket/${sub}/`);
+        continue;
       }
-    }
-  }
 
-  // 2. Patch remaining HTML files in place
-  const dirs = [docketRoot, path.join(process.cwd(), 'flight')];
-  for (const rootDir of dirs) {
-    if (!fs.existsSync(rootDir)) continue;
-    for (const sub of fs.readdirSync(rootDir)) {
-      const file = path.join(rootDir, sub, 'index.html');
-      if (!fs.existsSync(file)) continue;
-      let html = fs.readFileSync(file, 'utf8');
-      const orig = html;
+      // 2. Re-route intelligence/military/geopolitical pages (like caida-infraestructuras) to TIER_3_POLL ($1.99)
+      let updatedHtml = htmlContent;
+      if (geoIntelRegex.test(sub) || geoIntelRegex.test(titleText) || geoIntelRegex.test(htmlContent)) {
+        const langMatch = updatedHtml.match(/<html lang='([a-z]{2})'>/i);
+        const langKey = langMatch ? langMatch[1].toLowerCase() : 'en';
+        const incMatch = updatedHtml.match(/name='incident' value='([^']+)'/i);
+        const masterIncident = incMatch ? incMatch[1] : sub;
+        const regMatch = updatedHtml.match(/name='region' value='([^']+)'/i);
+        const region = regMatch ? regMatch[1] : 'GLOBAL';
 
-      html = html
+        const newConversionHtml = buildConversionSectionHtml(langKey, 'TIER_3_POLL', 'POLITICS', masterIncident, region);
+        updatedHtml = updatedHtml.replace(/<h3 style='font-size:1[89]px;color:#0f172a;margin-top:3\dpx;[\s\S]*?<\/form>\s*<\/div>/i, newConversionHtml);
+
+        for (const [k, v] of Object.entries(state.deployed || {})) {
+          if (v.slug === sub || v.master_id === sub) {
+            state.deployed[k].tier = 'TIER_3_POLL';
+          }
+        }
+      }
+
+      // 3. Apply universal text & translation fixes across all existing pages
+      updatedHtml = updatedHtml
         .replace(/\$29\.00\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$29.00')
         .replace(/\$4\.99\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$4.99')
         .replace(/\$1\.99\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$1.99')
+        .replace(/Versandbestätigung/g, 'Offizielle Übermittlungsbestätigung')
         .replace(/autorités bancaires/g, 'autorités de régulation')
         .replace(/autoridades financieras/g, 'comités de supervisión')
         .replace(/bancos centrais/g, 'conselhos executivos')
@@ -571,8 +645,8 @@ function patchAndCleanExistingFiles(state) {
         .replace(/Verified Retail, Gear &amp; Collector Availability/g, 'Recommended Resources, Guides &amp; Essential Gear')
         .replace(/Check Live Stock, Editions &amp; Top-Rated Options:/g, 'View Top-Rated Books, Tools &amp; Related Essentials:');
 
-      if (html !== orig) {
-        fs.writeFileSync(file, html, 'utf8');
+      if (updatedHtml !== htmlContent) {
+        fs.writeFileSync(indexFile, updatedHtml, 'utf8');
       }
     }
   }
@@ -637,7 +711,6 @@ function buildSiloHtml(d, isFlight) {
   const langKey = (d.lang_code || 'en').slice(0, 2).toLowerCase();
   const tierKey = d.tier || 'TIER_2_LEDGER';
   const langGroup = TIER_CONVERSION_PACKS[langKey] || TIER_CONVERSION_PACKS.en;
-  const pack = langGroup[tierKey] || langGroup.TIER_2_LEDGER;
 
   const hashByte = crypto.createHash('md5').update(pageSlug).digest()[0];
   const slotCount = 29 + (hashByte % 16);
@@ -669,14 +742,7 @@ function buildSiloHtml(d, isFlight) {
        </div>`
     : '';
 
-  const stanceSelectorHtml = isPoll
-    ? `<select name='stance' required style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;background:#ffffff;color:#0f172a;font-weight:700;'>
-         <option value='' disabled selected>${langGroup.stancePrompt}</option>
-         <option value='SUPPORT_ACTION'>${langGroup.stanceA}</option>
-         <option value='OPPOSE_ACTION'>${langGroup.stanceB}</option>
-         <option value='INDEPENDENT_AUDIT'>${langGroup.stanceC}</option>
-       </select>`
-    : '';
+  const conversionSectionHtml = buildConversionSectionHtml(langKey, tierKey, d.niche, masterIncident, d.region);
 
   const customAmzHeader = d.affiliate_heading || langGroup.amzDefaultHeader;
   const affiliateBlockHtml = d.affiliate_keyword
@@ -735,56 +801,7 @@ function buildSiloHtml(d, isFlight) {
       </div>
     </div>
 
-    <h3 style='font-size:19px;color:#0f172a;margin-top:34px;margin-bottom:14px;font-weight:900;'>${pack.heading}</h3>
-    <div style='display:flex;flex-direction:column;gap:14px;margin-bottom:24px;'>
-      <div style='background:#fef2f2;border:2px solid #ef4444;border-radius:8px;padding:16px;'>
-        <div style='color:#b91c1c;font-weight:800;font-size:13px;text-transform:uppercase;'>${pack.redTitle}</div>
-        <p style='margin:6px 0 0 0;font-size:14.5px;color:#7f1d1d;'>${pack.redText}</p>
-      </div>
-      <div style='background:#fffbeb;border:2px solid #f59e0b;border-radius:8px;padding:16px;'>
-        <div style='color:#b45309;font-weight:800;font-size:13px;text-transform:uppercase;'>${pack.amberTitle}</div>
-        <p style='margin:6px 0 0 0;font-size:14.5px;color:#78350f;'>${pack.amberText}</p>
-      </div>
-      <div style='background:#f0fdf4;border:2px solid #16a34a;border-radius:8px;padding:22px;'>
-        <div style='color:#15803d;font-weight:800;font-size:13.5px;text-transform:uppercase;'>${pack.greenTitle}</div>
-        <p style='margin:8px 0 16px 0;font-size:14.5px;color:#14532d;line-height:1.65;'>${pack.greenText}</p>
-        <form action='${MAKE_WEBHOOK_URL}' method='GET' style='display:flex;flex-direction:column;gap:10px;'>
-          <input type='hidden' name='flow_type' value='DFY_CHECKOUT'>
-          <input type='hidden' name='niche' value='${d.niche}'>
-          <input type='hidden' name='incident' value='${masterIncident}'>
-          <input type='hidden' name='tier' value='${tierKey}'>
-          <input type='hidden' name='region' value='${d.region}'>
-          ${stanceSelectorHtml}
-          <input type='text' name='name' required placeholder='${pack.namePlaceholder}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
-          <input type='text' name='pnr' required placeholder='${pack.inputPlaceholder}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
-          <input type='email' name='email' required placeholder='${pack.emailPlaceholder}' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
-          <button type='submit' style='padding:16px;background:#16a34a;color:#ffffff;font-weight:900;font-size:16px;border:none;border-radius:6px;cursor:pointer;'>${pack.ctaBtn} &rarr;</button>
-        </form>
-      </div>
-    </div>
-
-    <div style='background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:20px;margin-top:24px;'>
-      <h4 style='margin:0 0 6px 0;font-size:16px;color:#0f172a;'>${pack.freeTitle}</h4>
-      <p style='margin:0 0 14px 0;font-size:14px;color:#475569;'>${pack.freeCta}</p>
-      <form action='${MAKE_WEBHOOK_URL}' method='GET' style='display:flex;flex-direction:column;gap:10px;'>
-        <input type='hidden' name='flow_type' value='FREE_LEAD'>
-        <input type='hidden' name='niche' value='${d.niche}'>
-        <input type='hidden' name='incident' value='${masterIncident}'>
-        <input type='hidden' name='tier' value='${tierKey}'>
-        <input type='hidden' name='region' value='${d.region}'>
-        <div style='display:flex;gap:10px;flex-wrap:wrap;'>
-          <input type='text' name='signer_name' required placeholder='${pack.namePlaceholder}' style='flex:1;min-width:180px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
-          <input type='email' name='email' required placeholder='${pack.emailPlaceholder}' style='flex:1;min-width:200px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
-        </div>
-        <input type='text' name='loss_impact' required placeholder='${pack.freeInputPlaceholder}' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
-        <label style='display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#64748b;cursor:pointer;'>
-          <input type='checkbox' name='coreg_optin' value='yes' checked style='margin-top:3px;'>
-          <span>${langGroup.coregNote}</span>
-        </label>
-        <button type='submit' style='padding:13px;background:#0f172a;color:#ffffff;font-weight:800;font-size:14px;border:none;border-radius:6px;cursor:pointer;'>${pack.freeBtn}</button>
-      </form>
-    </div>
-
+    ${conversionSectionHtml}
     ${affiliateBlockHtml}
     ${buildSharedFooter(masterIncident, pageSlug)}
   </div>
@@ -794,16 +811,16 @@ function buildSiloHtml(d, isFlight) {
 
 const MASTER_SYSTEM_PROMPT = `You are an elite long-tail SEO investigative journalist and consumer advocacy advertorial writer.
 CRITICAL RULES:
-1. CLINICAL MEDICAL & DISEASE SAFETY FILTER: If the headline is strictly about clinical disease treatment, cancer/oncology drug guidelines (e.g. CLL, leukemia, pirtobrutinib), eating disorders (e.g. anorexia, bulimia), surgery, or hospital patient care, return {"skip": true}. (NOTE: Consumer product recalls, food/appliance recalls, corporate lawsuits, and ALL non-medical news—including sports, entertainment, tech, business, politics, and viral culture—are 100% VALID and must NEVER be skipped).
+1. CLINICAL MEDICAL & DISEASE SAFETY FILTER: If the headline is strictly about clinical disease treatment, cancer/oncology drug guidelines (e.g. CLL, leukemia, pirtobrutinib), eating disorders (e.g. anorexia, bulimia), surgery, or hospital patient care, return {"skip": true}. (NOTE: Consumer health insurance pricing/co-pay debates, product recalls, food/appliance recalls, corporate lawsuits, and ALL non-medical news—including sports, entertainment, tech, business, politics, and viral culture—are 100% VALID and must NEVER be skipped).
 2. NEVER write one-sentence answers. Every paragraph in "advertorial_paragraphs" and every answer ("a1_answer", "a2_answer", "a3_answer") MUST be 4 to 5 full, detailed sentences (at least 65 words per paragraph/answer) packed with specific context, regulatory/financial stakes, and actionable insights in the requested Language.
 3. NEVER use the words "automated", "bot", or "AI".
 4. LONG-TAIL GOOGLE SEARCH HEADLINES:
    - "seo_title" and "human_h1" MUST be written in the requested Language the exact way real people search on Google when looking for answers, refunds, account protection, petitions, or public reaction to this news event.
    - "english_title" MUST always be written in clear English so the operator dashboard reads in English.
 5. PRECISE MONETIZATION TIER ROUTING:
-   - "TIER_1_STATUTORY" ($29.00): Direct personal cash loss, cancelled/delayed flight, active service outage, frozen bank/fintech funds, withheld security deposit/Airbnb refund, or defective consumer product recall requiring an immediate statutory refund/release demand.
-   - "TIER_2_LEDGER" ($4.99): Regulatory oversight/administration probes, government/corporate policy decisions, rate hikes, labor/school strikes, or institutional actions where citizens/account holders want to dispatch a formal $4.99 Individual Protection & Accountability Notice in their name.
-   - "TIER_3_POLL" ($1.99): ALL general news, sports, celebrity drama, entertainment/gaming releases, court trials, cultural flashpoints, or viral debates where there is no direct personal refund owed, and readers want to log a 10x weighted referendum vote and statement.
+   - "TIER_1_STATUTORY" ($29.00): Direct personal cash loss by everyday consumers (cancelled/delayed flight, consumer telecom/bank/ISP outage, frozen bank/fintech funds, withheld security deposit/Airbnb refund, or defective consumer product recall requiring an immediate statutory refund/release demand). NEVER use TIER_1_STATUTORY for government/military/intelligence agency networks.
+   - "TIER_2_LEDGER" ($4.99): Domestic consumer-facing corporate probes (e.g., bank/fintech special administration), domestic household financial policy proposals (e.g., health insurance co-pay hikes, utility/tax rate hikes, municipal tolls, school/transit strikes) where citizens or account holders have a direct financial stake and want to dispatch a formal $4.99 Individual Notice. NEVER use TIER_2_LEDGER for military, intelligence agencies (CIA/NSA), or foreign geopolitical events.
+   - "TIER_3_POLL" ($1.99): ALL military, intelligence agency, national security, foreign geopolitics, general politics, sports, celebrity drama, entertainment/gaming releases, court trials, cultural flashpoints, or viral debates where readers want to cast a 10x weighted referendum vote and log their verified statement.
 6. CONTEXT-MATCHED AMAZON AFFILIATE CALLOUT:
    - "affiliate_heading": A natural 3-to-5 word category callout in the requested Language that explains WHY the recommended product/book/gear below fits this article.
    - "affiliate_keyword": A high-converting 2-to-4 word Amazon search phrase in the requested Language matching that callout.
@@ -909,8 +926,8 @@ async function processGlobalNews(state, newUrls) {
     activeFeeds.push(OMNIBUS_FEEDS[(startIdx + i) % OMNIBUS_FEEDS.length]);
   }
 
-  // Pre-filter clinical oncology/eating-disorder terms in Node before calling OpenAI (saves OpenAI credits too)
   const clinicalPreFilter = /(anorexia|bulimia|leukemia|leukaemie|onkopedia|pirtobrutinib|chemotherapy|chimiotherapie|carcinoma|lymphoma|melanoma|glioblastoma)/i;
+  const geoIntelForcePollRegex = /(intelligence agency|intelligence services|servicios de inteligencia|servizi di intelligence|nachrichtendienst|renseignement|pentagon|cia|nsa|military|nato|otan|espionage)/i;
 
   const feedResults = await Promise.all(
     activeFeeds.map(async (feed) => {
@@ -970,6 +987,11 @@ async function processGlobalNews(state, newUrls) {
       if (!parsed || parsed.skip === true || !parsed.slug || !Array.isArray(parsed.advertorial_paragraphs) || parsed.advertorial_paragraphs.length < 2) {
         state.deployed[hashId] = { ts: Date.now(), status: 'SKIPPED', v14: true };
         return;
+      }
+
+      // Hard enforcement: military/intelligence stories always route to TIER_3_POLL ($1.99)
+      if (geoIntelForcePollRegex.test(rawTitle) || geoIntelForcePollRegex.test(parsed.english_title || '')) {
+        parsed.tier = 'TIER_3_POLL';
       }
 
       const cleanSlug = parsed.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
