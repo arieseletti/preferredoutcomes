@@ -7,7 +7,7 @@ const FLIGHTAWARE_API_KEY = process.env.FLIGHTAWARE_API_KEY;
 const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp';
 const SITE_URL = 'https://preferredoutcomes.org';
 const INDEXNOW_KEY = 'poindex2026key';
-const AMAZON_TAG = 'plethora0c5-20';
+const AMAZON_TAG = 'preferredoutc-20'; // <-- Replace with your Amazon Associates Tag (e.g. yourname-20)
 
 const SILOS_FILE = path.join(process.cwd(), 'terminal', 'silos.json');
 
@@ -264,66 +264,69 @@ function buildSiloHtml(d, isFlight) {
 
 async function pollGlobalAviation(state, newUrls) {
   if (!FLIGHTAWARE_API_KEY) return;
-  const idx = (state.airport_cursor || 0) % ALL_AIRPORTS.length;
-  state.airport_cursor = (idx + 1) % ALL_AIRPORTS.length;
-  const hub = ALL_AIRPORTS[idx];
 
-  try {
-    console.log(`[Aviation] Polling hub ${hub.code} (${hub.region})...`);
-    const res = await fetch(`https://aeroapi.flightaware.com/aeroapi/airports/${hub.code}/flights?max_pages=1`, {
-      headers: { 'x-apikey': FLIGHTAWARE_API_KEY }
-    });
-    if (!res.ok) return;
-    const data = await res.json();
-    const allFlights = [...(data.departures || []), ...(data.arrivals || [])];
+  for (let h = 0; h < 3; h++) {
+    const idx = (state.airport_cursor || 0) % ALL_AIRPORTS.length;
+    state.airport_cursor = (idx + 1) % ALL_AIRPORTS.length;
+    const hub = ALL_AIRPORTS[idx];
 
-    const disrupted = allFlights.filter(f => {
-      if (!f.ident || f.ident.length < 4) return false;
-      const delaySec = Math.max(f.departure_delay || 0, f.arrival_delay || 0);
-      return f.cancelled === true || delaySec >= 10800;
-    }).slice(0, 6);
+    try {
+      console.log(`[Aviation] Polling hub ${hub.code} (${hub.region})...`);
+      const res = await fetch(`https://aeroapi.flightaware.com/aeroapi/airports/${hub.code}/flights?max_pages=1`, {
+        headers: { 'x-apikey': FLIGHTAWARE_API_KEY }
+      });
+      if (!res.ok) continue;
+      const data = await res.json();
+      const allFlights = [...(data.departures || []), ...(data.arrivals || [])];
 
-    for (const fl of disrupted) {
-      const ident = fl.ident.toLowerCase();
-      if (state.deployed[ident]) continue;
+      const disrupted = allFlights.filter(f => {
+        if (!f.ident || f.ident.length < 4) return false;
+        const ident = f.ident.toLowerCase();
+        if (state.deployed[ident]) return false;
+        const delaySec = Math.max(f.departure_delay || 0, f.arrival_delay || 0);
+        return f.cancelled === true || delaySec >= 10800;
+      }).slice(0, 6);
 
-      const parsed = await callOpenAI(
-        `You are an aviation statutory specialist. Never use the word "automated" or "AI". Output JSON in ${hub.lang} with keys:
-        "seo_title", "human_h1", "ai_direct_answer", "badge_text", "lang_code", "english_title",
-        "q1_human", "a1_answer", "q2_human", "a2_answer", "q3_human", "a3_answer",
-        "compare_heading", "red_option_title", "red_option_text", "amber_option_title", "amber_option_text",
-        "green_option_title", "green_option_text", "name_placeholder", "input_placeholder", "free_input_placeholder",
-        "email_placeholder", "cta_button_text" (must end with "— $29.00"), "free_tool_title", "free_tool_cta", "free_button_text".`,
-        `Flight ${fl.ident} at ${hub.code} (${hub.region}) is ${fl.cancelled ? 'CANCELLED' : 'DELAYED OVER 3 HOURS'}. Generate a natural long-tail passenger compensation & refund filing page.`
-      );
+      for (const fl of disrupted) {
+        const ident = fl.ident.toLowerCase();
+        const parsed = await callOpenAI(
+          `You are an aviation statutory specialist. Never use the word "automated" or "AI". Output JSON in ${hub.lang} with keys:
+          "seo_title", "human_h1", "ai_direct_answer", "badge_text", "lang_code", "english_title",
+          "q1_human", "a1_answer", "q2_human", "a2_answer", "q3_human", "a3_answer",
+          "compare_heading", "red_option_title", "red_option_text", "amber_option_title", "amber_option_text",
+          "green_option_title", "green_option_text", "name_placeholder", "input_placeholder", "free_input_placeholder",
+          "email_placeholder", "cta_button_text" (must end with "— $29.00"), "free_tool_title", "free_tool_cta", "free_button_text".`,
+          `Flight ${fl.ident} at ${hub.code} (${hub.region}) is ${fl.cancelled ? 'CANCELLED' : 'DELAYED OVER 3 HOURS'}. Generate a natural long-tail passenger compensation & refund filing page.`
+        );
 
-      if (!parsed || !parsed.seo_title) continue;
-      parsed.slug = ident;
-      parsed.master_incident_id = ident;
-      parsed.niche = 'AVIATION';
-      parsed.tier = 'TIER_1_STATUTORY';
-      parsed.region = hub.region;
+        if (!parsed || !parsed.seo_title) continue;
+        parsed.slug = ident;
+        parsed.master_incident_id = ident;
+        parsed.niche = 'AVIATION';
+        parsed.tier = 'TIER_1_STATUTORY';
+        parsed.region = hub.region;
 
-      const html = buildSiloHtml(parsed, true);
-      const outDir = path.join(process.cwd(), 'flight', ident);
-      fs.mkdirSync(outDir, { recursive: true });
-      fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf8');
+        const html = buildSiloHtml(parsed, true);
+        const outDir = path.join(process.cwd(), 'flight', ident);
+        fs.mkdirSync(outDir, { recursive: true });
+        fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf8');
 
-      state.deployed[ident] = {
-        ts: Date.now(),
-        status: 'LIVE',
-        slug: ident,
-        master_id: ident,
-        english_title: parsed.english_title || `Flight ${ident.toUpperCase()} (${hub.region})`,
-        type: 'AVIATION',
-        tier: 'TIER_1_STATUTORY',
-        region: hub.region
-      };
-      newUrls.push(`${SITE_URL}/flight/${ident}/`);
-      console.log(`Deployed Flight [${hub.region}]: /flight/${ident}/`);
+        state.deployed[ident] = {
+          ts: Date.now(),
+          status: 'LIVE',
+          slug: ident,
+          master_id: ident,
+          english_title: parsed.english_title || `Flight ${ident.toUpperCase()} (${hub.region})`,
+          type: 'AVIATION',
+          tier: 'TIER_1_STATUTORY',
+          region: hub.region
+        };
+        newUrls.push(`${SITE_URL}/flight/${ident}/`);
+        console.log(`Deployed Flight [${hub.region}]: /flight/${ident}/`);
+      }
+    } catch (e) {
+      console.error('Aviation poll error:', e.message);
     }
-  } catch (e) {
-    console.error('Aviation poll error:', e.message);
   }
 }
 
@@ -359,22 +362,23 @@ Return a strict JSON object with these keys:
     GLOBAL_RSS_FEEDS.map(async (feed) => {
       try {
         const res = await fetch(feed.url, { headers: BROWSER_HEADERS });
-        if (!res.ok) {
-          console.error(`RSS HTTP ${res.status} on ${feed.region} ${feed.niche}`);
-          return [];
-        }
+        if (!res.ok) return [];
         const xml = await res.text();
-        const matches = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 6);
-        return matches.map(m => {
+        const matches = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 40);
+        const freshItems = [];
+        for (const m of matches) {
           const itemXml = m[1];
           const t = itemXml.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/) || itemXml.match(/<title>(.*?)<\/title>/);
-          if (!t) return null;
-          const rawTitle = t[1].replace(/ - .*$/, '').trim();
+          if (!t) continue;
+          const rawTitle = t[1].replace(/ - .*\$/, '').trim();
           const hashId = crypto.createHash('sha256').update(rawTitle).digest('hex').slice(0, 16);
-          return { rawTitle, hashId, feed };
-        }).filter(Boolean);
+          if (!state.deployed[hashId]) {
+            freshItems.push({ rawTitle, hashId, feed });
+          }
+          if (freshItems.length >= 6) break;
+        }
+        return freshItems;
       } catch (e) {
-        console.error(`Fetch error on ${feed.region}:`, e.message);
         return [];
       }
     })
@@ -383,9 +387,7 @@ Return a strict JSON object with these keys:
   const candidates = [];
   for (let i = 0; i < 6; i++) {
     for (const list of feedResults) {
-      if (list[i] && !state.deployed[list[i].hashId]) {
-        candidates.push(list[i]);
-      }
+      if (list[i]) candidates.push(list[i]);
     }
   }
 
@@ -399,7 +401,7 @@ Return a strict JSON object with these keys:
     if (uniqueQueue.length >= 96) break;
   }
 
-  console.log(`[Global Discovery] Found ${uniqueQueue.length} unindexed global stories across 22 feeds...`);
+  console.log(`[Global Discovery] Processing ${uniqueQueue.length} fresh unseen global stories...`);
 
   const BATCH_SIZE = 12;
   for (let i = 0; i < uniqueQueue.length; i += BATCH_SIZE) {
@@ -419,17 +421,17 @@ Return a strict JSON object with these keys:
         parsed.tier = 'TIER_3_POLL';
         parsed.niche = 'CULTURE';
         if (parsed.cta_button_text && !parsed.cta_button_text.includes('1.99')) {
-          parsed.cta_button_text = parsed.cta_button_text.replace(/\$\d+(\.\d+)?/, '$1.99');
+          parsed.cta_button_text = parsed.cta_button_text.replace(/\$\d+(\.\d+)?/, '\$1.99');
         }
       } else if (feed.niche === 'POLITICS' && parsed.tier === 'TIER_1_STATUTORY') {
         parsed.tier = 'TIER_2_LEDGER';
         if (parsed.cta_button_text && !parsed.cta_button_text.includes('4.99')) {
-          parsed.cta_button_text = parsed.cta_button_text.replace(/\$\d+(\.\d+)?/, '$4.99');
+          parsed.cta_button_text = parsed.cta_button_text.replace(/\$\d+(\.\d+)?/, '\$4.99');
         }
       }
 
-      const cleanSlug = parsed.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
-      const cleanMaster = (parsed.master_incident_id || cleanSlug).toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
+      const cleanSlug = parsed.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-\$/g, '');
+      const cleanMaster = (parsed.master_incident_id || cleanSlug).toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-\$/g, '');
       if (!cleanSlug) return;
 
       parsed.slug = cleanSlug;
