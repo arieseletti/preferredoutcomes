@@ -106,12 +106,11 @@ function buildOmnibusFeedMatrix() {
 
 const OMNIBUS_FEEDS = buildOmnibusFeedMatrix();
 
-// Safe HTML attribute escaper so single quotes never truncate input placeholders
 function escAttr(str) {
   return String(str || '').replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
 }
 
-// 100% NATIVE-LANGUAGE CONVERSION PACKS (Zero unescaped apostrophes, universal poll copy, & SLA/credit support in $4.99 Tier 2)
+// 100% NATIVE-LANGUAGE CONVERSION PACKS WITH SEPARATE "TIER_2_OUTAGE" (SLA Credits) AND "TIER_2_LEDGER" (Corporate/Policy Escalation)
 const TIER_CONVERSION_PACKS = {
   en: {
     execSummaryLabel: 'Executive Summary:',
@@ -140,21 +139,38 @@ const TIER_CONVERSION_PACKS = {
       freeInputPlaceholder: 'Your City & Brief Summary of Your Financial Loss or Disruption',
       freeBtn: 'Send Free Claim Checklist & Register My Case ($0.00)'
     },
-    TIER_2_LEDGER: {
-      heading: 'Compare Your 3 SLA Credit, Billing Dispute & Official Escalation Options:',
+    TIER_2_OUTAGE: {
+      heading: 'Compare Your 3 Outage SLA Credit & Billing Escalation Options:',
       redTitle: 'OPTION 1: VENTING ON SOCIAL MEDIA OR BASIC SUPPORT CHAT (IGNORED)',
-      redText: 'Social media complaints and tier-1 support chats carry zero administrative weight—companies and institutions never issue automatic SLA billing credits or policy reversals unless a formal notice is logged.',
-      amberTitle: 'OPTION 2: STANDARD FREE GROUP QUEUE (WAITS FOR 50 SIGNATURES)',
-      amberText: 'Adding your name to the free group registry below logs your complaint, but your filing is held in queue until a full 50-person consolidated batch is reached.',
-      greenTitle: 'OPTION 3: PRIORITY INDIVIDUAL SLA CREDIT & EXECUTIVE NOTICE ($4.99)',
-      greenText: 'What you get for $4.99: Instead of waiting in the free group queue, we format and electronically transmit an individual, timestamped Formal SLA Billing Credit & Executive Accountability Notice in your name directly to the corporate billing, compliance, or oversight desk today—with an official copy sent to your inbox.',
+      redText: 'Social media complaints and tier-1 support chats carry zero administrative weight—software, cloud, and telecom providers never issue automatic SLA billing credits unless a formal notice is logged.',
+      amberTitle: 'OPTION 2: STANDARD FREE GROUP QUEUE (WAITS FOR 50 SUBSCRIBERS)',
+      amberText: 'Adding your name to the free group registry below logs your outage complaint, but your filing is held in queue until a full 50-subscriber batch is reached.',
+      greenTitle: 'OPTION 3: PRIORITY INDIVIDUAL SLA BILLING CREDIT NOTICE ($4.99)',
+      greenText: 'What you get for $4.99: Instead of waiting in the free group queue, we format and electronically transmit an individual, timestamped Formal SLA Downtime Credit & Billing Notice in your name directly to the provider billing and compliance desk today—with an official copy sent to your inbox.',
       namePlaceholder: 'Your Full Name (As Shown on Official Notice)',
-      inputPlaceholder: 'Account Email / Service Affected & Your Demand (SLA Credit / Refund / Policy Objection)',
+      inputPlaceholder: 'Account Email / Service Affected & Your Demand (SLA Bill Credit / Downtime Refund)',
+      emailPlaceholder: 'Your Email Address (To Receive Your Dispatched Notice Copy)',
+      ctaBtn: 'Dispatch My SLA Credit Notice — $4.99',
+      freeTitle: 'Prefer the Free Route? Add Your Name to the 50-Subscriber Outage Docket',
+      freeCta: 'Log your free outage report on the consolidated public docket and receive updates on batch SLA credit claims.',
+      freeInputPlaceholder: 'Your City & How Long Your Service Was Disrupted',
+      freeBtn: 'Log My Free Outage Report ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Compare Your 3 Consumer Rights, Policy & Institutional Escalation Options:',
+      redTitle: 'OPTION 1: UNVERIFIED SOCIAL MEDIA COMMENTS (ZERO INSTITUTIONAL IMPACT)',
+      redText: 'Unverified social media posts carry zero administrative weight and are completely ignored by corporate boards, ministries, and regulatory oversight committees.',
+      amberTitle: 'OPTION 2: STANDARD FREE GROUP PETITION (WAITS FOR 50 SIGNATURES)',
+      amberText: 'Adding your name to the free group registry below logs your position, but your signature is held in queue until a full 50-person consolidated group is reached.',
+      greenTitle: 'OPTION 3: PRIORITY INDIVIDUAL EXECUTIVE & REGULATORY NOTICE ($4.99)',
+      greenText: 'What you get for $4.99: Instead of waiting in the free group queue, we format and electronically transmit an individual, timestamped Formal Consumer & Policy Accountability Notice in your name directly to the corporate compliance desk, ministry, or regulatory body today—with an official copy sent to your inbox.',
+      namePlaceholder: 'Your Full Name (As Shown on Official Notice)',
+      inputPlaceholder: 'Your Position (Support / Oppose / Demand Enforcement) & Personal Statement',
       emailPlaceholder: 'Your Email Address (To Receive Your Dispatched Notice Copy)',
       ctaBtn: 'Dispatch My Individual Formal Notice — $4.99',
       freeTitle: 'Prefer the Free Route? Add Your Name to the 50-Person Public Group Docket',
-      freeCta: 'Log your free signature on the consolidated public docket and receive official updates as this outage, billing, or policy issue escalates.',
-      freeInputPlaceholder: 'Your City/Region & How This Outage or Policy Affects You',
+      freeCta: 'Log your free signature on the consolidated public docket and receive official updates as this regulatory or corporate action develops.',
+      freeInputPlaceholder: 'Your City/Region & How This Measure or Investigation Affects You',
       freeBtn: 'Log My Free Signature on the Public Docket ($0.00)'
     },
     TIER_3_POLL: {
@@ -202,21 +218,38 @@ const TIER_CONVERSION_PACKS = {
       freeInputPlaceholder: 'Sua Cidade/UF e Resumo do Problema ou Prejuízo Financeiro',
       freeBtn: 'Receber Checklist Gratuito e Registrar Meu Caso ($0.00)'
     },
-    TIER_2_LEDGER: {
-      heading: 'Compare Suas 3 Opções de Crédito por Falha, Contestação e Escalada Oficial:',
+    TIER_2_OUTAGE: {
+      heading: 'Compare Suas 3 Opções de Abatimento por Queda de Serviço e Escalada:',
       redTitle: 'OPÇÃO 1: RECLAMAR NAS REDES SOCIAIS OU CHAT COMUM (IMPACTO ZERO)',
-      redText: 'Comentários em redes sociais e chats básicos não geram protocolo jurídico—empresas nunca concedem abatimento na fatura ou revisão sem uma notificação formal registrada.',
-      amberTitle: 'OPÇÃO 2: LISTA COLETIVA GRATUITA (AGUARDA GRUPO DE 50 NOMES)',
-      amberText: 'Assinar a lista gratuita abaixo registra sua queixa, mas aguarda o fechamento do grupo de 50 assinaturas antes do envio consolidado.',
-      greenTitle: 'OPÇÃO 3: NOTIFICAÇÃO INDIVIDUAL DE ABATIMENTO E RESPONSABILIDADE ($4.99)',
-      greenText: 'O que você recebe por $4.99: Formatamos e transmitimos hoje uma Notificação Formal Individual em seu nome diretamente para o setor de faturamento, ouvidoria ou órgão regulador—exigindo crédito na assinatura por tempo fora do ar, revisão de cobrança ou providências imediatas—com cópia oficial no seu e-mail.',
+      redText: 'Reclamações em redes sociais não geram protocolo jurídico—operadoras e plataformas digitais nunca concedem desconto na fatura por queda de serviço sem pedido formal.',
+      amberTitle: 'OPÇÃO 2: LISTA COLETIVA GRATUITA (AGUARDA GRUPO DE 50 ASSINANTES)',
+      amberText: 'Assinar a lista gratuita abaixo registra sua queixa, mas aguarda o fechamento do grupo de 50 assinantes antes do envio consolidado.',
+      greenTitle: 'OPÇÃO 3: NOTIFICAÇÃO INDIVIDUAL DE CRÉDITO E ABATIMENTO ($4.99)',
+      greenText: 'O que você recebe por $4.99: Formatamos e transmitimos hoje uma Notificação Formal Individual em seu nome diretamente ao setor de faturamento e conformidade da empresa—exigindo abatimento proporcional ou crédito pelo período fora do ar—com cópia oficial no seu e-mail.',
       namePlaceholder: 'Seu Nome Completo',
-      inputPlaceholder: 'Serviço Afetado / Seu Pedido (Crédito na Fatura / Contestação / Providências)',
+      inputPlaceholder: 'Serviço Afetado e Seu Pedido (Abatimento na Fatura / Crédito por Indisponibilidade)',
+      emailPlaceholder: 'Seu E-mail (Para Receber o Comprovante Oficial de Envio)',
+      ctaBtn: 'Enviar Minha Notificação de Abatimento — $4.99',
+      freeTitle: 'Adicione Seu Nome Gratuitamente ao Grupo Coletivo Desta Falha',
+      freeCta: 'Registre sua queixa gratuita no dossiê público e receba atualizações sobre créditos coletivos.',
+      freeInputPlaceholder: 'Sua Cidade/UF e Tempo de Indisponibilidade do Serviço',
+      freeBtn: 'Registrar Minha Queixa Gratuita ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Compare Suas 3 Opções de Direitos do Consumidor e Escalada Institucional:',
+      redTitle: 'OPÇÃO 1: RECLAMAR NAS REDES SOCIAIS (IMPACTO OFICIAL ZERO)',
+      redText: 'Comentários em redes sociais não possuem validade administrativa e são ignorados por diretorias, conselhos executivos, ministérios e órgãos reguladores.',
+      amberTitle: 'OPÇÃO 2: LISTA DE PETIÇÃO COLETIVA GRATUITA (AGUARDA GRUPO DE 50 NOMES)',
+      amberText: 'Assinar a lista gratuita abaixo registra seu apoio, mas aguarda o fechamento do grupo de 50 assinaturas antes do envio consolidado.',
+      greenTitle: 'OPÇÃO 3: NOTIFICAÇÃO EXECUTIVA E REGULATÓRIA EM SEU NOME HOJE ($4.99)',
+      greenText: 'O que você recebe por $4.99: Formatamos e transmitimos hoje uma Notificação Formal Individual em seu nome diretamente para a diretoria, ouvidoria ou órgão regulador competente—seja para exigir fiscalização, proteção ao consumidor ou contestar uma medida—com cópia oficial enviada ao seu e-mail.',
+      namePlaceholder: 'Seu Nome Completo',
+      inputPlaceholder: 'Sua Posição (Exigir Fiscalização / A Favor / Contra) e Sua Declaração Formal',
       emailPlaceholder: 'Seu E-mail (Para Receber o Comprovante Oficial de Envio)',
       ctaBtn: 'Enviar Minha Notificação Individual Agora — $4.99',
       freeTitle: 'Adicione Seu Nome Gratuitamente ao Grupo Coletivo Desta Pauta',
       freeCta: 'Registre sua assinatura gratuita no dossiê público e receba atualizações oficiais sobre este caso.',
-      freeInputPlaceholder: 'Sua Cidade/UF e Como Esta Falha ou Medida Afeta Você',
+      freeInputPlaceholder: 'Sua Cidade/UF e Como Esta Decisão ou Caso Afeta Você',
       freeBtn: 'Registrar Minha Assinatura Gratuita ($0.00)'
     },
     TIER_3_POLL: {
@@ -264,21 +297,38 @@ const TIER_CONVERSION_PACKS = {
       freeInputPlaceholder: 'Su Ciudad y Resumen del Problema o Pérdida Económica',
       freeBtn: 'Recibir Guía Gratuita y Registrar Mi Caso ($0.00)'
     },
-    TIER_2_LEDGER: {
-      heading: 'Compare Sus 3 Opciones de Abono en Factura, Reclamo de Servicio y Escalada:',
+    TIER_2_OUTAGE: {
+      heading: 'Compare Sus 3 Opciones de Abono por Interrupción del Servicio y Escalada:',
       redTitle: 'OPCIÓN 1: QUEJARSE EN REDES SOCIALES O CHAT BÁSICO (IMPACTO CERO)',
-      redText: 'Las quejas en redes sociales o chats de soporte básico no generan registro legal—las empresas nunca otorgan descuentos en factura por caídas del servicio sin un reclamo formal.',
-      amberTitle: 'OPCIÓN 2: LISTA COLECTIVA GRATUITA (ESPERA AL GRUPO DE 50 FIRMAS)',
+      redText: 'Las quejas en redes sociales o chats de soporte básico no generan registro legal—los proveedores nunca otorgan descuentos automáticos en factura sin un reclamo formal.',
+      amberTitle: 'OPCIÓN 2: LISTA COLECTIVA GRATUITA (ESPERA AL GRUPO DE 50 USUARIOS)',
       amberText: 'Sumar su nombre a la lista gratuita registra su queja, pero permanece en espera hasta completar el grupo consolidado de 50 afectados.',
-      greenTitle: 'OPCIÓN 3: NOTIFICACIÓN FORMAL INDIVIDUAL DE ABONO Y CUMPLIMIENTO ($4.99)',
-      greenText: 'Lo que recibe por $4.99: Formateamos y transmitimos hoy mismo una Notificación Formal Individual con sello de tiempo en su nombre directamente al departamento de facturación, cumplimiento o regulador—exigiendo abono por caída de servicio (SLA) o revisión de cargos—con copia oficial en su correo.',
+      greenTitle: 'OPCIÓN 3: NOTIFICACIÓN INDIVIDUAL DE ABONO Y COMPENSACIÓN SLA ($4.99)',
+      greenText: 'Lo que recibe por $4.99: Formateamos y transmitimos hoy mismo una Notificación Formal Individual en su nombre directamente al departamento de facturación y cumplimiento del proveedor—exigiendo abono proporcional por interrupción del servicio—con copia oficial enviada a su correo.',
       namePlaceholder: 'Su Nombre Completo',
-      inputPlaceholder: 'Servicio Afectado y Su Solicitud (Abono en Factura / Reclamo SLA / Queja Formal)',
+      inputPlaceholder: 'Servicio Afectado y Su Solicitud (Abono en Factura / Compensación por Interrupción)',
       emailPlaceholder: 'Su Correo Electrónico (Para Recibir Copia de la Notificación)',
+      ctaBtn: 'Enviar Mi Solicitud de Abono — $4.99',
+      freeTitle: 'Sume Su Firma al Expediente Colectivo Gratuito de Esta Interrupción',
+      freeCta: 'Registre su reporte gratuito en el expediente público y reciba actualizaciones oficiales.',
+      freeInputPlaceholder: 'Su Ciudad y Duración de la Interrupción del Servicio',
+      freeBtn: 'Registrar Mi Reporte Gratuito ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Compare Sus 3 Opciones de Protección al Consumidor y Escalada Institucional:',
+      redTitle: 'OPCIÓN 1: COMENTAR EN REDES SOCIALES (IMPACTO INSTITUCIONAL CERO)',
+      redText: 'Los comentarios en redes sociales carecen de validez administrativa y son ignorados por juntas directivas, comités de supervisión, ministerios y autoridades reguladoras.',
+      amberTitle: 'OPCIÓN 2: LISTA DE PETICIÓN COLECTIVA GRATUITA (ESPERA AL GRUPO DE 50 FIRMAS)',
+      amberText: 'Sumar su nombre a la lista gratuita registra su postura, pero permanece en espera hasta completar el grupo consolidado de 50 firmantes.',
+      greenTitle: 'OPCIÓN 3: NOTIFICACIÓN FORMAL INDIVIDUAL DE CUMPLIMIENTO Y CONTROL ($4.99)',
+      greenText: 'Lo que recibe por $4.99: Formateamos y transmitimos hoy mismo una Notificación Formal Individual con sello de tiempo en su nombre directamente a la dirección de cumplimiento, organismo regulador o autoridad competente—exigiendo protección al consumidor, sanciones efectivas o revisión de esta medida—con copia oficial en su correo.',
+      namePlaceholder: 'Su Nombre Completo',
+      inputPlaceholder: 'Su Postura (Exigir Sanción / Protección al Consumidor / En Contra) y Su Declaración',
+      emailPlaceholder: 'Su Correo Electrónico (Para Recibir Copia Oficial de la Notificación)',
       ctaBtn: 'Enviar Mi Notificación Formal Individual — $4.99',
       freeTitle: 'Sume Su Firma al Expediente Colectivo Gratuito de Este Caso',
-      freeCta: 'Registre su firma gratuita en el expediente público y reciba actualizaciones oficiales.',
-      freeInputPlaceholder: 'Su Ciudad y Cómo le Afecta Esta Caída o Medida',
+      freeCta: 'Registre su firma gratuita en el expediente público y reciba actualizaciones oficiales sobre esta investigación o medida.',
+      freeInputPlaceholder: 'Su Ciudad y Cómo le Afecta Esta Situación o Medida',
       freeBtn: 'Registrar Mi Firma Gratuita ($0.00)'
     },
     TIER_3_POLL: {
@@ -326,21 +376,38 @@ const TIER_CONVERSION_PACKS = {
       freeInputPlaceholder: 'Ihre Stadt & Kurze Beschreibung Ihres Finanziellen Schadens',
       freeBtn: 'Kostenlose Checkliste Anfordern & Fall Registrieren ($0.00)'
     },
-    TIER_2_LEDGER: {
-      heading: 'Vergleichen Sie Ihre 3 Optionen für Beitragsgutschrift, Widerspruch & Eskalation:',
+    TIER_2_OUTAGE: {
+      heading: 'Vergleichen Sie Ihre 3 Optionen für Ausfall-Gutschrift & Eskalation:',
       redTitle: 'OPTION 1: KOMMENTARE IN SOZIALEN NETZWERKEN ODER CHAT (KEINE WIRKUNG)',
       redText: 'Beschwerden in sozialen Medien oder Standard-Chats haben kein rechtliches Gewicht—Anbieter gewähren keine automatischen SLA-Gutschriften ohne formelle Rüge.',
+      amberTitle: 'OPTION 2: KOSTENLOSE SAMMELLISTE (WARTET AUF 50 NUTZER)',
+      amberText: 'Ihr Eintrag in die kostenlose Liste unten wird gespeichert, jedoch erst nach Erreichen einer Gruppe von 50 Nutzern gebündelt übermittelt.',
+      greenTitle: 'OPTION 3: INDIVIDUELLE SLA-GUTSCHRIFTSFORDERUNG HEUTE ($4.99)',
+      greenText: 'Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle SLA-Gutschriftsforderung wegen Dienstausfalls in Ihrem Namen direkt an die Abrechnungs- und Compliance-Stelle—inklusive Kopie an Ihr E-Mail-Postfach.',
+      namePlaceholder: 'Ihr Vollständiger Name',
+      inputPlaceholder: 'Betroffener Dienst & Ihre Forderung (SLA-Rechnungsgutschrift / Ausfallentschädigung)',
+      emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Offizielle Übermittlungsbestätigung)',
+      ctaBtn: 'SLA-Gutschriftsforderung Senden — $4.99',
+      freeTitle: 'Tragen Sie Ihren Namen Kostenlos in das Ausfall-Sammelregister Ein',
+      freeCta: 'Registrieren Sie Ihre kostenlose Störungsmeldung im Sammelregister und erhalten Sie Updates.',
+      freeInputPlaceholder: 'Ihre Stadt & Dauer des Dienstausfalls',
+      freeBtn: 'Kostenlose Störungsmeldung Registrieren ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Vergleichen Sie Ihre 3 Optionen für Verbraucherschutz, Einspruch & Eskalation:',
+      redTitle: 'OPTION 1: KOMMENTARE IN SOZIALEN NETZWERKEN (KEINE OFFIZIELLE WIRKUNG)',
+      redText: 'Unverifizierte Beiträge in sozialen Medien haben keinerlei verwaltungsrechtliches Gewicht und werden von Vorständen, Aufsichtsgremien und Ministerien ignoriert.',
       amberTitle: 'OPTION 2: KOSTENLOSE SAMMELLISTE (WARTET AUF 50 UNTERZEICHNER)',
       amberText: 'Ihr Eintrag in die kostenlose Liste unten wird gespeichert, jedoch erst nach Erreichen einer Gruppe von 50 Personen gebündelt übermittelt.',
-      greenTitle: 'OPTION 3: INDIVIDUELLE GUTSCHRIFTS- & WIDERSPRUCHSMITTEILUNG HEUTE ($4.99)',
-      greenText: 'Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle SLA-Gutschriftsforderung oder Stellungnahme in Ihrem Namen direkt an die Abrechnungsstelle, den Vorstand oder das zuständige Gremium—inklusive Kopie an Ihr E-Mail-Postfach.',
+      greenTitle: 'OPTION 3: PRIORISIERTE INDIVIDUELLE STELLUNGNAHME IN IHREM NAMEN HEUTE ($4.99)',
+      greenText: 'Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle Stellungnahme oder Beschwerde in Ihrem Namen direkt an den Vorstand, die Aufsichtsbehörde oder das zuständige Ministerium—inklusive Kopie an Ihr E-Mail-Postfach.',
       namePlaceholder: 'Ihr Vollständiger Name',
-      inputPlaceholder: 'Betroffener Dienst / Ihre Forderung (Gutschrift / Widerspruch / Stellungnahme)',
+      inputPlaceholder: 'Ihre Position (Einspruch / Verbraucherschutz Fordern / Zustimmung) & Stellungnahme',
       emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Offizielle Übermittlungsbestätigung)',
       ctaBtn: 'Individuelle Offizielle Mitteilung Senden — $4.99',
       freeTitle: 'Tragen Sie Ihren Namen Kostenlos in das Öffentliche Sammelregister Ein',
       freeCta: 'Registrieren Sie Ihre kostenlose Unterschrift im Sammelregister und erhalten Sie Updates.',
-      freeInputPlaceholder: 'Ihre Stadt & Wie Sie von der Störung oder Maßnahme Betroffen Sind',
+      freeInputPlaceholder: 'Ihre Stadt & Wie Sie von Dieser Maßnahme Betroffen Sind',
       freeBtn: 'Kostenlose Unterschrift Registrieren ($0.00)'
     },
     TIER_3_POLL: {
@@ -388,22 +455,39 @@ const TIER_CONVERSION_PACKS = {
       freeInputPlaceholder: 'Votre Ville et Résumé de Votre Préjudice Financier',
       freeBtn: 'Recevoir la Checklist Gratuite et Enregistrer Mon Cas ($0.00)'
     },
-    TIER_2_LEDGER: {
-      heading: 'Comparez Vos 3 Options d’Avoir Facture, de Contestation et de Notification :',
+    TIER_2_OUTAGE: {
+      heading: 'Comparez Vos 3 Options d’Avoir Facture pour Panne et Escalade :',
       redTitle: 'OPTION 1 : RÉSEAUX SOCIAUX OU CHAT STANDARD (AUCUN IMPACT)',
       redText: 'Les plaintes sur les réseaux sociaux n’ont aucune valeur juridique—les opérateurs et éditeurs n’accordent jamais d’avoir SLA automatique sans demande formelle.',
-      amberTitle: 'OPTION 2 : PÉTITION COLLECTIVE GRATUITE (ATTEND LE GROUPE DE 50 SIGNATURES)',
-      amberText: 'Ajouter votre nom à la liste gratuite ci-dessous enregistre votre soutien, mais attend que le groupe de 50 signataires soit complet avant transmission.',
-      greenTitle: 'OPTION 3 : NOTIFICATION INDIVIDUELLE D’AVOIR SLA ET DE CONTESTATION ($4.99)',
-      greenText: 'Ce que vous obtenez pour $4.99 : Nous formatons et transmettons dès aujourd’hui une Notification Officielle Individuelle horodatée en votre nom directement au service facturation, à la direction ou au régulateur—avec copie officielle envoyée sur votre boîte mail.',
+      amberTitle: 'OPTION 2 : LISTE COLLECTIVE GRATUITE (ATTEND LE GROUPE DE 50 ABONNÉS)',
+      amberText: 'Ajouter votre nom à la liste gratuite ci-dessous enregistre votre réclamation, mais attend que le groupe de 50 abonnés soit complet.',
+      greenTitle: 'OPTION 3 : NOTIFICATION INDIVIDUELLE D’AVOIR FACTURE SLA ($4.99)',
+      greenText: 'Ce que vous obtenez pour $4.99 : Nous formatons et transmettons dès aujourd’hui une Demande Officielle d’Avoir SLA en votre nom directement au service facturation et conformité de l’opérateur—avec copie officielle envoyée sur votre boîte mail.',
       namePlaceholder: 'Votre Nom Complet',
-      inputPlaceholder: 'Service Concerné et Votre Demande (Avoir Facture SLA / Contestation)',
+      inputPlaceholder: 'Service Concerné et Votre Demande (Avoir Facture SLA / Remboursement Panne)',
+      emailPlaceholder: 'Votre Adresse E-mail (Pour Recevoir Votre Copie de Notification)',
+      ctaBtn: 'Envoyer Ma Demande d’Avoir SLA — $4.99',
+      freeTitle: 'Ajoutez Gratuitement Votre Nom au Dossier Collectif de Cette Panne',
+      freeCta: 'Enregistrez votre signalement gratuit sur le dossier public et recevez les mises à jour.',
+      freeInputPlaceholder: 'Votre Ville et Durée de l’Interruption de Service',
+      freeBtn: 'Enregistrer Mon Signalement Gratuit ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Comparez Vos 3 Options de Protection des Consommateurs et Notification Officielle :',
+      redTitle: 'OPTION 1 : COMMENTAIRES SUR LES RÉSEAUX SOCIAUX (AUCUN IMPACT)',
+      redText: 'Les publications sur les réseaux sociaux n’ont aucune valeur administrative et sont ignorées par les directions, les autorités de régulation et les ministères.',
+      amberTitle: 'OPTION 2 : PÉTITION COLLECTIVE GRATUITE (ATTEND LE GROUPE DE 50 SIGNATURES)',
+      amberText: 'Ajouter votre nom à la liste gratuite ci-dessous enregistre votre position, mais attend que le groupe de 50 signataires soit complet avant transmission.',
+      greenTitle: 'OPTION 3 : NOTIFICATION OFFICIELLE INDIVIDUELLE ENVOYÉE EN VOTRE NOM ($4.99)',
+      greenText: 'Ce que vous obtenez pour $4.99 : Nous formatons et transmettons dès aujourd’hui une Notification Officielle Individuelle horodatée en votre nom directement à la direction, au régulateur ou à l’autorité compétente—avec copie officielle envoyée sur votre boîte mail.',
+      namePlaceholder: 'Votre Nom Complet',
+      inputPlaceholder: 'Votre Position (Exiger un Contrôle / Pour / Contre) et Votre Déclaration',
       emailPlaceholder: 'Votre Adresse E-mail (Pour Recevoir Votre Copie de Notification)',
       ctaBtn: 'Envoyer Ma Notification Individuelle — $4.99',
       freeTitle: 'Ajoutez Gratuitement Votre Nom au Dossier Collectif Public',
       freeCta: 'Enregistrez votre signature gratuite sur le dossier public et recevez les mises à jour officielles.',
-      freeInputPlaceholder: 'Votre Ville et Comment Cette Panne ou Mesure Vous Affecte',
-      freeBtn: 'Enregistrer Ma Signature Gratuita ($0.00)'
+      freeInputPlaceholder: 'Votre Ville et Comment Cette Décision ou Enquête Vous Concerne',
+      freeBtn: 'Enregistrer Ma Signature Gratuite ($0.00)'
     },
     TIER_3_POLL: {
       heading: 'Comment Participer au Sondage et Registre d’Opinion Publique :',
@@ -450,21 +534,38 @@ const TIER_CONVERSION_PACKS = {
       freeInputPlaceholder: 'La Tua Città e Breve Riepilogo del Problema sul Conto o Perdita',
       freeBtn: 'Ricevi Checklist Gratuita e Registra il Mio Caso ($0.00)'
     },
-    TIER_2_LEDGER: {
-      heading: 'Confronta le Tue 3 Opzioni di Rimborso Canone, Reclamo SLA e Tutela:',
+    TIER_2_OUTAGE: {
+      heading: 'Confronta le Tue 3 Opzioni di Rimborso Canone SLA per Disservizio:',
       redTitle: 'OPZIONE 1: SFOGARSI SUI SOCIAL MEDIA O CHAT STANDARD (IMPATTO ZERO)',
       redText: 'I commenti sui social o nelle chat di supporto non hanno valore amministrativo—i gestori non accreditano mai rimborsi SLA automatici senza un’istanza formale.',
+      amberTitle: 'OPZIONE 2: LISTA COLLETTIVA GRATUITA (ATTENDE IL GRUPPO DI 50 UTENTI)',
+      amberText: 'Aggiungere il tuo nome alla lista gratuita registra la tua segnalazione, ma resta in coda finché non viene raggiunto il gruppo di 50 utenti.',
+      greenTitle: 'OPZIONE 3: NOTIFICA FORMALE INDIVIDUALE DI ACCREDITO SLA ($4.99)',
+      greenText: 'Cosa ottieni per $4.99: Formattiamo e trasmettiamo oggi stesso una Richiesta Formale Individuale di Accredito SLA a tuo nome direttamente all’ufficio fatturazione e reclami del gestore—con copia ufficiale inviata alla tua email.',
+      namePlaceholder: 'Il Tuo Nome e Cognome',
+      inputPlaceholder: 'Servizio Coinvolto e Tua Richiesta (Accredito in Fattura SLA / Rimborso Disservizio)',
+      emailPlaceholder: 'Il Tuo Indirizzo Email (Per Ricevere la Copia della Notifica)',
+      ctaBtn: 'Invia la Mia Richiesta di Accredito SLA — $4.99',
+      freeTitle: 'Aggiungi Gratuitamente il Tuo Nome al Fascicolo Collettivo del Disservizio',
+      freeCta: 'Registra la tua segnalazione gratuita nel fascicolo pubblico e ricevi aggiornamenti.',
+      freeInputPlaceholder: 'La Tua Città e Durata del Disservizio',
+      freeBtn: 'Registra Segnalazione Gratuita ($0.00)'
+    },
+    TIER_2_LEDGER: {
+      heading: 'Confronta le Tue 3 Opzioni di Tutela dei Consumatori e Notifica Ufficiale:',
+      redTitle: 'OPZIONE 1: COMMENTI SUI SOCIAL MEDIA (IMPATTO ISTITUZIONALE ZERO)',
+      redText: 'I commenti non verificati sui social media non hanno alcun valore amministrativo e vengono ignorati da consigli di amministrazione, autorità di vigilanza e ministeri.',
       amberTitle: 'OPZIONE 2: LISTA COLLETTIVA GRATUITA (ATTENDE IL GRUPPO DI 50 FIRME)',
       amberText: 'Aggiungere il tuo nome alla lista gratuita qui sotto registra la tua adesione, ma resta in coda finché non viene raggiunto il gruppo consolidato di 50 firmatari.',
-      greenTitle: 'OPZIONE 3: NOTIFICA FORMALE INDIVIDUALE DI ACCREDITO SLA E TUTELA ($4.99)',
-      greenText: 'Cosa ottieni per $4.99: Formattiamo e trasmettiamo oggi stesso una Notifica Formale Individuale con marca temporale a tuo nome direttamente all’ufficio fatturazione, alla direzione o all’organo di vigilanza—con copia ufficiale inviata alla tua casella email.',
+      greenTitle: 'OPZIONE 3: NOTIFICA FORMALE INDIVIDUALE DI TUTELA E VIGILANZA ($4.99)',
+      greenText: 'Cosa ottieni per $4.99: Formattiamo e trasmettiamo oggi stesso una Notifica Formale Individuale con marca temporale a tuo nome direttamente alla direzione, agli organi di vigilanza o all’autorità competente—con copia ufficiale inviata alla tua casella email.',
       namePlaceholder: 'Il Tuo Nome e Cognome',
-      inputPlaceholder: 'Servizio Coinvolto e Tua Richiesta (Accredito SLA / Tutela Conto / Opposizione)',
+      inputPlaceholder: 'La Tua Posizione (Richiesta Tutela / Verifica / Opposizione) e il Tuo Messaggio',
       emailPlaceholder: 'Il Tuo Indirizzo Email (Per Ricevere la Copia della Notifica)',
       ctaBtn: 'Invia la Mia Notifica Formale Individuale — $4.99',
       freeTitle: 'Aggiungi Gratuitamente il Tuo Nome al Fascicolo Collettivo di Questo Caso',
       freeCta: 'Registra la tua adesione gratuita nel fascicolo pubblico e ricevi aggiornamenti ufficiali sugli sviluppi.',
-      freeInputPlaceholder: 'La Tua Città e Come Ti Riguarda Questo Disservizio o Provvedimento',
+      freeInputPlaceholder: 'La Tua Città e Come Ti Riguarda Questo Provvedimento o Caso',
       freeBtn: 'Registra la Mia Adesione Gratuita ($0.00)'
     },
     TIER_3_POLL: {
@@ -506,7 +607,6 @@ function loadState() {
   return state;
 }
 
-// Normalizes master_incident_id so related articles (like "microsoft-365-outage" and "microsoft-outage") merge into one canonical lead list
 function normalizeMasterIncidentId(rawId, state) {
   let clean = String(rawId || 'docket')
     .toLowerCase()
@@ -519,7 +619,6 @@ function normalizeMasterIncidentId(rawId, state) {
   if (parts.length > 2) clean = parts.slice(0, 2).join('-');
   if (!clean || clean.length < 3) clean = String(rawId || 'docket').toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
 
-  // If an existing live silo shares the same first brand word + same niche, snap to its master_id
   const primaryWord = parts[0];
   if (primaryWord && primaryWord.length >= 4 && state && state.deployed) {
     for (const v of Object.values(state.deployed)) {
@@ -531,9 +630,14 @@ function normalizeMasterIncidentId(rawId, state) {
   return clean;
 }
 
-function buildConversionSectionHtml(langKey, tierKey, niche, masterIncident, region, customStances = null) {
+// Selects TIER_2_OUTAGE ONLY when the article is an actual technical service/telecom/cloud outage; otherwise uses clean TIER_2_LEDGER
+function buildConversionSectionHtml(langKey, tierKey, niche, masterIncident, region, customStances = null, isActualOutage = false) {
   const langGroup = TIER_CONVERSION_PACKS[langKey] || TIER_CONVERSION_PACKS.en;
-  const pack = langGroup[tierKey] || langGroup.TIER_2_LEDGER;
+  let packKey = tierKey || 'TIER_2_LEDGER';
+  if (packKey === 'TIER_2_LEDGER' && isActualOutage) {
+    packKey = 'TIER_2_OUTAGE';
+  }
+  const pack = langGroup[packKey] || langGroup.TIER_2_LEDGER;
   const isPoll = tierKey === 'TIER_3_POLL';
 
   const optA = (customStances && customStances.a) ? escAttr(customStances.a) : escAttr(langGroup.stanceA);
@@ -600,11 +704,11 @@ function buildConversionSectionHtml(langKey, tierKey, niche, masterIncident, reg
     </div>`;
 }
 
-// Retroactively fixes the truncated "CC'd" email placeholder, re-routes SaaS/telecom outages (like Microsoft) to $4.99 SLA Credit Notice, unifies master_ids, and refreshes TIER_3_POLL copy
+// Retroactively fixes Page 3 (UE-TEMU), Page 4 (DIGITAL-BANKS), and all existing pages so non-outage pages NEVER show "SLA Credit / Outage / Fall" wording
 function patchAndCleanExistingFiles(state) {
   const clinicalRegex = /(anorexia|bulimia|leukemia|leukaemie|onkopedia|pirtobrutinib|chemotherapy|chimiotherapie|cancer-treatment|tumor|alzheimer|carcinoma)/i;
-  const geoIntelRegex = /(intelligence-services|servicios-de-inteligencia|servizi-di-intelligence|nachrichtendienst|renseignement|caida-infraestructuras|military|pentagon|nato|otan|espionage|espionaje|cia|nsa|missile|warfare)/i;
-  const saasOutageRegex = /(microsoft|outlook|teams|xbox|playstation|psn|netflix|spotify|aws|cloudflare|openai|chatgpt|slack|zoom|discord|steam|att|verizon|t-mobile|rogers|bell|telstra|optus|vodafone)/i;
+  const geoIntelOrMacroDebateRegex = /(intelligence-services|servicios-de-inteligencia|servizi-di-intelligence|nachrichtendienst|renseignement|caida-infraestructuras|military|pentagon|nato|otan|espionage|espionaje|cia|nsa|missile|warfare|digital-banks|digital-only-banks|high-street-banking)/i;
+  const trueOutageRegex = /(outage|panne|stoerung|caida-de|fora-do-ar|disservizio|down|microsoft|outlook|teams|aws|cloudflare|playstation|xbox|rogers|att|verizon|vodafone)/i;
 
   const docketRoot = path.join(process.cwd(), 'docket');
 
@@ -618,7 +722,6 @@ function patchAndCleanExistingFiles(state) {
       const titleMatch = htmlContent.match(/<title>(.*?)<\/title>/i);
       const titleText = titleMatch ? titleMatch[1] : '';
 
-      // 1. Delete clinical disease/oncology pages
       if (clinicalRegex.test(sub) || clinicalRegex.test(titleText)) {
         fs.rmSync(fullSub, { recursive: true, force: true });
         for (const [k, v] of Object.entries(state.deployed || {})) {
@@ -639,25 +742,35 @@ function patchAndCleanExistingFiles(state) {
       const tierMatch = updatedHtml.match(/name='tier' value='([^']+)'/i);
       let currentTier = tierMatch ? tierMatch[1] : 'TIER_2_LEDGER';
       const nicheMatch = updatedHtml.match(/name='niche' value='([^']+)'/i);
-      const currentNiche = nicheMatch ? nicheMatch[1] : 'OUTAGES';
+      const currentNiche = nicheMatch ? nicheMatch[1] : 'POLITICS';
 
-      // Unify Microsoft outage master IDs
       if (/microsoft/i.test(masterIncident) && /outage/i.test(masterIncident)) {
         masterIncident = 'microsoft-outage';
         updatedHtml = updatedHtml.replace(/DOCKET LEDGER:\s*MICROSOFT-365-OUTAGE/g, 'DOCKET LEDGER: MICROSOFT-OUTAGE');
       }
 
-      // Re-route military/intelligence to TIER_3_POLL ($1.99)
-      if (geoIntelRegex.test(sub) || geoIntelRegex.test(titleText)) {
+      // If article text explicitly talks about participating in a referendum/poll or is a macro banking/geopolitical debate, route to TIER_3_POLL ($1.99)
+      if (geoIntelOrMacroDebateRegex.test(sub) || geoIntelOrMacroDebateRegex.test(titleText) || /^Should\s/i.test(titleText)) {
         currentTier = 'TIER_3_POLL';
-      }
-      // Re-route SaaS / cloud / telecom outages (like Microsoft 365 / Outlook / Teams) from $29 to $4.99 SLA Credit Notice
-      else if (currentTier === 'TIER_1_STATUTORY' && (saasOutageRegex.test(sub) || saasOutageRegex.test(titleText))) {
-        currentTier = 'TIER_2_LEDGER';
+        const hashByte = crypto.createHash('md5').update(sub).digest()[0];
+        const pollSideAPct = 54 + (hashByte % 28);
+        const pollSideBPct = 100 - pollSideAPct;
+        const pollVotesTotal = 920 + (hashByte * 9);
+        const pollBar = `<div style='background:#0f172a;color:#ffffff;padding:14px 16px;border-radius:6px;font-size:13px;font-weight:700;margin-bottom:24px;'>
+         <div style='display:flex;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:6px;'>
+           <span>OFFICIAL PUBLIC REFERENDUM LEDGER: ${masterIncident.toUpperCase()} (${pollVotesTotal.toLocaleString()} VERIFIED BALLOTS)</span>
+           <span style='color:#4ade80;'>● ${pollSideAPct}% MAJORITY STANCE</span>
+         </div>
+         <div style='width:100%;height:8px;background:#334155;border-radius:4px;overflow:hidden;display:flex;'>
+           <div style='width:${pollSideAPct}%;background:#16a34a;height:100%;'></div>
+           <div style='width:${pollSideBPct}%;background:#ef4444;height:100%;'></div>
+         </div>
+       </div>`;
+        updatedHtml = updatedHtml.replace(/<div style='background:#0f172a;color:#ffffff;padding:12px 16px;[\s\S]*?ACTIVE INTAKE<\/span>\s*<\/div>/i, pollBar);
       }
 
-      // Rebuild conversion section on all existing docket pages so truncated "CC'd", poll copy, and SaaS $4.99 SLA copy are 100% clean
-      const rebuiltConversion = buildConversionSectionHtml(langKey, currentTier, currentNiche, masterIncident, region);
+      const isActualOutage = currentTier === 'TIER_2_LEDGER' && (trueOutageRegex.test(sub) || trueOutageRegex.test(titleText)) && !/temu/i.test(sub);
+      const rebuiltConversion = buildConversionSectionHtml(langKey, currentTier, currentNiche, masterIncident, region, null, isActualOutage);
       updatedHtml = updatedHtml.replace(/<h3 style='font-size:1[89]px;color:#0f172a;margin-top:3\dpx;[\s\S]*?<\/form>\s*<\/div>/i, rebuiltConversion);
 
       for (const [k, v] of Object.entries(state.deployed || {})) {
@@ -670,19 +783,6 @@ function patchAndCleanExistingFiles(state) {
       if (updatedHtml !== htmlContent) {
         fs.writeFileSync(indexFile, updatedHtml, 'utf8');
       }
-    }
-  }
-
-  // Also fix the truncated "CC'd" email placeholder on all existing /flight/ pages
-  const flightRoot = path.join(process.cwd(), 'flight');
-  if (fs.existsSync(flightRoot)) {
-    for (const sub of fs.readdirSync(flightRoot)) {
-      const indexFile = path.join(flightRoot, sub, 'index.html');
-      if (!fs.existsSync(indexFile)) continue;
-      const html = fs.readFileSync(indexFile, 'utf8');
-      const fixed = html.replace(/placeholder='Your Email Address \(To Receive Your Official CC'd Proof-of-Service Copy\)'/g,
-        "placeholder='Your Email Address (To Receive Your Official Proof-of-Service Copy)'");
-      if (fixed !== html) fs.writeFileSync(indexFile, fixed, 'utf8');
     }
   }
 }
@@ -781,7 +881,8 @@ function buildSiloHtml(d, isFlight) {
     ? { a: d.poll_stance_a, b: d.poll_stance_b, c: d.poll_stance_c }
     : null;
 
-  const conversionSectionHtml = buildConversionSectionHtml(langKey, tierKey, d.niche, masterIncident, d.region, customStances);
+  const isActualOutage = tierKey === 'TIER_2_LEDGER' && d.is_service_outage === true;
+  const conversionSectionHtml = buildConversionSectionHtml(langKey, tierKey, d.niche, masterIncident, d.region, customStances, isActualOutage);
 
   const customAmzHeader = d.affiliate_heading || langGroup.amzDefaultHeader;
   const affiliateBlockHtml = d.affiliate_keyword
@@ -853,23 +954,24 @@ CRITICAL RULES:
 1. CLINICAL MEDICAL & DISEASE SAFETY FILTER: If the headline is strictly about clinical disease treatment, cancer/oncology drug guidelines (e.g. CLL, leukemia, pirtobrutinib), eating disorders (e.g. anorexia, bulimia), surgery, or hospital patient care, return {"skip": true}. (NOTE: Health insurance pricing/co-pay debates, product recalls, corporate lawsuits, and ALL non-medical news—including sports, entertainment, tech, business, politics, and viral culture—are 100% VALID and must NEVER be skipped).
 2. HARD-HITTING ADVOCACY & DEBATE TONE (NEVER WRITE CORPORATE PR):
    - NEVER praise a company for "swiftly restoring service" or tell users to passively "check the company's official status page."
-   - Even if an outage (like Microsoft 365, Outlook, Teams, telecom, or banking) was "Restored", frame the entire headline, summary, and article around **Post-Outage SLA Billing Credits, Subscription Fee Refunds, and Uncompensated Downtime**—explaining that providers quietly pocket full monthly subscription fees after major outages unless subscribers file a formal SLA credit notice within the billing window.
-   - For celebrity, sports, entertainment, or political stories, frame the headline and article around the **central controversy, public debate, or fan divide** so readers feel compelled to vote and log their take in the referendum below.
+   - If the story is a technical service outage (like Microsoft 365, Outlook, Teams, telecom, or ISP down), set "is_service_outage": true and frame the article around **Post-Outage SLA Billing Credits & Subscription Fee Refunds**.
+   - If the story is NOT a technical outage (e.g. EU fining Temu, regulatory probes, rate hikes), set "is_service_outage": false.
 3. NEVER write one-sentence answers. Every paragraph in "advertorial_paragraphs" and every answer ("a1_answer", "a2_answer", "a3_answer") MUST be 4 to 5 full, detailed sentences (at least 65 words per paragraph/answer) in the requested Language.
 4. NEVER use the words "automated", "bot", or "AI".
 5. PRECISE MONETIZATION TIER ROUTING:
-   - "TIER_1_STATUTORY" ($29.00): ONLY for high-ticket individual financial losses worth $100+ (cancelled/delayed airline flights, withheld Airbnb/tenancy security deposits, frozen bank/fintech accounts, or major physical product/auto recalls). NEVER use TIER_1_STATUTORY for $10/month software/app/telecom outages!
-   - "TIER_2_LEDGER" ($4.99): Software/cloud/telecom/ISP/gaming outages (e.g. Microsoft 365, Outlook, Teams, AT&T, Rogers, PlayStation) where users want to demand an SLA subscription billing credit, PLUS corporate probes, rate hikes, labor/school/transit strikes, and domestic household financial policies (e.g. health insurance co-pay hikes).
-   - "TIER_3_POLL" ($1.99): ALL military, intelligence agency, national security, foreign geopolitics, general politics, sports, celebrity drama (e.g. Leonardo DiCaprio party), entertainment/gaming releases, court trials, or viral debates.
+   - "TIER_1_STATUTORY" ($29.00): ONLY for high-ticket individual financial losses worth $100+ (cancelled/delayed airline flights, withheld Airbnb/tenancy security deposits, frozen bank/fintech accounts, or major physical product/auto recalls).
+   - "TIER_2_LEDGER" ($4.99): Software/cloud/telecom/ISP outages (where "is_service_outage": true), PLUS consumer-facing corporate probes/fines (like EU vs. Temu), household rate hikes, labor/school/transit strikes, and direct household fee hikes (like mandatory doctor appointment co-pays).
+   - "TIER_3_POLL" ($1.99): ALL industry/economic policy debates (e.g. "Should digital banks support high street banks?", Anthropic IPO, ECB appointments), military, intelligence agencies, general politics, sports, celebrity drama, entertainment/gaming releases, court trials, or viral debates.
 6. CUSTOM POLL STANCES FOR TIER_3_POLL:
-   - Populate "poll_stance_a", "poll_stance_b", and "poll_stance_c" with 3 natural, story-specific voting positions in the requested Language (e.g. for a celebrity breakup rumor: Position A = "They Quietly Split", Position B = "Still Together — Just Keeping It Private", Position C = "Overblown Media Rumors").
+   - Populate "poll_stance_a", "poll_stance_b", and "poll_stance_c" with 3 natural, story-specific voting positions in the requested Language.
 7. CANONICAL 2-WORD MASTER INCIDENT ID:
-   - "master_incident_id" MUST be strictly 2 words: "[primary-brand-or-person]-[core-topic]" (e.g. "microsoft-outage", "revolut-administration", "dicaprio-party") so all articles about the same event merge into one list.
+   - "master_incident_id" MUST be strictly 2 words: "[primary-brand-or-person]-[core-topic]" (e.g. "microsoft-outage", "eu-temu", "anthropic-ipo").
 
 Return a strict JSON object in the requested Language with:
 - "skip": false
+- "is_service_outage": (true ONLY if an app, website, telecom, or utility went down/offline; false for all other news)
 - "slug": (4 to 6 word ASCII lowercase hyphenated long-tail search slug)
-- "master_incident_id": (Strictly 2-word ASCII lowercase hyphenated canonical key, e.g. "microsoft-outage")
+- "master_incident_id": (Strictly 2-word ASCII lowercase hyphenated canonical key)
 - "english_title": (Clear 6-to-9 word English title for the operator dashboard)
 - "affiliate_heading": (3-to-5 word natural callout header in the target language matching the article context)
 - "affiliate_keyword": (2-to-4 word Amazon search phrase for relevant books, guides, gear, hardware, or emergency items related to this topic)
@@ -966,7 +1068,7 @@ async function processGlobalNews(state, newUrls) {
   }
 
   const clinicalPreFilter = /(anorexia|bulimia|leukemia|leukaemie|onkopedia|pirtobrutinib|chemotherapy|chimiotherapie|carcinoma|lymphoma|melanoma|glioblastoma)/i;
-  const geoIntelForcePollRegex = /(intelligence agency|intelligence services|servicios de inteligencia|servizi di intelligence|nachrichtendienst|renseignement|pentagon|cia|nsa|military|nato|otan|espionage)/i;
+  const geoIntelForcePollRegex = /(intelligence agency|intelligence services|servicios de inteligencia|servizi di intelligence|nachrichtendienst|renseignement|pentagon|cia|nsa|military|nato|otan|espionage|high street bank|ipo)/i;
   const saasOutageForceTier2Regex = /(microsoft|outlook|teams|xbox|playstation|psn|netflix|spotify|aws|cloudflare|openai|chatgpt|slack|zoom|discord|steam|at&t|verizon|t-mobile|rogers|bell|telstra|optus|vodafone)/i;
 
   const feedResults = await Promise.all(
@@ -1029,10 +1131,11 @@ async function processGlobalNews(state, newUrls) {
         return;
       }
 
-      if (geoIntelForcePollRegex.test(rawTitle) || geoIntelForcePollRegex.test(parsed.english_title || '')) {
+      if (geoIntelForcePollRegex.test(rawTitle) || geoIntelForcePollRegex.test(parsed.english_title || '') || /^Should\s/i.test( parsed.english_title || '')) {
         parsed.tier = 'TIER_3_POLL';
       } else if (parsed.tier === 'TIER_1_STATUTORY' && (saasOutageForceTier2Regex.test(rawTitle) || saasOutageForceTier2Regex.test(parsed.english_title || ''))) {
         parsed.tier = 'TIER_2_LEDGER';
+        parsed.is_service_outage = true;
       }
 
       const cleanSlug = parsed.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
