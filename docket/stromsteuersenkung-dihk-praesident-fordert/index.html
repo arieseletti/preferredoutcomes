@@ -49,32 +49,60 @@
       </div>
     </div>
 
-    <h3 style='font-size:19px;color:#0f172a;margin-top:34px;margin-bottom:14px;font-weight:900;'>Vergleichen Sie Ihre 3 Optionen zur Offiziellen Eskalation:</h3>
+    <h3 style='font-size:19px;color:#0f172a;margin-top:34px;margin-bottom:14px;font-weight:900;'>So Nehmen Sie am Offiziellen Öffentlichen Meinungsregister Teil:</h3>
     <div style='display:flex;flex-direction:column;gap:14px;margin-bottom:24px;'>
       <div style='background:#fef2f2;border:2px solid #ef4444;border-radius:8px;padding:16px;'>
-        <div style='color:#b91c1c;font-weight:800;font-size:13px;text-transform:uppercase;'>OPTION 1: KOMMENTARE IN SOZIALEN NETZWERKEN (KEINE OFFIZIELLE WIRKUNG)</div>
-        <p style='margin:6px 0 0 0;font-size:14.5px;color:#7f1d1d;'>Unverifizierte Beiträge in sozialen Medien haben keinerlei verwaltungsrechtliches Gewicht und werden von Vorständen und Behörden ignoriert.</p>
+        <div style='color:#b91c1c;font-weight:800;font-size:13px;text-transform:uppercase;'>OPTION 1: UNVERIFIZIERTE KOMMENTARSPALTEN (GEHEN IM ALGORITHMUS UNTER)</div>
+        <p style='margin:6px 0 0 0;font-size:14.5px;color:#7f1d1d;'>Standard-Kommentarspalten werden von Bots geflutet und durch Algorithmen gefiltert, sodass Ihre Meinung nach wenigen Minuten verschwindet.</p>
       </div>
       <div style='background:#fffbeb;border:2px solid #f59e0b;border-radius:8px;padding:16px;'>
-        <div style='color:#b45309;font-weight:800;font-size:13px;text-transform:uppercase;'>OPTION 2: KOSTENLOSE SAMMELLISTE (WARTET AUF 50 UNTERZEICHNER)</div>
-        <p style='margin:6px 0 0 0;font-size:14.5px;color:#78350f;'>Ihr Eintrag in die kostenlose Liste unten wird gespeichert, jedoch erst nach Erreichen von 50 Unterschriften gebündelt übermittelt.</p>
+        <div style='color:#b45309;font-weight:800;font-size:13px;text-transform:uppercase;'>OPTION 2: EINFACHE STIMME OHNE GEWICHTUNG (OHNE STELLUNGNAHME)</div>
+        <p style='margin:6px 0 0 0;font-size:14.5px;color:#78350f;'>Eine kostenlose Stimme unten zählt als einfacher Punkt im Balken, ohne Ihre persönliche Begründung im Dossier zu veröffentlichen.</p>
       </div>
       <div style='background:#f0fdf4;border:2px solid #16a34a;border-radius:8px;padding:22px;'>
-        <div style='color:#15803d;font-weight:800;font-size:13.5px;text-transform:uppercase;'>OPTION 3: PRIORISIERTE INDIVIDUELLE MITTEILUNG IN IHREM NAMEN HEUTE ($4.99)</div>
-        <p style='margin:8px 0 16px 0;font-size:14.5px;color:#14532d;line-height:1.65;'>Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle Stellungnahme in Ihrem Namen direkt an den Vorstand, das Ministerium oder die Aufsichtsstelle—inklusive Kopie an Ihr E-Mail-Postfach.</p>
+        <div style='color:#15803d;font-weight:800;font-size:13.5px;text-transform:uppercase;'>OPTION 3: VERIFIZIERTE STELLUNGNAHME + 10-FACH GEWICHTETE STIMME ($1.99)</div>
+        <p style='margin:8px 0 16px 0;font-size:14.5px;color:#14532d;line-height:1.65;'>Was Sie für $1.99 erhalten: Egal ob Sie zustimmen, widersprechen oder eine Untersuchung fordern—Ihre verifizierte Stimme zählt mit 10-facher Gewichtung und Ihre persönliche Stellungnahme wird dauerhaft im offiziellen Meinungsdossier für Medien und Entscheidungsträger protokolliert.</p>
         <form action='https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp' method='GET' style='display:flex;flex-direction:column;gap:10px;'>
           <input type='hidden' name='flow_type' value='DFY_CHECKOUT'>
           <input type='hidden' name='niche' value='POLITICS'>
           <input type='hidden' name='incident' value='stromsteuersenkung-politik'>
-          <input type='hidden' name='tier' value='TIER_2_LEDGER'>
+          <input type='hidden' name='tier' value='TIER_3_POLL'>
           <input type='hidden' name='region' value='DE'>
-          
-          <input type='text' name='name' required placeholder='Ihr Vollständiger Name' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
-          <input type='text' name='pnr' required placeholder='Ihre Position (Dafür / Dagegen / Prüfung Fordern) & Ihre Stellungnahme' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
-          <input type='email' name='email' required placeholder='Ihre E-Mail-Adresse (Für Ihre Versandbestätigung)' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
-          <button type='submit' style='padding:16px;background:#16a34a;color:#ffffff;font-weight:900;font-size:16px;border:none;border-radius:6px;cursor:pointer;'>Individuelle Offizielle Mitteilung Senden — $4.99 &rarr;</button>
+          <select name='stance' required style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;background:#ffffff;color:#0f172a;font-weight:700;'>
+         <option value='' disabled selected>Wählen Sie Ihre Offizielle Position im Referendum (Jede Seite Wählbar)...</option>
+         <option value='SUPPORT_ACTION'>Position A: Volle Zustimmung / Forderung nach Aufklärung & Konsequenzen</option>
+         <option value='OPPOSE_ACTION'>Position B: Strikte Ablehnung / Gegen die Vorwürfe oder Maßnahme</option>
+         <option value='INDEPENDENT_AUDIT'>Position C: Forderung nach Unabhängiger Prüfung & Transparenz</option>
+       </select>
+          <input type='text' name='name' required placeholder='Ihr Name oder Verifiziertes Profil' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
+          <input type='text' name='pnr' required placeholder='Ihre Öffentliche Stellungnahme für das Offizielle Meinungsdossier' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
+          <input type='email' name='email' required placeholder='Ihre E-Mail-Adresse (Für Ihren Offiziellen Beleg)' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
+          <button type='submit' style='padding:16px;background:#16a34a;color:#ffffff;font-weight:900;font-size:16px;border:none;border-radius:6px;cursor:pointer;'>Verifizierte Stellungnahme & 10x Stimme Absenden — $1.99 &rarr;</button>
         </form>
       </div>
+    </div>
+
+    <div style='background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:20px;margin-top:24px;'>
+      <h4 style='margin:0 0 6px 0;font-size:16px;color:#0f172a;'>Kostenlose 1x Stimme Abgeben & Dossier-Updates Erhalten</h4>
+      <p style='margin:0 0 14px 0;font-size:14px;color:#475569;'>Geben Sie eine kostenlose Stimme ab und erhalten Sie Benachrichtigungen bei neuen Entwicklungen.</p>
+      <form action='https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp' method='GET' style='display:flex;flex-direction:column;gap:10px;'>
+        <input type='hidden' name='flow_type' value='FREE_LEAD'>
+        <input type='hidden' name='niche' value='POLITICS'>
+        <input type='hidden' name='incident' value='stromsteuersenkung-politik'>
+        <input type='hidden' name='tier' value='TIER_3_POLL'>
+        <input type='hidden' name='region' value='DE'>
+        <div style='display:flex;gap:10px;flex-wrap:wrap;'>
+          <input type='text' name='signer_name' required placeholder='Ihr Name oder Verifiziertes Profil' style='flex:1;min-width:180px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+          <input type='email' name='email' required placeholder='Ihre E-Mail-Adresse (Für Ihren Offiziellen Beleg)' style='flex:1;min-width:200px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+        </div>
+        <input type='text' name='loss_impact' required placeholder='Ihre Stadt & Ihre Kurze Meinung' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+        <label style='display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#64748b;cursor:pointer;'>
+          <input type='checkbox' name='coreg_optin' value='yes' checked style='margin-top:3px;'>
+          <span>Ich möchte außerdem kostenlose Verbraucher-Updates, Partner-Briefings und Statusmeldungen zur Sammelakte erhalten (jederzeit abbestellbar).</span>
+        </label>
+        <button type='submit' style='padding:13px;background:#0f172a;color:#ffffff;font-weight:800;font-size:14px;border:none;border-radius:6px;cursor:pointer;'>Kostenlose Stimme Abgeben ($0.00)</button>
+      </form>
+    </div>
     </div>
 
     <div style='background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:20px;margin-top:24px;'>
@@ -88,7 +116,7 @@
         <input type='hidden' name='region' value='DE'>
         <div style='display:flex;gap:10px;flex-wrap:wrap;'>
           <input type='text' name='signer_name' required placeholder='Ihr Vollständiger Name' style='flex:1;min-width:180px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
-          <input type='email' name='email' required placeholder='Ihre E-Mail-Adresse (Für Ihre Versandbestätigung)' style='flex:1;min-width:200px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+          <input type='email' name='email' required placeholder='Ihre E-Mail-Adresse (Für Ihre Offizielle Übermittlungsbestätigung)' style='flex:1;min-width:200px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
         </div>
         <input type='text' name='loss_impact' required placeholder='Ihre Stadt & Warum Dieses Thema Wichtig Ist' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
         <label style='display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#64748b;cursor:pointer;'>
