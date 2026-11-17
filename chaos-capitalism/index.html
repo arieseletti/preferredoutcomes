@@ -361,7 +361,7 @@
               </div>
             </div>
             <div class="text-[10px] text-stone-400">
-              Want ultra-realistic AI voices on S21 &amp; Desktop? Paste your free ElevenLabs API key in <button onclick="openApiModal()" class="text-[#FF851B] underline">⚙️ Data Bridge</button>.
+              Want all 30+ ElevenLabs voices on S21 &amp; Desktop? Paste your ElevenLabs API key in <button onclick="openApiModal()" class="text-[#FF851B] underline">⚙️ Data Bridge</button>.
             </div>
           </div>
 
@@ -377,7 +377,7 @@
       </div>
     </section>
 
-    <!-- POTENTIAL AUDITOR (5-Scenario Algorithmic Scorer + 1-Click Deploy Trigger) -->
+    <!-- POTENTIAL AUDITOR -->
     <section id="potential-auditor" class="po-panel rounded-2xl p-5 sm:p-6">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
@@ -450,11 +450,11 @@
           <input id="bridge-url-input" type="url" placeholder="https://hook.us2.make.com/..." class="w-full px-3.5 py-2.5 rounded-lg bg-[#080402] border border-orange-500/35 text-xs text-white">
         </div>
         <div>
-          <label class="block text-[11px] font-mono-tech uppercase text-stone-400 mb-1">ElevenLabs API Key (Optional — For Ultra-Realistic Neural Voices on S21 &amp; Desktop)</label>
-          <input id="eleven-key-input" type="password" placeholder="xi-api-key..." class="w-full px-3.5 py-2.5 rounded-lg bg-[#080402] border border-orange-500/35 text-xs text-white">
+          <label class="block text-[11px] font-mono-tech uppercase text-stone-400 mb-1">ElevenLabs API Key (Auto-Loads All Voices From Your ElevenLabs Account)</label>
+          <input id="eleven-key-input" type="password" placeholder="sk_..." class="w-full px-3.5 py-2.5 rounded-lg bg-[#080402] border border-orange-500/35 text-xs text-white">
         </div>
         <div>
-          <label class="block text-[11px] font-mono-tech uppercase text-stone-400 mb-1">ElevenLabs Voice Preset</label>
+          <label class="block text-[11px] font-mono-tech uppercase text-stone-400 mb-1">Fallback Default ElevenLabs Voice</label>
           <select id="eleven-voice-input" class="w-full px-3.5 py-2.5 rounded-lg bg-[#080402] border border-orange-500/35 text-xs text-white">
             <option value="21m00Tcm4TlvDq8ikWAM">Rachel (Calm, Warm Executive Female)</option>
             <option value="pNInz6obpgDQGcFmaJgB">Adam (Deep, Authoritative Male)</option>
@@ -917,7 +917,7 @@
       populateSystemVoices();
     }
 
-    function populateSystemVoices() {
+    async function populateSystemVoices() {
       const select = document.getElementById('voice-select');
       if (!select) return;
       const savedVoice = localStorage.getItem('po_voice_name') || '';
@@ -925,12 +925,26 @@
       let optionsHtml = '';
 
       if (elevenKey) {
-        optionsHtml += `<optgroup label="ElevenLabs Neural Voices (Active)">
-          <option value="eleven:21m00Tcm4TlvDq8ikWAM">ElevenLabs: Rachel (Warm Executive)</option>
-          <option value="eleven:pNInz6obpgDQGcFmaJgB">ElevenLabs: Adam (Deep Authority)</option>
-          <option value="eleven:TxGEqnHWrfWFTfGW9XjX">ElevenLabs: Josh (Crisp Narrator)</option>
-          <option value="eleven:EXAVITQu4vr4xnSDxMaL">ElevenLabs: Bella (Articulate Female)</option>
-        </optgroup>`;
+        try {
+          const res = await fetch('https://api.elevenlabs.io/v1/voices', {
+            headers: { 'xi-api-key': elevenKey }
+          });
+          if (res.ok) {
+            const data = await res.json();
+            const elVoices = data.voices || [];
+            if (elVoices.length > 0) {
+              optionsHtml += `<optgroup label="ElevenLabs Neural Voices (${elVoices.length} Available)">` +
+                elVoices.map(v => {
+                  const val = `eleven:${v.voice_id}`;
+                  const desc = v.labels ? Object.values(v.labels).slice(0, 3).join(', ') : (v.category || 'neural');
+                  return `<option value="${val}" ${val === savedVoice ? 'selected' : ''}>ElevenLabs: ${v.name} (${desc})</option>`;
+                }).join('') +
+                `</optgroup>`;
+            }
+          }
+        } catch (e) {
+          console.error('Could not fetch ElevenLabs voice list:', e);
+        }
       }
 
       if ('speechSynthesis' in window) {
