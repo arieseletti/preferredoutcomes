@@ -94,9 +94,10 @@ function buildOmnibusFeedMatrix() {
 
 const OMNIBUS_FEEDS = buildOmnibusFeedMatrix();
 
-// 100% NATIVE-LANGUAGE HARDCODED CONVERSION PACKS ACROSS ALL 6 LANGUAGES (NO "FLAT" WORDING ANYWHERE)
+// 100% UNIVERSAL, IDIOMATIC CONVERSION PACKS ACROSS ALL 6 LANGUAGES (NO "LOTTERY", NO "TRANSPORT VOUCHERS", NO "FLAT")
 const TIER_CONVERSION_PACKS = {
   en: {
+    execSummaryLabel: 'Executive Summary:',
     stancePrompt: 'Select Your Official Referendum Stance (Any Side Eligible)...',
     stanceA: 'Position A: Strongly Support / Demand Full Accountability & Investigation',
     stanceB: 'Position B: Strongly Oppose / Reject Allegations or Policy Change',
@@ -104,38 +105,39 @@ const TIER_CONVERSION_PACKS = {
     amzDefaultHeader: 'Recommended Resources, Guides & Essential Gear',
     amzSubPrefix: 'View Top-Rated Books, Tools & Related Essentials:',
     amzBtnText: 'Browse on Amazon',
+    coregNote: 'Also subscribe me to free consumer settlement alerts, partner briefs, and consolidated group recovery updates (unsubscribe anytime).',
     TIER_1_STATUTORY: {
-      heading: 'Compare Your 3 Claim & Compensation Recovery Options:',
-      redTitle: 'OPTION 1: FILE SOLO VIA STANDARD COMPANY WEB FORM (72% REJECTION RISK)',
-      redText: 'Corporations, airlines, and property platforms routinely reject unrepresented consumer claims using boilerplate excuses or push restrictive vouchers that waive your right to cash.',
-      amberTitle: 'OPTION 2: THIRD-PARTY CLAIM AGENCIES (LOSES 35% TO 50% OF YOUR PAYOUT)',
-      amberText: 'Middleman claim sharks take 3 to 6 months to process routine demands and pocket up to half of your statutory refund or settlement check just for submitting a template letter.',
-      greenTitle: 'OPTION 3: DONE-FOR-YOU PRE-CITED STATUTORY DEMAND DISPATCH ($29.00 — YOU KEEP 100%)',
-      greenText: 'What you get for $29.00: We prepare your formal legal-grade demand notice citing the exact consumer statute, attach your claim telemetry, and electronically dispatch it directly to the corporate compliance desk on your behalf (with you CC\'d on the official Proof-of-Service record) so you keep 100% of your payout.',
+      heading: 'Compare Your 3 Fund Protection, Refund & Statutory Recovery Options:',
+      redTitle: 'OPTION 1: STANDARD CUSTOMER SUPPORT CHANNELS (72% REJECTION RISK)',
+      redText: 'Financial institutions, service providers, and carriers routinely stall or reject individual requests that lack formal statutory citations, offering generic excuses or non-cash credits instead of full resolution.',
+      amberTitle: 'OPTION 2: THIRD-PARTY CLAIM BROKERS (LOSES 35% TO 50% OF YOUR PAYOUT)',
+      amberText: 'Middleman recovery agencies take 3 to 6 months to process routine demands and pocket up to half of your statutory refund, account release, or compensation payout in commission fees.',
+      greenTitle: 'OPTION 3: DONE-FOR-YOU PRE-CITED STATUTORY DEMAND DISPATCH ($29.00 — KEEP 100%)',
+      greenText: 'What you get for $29.00: We prepare your formal legal-grade demand and account protection notice citing the exact consumer and financial statutes, and electronically dispatch it directly to the corporate compliance desk on your behalf (with you CC\'d on the official Proof-of-Service record) so you keep 100% of your funds.',
       namePlaceholder: 'Your Full Legal Name',
-      inputPlaceholder: 'Booking / Account Reference & Estimated Dollar Loss (e.g. PNR K8M2P9 - $650)',
-      emailPlaceholder: 'Your Email Address (For Your CC\'d Proof-of-Service Dossier)',
-      ctaBtn: 'Dispatch My Formal Statutory Claim Notice — $29.00',
-      freeTitle: 'Not Ready to Dispatch Today? Join the Free 50-Claimant Batch & Evidence Tracker',
-      freeCta: 'Enter your details below to receive the free Evidence Preservation Checklist and lock in your spot on our 50-claimant consolidated legal batch.',
-      freeInputPlaceholder: 'City/State & Brief Summary of Disruption or Financial Loss',
-      freeBtn: 'Send Free Evidence Checklist & Log My Claim ($0.00)'
+      inputPlaceholder: 'Account / Reference Number & Estimated Amount at Stake',
+      emailPlaceholder: 'Your Email Address (To Receive Your Official CC\'d Proof-of-Service Copy)',
+      ctaBtn: 'Dispatch My Formal Statutory Notice Now — $29.00',
+      freeTitle: 'Prefer to Wait? Join the Free 50-Claimant Consolidated Group Docket',
+      freeCta: 'Enter your details below to receive the free Evidence & Account Protection Checklist and register your spot in our 50-claimant consolidated group filing.',
+      freeInputPlaceholder: 'Your City & Brief Summary of Your Account Issue, Disruption, or Loss',
+      freeBtn: 'Send Free Protection Checklist & Register My Case ($0.00)'
     },
     TIER_2_LEDGER: {
       heading: 'Compare Your 3 Institutional Action & Escalation Options:',
       redTitle: 'OPTION 1: VENTING ON SOCIAL MEDIA (ZERO INSTITUTIONAL IMPACT)',
-      redText: 'Unverified social media posts and comment threads carry zero administrative weight and are completely ignored by corporate boards, ministries, and regulatory oversight committees.',
-      amberTitle: 'OPTION 2: STANDARD FREE PETITION QUEUE (HELD IN BATCH ESCROW)',
-      amberText: 'Adding your name to the free petition queue below logs your support, but your signature is held in escrow until a full 50-person consolidated batch is reached.',
+      redText: 'Unverified social media posts and comment threads carry zero administrative weight and are completely ignored by corporate boards, banking regulators, ministries, and oversight committees.',
+      amberTitle: 'OPTION 2: STANDARD FREE GROUP QUEUE (WAITS FOR 50 SIGNATURES)',
+      amberText: 'Adding your name to the free group registry below logs your support, but your signature is held in queue until a full 50-person consolidated group is reached.',
       greenTitle: 'OPTION 3: PRIORITY INDIVIDUAL EXECUTIVE NOTICE DISPATCHED IN YOUR NAME ($4.99)',
-      greenText: 'What you get for $4.99: Instead of waiting in the free batch queue, we format and electronically transmit an individual, timestamped Formal Executive Accountability Notice in your name directly to the governing board, agency, or corporate leadership desk today—with an official copy sent to your inbox.',
+      greenText: 'What you get for $4.99: Instead of waiting in the free group queue, we format and electronically transmit an individual, timestamped Formal Accountability & Protection Notice in your name directly to the governing board, regulator, or executive desk today—with an official copy sent to your inbox.',
       namePlaceholder: 'Your Full Name (As Shown on Official Notice)',
-      inputPlaceholder: 'Your Position (Support / Oppose / Demand Audit) & Personal Statement to Dispatch',
+      inputPlaceholder: 'Your Position (Demand Protection / Support / Oppose) & Formal Statement',
       emailPlaceholder: 'Your Email Address (To Receive Your Dispatched Notice Copy)',
       ctaBtn: 'Dispatch My Individual Formal Notice — $4.99',
-      freeTitle: 'Prefer the Free Route? Add Your Name to the 50-Person Public Docket Batch',
-      freeCta: 'Log your free signature on the consolidated public docket and receive official updates as this issue escalates.',
-      freeInputPlaceholder: 'Your City/Region & Why This Issue Matters to You',
+      freeTitle: 'Prefer the Free Route? Add Your Name to the 50-Person Public Group Docket',
+      freeCta: 'Log your free signature on the consolidated public docket and receive official updates as this regulatory or corporate issue develops.',
+      freeInputPlaceholder: 'Your City/Region & How This Issue Affects You',
       freeBtn: 'Log My Free Signature on the Public Docket ($0.00)'
     },
     TIER_3_POLL: {
@@ -157,45 +159,47 @@ const TIER_CONVERSION_PACKS = {
     }
   },
   pt: {
+    execSummaryLabel: 'Resumo Executivo:',
     stancePrompt: 'Selecione Sua Posição Oficial no Referendo (Qualquer Lado Elegível)...',
     stanceA: 'Posição A: Apoio Totalmente / Exijo Investigação e Responsabilização',
-    stanceB: 'Posição B: Discordo Totalmente / Rejeito as Acusações ou Mudança',
+    stanceB: 'Posição B: Discordo Totalmente / Rejeito as Acusações ou Medida',
     stanceC: 'Posição C: Exijo Auditoria Independente e Transparência Total',
     amzDefaultHeader: 'Recursos Recomendados, Guias e Itens Essenciais',
     amzSubPrefix: 'Veja Livros, Guias e Produtos Bem Avaliados sobre o Tema:',
     amzBtnText: 'Ver na Amazon',
+    coregNote: 'Também quero receber alertas gratuitos de acordos ao consumidor, informativos de parceiros e atualizações do grupo coletivo (cancele quando quiser).',
     TIER_1_STATUTORY: {
-      heading: 'Compare Suas 3 Opções para Exigir Reembolso e Indenização:',
-      redTitle: 'OPÇÃO 1: FORMULÁRIO PADRÃO DA EMPRESA (72% DE RISCO DE RECUSA)',
-      redText: 'Empresas e companhias aéreas frequentemente negam pedidos individuais sem fundamentação legal ou oferecem vouchers restritivos para evitar o pagamento em dinheiro.',
-      amberTitle: 'OPÇÃO 2: AGÊNCIAS INTERMEDIÁRIAS (COBRAM DE 35% A 50% DO SEU VALOR)',
-      amberText: 'Empresas intermediárias levam meses e ficam com até metade da sua indenização apenas para enviar uma notificação padrão.',
+      heading: 'Compare Suas 3 Opções de Proteção de Conta, Reembolso e Indenização:',
+      redTitle: 'OPÇÃO 1: ATENDIMENTO PADRÃO DA EMPRESA (72% DE RISCO DE RECUSA)',
+      redText: 'Instituições financeiras, plataformas e operadoras frequentemente negam ou protelam reclamações individuais sem fundamentação normativa, oferecendo respostas automáticas em vez de solução efetiva.',
+      amberTitle: 'OPÇÃO 2: INTERMEDIÁRIOS E AGÊNCIAS (COBRAM DE 35% A 50% DO SEU VALOR)',
+      amberText: 'Empresas intermediárias levam meses e retêm até metade do seu reembolso ou indenização apenas para protocolar um pedido padrão.',
       greenTitle: 'OPÇÃO 3: DESPACHO DE NOTIFICAÇÃO FORMAL PRÉ-FUNDAMENTADA ($29.00 — FIQUE COM 100%)',
-      greenText: 'O que você recebe por $29.00: Preparamos sua Notificação Formal citando a legislação aplicável (CDC / ANAC / Procon) e enviamos eletronicamente direto ao setor de conformidade da empresa em seu nome (com cópia oficial de protocolo para o seu e-mail), garantindo 100% do valor para você.',
+      greenText: 'O que você recebe por $29.00: Preparamos sua Notificação Formal de Proteção e Reembolso citando a legislação aplicável (CDC / Banco Central / Procon / ANAC) e enviamos eletronicamente direto ao setor de conformidade da empresa em seu nome (com cópia oficial protocolada no seu e-mail), garantindo 100% do valor para você.',
       namePlaceholder: 'Seu Nome Completo',
-      inputPlaceholder: 'Código da Reserva / Conta e Valor Estimado do Prejuízo',
+      inputPlaceholder: 'Número da Conta / Protocolo / Reserva e Valor Estimado Envolvido',
       emailPlaceholder: 'Seu E-mail (Para Receber a Cópia Oficial Protocolada)',
-      ctaBtn: 'Enviar Minha Notificação Formal de Reembolso — $29.00',
-      freeTitle: 'Prefere Não Enviar Hoje? Entre no Lote Coletivo Gratuito de 50 Reclamantes',
-      freeCta: 'Cadastre seu e-mail abaixo para receber o Checklist Gratuito de Provas e integrar o lote coletivo de 50 afetados.',
-      freeInputPlaceholder: 'Sua Cidade/UF e Resumo do Problema ou Prejuízo',
-      freeBtn: 'Receber Checklist Gratuito e Registrar Caso ($0.00)'
+      ctaBtn: 'Enviar Minha Notificação Formal Agora — $29.00',
+      freeTitle: 'Prefere Aguardar? Entre Gratuitamente no Grupo Coletivo de 50 Reclamantes',
+      freeCta: 'Cadastre seus dados abaixo para receber o Checklist Gratuito de Proteção e Provas e garantir sua vaga no expediente coletivo de 50 consumidores.',
+      freeInputPlaceholder: 'Sua Cidade/UF e Resumo do Problema na Conta ou Prejuízo',
+      freeBtn: 'Receber Checklist Gratuito e Registrar Meu Caso ($0.00)'
     },
     TIER_2_LEDGER: {
       heading: 'Compare Suas 3 Opções de Manifestação e Escalada Institucional:',
       redTitle: 'OPÇÃO 1: RECLAMAR NAS REDES SOCIAIS (IMPACTO OFICIAL ZERO)',
-      redText: 'Comentários em redes sociais não possuem validade administrativa e são ignorados por diretorias, conselhos e órgãos reguladores.',
-      amberTitle: 'OPÇÃO 2: FILA DE PETIÇÃO COLETIVA GRATUITA (AGUARDA LOTE DE 50 NOMES)',
-      amberText: 'Assinar a lista gratuita abaixo registra seu apoio, mas aguarda o fechamento do lote de 50 assinaturas antes do envio consolidado.',
+      redText: 'Comentários em redes sociais não possuem validade administrativa e são ignorados por diretorias, bancos centrais, conselhos e órgãos reguladores.',
+      amberTitle: 'OPÇÃO 2: LISTA DE PETIÇÃO COLETIVA GRATUITA (AGUARDA GRUPO DE 50 NOMES)',
+      amberText: 'Assinar a lista gratuita abaixo registra seu apoio, mas aguarda o fechamento do grupo de 50 assinaturas antes do envio consolidado.',
       greenTitle: 'OPÇÃO 3: NOTIFICAÇÃO EXECUTIVA INDIVIDUAL ENVIADA EM SEU NOME HOJE ($4.99)',
-      greenText: 'O que você recebe por $4.99: Formatamos e transmitimos hoje uma Notificação Formal Individual em seu nome diretamente para a diretoria, ouvidoria ou órgão responsável—seja para cobrar providências, apoiar ou contestar a medida—com cópia oficial enviada ao seu e-mail.',
+      greenText: 'O que você recebe por $4.99: Formatamos e transmitimos hoje uma Notificação Formal Individual em seu nome diretamente para a diretoria, ouvidoria ou órgão regulador responsável—seja para exigir proteção da sua conta, cobrar fiscalização ou contestar a medida—com cópia oficial enviada ao seu e-mail.',
       namePlaceholder: 'Seu Nome Completo',
-      inputPlaceholder: 'Sua Posição (A Favor / Contra / Cobrar Auditoria) e Sua Mensagem Formal',
+      inputPlaceholder: 'Sua Posição (Exigir Proteção / A Favor / Contra) e Sua Mensagem Formal',
       emailPlaceholder: 'Seu E-mail (Para Receber o Comprovante de Envio)',
       ctaBtn: 'Enviar Minha Notificação Individual Agora — $4.99',
-      freeTitle: 'Adicione Seu Nome Gratuitamente ao Lote Coletivo Desta Pauta',
+      freeTitle: 'Adicione Seu Nome Gratuitamente ao Grupo Coletivo Desta Pauta',
       freeCta: 'Registre sua assinatura gratuita no dossiê público e receba atualizações oficiais sobre este caso.',
-      freeInputPlaceholder: 'Sua Cidade/UF e Sua Posição sobre o Caso',
+      freeInputPlaceholder: 'Sua Cidade/UF e Como Este Caso Afeta Você',
       freeBtn: 'Registrar Minha Assinatura Gratuita ($0.00)'
     },
     TIER_3_POLL: {
@@ -217,6 +221,7 @@ const TIER_CONVERSION_PACKS = {
     }
   },
   es: {
+    execSummaryLabel: 'Resumen Ejecutivo:',
     stancePrompt: 'Seleccione Su Postura Oficial en el Referéndum (Cualquier Lado Elegible)...',
     stanceA: 'Postura A: Apoyo Totalmente / Exijo Investigación y Responsabilidad',
     stanceB: 'Postura B: En Total Desacuerdo / Rechazo las Acusaciones o Medida',
@@ -224,38 +229,39 @@ const TIER_CONVERSION_PACKS = {
     amzDefaultHeader: 'Recursos Recomendados, Guías y Artículos Esenciales',
     amzSubPrefix: 'Ver Libros, Guías y Opciones Mejor Valoradas:',
     amzBtnText: 'Ver en Amazon',
+    coregNote: 'También deseo recibir alertas gratuitas sobre acuerdos de consumidores, informes de socios y actualizaciones del expediente colectivo (cancelar en cualquier momento).',
     TIER_1_STATUTORY: {
-      heading: 'Compare Sus 3 Opciones de Reembolso e Indemnización:',
-      redTitle: 'OPCIÓN 1: FORMULARIO WEB ESTÁNDAR DE LA EMPRESA (72% DE RIESGO DE RECHAZO)',
-      redText: 'Las aerolíneas, bancos y plataformas suelen rechazar reclamaciones individuales sin respaldo normativo u ofrecen bonos restrictivos que anulan su derecho a efectivo.',
-      amberTitle: 'OPCIÓN 2: AGENCIAS INTERMEDIARIAS (PIERDE DEL 35% AL 50% EN COMISIONES)',
-      amberText: 'Los intermediarios tardan de 3 a 6 meses y se quedan con hasta la mitad de su indemnización solo por enviar una carta estándar.',
+      heading: 'Compare Sus 3 Opciones de Protección de Fondos, Reembolso e Indemnización:',
+      redTitle: 'OPCIÓN 1: FORMULARIO DE ATENCIÓN ESTÁNDAR (72% DE RIESGO DE RECHAZO)',
+      redText: 'Los bancos, plataformas digitales y empresas suelen rechazar o demorar reclamaciones individuales que carecen de fundamentos normativos, ofreciendo respuestas automáticas en lugar de liberar fondos o reembolsar.',
+      amberTitle: 'OPCIÓN 2: AGENCIAS INTERMEDIARIAS (RETENIEN DEL 35% AL 50% EN COMISIONES)',
+      amberText: 'Los gestores intermediarios tardan de 3 a 6 meses y se quedan con hasta la mitad de su dinero o indemnización solo por enviar una carta estándar.',
       greenTitle: 'OPCIÓN 3: DESPACHO DE RECLAMACIÓN FORMAL PRE-CITADA ($29.00 — CONSERVE EL 100%)',
-      greenText: 'Lo que recibe por $29.00: Preparamos su reclamación formal citando la normativa aplicable y la enviamos electrónicamente al departamento de cumplimiento de la empresa en su nombre (con copia oficial de acuse en su correo) para que usted conserve el 100% de su dinero.',
-      namePlaceholder: 'Su Nombre Completo',
-      inputPlaceholder: 'Código de Reserva / Cuenta e Importe Estimado del Perjuicio',
+      greenText: 'Lo que recibe por $29.00: Preparamos su requerimiento formal de protección de cuenta o reembolso citando la normativa aplicable y lo enviamos electrónicamente al departamento de cumplimiento de la entidad en su nombre (con copia oficial en CC a su correo) para que usted conserve el 100% de sus fondos.',
+      namePlaceholder: 'Su Nombre y Apellidos Completos',
+      inputPlaceholder: 'Número de Cuenta / Referencia y Monto Estimado Afectado',
       emailPlaceholder: 'Su Correo Electrónico (Para Recibir Su Copia Oficial en CC)',
       ctaBtn: 'Enviar Mi Reclamación Formal Ahora — $29.00',
-      freeTitle: '¿Prefiere Esperar? Únase al Lote Colectivo Gratuito de 50 Afectados',
-      freeCta: 'Ingrese sus datos abajo para recibir gratis la Guía de Conservación de Pruebas y asegurar su lugar en el lote colectivo de 50 reclamantes.',
-      freeInputPlaceholder: 'Su Ciudad y Resumen del Problema o Pérdida',
+      freeTitle: '¿Prefiere Esperar? Únase Gratis al Grupo Colectivo de 50 Afectados',
+      freeCta: 'Ingrese sus datos abajo para recibir gratis la Guía de Protección de Pruebas y Fondos y asegurar su lugar en el expediente colectivo de 50 reclamantes.',
+      freeInputPlaceholder: 'Su Ciudad y Resumen del Problema en Su Cuenta o Servicio',
       freeBtn: 'Recibir Guía Gratuita y Registrar Mi Caso ($0.00)'
     },
     TIER_2_LEDGER: {
       heading: 'Compare Sus 3 Opciones de Acción y Escalada Institucional:',
       redTitle: 'OPCIÓN 1: QUEJARSE EN REDES SOCIALES (IMPACTO INSTITUCIONAL CERO)',
-      redText: 'Los comentarios en redes sociales carecen de validez administrativa y son ignorados por juntas directivas, ministerios y organismos reguladores.',
-      amberTitle: 'OPCIÓN 2: COLA DE PETICIÓN COLECTIVA GRATUITA (ESPERA AL LOTE DE 50 FIRMAS)',
-      amberText: 'Sumar su nombre a la lista gratuita registra su apoyo, pero permanece en espera hasta completar el lote de 50 firmantes.',
+      redText: 'Los comentarios en redes sociales carecen de validez administrativa y son ignorados por juntas directivas, autoridades financieras, ministerios y reguladores.',
+      amberTitle: 'OPCIÓN 2: LISTA DE PETICIÓN COLECTIVA GRATUITA (ESPERA AL GRUPO DE 50 FIRMAS)',
+      amberText: 'Sumar su nombre a la lista gratuita registra su apoyo, pero permanece en espera hasta completar el grupo consolidado de 50 firmantes.',
       greenTitle: 'OPCIÓN 3: NOTIFICACIÓN EJECUTIVA INDIVIDUAL ENVIADA EN SU NOMBRE HOY ($4.99)',
-      greenText: 'Lo que recibe por $4.99: Formateamos y transmitimos hoy mismo una Notificación Formal Individual con sello de tiempo en su nombre directamente a la junta directiva, ministerio u organismo competente, con copia oficial enviada a su correo.',
+      greenText: 'Lo que recibe por $4.99: Formateamos y transmitimos hoy mismo una Notificación Formal Individual con sello de tiempo en su nombre directamente a la junta directiva, regulador u organismo competente, con copia oficial enviada a su correo.',
       namePlaceholder: 'Su Nombre Completo',
-      inputPlaceholder: 'Su Postura (A Favor / En Contra / Exigir Auditoría) y Su Declaración Formal',
+      inputPlaceholder: 'Su Postura (Exigir Garantías / A Favor / En Contra) y Declaración Formal',
       emailPlaceholder: 'Su Correo Electrónico (Para Recibir Copia de la Notificación)',
       ctaBtn: 'Enviar Mi Notificación Formal Individual — $4.99',
-      freeTitle: 'Sume Su Firma al Registro Colectivo Gratuito de Este Expediente',
+      freeTitle: 'Sume Su Firma al Expediente Colectivo Gratuito de Este Caso',
       freeCta: 'Registre su firma gratuita en el expediente público y reciba actualizaciones oficiales.',
-      freeInputPlaceholder: 'Su Ciudad y Por Qué Este Tema le Afecta',
+      freeInputPlaceholder: 'Su Ciudad y Cómo le Afecta Este Caso',
       freeBtn: 'Registrar Mi Firma Gratuita ($0.00)'
     },
     TIER_3_POLL: {
@@ -277,6 +283,7 @@ const TIER_CONVERSION_PACKS = {
     }
   },
   de: {
+    execSummaryLabel: 'Zusammenfassung:',
     stancePrompt: 'Wählen Sie Ihre Offizielle Position im Referendum (Jede Seite Wählbar)...',
     stanceA: 'Position A: Volle Zustimmung / Forderung nach Aufklärung & Konsequenzen',
     stanceB: 'Position B: Strikte Ablehnung / Gegen die Vorwürfe oder Maßnahme',
@@ -284,38 +291,39 @@ const TIER_CONVERSION_PACKS = {
     amzDefaultHeader: 'Empfohlene Ressourcen, Ratgeber & Wichtige Ausrüstung',
     amzSubPrefix: 'Top-Bewertete Bücher, Ratgeber & Passende Artikel:',
     amzBtnText: 'Bei Amazon Ansehen',
+    coregNote: 'Ich möchte außerdem kostenlose Verbraucher-Updates, Partner-Briefings und Statusmeldungen zur Sammelakte erhalten (jederzeit abbestellbar).',
     TIER_1_STATUTORY: {
-      heading: 'Vergleichen Sie Ihre 3 Optionen zur Rückerstattung & Entschädigung:',
-      redTitle: 'OPTION 1: STANDARD-WEBFORMULAR DES UNTERNEHMENS (72% ABLEHNUNGSRISIKO)',
-      redText: 'Konzerne und Fluggesellschaften lehnen unvertretene Kundenanträge häufig mit Standardtextbausteinen ab oder drängen auf restriktive Gutscheine statt Barauszahlung.',
+      heading: 'Vergleichen Sie Ihre 3 Optionen zum Kontoschutz, zur Rückerstattung & Entschädigung:',
+      redTitle: 'OPTION 1: STANDARD-SUPPORTFORMULAR DES ANBIETERS (72% ABLEHNUNGSRISIKO)',
+      redText: 'Banken, Plattformen und Großunternehmen lehnen einfache Kundenanfragen ohne konkrete Gesetzesverweise häufig mit Standardtextbausteinen ab oder verzögern die Auszahlung.',
       amberTitle: 'OPTION 2: INKASSO- & ANSPRUCHSPORTALE (35% BIS 50% GEBÜHRENABZUG)',
-      amberText: 'Drittanbieter benötigen oft Monate und behalten bis zur Hälfte Ihrer gesetzlichen Entschädigung als Provision ein.',
+      amberText: 'Drittanbieter benötigen oft Monate für die Bearbeitung und behalten bis zur Hälfte Ihres Guthabens oder Ihrer Entschädigung als Provision ein.',
       greenTitle: 'OPTION 3: DIREKTER VERSAND IHRER RECHTLICH FUNDIERTEN FORDERUNG ($29.00 — 100% BEHALTEN)',
-      greenText: 'Was Sie für $29.00 erhalten: Wir erstellen Ihre formelle Zahlungsaufforderung unter Nennung der einschlägigen Verbrauchernormen und übermitteln diese elektronisch in Ihrem Namen direkt an die Rechts- und Compliance-Abteilung (mit offizieller Kopie im CC an Sie), sodass Sie 100% Ihrer Auszahlung behalten.',
+      greenText: 'Was Sie für $29.00 erhalten: Wir erstellen Ihre formelle Schutz- und Zahlungsaufforderung unter Nennung der einschlägigen Verbrauchernormen und übermitteln diese elektronisch in Ihrem Namen direkt an die Rechts- und Compliance-Abteilung (mit offizieller Kopie im CC an Sie), sodass Sie 100% Ihrer Summe behalten.',
       namePlaceholder: 'Ihr Vollständiger Name',
-      inputPlaceholder: 'Buchungs- / Kontonummer & Geschätzter Schadensbetrag',
+      inputPlaceholder: 'Konto- / Referenznummer & Betroffener Betrag',
       emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Offizielle Zustellkopie)',
       ctaBtn: 'Formelle Forderung Jetzt Versenden — $29.00',
-      freeTitle: 'Noch Nicht Versenden? Kostenlos in die 50-Personen-Sammelakte Eintragen',
-      freeCta: 'Tragen Sie sich unten ein, um die kostenlose Beweis-Checkliste zu erhalten und Ihren Platz in der 50-Personen-Sammelakte zu sichern.',
-      freeInputPlaceholder: 'Ihre Stadt & Kurze Beschreibung des Vorfalls oder Schadens',
+      freeTitle: 'Lieber Abwarten? Kostenlos in die 50-Personen-Sammelakte Eintragen',
+      freeCta: 'Tragen Sie sich unten ein, um die kostenlose Nachweis- und Kontoschutz-Checkliste zu erhalten und Ihren Platz in der 50-Personen-Sammelakte zu sichern.',
+      freeInputPlaceholder: 'Ihre Stadt & Kurze Beschreibung Ihres Konto- oder Serviceproblems',
       freeBtn: 'Kostenlose Checkliste Anfordern & Fall Registrieren ($0.00)'
     },
     TIER_2_LEDGER: {
       heading: 'Vergleichen Sie Ihre 3 Optionen zur Offiziellen Eskalation:',
       redTitle: 'OPTION 1: KOMMENTARE IN SOZIALEN NETZWERKEN (KEINE OFFIZIELLE WIRKUNG)',
-      redText: 'Unverifizierte Beiträge in sozialen Medien haben keinerlei verwaltungsrechtliches Gewicht und werden von Vorständen und Behörden ignoriert.',
+      redText: 'Unverifizierte Beiträge in sozialen Medien haben keinerlei verwaltungsrechtliches Gewicht und werden von Vorständen, Aufsichtsbehörden und Ministerien ignoriert.',
       amberTitle: 'OPTION 2: KOSTENLOSE SAMMELLISTE (WARTET AUF 50 UNTERZEICHNER)',
-      amberText: 'Ihr Eintrag in die kostenlose Liste unten wird gespeichert, jedoch erst nach Erreichen von 50 Unterschriften gebündelt übermittelt.',
+      amberText: 'Ihr Eintrag in die kostenlose Liste unten wird gespeichert, jedoch erst nach Erreichen einer Gruppe von 50 Personen gebündelt übermittelt.',
       greenTitle: 'OPTION 3: PRIORISIERTE INDIVIDUELLE MITTEILUNG IN IHREM NAMEN HEUTE ($4.99)',
-      greenText: 'Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle Stellungnahme in Ihrem Namen direkt an den Vorstand, das Ministerium oder die Aufsichtsstelle—inklusive Kopie an Ihr E-Mail-Postfach.',
+      greenText: 'Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle Stellungnahme und Schutzaufforderung in Ihrem Namen direkt an den Vorstand, die Aufsichtsbehörde oder das Ministerium—inklusive Kopie an Ihr E-Mail-Postfach.',
       namePlaceholder: 'Ihr Vollständiger Name',
-      inputPlaceholder: 'Ihre Position (Dafür / Dagegen / Prüfung Fordern) & Ihre Stellungnahme',
+      inputPlaceholder: 'Ihre Position (Schutz Fordern / Dafür / Dagegen) & Ihre Stellungnahme',
       emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Versandbestätigung)',
       ctaBtn: 'Individuelle Offizielle Mitteilung Senden — $4.99',
-      freeTitle: 'Tragen Sie Ihren Namen Kostenlos in das Öffentliche Register Ein',
+      freeTitle: 'Tragen Sie Ihren Namen Kostenlos in das Öffentliche Sammelregister Ein',
       freeCta: 'Registrieren Sie Ihre kostenlose Unterschrift im Sammelregister und erhalten Sie Updates.',
-      freeInputPlaceholder: 'Ihre Stadt & Warum Dieses Thema Wichtig Ist',
+      freeInputPlaceholder: 'Ihre Stadt & Wie Sie Betroffen Sind',
       freeBtn: 'Kostenlose Unterschrift Registrieren ($0.00)'
     },
     TIER_3_POLL: {
@@ -337,6 +345,7 @@ const TIER_CONVERSION_PACKS = {
     }
   },
   fr: {
+    execSummaryLabel: 'Résumé Exécutif :',
     stancePrompt: 'Sélectionnez Votre Position Officielle au Référendum (Tout Camp Éligible)...',
     stanceA: 'Position A : Soutien Total / Demande d’Enquête et de Responsabilité',
     stanceB: 'Position B : Opposition Ferme / Rejet des Allégations ou de la Mesure',
@@ -344,38 +353,39 @@ const TIER_CONVERSION_PACKS = {
     amzDefaultHeader: 'Ressources Recommandées, Guides et Équipements Essentiels',
     amzSubPrefix: 'Voir les Livres, Guides et Articles les Mieux Notés :',
     amzBtnText: 'Voir sur Amazon',
+    coregNote: 'Je souhaite également recevoir gratuitement les alertes de règlement, les notes partenaires et les mises à jour du dossier collectif (désinscription à tout moment).',
     TIER_1_STATUTORY: {
-      heading: 'Comparez Vos 3 Options de Remboursement et d’Indemnisation :',
-      redTitle: 'OPTION 1 : FORMULAIRE CLIENT STANDARD (72 % DE RISQUE DE REJET)',
-      redText: 'Les compagnies aériennes, banques et plateformes rejettent fréquemment les réclamations individuelles non citées ou imposent des avoirs restrictifs au lieu d’un remboursement en espèces.',
+      heading: 'Comparez Vos 3 Options de Protection des Fonds, de Remboursement et d’Indemnisation :',
+      redTitle: 'OPTION 1 : FORMULAIRE SUPPORT STANDARD (72 % DE RISQUE DE REJET)',
+      redText: 'Les établissements financiers, opérateurs et plateformes rejettent ou retardent fréquemment les demandes individuelles dépourvues de références légales précises.',
       amberTitle: 'OPTION 2 : AGENCES INTERMÉDIAIRES (PRÉLÈVENT 35 % À 50 % DE COMMISSION)',
-      amberText: 'Les intermédiaires prennent de 3 à 6 mois et retiennent jusqu’à la moitié de votre indemnisation légale pour envoyer un simple courrier type.',
+      amberText: 'Les intermédiaires prennent de 3 à 6 mois et retiennent jusqu’à la moitié de vos fonds ou de votre indemnisation légale pour envoyer un simple courrier type.',
       greenTitle: 'OPTION 3 : ENVOI DIRECT DE VOTRE MISE EN DEMEURE PRÉ-CITÉE ($29.00 — GARDEZ 100 %)',
-      greenText: 'Ce que vous obtenez pour $29.00 : Nous préparons votre demande formelle citant les textes réglementaires exacts et la transmettons électroniquement au service conformité en votre nom (avec copie officielle en CC sur votre e-mail) afin que vous conserviez 100 % de votre remboursement.',
-      namePlaceholder: 'Votre Nom Complet',
-      inputPlaceholder: 'Référence de Réservation / Compte et Montant Estimé du Préjudice',
+      greenText: 'Ce que vous obtenez pour $29.00 : Nous préparons votre demande formelle de protection ou de remboursement citant les textes réglementaires exacts et la transmettons électroniquement au service conformité en votre nom (avec copie officielle en CC sur votre e-mail) afin que vous conserviez 100 % de vos fonds.',
+      namePlaceholder: 'Votre Nom et Prénom Complet',
+      inputPlaceholder: 'Numéro de Compte / Référence et Montant Estimé Concerné',
       emailPlaceholder: 'Votre Adresse E-mail (Pour Recevoir Votre Copie Officielle en CC)',
       ctaBtn: 'Envoyer Ma Demande Officielle Maintenant — $29.00',
-      freeTitle: 'Pas Prêt Aujourd’hui ? Rejoignez Gratuitement le Lot Collectif de 50 Réclamants',
-      freeCta: 'Inscrivez vos coordonnées ci-dessous pour recevoir gratuitement la Checklist des Preuves et réserver votre place dans le lot collectif de 50 dossiers.',
-      freeInputPlaceholder: 'Votre Ville et Résumé de la Perturbation ou Perte',
+      freeTitle: 'Vous Préférez Attendre ? Rejoignez Gratuitement le Dossier Collectif de 50 Réclamants',
+      freeCta: 'Inscrivez vos coordonnées ci-dessous pour recevoir gratuitement la Checklist de Protection des Preuves et réserver votre place dans le groupe collectif de 50 dossiers.',
+      freeInputPlaceholder: 'Votre Ville et Résumé du Problème de Compte ou Préjudice',
       freeBtn: 'Recevoir la Checklist Gratuite et Enregistrer Mon Cas ($0.00)'
     },
     TIER_2_LEDGER: {
       heading: 'Comparez Vos 3 Options d’Action et de Notification Officielle :',
       redTitle: 'OPTION 1 : RÉSEAUX SOCIAUX (AUCUN IMPACT INSTITUTIONNEL)',
-      redText: 'Les publications sur les réseaux sociaux n’ont aucune valeur administrative et sont ignorées par les conseils d’administration, ministères et régulateurs.',
-      amberTitle: 'OPTION 2 : PÉTITION COLLECTIVE GRATUITE (ATTEND LE QUOTA DE 50 SIGNATURES)',
-      amberText: 'Ajouter votre nom à la liste gratuite ci-dessous enregistre votre soutien, mais attend que le lot de 50 signataires soit complet avant transmission.',
+      redText: 'Les publications sur les réseaux sociaux n’ont aucune valeur administrative et sont ignorées par les directions, autorités bancaires, ministères et régulateurs.',
+      amberTitle: 'OPTION 2 : PÉTITION COLLECTIVE GRATUITE (ATTEND LE GROUPE DE 50 SIGNATURES)',
+      amberText: 'Ajouter votre nom à la liste gratuite ci-dessous enregistre votre soutien, mais attend que le groupe de 50 signataires soit complet avant transmission.',
       greenTitle: 'OPTION 3 : NOTIFICATION OFFICIELLE INDIVIDUELLE ENVOYÉE EN VOTRE NOM ($4.99)',
-      greenText: 'Ce que vous obtenez pour $4.99 : Nous formatons et transmettons dès aujourd’hui une Notification Officielle Individuelle horodatée en votre nom directement à la direction, au ministère ou à l’autorité compétente—avec copie officielle envoyée sur votre boîte mail.',
+      greenText: 'Ce que vous obtenez pour $4.99 : Nous formatons et transmettons dès aujourd’hui une Notification Officielle Individuelle horodatée en votre nom directement à la direction, au régulateur ou à l’autorité compétente—avec copie officielle envoyée sur votre boîte mail.',
       namePlaceholder: 'Votre Nom Complet',
-      inputPlaceholder: 'Votre Position (Pour / Contre / Audit) et Votre Déclaration Officielle',
+      inputPlaceholder: 'Votre Position (Exiger des Garanties / Pour / Contre) et Votre Déclaration',
       emailPlaceholder: 'Votre Adresse E-mail (Pour Recevoir Votre Copie de Notification)',
       ctaBtn: 'Envoyer Ma Notification Individuelle — $4.99',
-      freeTitle: 'Ajoutez Gratuitement Votre Nom au Registre Collectif de Ce Dossier',
+      freeTitle: 'Ajoutez Gratuitement Votre Nom au Dossier Collectif Public',
       freeCta: 'Enregistrez votre signature gratuite sur le dossier public et recevez les mises à jour officielles.',
-      freeInputPlaceholder: 'Votre Ville et Pourquoi Ce Sujet Vous Concerne',
+      freeInputPlaceholder: 'Votre Ville et Pourquoi Ce Dossier Vous Concerne',
       freeBtn: 'Enregistrer Ma Signature Gratuite ($0.00)'
     },
     TIER_3_POLL: {
@@ -397,46 +407,48 @@ const TIER_CONVERSION_PACKS = {
     }
   },
   it: {
+    execSummaryLabel: 'Sintesi Esecutiva:',
     stancePrompt: 'Seleziona la Tua Posizione Ufficiale nel Referendum (Ogni Posizione Ammessa)...',
-    stanceA: 'Posizione A: Pieno Supporto / Richiesta di Indagine e Responsabilità',
+    stanceA: 'Posizione A: Pieno Supporto / Richiesta di Indagine e Tutela',
     stanceB: 'Posizione B: Ferma Opposizione / Rifiuto delle Accuse o della Misura',
     stanceC: 'Posizione C: Richiesta di Audit Indipendente e Piena Trasparenza',
-    amzDefaultHeader: 'Risorse Consigliate, Guide e Articoli Essenziali',
-    amzSubPrefix: 'Scopri Libri, Guide e Prodotti Più Recensiti:',
+    amzDefaultHeader: 'Risorse Consigliate, Guide e Strumenti Utili',
+    amzSubPrefix: 'Scopri Libri, Guide e Strumenti Più Recensiti:',
     amzBtnText: 'Vedi su Amazon',
+    coregNote: 'Desidero inoltre ricevere gratuitamente avvisi di tutela dei consumatori, informative dei partner e aggiornamenti sul fascicolo collettivo (disiscrizione in qualsiasi momento).',
     TIER_1_STATUTORY: {
-      heading: 'Confronta le Tue 3 Opzioni di Rimborso e Risarcimento:',
-      redTitle: 'OPZIONE 1: MODULO DI RECLAMO STANDARD (72% DI RISCHIO DI RIFIUTO)',
-      redText: 'Le aziende, compagnie di trasporto e piattaforme respingono spesso i reclami individuali non citati o offrono voucher restrittivi al posto del rimborso in denaro.',
+      heading: 'Confronta le Tue 3 Opzioni di Tutela del Conto, Rimborso e Risarcimento:',
+      redTitle: 'OPZIONE 1: RECLAMO STANDARD ALL’ASSISTENZA CLIENTI (72% DI RISCHIO DI RIFIUTO)',
+      redText: 'Istituti finanziari, gestori e piattaforme respingono o ritardano frequentemente i reclami individuali privi di riferimenti normativi vincolanti, fornendo risposte preconfezionate invece di sbloccare i fondi o rimborsare.',
       amberTitle: 'OPZIONE 2: AGENZIE INTERMEDIARIE (TRATTENGONO DAL 35% AL 50% DI COMMISSIONE)',
-      amberText: 'Gli intermediari impiegano mesi e trattengono fino alla metà del tuo risarcimento legale solo per inviare una lettera precompilata.',
-      greenTitle: 'OPZIONE 3: INVIO DIRETTO DELLA DIFFIDA FORMALE PRE-CITATA ($29.00 — TIENI IL 100%)',
-      greenText: 'Cosa ottieni per $29.00: Prepariamo la tua richiesta formale citando le normative vigenti a tutela del consumatore e la trasmettiamo elettronicamente a tuo nome direttamente all’ufficio conformità dell’azienda (con copia ufficiale in CC sulla tua email), così trattieni il 100% del rimborso.',
+      amberText: 'Gli intermediari impiegano mesi e trattengono fino alla metà del tuo rimborso o indennizzo legale solo per inviare una comunicazione standard.',
+      greenTitle: 'OPZIONE 3: INVIO DIRETTO DELLA DIFFIDA E ISTANZA FORMALE PRE-CITATA ($29.00 — TIENI IL 100%)',
+      greenText: 'Cosa ottieni per $29.00: Prepariamo la tua istanza formale di tutela fondi o rimborso citando le normative vigenti (Codice del Consumo / Banca d’Italia / Normativa UE) e la trasmettiamo elettronicamente a tuo nome direttamente all’ufficio conformità e reclami della società (con copia ufficiale in CC sulla tua email), così trattieni il 100% delle tue somme.',
       namePlaceholder: 'Il Tuo Nome e Cognome Completo',
-      inputPlaceholder: 'Codice Prenotazione / Biglietto / Conto e Importo Stimato del Danno',
+      inputPlaceholder: 'Numero di Conto / Pratica / Riferimento e Importo Stimato Coinvolto',
       emailPlaceholder: 'Il Tuo Indirizzo Email (Per Ricevere la Copia Ufficiale in CC)',
-      ctaBtn: 'Invia Ora la Mia Richiesta Formale di Rimborso — $29.00',
-      freeTitle: 'Preferisci Aspettare? Unisciti Gratuitamente al Lotto Collettivo di 50 Ricorrenti',
-      freeCta: 'Inserisci i tuoi dati qui sotto per ricevere gratis la Checklist di Conservazione delle Prove e bloccare il tuo posto nel lotto collettivo da 50 pratiche.',
-      freeInputPlaceholder: 'La Tua Città e Breve Riepilogo del Disservizio o Perdita',
+      ctaBtn: 'Invia Ora la Mia Istanza Formale di Tutela e Rimborso — $29.00',
+      freeTitle: 'Preferisci Attendere? Unisciti Gratuitamente al Fascicolo Collettivo di 50 Ricorrenti',
+      freeCta: 'Inserisci i tuoi dati qui sotto per ricevere gratis la Checklist di Tutela del Conto e delle Prove e riservare il tuo posto nel gruppo collettivo di 50 pratiche.',
+      freeInputPlaceholder: 'La Tua Città e Breve Riepilogo del Problema sul Conto o Disservizio',
       freeBtn: 'Ricevi Checklist Gratuita e Registra il Mio Caso ($0.00)'
     },
     TIER_2_LEDGER: {
-      heading: 'Confronta le Tue 3 Opzioni di Azione e Notifica Istituzionale:',
+      heading: 'Confronta le Tue 3 Opzioni di Azione e Tutela Istituzionale:',
       redTitle: 'OPZIONE 1: SFOGARSI SUI SOCIAL MEDIA (IMPATTO ISTITUZIONALE ZERO)',
-      redText: 'I commenti non verificati sui social media non hanno alcun valore amministrativo e vengono ignorati da consigli di amministrazione, ministeri ed enti regolatori.',
-      amberTitle: 'OPZIONE 2: CODA PETIZIONE COLLETTIVA GRATUITA (ATTENDE IL LOTTO DI 50 FIRME)',
-      amberText: 'Aggiungere il tuo nome alla lista gratuita qui sotto registra la tua adesione, ma resta in attesa finché non viene raggiunto il blocco di 50 firmatari.',
-      greenTitle: 'OPZIONE 3: NOTIFICA ESECUTIVA INDIVIDUALE INVIATA A TUO NOME OGGI ($4.99)',
-      greenText: 'Cosa ottieni per $4.99: Formattiamo e trasmettiamo oggi stesso una Notifica Formale Individuale con marca temporale a tuo nome direttamente alla direzione, al ministero o all’organo di vigilanza—con copia ufficiale inviata alla tua casella email.',
+      redText: 'I commenti non verificati sui social media non hanno alcun valore amministrativo e vengono ignorati da consigli di amministrazione, commissari, autorità di vigilanza e ministeri.',
+      amberTitle: 'OPZIONE 2: LISTA COLLETTIVA GRATUITA (ATTENDE IL GRUPPO DI 50 FIRME)',
+      amberText: 'Aggiungere il tuo nome alla lista gratuita qui sotto registra la tua adesione, ma resta in coda finché non viene raggiunto il gruppo consolidato di 50 firmatari.',
+      greenTitle: 'OPZIONE 3: NOTIFICA FORMALE INDIVIDUALE INVIATA A TUO NOME OGGI ($4.99)',
+      greenText: 'Cosa ottieni per $4.99: Formattiamo e trasmettiamo oggi stesso una Notifica Formale Individuale di Tutela e Trasparenza con marca temporale a tuo nome direttamente alla direzione, agli organi di vigilanza o all’ente competente—con copia ufficiale inviata alla tua casella email.',
       namePlaceholder: 'Il Tuo Nome e Cognome',
-      inputPlaceholder: 'La Tua Posizione (Favorevole / Contrario / Richiesta Audit) e il Tuo Messaggio Formale',
+      inputPlaceholder: 'La Tua Posizione (Richiesta Tutela Conto / Favorevole / Contrario) e Messaggio',
       emailPlaceholder: 'Il Tuo Indirizzo Email (Per Ricevere la Copia della Notifica)',
       ctaBtn: 'Invia la Mia Notifica Formale Individuale — $4.99',
-      freeTitle: 'Aggiungi Gratuitamente il Tuo Nome al Registro Collettivo di Questo Fascicolo',
-      freeCta: 'Registra la tua firma gratuita nel fascicolo pubblico e ricevi aggiornamenti ufficiali.',
-      freeInputPlaceholder: 'La Tua Città e Perché Questo Tema Ti Riguarda',
-      freeBtn: 'Registra la Mia Firma Gratuita ($0.00)'
+      freeTitle: 'Aggiungi Gratuitamente il Tuo Nome al Fascicolo Collettivo di Questo Caso',
+      freeCta: 'Registra la tua adesione gratuita nel fascicolo pubblico e ricevi aggiornamenti ufficiali sugli sviluppi.',
+      freeInputPlaceholder: 'La Tua Città e Come Ti Riguarda Questa Situazione',
+      freeBtn: 'Registra la Mia Adesione Gratuita ($0.00)'
     },
     TIER_3_POLL: {
       heading: 'Come Partecipare al Referendum Pubblico Ufficiale:',
@@ -477,27 +489,63 @@ function loadState() {
   return state;
 }
 
-// Automatically cleans any existing live pages in /docket/ and /flight/ so "FLAT" and "Collector Availability" are replaced immediately without losing your page count
+// IN-PLACE GLOBAL PATCHER: Automatically upgrades the conversion boxes on your existing Revolut & international pages without deleting or resetting your page count!
 function patchExistingHtmlFiles() {
   const dirs = [path.join(process.cwd(), 'docket'), path.join(process.cwd(), 'flight')];
+  let patchedCount = 0;
+
   for (const rootDir of dirs) {
     if (!fs.existsSync(rootDir)) continue;
     for (const sub of fs.readdirSync(rootDir)) {
       const file = path.join(rootDir, sub, 'index.html');
       if (!fs.existsSync(file)) continue;
       let html = fs.readFileSync(file, 'utf8');
-      const updated = html
+      const orig = html;
+
+      // 1. Remove any remaining FLAT / FIXOS / FIJOS / PAUSCHAL / FIXES / FISSI next to prices
+      html = html
         .replace(/\$29\.00\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$29.00')
         .replace(/\$4\.99\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$4.99')
-        .replace(/\$1\.99\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$1.99')
+        .replace(/\$1\.99\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$1.99');
+
+      // 2. Fix Italian "Lotto Collettivo" ("collective lottery"), "non citati" ("unmentioned"), and transport/voucher wording
+      html = html
+        .replace(/Lotto Collettivo di 50 Ricorrenti/g, 'Fascicolo Collettivo di 50 Ricorrenti')
+        .replace(/nel lotto collettivo da 50 pratiche/g, 'nel gruppo collettivo di 50 pratiche')
+        .replace(/il blocco di 50 firmatari/g, 'il gruppo consolidato di 50 firmatari')
+        .replace(/IL LOTTO DI 50 FIRME/g, 'IL GRUPPO DI 50 FIRME')
+        .replace(/Le aziende, compagnie di trasporto e piattaforme respingono spesso i reclami individuali non citati o offrono voucher restrittivi al posto del rimborso in denaro\./g,
+          'Istituti finanziari, gestori e piattaforme respingono o ritardano frequentemente i reclami individuali privi di riferimenti normativi vincolanti, fornendo risposte preconfezionate invece di sbloccare i fondi o rimborsare.')
+        .replace(/Codice Prenotazione \/ Biglietto \/ Conto e Importo Stimato del Danno/g,
+          'Numero di Conto / Pratica / Riferimento e Importo Stimato Coinvolto')
+        .replace(/Invia Ora la Mia Richiesta Formale di Rimborso — \$29\.00/g,
+          'Invia Ora la Mia Istanza Formale di Tutela e Rimborso — $29.00');
+
+      // 3. Fix English, Spanish, Portuguese, French, German travel-only TIER_1 wording on existing pages
+      html = html
+        .replace(/Corporations, airlines, and property platforms routinely reject unrepresented consumer claims using boilerplate excuses or push restrictive travel vouchers that waive your right to cash\./g,
+          'Financial institutions, service providers, and carriers routinely stall or reject individual requests that lack formal statutory citations, offering generic excuses or non-cash credits instead of full resolution.')
+        .replace(/Corporations, airlines, and property platforms routinely reject unrepresented consumer claims using boilerplate excuses or push restrictive vouchers that waive your right to cash\./g,
+          'Financial institutions, service providers, and carriers routinely stall or reject individual requests that lack formal statutory citations, offering generic excuses or non-cash credits instead of full resolution.')
+        .replace(/Booking \/ Account Reference &amp; Estimated Dollar Loss \(e\.g\. PNR K8M2P9 - \$650\)/g,
+          'Account / Reference Number &amp; Estimated Amount at Stake')
+        .replace(/Booking \/ Account Reference & Estimated Dollar Loss \(e\.g\. PNR K8M2P9 - \$650\)/g,
+          'Account / Reference Number & Estimated Amount at Stake')
+        .replace(/Lote Coletivo Gratuito/g, 'Grupo Coletivo Gratuito')
+        .replace(/lote coletivo de 50/g, 'grupo coletivo de 50')
+        .replace(/Lote Colectivo Gratuito/g, 'Grupo Colectivo Gratuito')
+        .replace(/lote colectivo de 50/g, 'expediente colectivo de 50')
         .replace(/Verified Retail, Gear &amp; Collector Availability/g, 'Recommended Resources, Guides &amp; Essential Gear')
-        .replace(/Verified Retail &amp; Replacement Availability/g, 'Recommended Resources, Guides &amp; Essential Gear')
-        .replace(/Check Live Stock, Editions &amp; Top-Rated Options:/g, 'View Top-Rated Books, Tools &amp; Related Essentials:')
-        .replace(/Check Live Stock, Collector Editions &amp; Approved Alternatives:/g, 'View Top-Rated Books, Tools &amp; Related Essentials:');
-      if (updated !== html) {
-        fs.writeFileSync(file, updated, 'utf8');
+        .replace(/Check Live Stock, Editions &amp; Top-Rated Options:/g, 'View Top-Rated Books, Tools &amp; Related Essentials:');
+
+      if (html !== orig) {
+        fs.writeFileSync(file, html, 'utf8');
+        patchedCount++;
       }
     }
+  }
+  if (patchedCount > 0) {
+    console.log(`[Patcher] Upgraded ${patchedCount} existing HTML pages in place.`);
   }
 }
 
@@ -631,7 +679,7 @@ function buildSiloHtml(d, isFlight) {
     <h1 style='font-size:28px;line-height:1.25;margin:0 0 16px 0;color:#0f172a;font-weight:900;'>${d.human_h1}</h1>
 
     <div style='background:#f8fafc;border-left:4px solid #0f172a;padding:16px;border-radius:0 6px 6px 0;margin-bottom:20px;font-size:16px;font-weight:500;color:#1e293b;'>
-      <strong>Executive Summary:</strong> ${d.ai_direct_answer}
+      <strong>${langGroup.execSummaryLabel}</strong> ${d.ai_direct_answer}
     </div>
 
     ${statusBarHtml}
@@ -702,7 +750,7 @@ function buildSiloHtml(d, isFlight) {
         <input type='text' name='loss_impact' required placeholder='${pack.freeInputPlaceholder}' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
         <label style='display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#64748b;cursor:pointer;'>
           <input type='checkbox' name='coreg_optin' value='yes' checked style='margin-top:3px;'>
-          <span>Also subscribe me to free consumer settlement alerts, partner briefs, and consolidated batch recovery updates (unsubscribe anytime).</span>
+          <span>${langGroup.coregNote}</span>
         </label>
         <button type='submit' style='padding:13px;background:#0f172a;color:#ffffff;font-weight:800;font-size:14px;border:none;border-radius:6px;cursor:pointer;'>${pack.freeBtn}</button>
       </form>
@@ -720,14 +768,14 @@ CRITICAL RULES:
 1. NEVER write one-sentence answers. Every paragraph in "advertorial_paragraphs" and every answer ("a1_answer", "a2_answer", "a3_answer") MUST be 4 to 5 full, detailed sentences (at least 65 words per paragraph/answer) packed with specific context, regulatory/financial stakes, and actionable insights in the requested Language.
 2. NEVER use the words "automated", "bot", or "AI".
 3. LONG-TAIL GOOGLE SEARCH HEADLINES:
-   - "seo_title" and "human_h1" MUST be written in the requested Language the exact way real people search on Google when looking for answers, refunds, petitions, or fallout from this news event.
+   - "seo_title" and "human_h1" MUST be written in the requested Language the exact way real people search on Google when looking for answers, refunds, account protection, petitions, or fallout from this news event.
    - "english_title" MUST always be written in clear English so the operator dashboard reads in English.
-4. MONETIZATION TIER ROUTING:
-   - "TIER_1_STATUTORY" ($29.00): Direct consumer financial loss (flights, transit strikes, telecom/software outages, Airbnb/landlord disputes, bank account freezes, billing errors, product recalls).
-   - "TIER_2_LEDGER" ($4.99): Government/corporate policy decisions, investigations (like corporate probes/scandals), rate hikes, school/labor strikes, municipal rules, or institutional actions where citizens want to send a formal $4.99 notice or sign a petition.
-   - "TIER_3_POLL" ($1.99): Sports, celebrity drama, entertainment/gaming releases, cultural flashpoints, or viral debates where readers want to log a weighted referendum vote and statement.
+4. PRECISE MONETIZATION TIER ROUTING:
+   - "TIER_1_STATUTORY" ($29.00): Use ONLY when individuals have suffered a direct personal cash loss, cancelled/delayed flight, active service outage, frozen bank/fintech funds, withheld security deposit/Airbnb refund, or defective product recall requiring an immediate statutory refund/release demand.
+   - "TIER_2_LEDGER" ($4.99): Use when the story involves regulatory oversight/administration probes (where accounts are NOT frozen yet, e.g., special administration or compliance audits), government/corporate policy decisions, rate hikes, labor/school strikes, or institutional actions where citizens/account holders want to dispatch a formal $4.99 Individual Protection & Accountability Notice in their name.
+   - "TIER_3_POLL" ($1.99): Use for sports, celebrity drama, entertainment/gaming releases, court trials, cultural flashpoints, or viral debates where readers want to log a weighted referendum vote and statement.
 5. CONTEXT-MATCHED AMAZON AFFILIATE CALLOUT:
-   - "affiliate_heading": A natural 3-to-5 word category callout in the requested Language that explains WHY the recommended product/book/gear below fits this article (e.g., "Recommended Family Safety & Legal Guides", "Air Travel & Delay Preparedness Gear", "Home Outage & Backup Power Essentials", or "Official Franchise Editions & Hardware").
+   - "affiliate_heading": A natural 3-to-5 word category callout in the requested Language that explains WHY the recommended product/book/gear below fits this article (e.g., "Recommended Personal Finance & Banking Security Guides", "Air Travel & Delay Preparedness Gear", "Home Outage & Backup Power Essentials", or "Official Franchise Editions & Hardware").
    - "affiliate_keyword": A high-converting 2-to-4 word Amazon search phrase in the requested Language matching that callout.
 
 Return a strict JSON object in the requested Language with:
