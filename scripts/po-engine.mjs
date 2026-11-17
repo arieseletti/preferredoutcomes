@@ -24,7 +24,7 @@ const ALL_AIRPORTS = [
   { code: 'LEMD', region: 'EU261', lang: 'Spanish', lang_code: 'es' },
   { code: 'SBGR', region: 'ANAC_BR', lang: 'Portuguese (pt-BR)', lang_code: 'pt' },
   { code: 'CYYZ', region: 'APPR', lang: 'English', lang_code: 'en' },
-  { code: 'CYVR', region: 'APPR', lang_code: 'en', lang: 'English' },
+  { code: 'CYVR', region: 'APPR', lang: 'English', lang_code: 'en' },
   { code: 'KJFK', region: 'US_DOT', lang: 'English', lang_code: 'en' },
   { code: 'KATL', region: 'US_DOT', lang: 'English', lang_code: 'en' },
   { code: 'KLAX', region: 'US_DOT', lang: 'English', lang_code: 'en' },
@@ -47,33 +47,50 @@ function buildOmnibusFeedMatrix() {
     { region: 'EU', lang: 'Italian', lang_code: 'it', hl: 'it', gl: 'IT', ceid: 'IT:it' }
   ];
 
+  // Replaced raw clinical HEALTH/SCIENCE feeds with Top Headlines + All Major Commercial/Civic/Cultural Categories
   const topics = [
     { topic: 'BUSINESS', defaultNiche: 'FINANCE' },
     { topic: 'TECHNOLOGY', defaultNiche: 'OUTAGES' },
     { topic: 'WORLD', defaultNiche: 'POLITICS' },
     { topic: 'NATION', defaultNiche: 'POLITICS' },
     { topic: 'ENTERTAINMENT', defaultNiche: 'CULTURE' },
-    { topic: 'SPORTS', defaultNiche: 'CULTURE' },
-    { topic: 'SCIENCE', defaultNiche: 'CULTURE' },
-    { topic: 'HEALTH', defaultNiche: 'RECALLS' }
+    { topic: 'SPORTS', defaultNiche: 'CULTURE' }
   ];
 
   const feeds = [];
 
   for (const loc of locales) {
+    // 1. High-Intent Consumer Refunds, Outages, Flights, Tenancy & Recalls
     feeds.push({
       niche: 'OUTAGES',
       region: loc.region,
       lang: loc.lang,
       lang_code: loc.lang_code,
-      url: `https://news.google.com/rss/search?q=(outage+OR+refund+OR+lawsuit+OR+strike+OR+cancelled+OR+compensation+OR+Airbnb+OR+tenant)+when:7d&hl=${loc.hl}&gl=${loc.gl}&ceid=${loc.ceid}`
+      url: `https://news.google.com/rss/search?q=(outage+OR+refund+OR+lawsuit+OR+strike+OR+cancelled+OR+compensation+OR+Airbnb+OR+tenant+OR+recall)+when:7d&hl=${loc.hl}&gl=${loc.gl}&ceid=${loc.ceid}`
     });
+    // 2. Viral Controversies, Backlash, Investigations, Verdicts & Boycotts
     feeds.push({
       niche: 'CULTURE',
       region: loc.region,
       lang: loc.lang,
       lang_code: loc.lang_code,
       url: `https://news.google.com/rss/search?q=(controversy+OR+backlash+OR+scandal+OR+boycott+OR+investigation+OR+verdict+OR+feud)+when:7d&hl=${loc.hl}&gl=${loc.gl}&ceid=${loc.ceid}`
+    });
+    // 3. Mainstream Top Breaking Headlines for Every Country
+    feeds.push({
+      niche: 'POLITICS',
+      region: loc.region,
+      lang: loc.lang,
+      lang_code: loc.lang_code,
+      url: `https://news.google.com/rss?hl=${loc.hl}&gl=${loc.gl}&ceid=${loc.ceid}`
+    });
+    // 4. Product Recalls, Class Actions & Consumer Safety (Non-Clinical)
+    feeds.push({
+      niche: 'RECALLS',
+      region: loc.region,
+      lang: loc.lang,
+      lang_code: loc.lang_code,
+      url: `https://news.google.com/rss/search?q=(recall+OR+"class+action"+OR+defective+OR+settlement+OR+fine+OR+overcharged)+when:7d&hl=${loc.hl}&gl=${loc.gl}&ceid=${loc.ceid}`
     });
   }
 
@@ -94,7 +111,6 @@ function buildOmnibusFeedMatrix() {
 
 const OMNIBUS_FEEDS = buildOmnibusFeedMatrix();
 
-// 100% UNIVERSAL, IDIOMATIC CONVERSION PACKS ACROSS ALL 6 LANGUAGES (NO "LOTTERY", NO "TRANSPORT VOUCHERS", NO "FLAT")
 const TIER_CONVERSION_PACKS = {
   en: {
     execSummaryLabel: 'Executive Summary:',
@@ -126,7 +142,7 @@ const TIER_CONVERSION_PACKS = {
     TIER_2_LEDGER: {
       heading: 'Compare Your 3 Institutional Action & Escalation Options:',
       redTitle: 'OPTION 1: VENTING ON SOCIAL MEDIA (ZERO INSTITUTIONAL IMPACT)',
-      redText: 'Unverified social media posts and comment threads carry zero administrative weight and are completely ignored by corporate boards, banking regulators, ministries, and oversight committees.',
+      redText: 'Unverified social media posts and comment threads carry zero administrative weight and are completely ignored by executive boards, ministries, and regulatory oversight committees.',
       amberTitle: 'OPTION 2: STANDARD FREE GROUP QUEUE (WAITS FOR 50 SIGNATURES)',
       amberText: 'Adding your name to the free group registry below logs your support, but your signature is held in queue until a full 50-person consolidated group is reached.',
       greenTitle: 'OPTION 3: PRIORITY INDIVIDUAL EXECUTIVE NOTICE DISPATCHED IN YOUR NAME ($4.99)',
@@ -188,13 +204,13 @@ const TIER_CONVERSION_PACKS = {
     TIER_2_LEDGER: {
       heading: 'Compare Suas 3 Opções de Manifestação e Escalada Institucional:',
       redTitle: 'OPÇÃO 1: RECLAMAR NAS REDES SOCIAIS (IMPACTO OFICIAL ZERO)',
-      redText: 'Comentários em redes sociais não possuem validade administrativa e são ignorados por diretorias, bancos centrais, conselhos e órgãos reguladores.',
+      redText: 'Comentários em redes sociais não possuem validade administrativa e são ignorados por diretorias, conselhos executivos, ministérios e órgãos reguladores.',
       amberTitle: 'OPÇÃO 2: LISTA DE PETIÇÃO COLETIVA GRATUITA (AGUARDA GRUPO DE 50 NOMES)',
       amberText: 'Assinar a lista gratuita abaixo registra seu apoio, mas aguarda o fechamento do grupo de 50 assinaturas antes do envio consolidado.',
       greenTitle: 'OPÇÃO 3: NOTIFICAÇÃO EXECUTIVA INDIVIDUAL ENVIADA EM SEU NOME HOJE ($4.99)',
-      greenText: 'O que você recebe por $4.99: Formatamos e transmitimos hoje uma Notificação Formal Individual em seu nome diretamente para a diretoria, ouvidoria ou órgão regulador responsável—seja para exigir proteção da sua conta, cobrar fiscalização ou contestar a medida—com cópia oficial enviada ao seu e-mail.',
+      greenText: 'O que você recebe por $4.99: Formatamos e transmitimos hoje uma Notificação Formal Individual em seu nome diretamente para a diretoria, ouvidoria ou órgão regulador responsável—seja para exigir garantias, cobrar fiscalização ou contestar a medida—com cópia oficial enviada ao seu e-mail.',
       namePlaceholder: 'Seu Nome Completo',
-      inputPlaceholder: 'Sua Posição (Exigir Proteção / A Favor / Contra) e Sua Mensagem Formal',
+      inputPlaceholder: 'Sua Posição (Exigir Garantias / A Favor / Contra) e Sua Mensagem Formal',
       emailPlaceholder: 'Seu E-mail (Para Receber o Comprovante de Envio)',
       ctaBtn: 'Enviar Minha Notificação Individual Agora — $4.99',
       freeTitle: 'Adicione Seu Nome Gratuitamente ao Grupo Coletivo Desta Pauta',
@@ -233,8 +249,8 @@ const TIER_CONVERSION_PACKS = {
     TIER_1_STATUTORY: {
       heading: 'Compare Sus 3 Opciones de Protección de Fondos, Reembolso e Indemnización:',
       redTitle: 'OPCIÓN 1: FORMULARIO DE ATENCIÓN ESTÁNDAR (72% DE RIESGO DE RECHAZO)',
-      redText: 'Los bancos, plataformas digitales y empresas suelen rechazar o demorar reclamaciones individuales que carecen de fundamentos normativos, ofreciendo respuestas automáticas en lugar de liberar fondos o reembolsar.',
-      amberTitle: 'OPCIÓN 2: AGENCIAS INTERMEDIARIAS (RETENIEN DEL 35% AL 50% EN COMISIONES)',
+      redText: 'Las entidades, plataformas digitales y empresas suelen rechazar o demorar reclamaciones individuales que carecen de fundamentos normativos, ofreciendo respuestas automáticas en lugar de liberar fondos o reembolsar.',
+      amberTitle: 'OPCIÓN 2: AGENCIAS INTERMEDIARIAS (RETIENEN DEL 35% AL 50% EN COMISIONES)',
       amberText: 'Los gestores intermediarios tardan de 3 a 6 meses y se quedan con hasta la mitad de su dinero o indemnización solo por enviar una carta estándar.',
       greenTitle: 'OPCIÓN 3: DESPACHO DE RECLAMACIÓN FORMAL PRE-CITADA ($29.00 — CONSERVE EL 100%)',
       greenText: 'Lo que recibe por $29.00: Preparamos su requerimiento formal de protección de cuenta o reembolso citando la normativa aplicable y lo enviamos electrónicamente al departamento de cumplimiento de la entidad en su nombre (con copia oficial en CC a su correo) para que usted conserve el 100% de sus fondos.',
@@ -250,7 +266,7 @@ const TIER_CONVERSION_PACKS = {
     TIER_2_LEDGER: {
       heading: 'Compare Sus 3 Opciones de Acción y Escalada Institucional:',
       redTitle: 'OPCIÓN 1: QUEJARSE EN REDES SOCIALES (IMPACTO INSTITUCIONAL CERO)',
-      redText: 'Los comentarios en redes sociales carecen de validez administrativa y son ignorados por juntas directivas, autoridades financieras, ministerios y reguladores.',
+      redText: 'Los comentarios en redes sociales carecen de validez administrativa y son ignorados por juntas directivas, comités de supervisión, ministerios y organismos reguladores.',
       amberTitle: 'OPCIÓN 2: LISTA DE PETICIÓN COLECTIVA GRATUITA (ESPERA AL GRUPO DE 50 FIRMAS)',
       amberText: 'Sumar su nombre a la lista gratuita registra su apoyo, pero permanece en espera hasta completar el grupo consolidado de 50 firmantes.',
       greenTitle: 'OPCIÓN 3: NOTIFICACIÓN EJECUTIVA INDIVIDUAL ENVIADA EN SU NOMBRE HOY ($4.99)',
@@ -295,7 +311,7 @@ const TIER_CONVERSION_PACKS = {
     TIER_1_STATUTORY: {
       heading: 'Vergleichen Sie Ihre 3 Optionen zum Kontoschutz, zur Rückerstattung & Entschädigung:',
       redTitle: 'OPTION 1: STANDARD-SUPPORTFORMULAR DES ANBIETERS (72% ABLEHNUNGSRISIKO)',
-      redText: 'Banken, Plattformen und Großunternehmen lehnen einfache Kundenanfragen ohne konkrete Gesetzesverweise häufig mit Standardtextbausteinen ab oder verzögern die Auszahlung.',
+      redText: 'Unternehmen, Plattformen und Dienstleister lehnen einfache Kundenanfragen ohne konkrete Gesetzesverweise häufig mit Standardtextbausteinen ab oder verzögern die Auszahlung.',
       amberTitle: 'OPTION 2: INKASSO- & ANSPRUCHSPORTALE (35% BIS 50% GEBÜHRENABZUG)',
       amberText: 'Drittanbieter benötigen oft Monate für die Bearbeitung und behalten bis zur Hälfte Ihres Guthabens oder Ihrer Entschädigung als Provision ein.',
       greenTitle: 'OPTION 3: DIREKTER VERSAND IHRER RECHTLICH FUNDIERTEN FORDERUNG ($29.00 — 100% BEHALTEN)',
@@ -305,20 +321,20 @@ const TIER_CONVERSION_PACKS = {
       emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Offizielle Zustellkopie)',
       ctaBtn: 'Formelle Forderung Jetzt Versenden — $29.00',
       freeTitle: 'Lieber Abwarten? Kostenlos in die 50-Personen-Sammelakte Eintragen',
-      freeCta: 'Tragen Sie sich unten ein, um die kostenlose Nachweis- und Kontoschutz-Checkliste zu erhalten und Ihren Platz in der 50-Personen-Sammelakte zu sichern.',
+      freeCta: 'Tragen Sie sich unten ein, um die kostenlose Nachweis- und Schutz-Checkliste zu erhalten und Ihren Platz in der 50-Personen-Sammelakte zu sichern.',
       freeInputPlaceholder: 'Ihre Stadt & Kurze Beschreibung Ihres Konto- oder Serviceproblems',
       freeBtn: 'Kostenlose Checkliste Anfordern & Fall Registrieren ($0.00)'
     },
     TIER_2_LEDGER: {
       heading: 'Vergleichen Sie Ihre 3 Optionen zur Offiziellen Eskalation:',
       redTitle: 'OPTION 1: KOMMENTARE IN SOZIALEN NETZWERKEN (KEINE OFFIZIELLE WIRKUNG)',
-      redText: 'Unverifizierte Beiträge in sozialen Medien haben keinerlei verwaltungsrechtliches Gewicht und werden von Vorständen, Aufsichtsbehörden und Ministerien ignoriert.',
+      redText: 'Unverifizierte Beiträge in sozialen Medien haben keinerlei verwaltungsrechtliches Gewicht und werden von Vorständen, Aufsichtsgremien und Ministerien ignoriert.',
       amberTitle: 'OPTION 2: KOSTENLOSE SAMMELLISTE (WARTET AUF 50 UNTERZEICHNER)',
       amberText: 'Ihr Eintrag in die kostenlose Liste unten wird gespeichert, jedoch erst nach Erreichen einer Gruppe von 50 Personen gebündelt übermittelt.',
       greenTitle: 'OPTION 3: PRIORISIERTE INDIVIDUELLE MITTEILUNG IN IHREM NAMEN HEUTE ($4.99)',
-      greenText: 'Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle Stellungnahme und Schutzaufforderung in Ihrem Namen direkt an den Vorstand, die Aufsichtsbehörde oder das Ministerium—inklusive Kopie an Ihr E-Mail-Postfach.',
+      greenText: 'Was Sie für $4.99 erhalten: Wir formatieren und übermitteln noch heute eine individuelle, zeitgestempelte formelle Stellungnahme in Ihrem Namen direkt an den Vorstand, die Aufsichtsstelle oder das zuständige Gremium—inklusive Kopie an Ihr E-Mail-Postfach.',
       namePlaceholder: 'Ihr Vollständiger Name',
-      inputPlaceholder: 'Ihre Position (Schutz Fordern / Dafür / Dagegen) & Ihre Stellungnahme',
+      inputPlaceholder: 'Ihre Position (Prüfung Fordern / Dafür / Dagegen) & Ihre Stellungnahme',
       emailPlaceholder: 'Ihre E-Mail-Adresse (Für Ihre Versandbestätigung)',
       ctaBtn: 'Individuelle Offizielle Mitteilung Senden — $4.99',
       freeTitle: 'Tragen Sie Ihren Namen Kostenlos in das Öffentliche Sammelregister Ein',
@@ -351,13 +367,13 @@ const TIER_CONVERSION_PACKS = {
     stanceB: 'Position B : Opposition Ferme / Rejet des Allégations ou de la Mesure',
     stanceC: 'Position C : Demande d’Audit Indépendant et de Transparence Totale',
     amzDefaultHeader: 'Ressources Recommandées, Guides et Équipements Essentiels',
-    amzSubPrefix: 'Voir les Livres, Guides et Articles les Mieux Notés :',
+    amzSubPrefix: 'Voir les Livros, Guides et Articles les Mieux Notés :',
     amzBtnText: 'Voir sur Amazon',
     coregNote: 'Je souhaite également recevoir gratuitement les alertes de règlement, les notes partenaires et les mises à jour du dossier collectif (désinscription à tout moment).',
     TIER_1_STATUTORY: {
       heading: 'Comparez Vos 3 Options de Protection des Fonds, de Remboursement et d’Indemnisation :',
       redTitle: 'OPTION 1 : FORMULAIRE SUPPORT STANDARD (72 % DE RISQUE DE REJET)',
-      redText: 'Les établissements financiers, opérateurs et plateformes rejettent ou retardent fréquemment les demandes individuelles dépourvues de références légales précises.',
+      redText: 'Les entreprises, opérateurs et plateformes rejettent ou retardent fréquemment les demandes individuelles dépourvues de références légales précises.',
       amberTitle: 'OPTION 2 : AGENCES INTERMÉDIAIRES (PRÉLÈVENT 35 % À 50 % DE COMMISSION)',
       amberText: 'Les intermédiaires prennent de 3 à 6 mois et retiennent jusqu’à la moitié de vos fonds ou de votre indemnisation légale pour envoyer un simple courrier type.',
       greenTitle: 'OPTION 3 : ENVOI DIRECT DE VOTRE MISE EN DEMEURE PRÉ-CITÉE ($29.00 — GARDEZ 100 %)',
@@ -374,7 +390,7 @@ const TIER_CONVERSION_PACKS = {
     TIER_2_LEDGER: {
       heading: 'Comparez Vos 3 Options d’Action et de Notification Officielle :',
       redTitle: 'OPTION 1 : RÉSEAUX SOCIAUX (AUCUN IMPACT INSTITUTIONNEL)',
-      redText: 'Les publications sur les réseaux sociaux n’ont aucune valeur administrative et sont ignorées par les directions, autorités bancaires, ministères et régulateurs.',
+      redText: 'Les publications sur les réseaux sociaux n’ont aucune valeur administrative et sont ignorées par les directions, les autorités de régulation, les ministères et les comités de contrôle.',
       amberTitle: 'OPTION 2 : PÉTITION COLLECTIVE GRATUITE (ATTEND LE GROUPE DE 50 SIGNATURES)',
       amberText: 'Ajouter votre nom à la liste gratuite ci-dessous enregistre votre soutien, mais attend que le groupe de 50 signataires soit complet avant transmission.',
       greenTitle: 'OPTION 3 : NOTIFICATION OFFICIELLE INDIVIDUELLE ENVOYÉE EN VOTRE NOM ($4.99)',
@@ -489,11 +505,35 @@ function loadState() {
   return state;
 }
 
-// IN-PLACE GLOBAL PATCHER: Automatically upgrades the conversion boxes on your existing Revolut & international pages without deleting or resetting your page count!
-function patchExistingHtmlFiles() {
-  const dirs = [path.join(process.cwd(), 'docket'), path.join(process.cwd(), 'flight')];
-  let patchedCount = 0;
+// Removes existing clinical disease/eating-disorder pages and fixes "banking authorities" / "Lotto" / "FLAT" in place
+function patchAndCleanExistingFiles(state) {
+  const clinicalRegex = /(anorexia|bulimia|leukemia|leukaemie|onkopedia|pirtobrutinib|chemotherapy|chimiotherapie|cancer-treatment|tumor|alzheimer|carcinoma)/i;
+  const docketRoot = path.join(process.cwd(), 'docket');
 
+  // 1. Purge any clinical disease folders from /docket/ and mark their state as SKIPPED
+  if (fs.existsSync(docketRoot)) {
+    for (const sub of fs.readdirSync(docketRoot)) {
+      const fullSub = path.join(docketRoot, sub);
+      const indexFile = path.join(fullSub, 'index.html');
+      let shouldRemove = clinicalRegex.test(sub);
+      if (!shouldRemove && fs.existsSync(indexFile)) {
+        const titleMatch = fs.readFileSync(indexFile, 'utf8').match(/<title>(.*?)<\/title>/i);
+        if (titleMatch && clinicalRegex.test(titleMatch[1])) shouldRemove = true;
+      }
+      if (shouldRemove) {
+        fs.rmSync(fullSub, { recursive: true, force: true });
+        for (const [k, v] of Object.entries(state.deployed || {})) {
+          if (v.slug === sub || v.master_id === sub) {
+            state.deployed[k].status = 'SKIPPED';
+          }
+        }
+        console.log(`[Clinical Purge] Removed sensitive medical page: /docket/${sub}/`);
+      }
+    }
+  }
+
+  // 2. Patch remaining HTML files in place
+  const dirs = [docketRoot, path.join(process.cwd(), 'flight')];
   for (const rootDir of dirs) {
     if (!fs.existsSync(rootDir)) continue;
     for (const sub of fs.readdirSync(rootDir)) {
@@ -502,14 +542,14 @@ function patchExistingHtmlFiles() {
       let html = fs.readFileSync(file, 'utf8');
       const orig = html;
 
-      // 1. Remove any remaining FLAT / FIXOS / FIJOS / PAUSCHAL / FIXES / FISSI next to prices
       html = html
         .replace(/\$29\.00\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$29.00')
         .replace(/\$4\.99\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$4.99')
-        .replace(/\$1\.99\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$1.99');
-
-      // 2. Fix Italian "Lotto Collettivo" ("collective lottery"), "non citati" ("unmentioned"), and transport/voucher wording
-      html = html
+        .replace(/\$1\.99\s+(?:FLAT|FIXOS|FIJOS|PAUSCHAL|FIXES|FISSI)/gi, '$1.99')
+        .replace(/autorités bancaires/g, 'autorités de régulation')
+        .replace(/autoridades financieras/g, 'comités de supervisión')
+        .replace(/bancos centrais/g, 'conselhos executivos')
+        .replace(/banking regulators/g, 'oversight committees')
         .replace(/Lotto Collettivo di 50 Ricorrenti/g, 'Fascicolo Collettivo di 50 Ricorrenti')
         .replace(/nel lotto collettivo da 50 pratiche/g, 'nel gruppo collettivo di 50 pratiche')
         .replace(/il blocco di 50 firmatari/g, 'il gruppo consolidato di 50 firmatari')
@@ -519,18 +559,11 @@ function patchExistingHtmlFiles() {
         .replace(/Codice Prenotazione \/ Biglietto \/ Conto e Importo Stimato del Danno/g,
           'Numero di Conto / Pratica / Riferimento e Importo Stimato Coinvolto')
         .replace(/Invia Ora la Mia Richiesta Formale di Rimborso — \$29\.00/g,
-          'Invia Ora la Mia Istanza Formale di Tutela e Rimborso — $29.00');
-
-      // 3. Fix English, Spanish, Portuguese, French, German travel-only TIER_1 wording on existing pages
-      html = html
-        .replace(/Corporations, airlines, and property platforms routinely reject unrepresented consumer claims using boilerplate excuses or push restrictive travel vouchers that waive your right to cash\./g,
+          'Invia Ora la Mia Istanza Formale di Tutela e Rimborso — $29.00')
+        .replace(/Corporations, airlines, and property platforms routinely reject unrepresented consumer claims using boilerplate excuses or push restrictive (?:travel )?vouchers that waive your right to cash\./g,
           'Financial institutions, service providers, and carriers routinely stall or reject individual requests that lack formal statutory citations, offering generic excuses or non-cash credits instead of full resolution.')
-        .replace(/Corporations, airlines, and property platforms routinely reject unrepresented consumer claims using boilerplate excuses or push restrictive vouchers that waive your right to cash\./g,
-          'Financial institutions, service providers, and carriers routinely stall or reject individual requests that lack formal statutory citations, offering generic excuses or non-cash credits instead of full resolution.')
-        .replace(/Booking \/ Account Reference &amp; Estimated Dollar Loss \(e\.g\. PNR K8M2P9 - \$650\)/g,
+        .replace(/Booking \/ Account Reference &(?:amp;)? Estimated Dollar Loss \(e\.g\. PNR K8M2P9 - \$650\)/g,
           'Account / Reference Number &amp; Estimated Amount at Stake')
-        .replace(/Booking \/ Account Reference & Estimated Dollar Loss \(e\.g\. PNR K8M2P9 - \$650\)/g,
-          'Account / Reference Number & Estimated Amount at Stake')
         .replace(/Lote Coletivo Gratuito/g, 'Grupo Coletivo Gratuito')
         .replace(/lote coletivo de 50/g, 'grupo coletivo de 50')
         .replace(/Lote Colectivo Gratuito/g, 'Grupo Colectivo Gratuito')
@@ -540,12 +573,8 @@ function patchExistingHtmlFiles() {
 
       if (html !== orig) {
         fs.writeFileSync(file, html, 'utf8');
-        patchedCount++;
       }
     }
-  }
-  if (patchedCount > 0) {
-    console.log(`[Patcher] Upgraded ${patchedCount} existing HTML pages in place.`);
   }
 }
 
@@ -765,20 +794,22 @@ function buildSiloHtml(d, isFlight) {
 
 const MASTER_SYSTEM_PROMPT = `You are an elite long-tail SEO investigative journalist and consumer advocacy advertorial writer.
 CRITICAL RULES:
-1. NEVER write one-sentence answers. Every paragraph in "advertorial_paragraphs" and every answer ("a1_answer", "a2_answer", "a3_answer") MUST be 4 to 5 full, detailed sentences (at least 65 words per paragraph/answer) packed with specific context, regulatory/financial stakes, and actionable insights in the requested Language.
-2. NEVER use the words "automated", "bot", or "AI".
-3. LONG-TAIL GOOGLE SEARCH HEADLINES:
-   - "seo_title" and "human_h1" MUST be written in the requested Language the exact way real people search on Google when looking for answers, refunds, account protection, petitions, or fallout from this news event.
+1. CLINICAL MEDICAL & DISEASE SAFETY FILTER: If the headline is strictly about clinical disease treatment, cancer/oncology drug guidelines (e.g. CLL, leukemia, pirtobrutinib), eating disorders (e.g. anorexia, bulimia), surgery, or hospital patient care, return {"skip": true}. (NOTE: Consumer product recalls, food/appliance recalls, corporate lawsuits, and ALL non-medical news—including sports, entertainment, tech, business, politics, and viral culture—are 100% VALID and must NEVER be skipped).
+2. NEVER write one-sentence answers. Every paragraph in "advertorial_paragraphs" and every answer ("a1_answer", "a2_answer", "a3_answer") MUST be 4 to 5 full, detailed sentences (at least 65 words per paragraph/answer) packed with specific context, regulatory/financial stakes, and actionable insights in the requested Language.
+3. NEVER use the words "automated", "bot", or "AI".
+4. LONG-TAIL GOOGLE SEARCH HEADLINES:
+   - "seo_title" and "human_h1" MUST be written in the requested Language the exact way real people search on Google when looking for answers, refunds, account protection, petitions, or public reaction to this news event.
    - "english_title" MUST always be written in clear English so the operator dashboard reads in English.
-4. PRECISE MONETIZATION TIER ROUTING:
-   - "TIER_1_STATUTORY" ($29.00): Use ONLY when individuals have suffered a direct personal cash loss, cancelled/delayed flight, active service outage, frozen bank/fintech funds, withheld security deposit/Airbnb refund, or defective product recall requiring an immediate statutory refund/release demand.
-   - "TIER_2_LEDGER" ($4.99): Use when the story involves regulatory oversight/administration probes (where accounts are NOT frozen yet, e.g., special administration or compliance audits), government/corporate policy decisions, rate hikes, labor/school strikes, or institutional actions where citizens/account holders want to dispatch a formal $4.99 Individual Protection & Accountability Notice in their name.
-   - "TIER_3_POLL" ($1.99): Use for sports, celebrity drama, entertainment/gaming releases, court trials, cultural flashpoints, or viral debates where readers want to log a weighted referendum vote and statement.
-5. CONTEXT-MATCHED AMAZON AFFILIATE CALLOUT:
-   - "affiliate_heading": A natural 3-to-5 word category callout in the requested Language that explains WHY the recommended product/book/gear below fits this article (e.g., "Recommended Personal Finance & Banking Security Guides", "Air Travel & Delay Preparedness Gear", "Home Outage & Backup Power Essentials", or "Official Franchise Editions & Hardware").
+5. PRECISE MONETIZATION TIER ROUTING:
+   - "TIER_1_STATUTORY" ($29.00): Direct personal cash loss, cancelled/delayed flight, active service outage, frozen bank/fintech funds, withheld security deposit/Airbnb refund, or defective consumer product recall requiring an immediate statutory refund/release demand.
+   - "TIER_2_LEDGER" ($4.99): Regulatory oversight/administration probes, government/corporate policy decisions, rate hikes, labor/school strikes, or institutional actions where citizens/account holders want to dispatch a formal $4.99 Individual Protection & Accountability Notice in their name.
+   - "TIER_3_POLL" ($1.99): ALL general news, sports, celebrity drama, entertainment/gaming releases, court trials, cultural flashpoints, or viral debates where there is no direct personal refund owed, and readers want to log a 10x weighted referendum vote and statement.
+6. CONTEXT-MATCHED AMAZON AFFILIATE CALLOUT:
+   - "affiliate_heading": A natural 3-to-5 word category callout in the requested Language that explains WHY the recommended product/book/gear below fits this article.
    - "affiliate_keyword": A high-converting 2-to-4 word Amazon search phrase in the requested Language matching that callout.
 
 Return a strict JSON object in the requested Language with:
+- "skip": false (set to true ONLY for clinical medical disease/oncology/eating-disorder treatment articles)
 - "slug": (4 to 6 word ASCII lowercase hyphenated long-tail search slug)
 - "master_incident_id": (2 to 3 word ASCII lowercase hyphenated canonical key so related articles share one lead list)
 - "english_title": (Clear 6-to-9 word English title for the operator dashboard)
@@ -793,9 +824,9 @@ Return a strict JSON object in the requested Language with:
 - "human_h1": (Compelling long-tail search headline in the target language)
 - "ai_direct_answer": (3-sentence executive summary of the event, who is affected, and the active docket options in the target language)
 - "advertorial_paragraphs": [
-    "Paragraph 1 (4-5 detailed sentences in the target language breaking down the exact news catalyst, the entities involved, and why thousands of people are searching for answers right now)...",
-    "Paragraph 2 (4-5 detailed sentences in the target language analyzing the regulatory, financial, or institutional stakes behind the scenes that mainstream coverage glosses over)...",
-    "Paragraph 3 (4-5 detailed sentences in the target language explaining the specific rights, escalation channels, or public referendum leverage available to affected citizens, customers, or stakeholders)..."
+    "Paragraph 1 (4-5 detailed sentences in the target language)...",
+    "Paragraph 2 (4-5 detailed sentences in the target language)...",
+    "Paragraph 3 (4-5 detailed sentences in the target language)..."
   ]
 - "q1_human": (Long-tail search question 1 in the target language)
 - "a1_answer": (4-5 detailed sentences answering Q1 thoroughly in the target language)
@@ -878,6 +909,9 @@ async function processGlobalNews(state, newUrls) {
     activeFeeds.push(OMNIBUS_FEEDS[(startIdx + i) % OMNIBUS_FEEDS.length]);
   }
 
+  // Pre-filter clinical oncology/eating-disorder terms in Node before calling OpenAI (saves OpenAI credits too)
+  const clinicalPreFilter = /(anorexia|bulimia|leukemia|leukaemie|onkopedia|pirtobrutinib|chemotherapy|chimiotherapie|carcinoma|lymphoma|melanoma|glioblastoma)/i;
+
   const feedResults = await Promise.all(
     activeFeeds.map(async (feed) => {
       try {
@@ -891,6 +925,7 @@ async function processGlobalNews(state, newUrls) {
           const t = itemXml.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/) || itemXml.match(/<title>(.*?)<\/title>/);
           if (!t) continue;
           const rawTitle = t[1].replace(/ - .*$/, '').trim();
+          if (clinicalPreFilter.test(rawTitle)) continue;
           const hashId = crypto.createHash('sha256').update(rawTitle).digest('hex').slice(0, 16);
           if (!state.deployed[hashId]) {
             freshItems.push({ rawTitle, hashId, feed });
@@ -932,7 +967,10 @@ async function processGlobalNews(state, newUrls) {
         `Headline: "${rawTitle}" | Suggested Category: ${feed.niche} | Region: ${feed.region} | Language: ${feed.lang} (lang_code: ${feed.lang_code})`
       );
 
-      if (!parsed || !parsed.slug || !Array.isArray(parsed.advertorial_paragraphs) || parsed.advertorial_paragraphs.length < 2) return;
+      if (!parsed || parsed.skip === true || !parsed.slug || !Array.isArray(parsed.advertorial_paragraphs) || parsed.advertorial_paragraphs.length < 2) {
+        state.deployed[hashId] = { ts: Date.now(), status: 'SKIPPED', v14: true };
+        return;
+      }
 
       const cleanSlug = parsed.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
       const cleanMaster = (parsed.master_incident_id || cleanSlug).toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
@@ -1001,7 +1039,7 @@ async function pingIndexNow(newUrls) {
 
 async function run() {
   const state = loadState();
-  patchExistingHtmlFiles();
+  patchAndCleanExistingFiles(state);
   const newUrls = [];
   await pollGlobalAviation(state, newUrls);
   await processGlobalNews(state, newUrls);
