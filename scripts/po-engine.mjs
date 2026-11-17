@@ -370,7 +370,7 @@ Return a strict JSON object with these keys:
           const itemXml = m[1];
           const t = itemXml.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/) || itemXml.match(/<title>(.*?)<\/title>/);
           if (!t) continue;
-          const rawTitle = t[1].replace(/ - .*\$/, '').trim();
+          const rawTitle = t[1].replace(/ - .*$/, '').trim();
           const hashId = crypto.createHash('sha256').update(rawTitle).digest('hex').slice(0, 16);
           if (!state.deployed[hashId]) {
             freshItems.push({ rawTitle, hashId, feed });
@@ -421,17 +421,17 @@ Return a strict JSON object with these keys:
         parsed.tier = 'TIER_3_POLL';
         parsed.niche = 'CULTURE';
         if (parsed.cta_button_text && !parsed.cta_button_text.includes('1.99')) {
-          parsed.cta_button_text = parsed.cta_button_text.replace(/\$\d+(\.\d+)?/, '\$1.99');
+          parsed.cta_button_text = parsed.cta_button_text.replace(/\$\d+(\.\d+)?/, '$1.99');
         }
       } else if (feed.niche === 'POLITICS' && parsed.tier === 'TIER_1_STATUTORY') {
         parsed.tier = 'TIER_2_LEDGER';
         if (parsed.cta_button_text && !parsed.cta_button_text.includes('4.99')) {
-          parsed.cta_button_text = parsed.cta_button_text.replace(/\$\d+(\.\d+)?/, '\$4.99');
+          parsed.cta_button_text = parsed.cta_button_text.replace(/\$\d+(\.\d+)?/, '$4.99');
         }
       }
 
-      const cleanSlug = parsed.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-\$/g, '');
-      const cleanMaster = (parsed.master_incident_id || cleanSlug).toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-\$/g, '');
+      const cleanSlug = parsed.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
+      const cleanMaster = (parsed.master_incident_id || cleanSlug).toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
       if (!cleanSlug) return;
 
       parsed.slug = cleanSlug;
