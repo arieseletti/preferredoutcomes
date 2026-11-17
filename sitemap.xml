@@ -3,116 +3,77 @@
   <url><loc>https://preferredoutcomes.org/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/mandate/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/resolution/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal1973/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/jbu9/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal2045/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal2462/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal531/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/gti8237/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/skw5054/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal2679/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal2529/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal2181/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/jia5367/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal2046/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/eva697/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/gec8409/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/klm1425/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/tra6888/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/ibe420/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/jza8511/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/edv5263/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/ual38/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/skw5985/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/rou1986/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal2646/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/dal288/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/dal668/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/skw4114/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/fft9409/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/swa1294/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/skw4202/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/cal5233/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/eny3561/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/ual1147/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal1238/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/aal669/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/cal5117/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/jbu1488/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/qlk2031/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/baw755/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/jza8452/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/dal1618/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/flight/ncr652/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/peel-police-auto-theft-recovery/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/jensen-huang-scandal-business-singapore/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/nvidia-scandal-ai-rivalry-trump-visit/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/flight/baw134/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/ontario-catholic-teachers-strike-mandate/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-global-outage-fixes-what-we-know/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/insolvency-service-email-issues-microsoft-outage/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/jensen-huang-scandal-singapore-headache/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-365-outage-what-happened/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/ontario-catholic-teachers-strike-mandate-vote/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/australia-sandpaper-scandal-bazball/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/nancy-nersessian-grenzen-navigieren/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/neue-airbnb-regeln-verbraucherschuetzer/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/airbnb-movimenta-r-113-bi-consorcio-imovel-sobe-37/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/david-jones-unpaid-staff-gift-cards/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/australia-sandpaper-scandal-cricket-drama/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/nancy-nersessian-interdisziplinaritaet-untersuchen/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/nvidia-scandal-ai-rivalry-china-trump-visit/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/peel-police-recover-auto-theft-vehicles/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/insolvency-service-email-issues-microsoft-outage/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/paul-bettany-claire-foy-2a-temporada/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/airbnb-movimenta-r-113-bi-e-consorcio-sobe-37/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/neue-airbnb-regeln-ab-20-november/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/jensen-huang-nvidia-ceo-return/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/markets-drop-ahead-of-nvidia-results/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/telus-vancouver-ai-data-centres/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/perk-integra-airbnb-alojamientos-empresas/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/telus-abandons-vancouver-ai-data-centres/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/huang-willing-return-nvidia-boss/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/david-jones-unpaid-staff-gift-cards-debt/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/perk-integra-airbnb-gestionar-alojamientos/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/medley-ventas-aumento-ciberincidentes/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/airbnb-condamnation-proprietaire-locations-ill-gales/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/verdict-proces-triple-narchomicide-aix/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/airbnb-condamnation-locations-illegales/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/nvidia-escandalo-facil-solucionar/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/airbnb-prohibira-obligar-fregar-platos/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/cobas-sciopero-generale-20-novembre/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/medley-ventas-aumento-investigacion-ciberincidentes/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/massacro-via-damelio-gianni-de-gennaro/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/prezzi-al-consumo-ottobre-2026/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/escandalo-nvidia-facil-solucionar/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/airbnb-prohibira-obligar-fregar-platos-basura/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/cobas-scoprono-scadenza-sciopero-generale/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/massacro-via-damelio-inchiesta-de-gennaro/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-outage-technology-provider-risks/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/suspect-sought-sexual-assault-investigation/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/nvidia-controversy-national-security-alert/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/jensen-huang-regreso-nvidia/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/colchester-man-convicted-voyeurism-investigation/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/nvidia-tech-bros-solidaritaet-jensen-huang/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-outage-hits-uk-hospitals/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/decrochage-france-previsions-economiques/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/two-men-charged-drugs-sold-online/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/nvidia-controversy-national-security-alert/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/federal-public-servants-strike-vote/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/dolar-sobe-ibovespa-avanca-petrobras-vale/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/ceos-famosos-apoyan-jensen-huang-nvidia/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/ex-nvidia-ceo-jensen-huang-aussage-senat/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/commission-europeenne-previsions-economiques-france/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/jensen-huang-regreso-nvidia/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/dolar-sobe-acima-de-r-5-79/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/venta-acciones-tech-golpea-bolsas-globales/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/prezzi-al-consumo-ottobre-2026/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/murder-charge-australia-news/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/vodafone-crime-investigation-frei-verfuegbar/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-365-ausfall-teams-exchange-copilot/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-outage-big-tech-fail/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/airbnb-prohibe-obligar-fregar-platos/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/airbnb-prix-taches-menageres-france/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/coreweave-ceo-veredicto-nvidia-controversia/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/airbnb-experiencias-corona-capital-mx/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/outage-global-microsoft-outlook-teams-copilot/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/boycott-cnews-medias-extreme-droite/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/eset-investigacao-inteligencia-ameacas/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/airbnb-proprietaires-prix-taches-menageres/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/vodafone-macht-crime-investigation-frei-verfugbar/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/outage-global-microsoft-outlook-teams/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/nvidia-escandalo-glitch-outlook-memes/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/airbnb-experiencias-corona-capital-festival/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/eset-investigacao-inteligencia-ameacas/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/microsoft-365-ausfall-teams-exchange-copilot/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/boycott-complet-cnews-extreme-droite/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/airbnb-prohibe-obligar-fregar-platos/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-outlook-365-services-outage/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/wall-st-slips-nvidia-anthropic-ipo/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/tg-jones-sale-private-equity-firm/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/nvidia-descarta-retorno-jensen-huang-ceo/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/caida-wall-street-incertidumbre-ia/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/rba-revolt-hikes-threaten-jobs-growth/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/october-home-sales-decline-canada/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/usa-valeurs-suivre-wall-street/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/donald-trump-deutsche-bank-datenleak/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/inside-deutsche-bank-vinculos-epstein/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/annuncio-sciopero-venerdi-20-novembre/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/nvidia-earnings-wall-street-updates/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/rba-hikes-threaten-jobs-growth/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/tg-jones-sale-after-store-closures/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/october-home-sales-down-10-6-percent/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/valeurs-suivre-wall-street-actualise/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/deutsche-bank-trump-kontodaten-leak/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/amancio-ortega-compra-torre-chicago/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/jensen-huang-regreso-nvidia-ceos-famosos/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/deutsche-bank-cade-francoforte-inchiesta/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/45-year-old-man-charged-child-luring/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/nvidia-descarte-retorno-jensen-huang-ceo/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/annuncio-sciopero-venerdi-20-novembre/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/jensen-huang-scandal-timeline-resignation/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/microsoft-services-broad-recovery-outage/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/further-charge-in-leeds-murder-investigation/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/jakarta-wiretap-scandal-treason/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/greater-victoria-transit-labour-dispute/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/two-men-charged-online-drug-sales/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-outlook-outage-disrupts-workplaces/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/jakarta-wiretap-scandal-treason-phones/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/insider-afm-walliams-ebenezer-londres/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/wahlen-urteil-amerikas-politische-richtung/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/waehler-urteil-amerika-politik-midterms/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/microsoft-ausfall-wie-lange-dauert-es/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://preferredoutcomes.org/docket/airbnb-illegal-paris-amende-proprietaire/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://preferredoutcomes.org/docket/contradicoes-brian-chesky-airbnb-funcionarios/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/insider-afm-walliams-ebenezer-londres/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/airbnb-illegal-a-paris-amende/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/microsoft-services-broad-recovery-outage/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://preferredoutcomes.org/docket/45-year-old-man-charged-child-luring/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
 </urlset>
