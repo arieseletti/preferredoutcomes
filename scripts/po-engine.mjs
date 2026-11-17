@@ -7,7 +7,7 @@ const FLIGHTAWARE_API_KEY = process.env.FLIGHTAWARE_API_KEY;
 const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp';
 const SITE_URL = 'https://preferredoutcomes.org';
 const INDEXNOW_KEY = 'poindex2026key';
-const AMAZON_TAG = 'preferredoutc-20'; // <-- Replace with your Amazon Associate Tag
+const AMAZON_TAG = 'plethora0c5-20';
 
 const SILOS_FILE = path.join(process.cwd(), 'terminal', 'silos.json');
 
