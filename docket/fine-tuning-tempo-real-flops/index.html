@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang='pt'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+  <title>Discrepâncias entre tempo real e FLOPs na computação | Preferred Outcomes</title>
+  <meta name='description' content='As discrepâncias entre o tempo real e os FLOPs (operações de ponto flutuante por segundo) são um tema relevante na computação moderna. Entender essas diferenças é crucial para otimizar o desempenho de sistemas e aplicações. Este artigo explora as razões por trás dessas variações e suas implicações na prática.'>
+  <link rel='icon' href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2216%22 fill=%22%230f172a%22/><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23ffffff%22 font-family=%22sans-serif%22 font-weight=%22900%22 font-size=%2242%22>P/O</text></svg>'>
+</head>
+<body style='background:#f1f5f9;color:#0f172a;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;margin:0;padding:24px 14px;line-height:1.65;'>
+  <div style='max-width:760px;margin:auto;background:#ffffff;border:1px solid #cbd5e1;border-radius:12px;padding:28px;box-shadow:0 8px 24px rgba(15,23,42,0.06);'>
+    <div style='display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #0f172a;padding-bottom:14px;margin-bottom:20px;flex-wrap:wrap;gap:8px;'>
+      <a href='/' style='font-weight:900;font-size:15px;letter-spacing:0.05em;color:#0f172a;text-decoration:none;'>P/O // PREFERRED OUTCOMES</a>
+      <span style='background:#dcfce7;color:#166534;padding:4px 10px;border-radius:4px;font-size:12px;font-weight:800;text-transform:uppercase;'>Análise Técnica</span>
+    </div>
+
+    <h1 style='font-size:28px;line-height:1.25;margin:0 0 16px 0;color:#0f172a;font-weight:900;'>Por que o tempo real não coincide com FLOPs?</h1>
+
+    <div style='background:#f8fafc;border-left:4px solid #0f172a;padding:16px;border-radius:0 6px 6px 0;margin-bottom:20px;font-size:16px;font-weight:500;color:#1e293b;'>
+      <strong>Resumo Executivo:</strong> As discrepâncias entre o tempo real e os FLOPs (operações de ponto flutuante por segundo) são um tema relevante na computação moderna. Entender essas diferenças é crucial para otimizar o desempenho de sistemas e aplicações. Este artigo explora as razões por trás dessas variações e suas implicações na prática.
+    </div>
+
+    <div style='background:#0f172a;color:#ffffff;padding:14px 16px;border-radius:6px;font-size:13px;font-weight:700;margin-bottom:24px;'>
+         <div style='display:flex;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:6px;'>
+           <span>OFFICIAL PUBLIC REFERENDUM LEDGER: FINE-DINING-BERLIN (2,396 VERIFIED BALLOTS)</span>
+           <span style='color:#4ade80;'>● 78% MAJORITY STANCE</span>
+         </div>
+         <div style='width:100%;height:8px;background:#334155;border-radius:4px;overflow:hidden;display:flex;'>
+           <div style='width:78%;background:#16a34a;height:100%;'></div>
+           <div style='width:22%;background:#ef4444;height:100%;'></div>
+         </div>
+       </div>
+    <div style='color:#1e293b;font-size:16.5px;line-height:1.8;margin-bottom:28px;padding-bottom:22px;border-bottom:2px solid #e2e8f0;'>
+         <p style='margin:0 0 16px 0;'>A discrepância entre o tempo real e os FLOPs é um tópico que merece atenção, especialmente no campo da computação. Os FLOPs são uma medida de desempenho que quantifica a capacidade de um sistema de realizar operações matemáticas complexas, enquanto o tempo real se refere à capacidade de um sistema de processar informações instantaneamente. Essa diferença pode ser atribuída a vários fatores, incluindo a arquitetura do sistema, a eficiência do algoritmo e a carga de trabalho específica. Portanto, é vital que desenvolvedores e engenheiros compreendam essas nuances para otimizar suas aplicações.</p><p style='margin:0 0 16px 0;'>Além disso, a utilização de FLOPs como uma métrica única pode ser enganosa, pois não leva em conta o tempo de latência e a eficiência do processamento em tempo real. Em muitos casos, um sistema pode ter uma alta contagem de FLOPs, mas ainda assim falhar em atender aos requisitos de tempo real. Isso é particularmente evidente em aplicações críticas, como em sistemas de controle de tráfego aéreo ou em operações financeiras, onde cada milissegundo conta. Portanto, a análise deve ser mais abrangente, considerando múltiplas métricas de desempenho.</p><p style='margin:0 0 16px 0;'>Por fim, a discussão sobre a precisão do tempo real em comparação aos FLOPs é essencial para a evolução da tecnologia. À medida que a demanda por sistemas mais rápidos e eficientes cresce, a necessidade de entender essas discrepâncias se torna ainda mais premente. Profissionais da área devem estar cientes de que a otimização de desempenho não se resume apenas a aumentar os FLOPs, mas também a garantir que as operações sejam executadas em tempo real de maneira eficaz.</p>
+       </div>
+
+    <div itemscope itemtype='https://schema.org/FAQPage'>
+      <div itemscope itemprop='mainEntity' itemtype='https://schema.org/Question'>
+        <h2 itemprop='name' style='font-size:20px;color:#0f172a;margin-top:24px;font-weight:800;'>Quais são as principais diferenças entre tempo real e FLOPs?</h2>
+        <div itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer'>
+          <p itemprop='text' style='color:#334155;font-size:16px;line-height:1.75;'>As principais diferenças entre tempo real e FLOPs residem na forma como cada um mede o desempenho de um sistema. Enquanto os FLOPs quantificam a capacidade de um sistema de realizar operações matemáticas complexas, o tempo real se concentra na rapidez com que um sistema pode processar informações e responder a eventos. Essa distinção é crucial, pois um sistema pode ter uma alta contagem de FLOPs, mas ainda assim não ser capaz de operar em tempo real devido a latências e ineficiências no processamento.</p>
+        </div>
+      </div>
+      <div itemscope itemprop='mainEntity' itemtype='https://schema.org/Question'>
+        <h2 itemprop='name' style='font-size:20px;color:#0f172a;margin-top:24px;font-weight:800;'>Por que é importante entender essas discrepâncias?</h2>
+        <div itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer'>
+          <p itemprop='text' style='color:#334155;font-size:16px;line-height:1.75;'>Entender as discrepâncias entre tempo real e FLOPs é fundamental para otimizar o desempenho de sistemas e aplicações. Em cenários críticos, como controle de tráfego aéreo ou operações financeiras, a capacidade de processar informações em tempo real pode ser mais importante do que simplesmente ter um alto desempenho em FLOPs. Portanto, uma análise abrangente que considere múltiplas métricas de desempenho é necessária para garantir que as aplicações atendam aos requisitos específicos de tempo e eficiência.</p>
+        </div>
+      </div>
+      <div itemscope itemprop='mainEntity' itemtype='https://schema.org/Question'>
+        <h2 itemprop='name' style='font-size:20px;color:#0f172a;margin-top:24px;font-weight:800;'>Como essas métricas afetam a prática na computação?</h2>
+        <div itemscope itemprop='acceptedAnswer' itemtype='https://schema.org/Answer'>
+          <p itemprop='text' style='color:#334155;font-size:16px;line-height:1.75;'>Essas métricas afetam a prática na computação ao orientar os desenvolvedores e engenheiros na escolha das melhores abordagens para otimizar suas aplicações. A ênfase excessiva em FLOPs pode levar a decisões que não atendem às necessidades de tempo real, resultando em sistemas que falham em cumprir suas funções críticas. Portanto, uma compreensão equilibrada e integrada do desempenho em tempo real e das capacidades de FLOPs é essencial para o sucesso em projetos de tecnologia.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style='font-size:19px;color:#0f172a;margin-top:34px;margin-bottom:14px;font-weight:900;'>Como Registrar Sua Opinião no Painel Público Oficial:</h3>
+    <div style='display:flex;flex-direction:column;gap:14px;margin-bottom:24px;'>
+      <div style='background:#fef2f2;border:2px solid #ef4444;border-radius:8px;padding:16px;'>
+        <div style='color:#b91c1c;font-weight:800;font-size:13px;text-transform:uppercase;'>OPÇÃO 1: COMENTÁRIOS COMUNS EM REDES SOCIAIS (OCULTADOS PELO ALGORITMO)</div>
+        <p style='margin:6px 0 0 0;font-size:14.5px;color:#7f1d1d;'>Caixas de comentários comuns misturam opiniões reais com robôs e desaparecem do feed em poucos minutos.</p>
+      </div>
+      <div style='background:#fffbeb;border:2px solid #f59e0b;border-radius:8px;padding:16px;'>
+        <div style='color:#b45309;font-weight:800;font-size:13px;text-transform:uppercase;'>OPÇÃO 2: VOTO SIMPLES SEM PESO (SEM COMENTÁRIO DESTACADO)</div>
+        <p style='margin:6px 0 0 0;font-size:14.5px;color:#78350f;'>O voto gratuito no final da página soma apenas 1 ponto básico na barra geral, sem destacar ou publicar sua opinião.</p>
+      </div>
+      <div style='background:#f0fdf4;border:2px solid #16a34a;border-radius:8px;padding:22px;'>
+        <div style='color:#15803d;font-weight:800;font-size:13.5px;text-transform:uppercase;'>OPÇÃO 3: COMENTÁRIO VERIFICADO EM DESTAQUE + VOTO COM PESO 10X ($1.99)</div>
+        <p style='margin:8px 0 16px 0;font-size:14.5px;color:#14532d;line-height:1.65;'>O que você recebe por $1.99: Qualquer que seja a sua opinião sobre este caso, seu voto verificado tem peso 10x no placar oficial e seu comentário pessoal fica registrado em destaque no Relatório de Opinião Pública compartilhado com a imprensa, analistas e leitores.</p>
+        <form action='https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp' method='GET' style='display:flex;flex-direction:column;gap:10px;'>
+          <input type='hidden' name='flow_type' value='DFY_CHECKOUT'>
+          <input type='hidden' name='niche' value='RECALLS'>
+          <input type='hidden' name='incident' value='fine-dining-berlin'>
+          <input type='hidden' name='tier' value='TIER_3_POLL'>
+          <input type='hidden' name='region' value='BR'>
+          <select name='stance' required style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;background:#ffffff;color:#0f172a;font-weight:700;'>
+         <option value='' disabled selected>Selecione Sua Posição Oficial nesta Pauta (Qualquer Lado Elegível)...</option>
+         <option value='STANCE_A'>O tempo real é mais preciso que FLOPs.</option>
+         <option value='STANCE_B'>FLOPs são mais confiáveis que o tempo real.</option>
+         <option value='STANCE_C'>Ambos têm suas limitações.</option>
+       </select>
+          <input type='text' name='name' required placeholder='Seu Nome ou Identificação' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
+          <input type='text' name='pnr' required placeholder='Escreva Sua Opinião ou Comentário para Destacar no Painel Oficial' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
+          <input type='email' name='email' required placeholder='Seu E-mail (Para Receber o Recibo Oficial do Seu Voto)' style='padding:12px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;'>
+          <button type='submit' style='padding:16px;background:#16a34a;color:#ffffff;font-weight:900;font-size:16px;border:none;border-radius:6px;cursor:pointer;'>Publicar Comentário Verificado e Voto 10x — $1.99 &rarr;</button>
+        </form>
+      </div>
+    </div>
+
+    <div style='background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:20px;margin-top:24px;'>
+      <h4 style='margin:0 0 6px 0;font-size:16px;color:#0f172a;'>Registre um Voto Gratuito (Peso 1x) e Receba Alertas Desta Pauta</h4>
+      <p style='margin:0 0 14px 0;font-size:14px;color:#475569;'>Some seu voto gratuito ao placar geral e receba alertas sobre novos desdobramentos.</p>
+      <form action='https://hook.us2.make.com/cyrvdqwkme5hjj26cjat8oz51jrk98jp' method='GET' style='display:flex;flex-direction:column;gap:10px;'>
+        <input type='hidden' name='flow_type' value='FREE_LEAD'>
+        <input type='hidden' name='niche' value='RECALLS'>
+        <input type='hidden' name='incident' value='fine-dining-berlin'>
+        <input type='hidden' name='tier' value='TIER_3_POLL'>
+        <input type='hidden' name='region' value='BR'>
+        <div style='display:flex;gap:10px;flex-wrap:wrap;'>
+          <input type='text' name='signer_name' required placeholder='Seu Nome ou Identificação' style='flex:1;min-width:180px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+          <input type='email' name='email' required placeholder='Seu E-mail (Para Receber o Recibo Oficial do Seu Voto)' style='flex:1;min-width:200px;padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+        </div>
+        <input type='text' name='loss_impact' required placeholder='Sua Cidade e Sua Opinião em 1 Frase' style='padding:11px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px;'>
+        <label style='display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#64748b;cursor:pointer;'>
+          <input type='checkbox' name='coreg_optin' value='yes' checked style='margin-top:3px;'>
+          <span>Também quero receber alertas gratuitos de acordos ao consumidor, informativos de parceiros e atualizações do grupo coletivo (cancele quando quiser).</span>
+        </label>
+        <button type='submit' style='padding:13px;background:#0f172a;color:#ffffff;font-weight:800;font-size:14px;border:none;border-radius:6px;cursor:pointer;'>Registrar Voto Gratuito ($0.00)</button>
+      </form>
+    </div>
+    <div style='margin-top:20px;padding:18px;background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;'>
+         <div>
+           <div style='font-size:11px;font-weight:800;color:#b45309;text-transform:uppercase;'>Entenda as Discrepâncias</div>
+           <div style='font-size:14px;font-weight:700;color:#0f172a;'>Veja Livros, Guias e Produtos Bem Avaliados sobre o Tema: livros sobre computação</div>
+         </div>
+         <a href='https://www.amazon.com/s?k=livros%20sobre%20computa%C3%A7%C3%A3o&tag=preferredoutc-20' target='_blank' rel='noopener' style='padding:10px 16px;background:#f59e0b;color:#0f172a;font-weight:800;font-size:13px;text-decoration:none;border-radius:6px;'>Ver na Amazon &rarr;</a>
+       </div>
+    
+    <div style='margin-top:28px;padding:28px 24px;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;color:#3b0764;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;line-height:1.85;letter-spacing:0.01em;'>
+      <div style='font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#581c87;margin-bottom:10px;'>PLETHORA // ZERO</div>
+      <p style='margin:0 0 8px 0;font-size:14px;color:#3b0764;'>A portion of proceeds from Preferred Outcomes supports PLETHORA. Through its ZERO mechanism, everyday people can also fund financial relief at zero cost to them.</p>
+      <p style='margin:0 0 10px 0;font-size:14px;color:#3b0764;'>When someone begins an online purchase through ZERO, standard retailer commissions are redirected toward individuals experiencing a tight month. It costs nothing. It changes nothing about how people shop. It quietly creates relief.</p>
+      <p style='margin:0;font-size:13px;color:#581c87;'>The world has plenty. Sometimes resources just need help moving around. &mdash; <a href='https://theworldhasplenty.org/ZERO' target='_blank' rel='noopener' style='color:#3b0764;text-decoration:underline;font-weight:600;'>theworldhasplenty.org/ZERO</a></p>
+    </div>
+    <div style='margin-top:22px;padding-top:16px;border-top:1px solid #e2e8f0;font-size:12px;color:#64748b;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;'>
+      <span>&copy; Preferred Outcomes Consumer Advocacy &amp; Public Sentiment Registry. Not a law firm.</span>
+      <span style='display:flex;gap:14px;'>
+        <a href='/mandate/' style='color:#0f172a;font-weight:700;text-decoration:underline;'>Our Mandate</a>
+        <a href='/resolution/?docket=fine-dining-berlin&ref=fine-tuning-tempo-real-flops' style='color:#475569;text-decoration:underline;'>Corporate &amp; Legal Resolution Desk</a>
+      </span>
+    </div>
+  </div>
+</body>
+</html>
