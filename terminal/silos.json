@@ -13131,7 +13131,7 @@
       "status": "LIVE",
       "v14": true,
       "slug": "us-government-investigation-megaspeed",
-      "master_id": "megaspeed-chips",
+      "master_id": "government-reforms",
       "english_title": "US Government Investigates Tech Firm Megaspeed",
       "type": "CULTURE",
       "tier": "TIER_3_POLL",
@@ -50913,7 +50913,7 @@
       "master_id": "citi-carrytrade",
       "english_title": "Citi CEO's Tech Warning Raises Outage Stakes",
       "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
+      "tier": "TIER_3_POLL",
       "region": "ES"
     },
     "fc582a1f5891de10": {
@@ -51939,7 +51939,7 @@
       "master_id": "citi-carrytrade",
       "english_title": "Citi CEO's Tech Warning Raises Outage Stakes",
       "type": "OUTAGES",
-      "tier": "TIER_2_LEDGER",
+      "tier": "TIER_3_POLL",
       "region": "ES"
     },
     {
@@ -92604,7 +92604,7 @@
       "status": "LIVE",
       "v14": true,
       "slug": "us-government-investigation-megaspeed",
-      "master_id": "megaspeed-chips",
+      "master_id": "government-reforms",
       "english_title": "US Government Investigates Tech Firm Megaspeed",
       "type": "CULTURE",
       "tier": "TIER_3_POLL",
@@ -106819,6 +106819,6 @@
       "region": "UK261"
     }
   ],
-  "airport_cursor": 13,
-  "feed_cursor": 50
+  "airport_cursor": 2,
+  "feed_cursor": 80
 }
