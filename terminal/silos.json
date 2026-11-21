@@ -65520,7 +65520,7 @@
       "master_id": "honda-avancier",
       "english_title": "Honda to Recall Over 800,000 Vehicles in the US",
       "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
+      "tier": "TIER_3_POLL",
       "region": "BR"
     },
     "c4e114e714571638": {
@@ -65670,9 +65670,963 @@
       "type": "CULTURE",
       "tier": "TIER_3_POLL",
       "region": "US"
+    },
+    "457a54484c6ddc67": {
+      "ts": 1795219968523,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "fda9c8f4e1f3bb98": {
+      "ts": 1795219978200,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "sp-revisa-perspectiva-lucky-strike",
+      "master_id": "sp-lucky",
+      "english_title": "S&P Revises Lucky Strike Outlook to Negative",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
+    "f7cee1c2f4b1412a": {
+      "ts": 1795219978202,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "the-orb-factory-safety-notice",
+      "master_id": "orb-factory",
+      "english_title": "The Orb Factory Limited Safety Notice",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "DE"
+    },
+    "3cfa02ca42d1cb4c": {
+      "ts": 1795219978343,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "merz-regierung-katastrophe-experte",
+      "master_id": "merz-gipfel",
+      "english_title": "Expert Critiques Merz Government After Catastrophic 48 Hours",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "DE"
+    },
+    "129507f97deb7322": {
+      "ts": 1795219978463,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "ppx-mining-debt-settlement",
+      "master_id": "ppx-mining",
+      "english_title": "PPX Mining Completes Debt Settlement Announcement",
+      "type": "RECALLS",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    "e022363f840c8a73": {
+      "ts": 1795219978793,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "declaracion-institucional-dia-mundial-infancia",
+      "master_id": "declaracion-dia",
+      "english_title": "Institutional Statement on World Children's Day",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    "3eb66c196b41f677": {
+      "ts": 1795219978844,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "telcel-telmex-fallas-servicio",
+      "master_id": "telcel-outage",
+      "english_title": "Telcel and Telmex Confirm Service Degradation Issues",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    "fb3abe84098eb5f9": {
+      "ts": 1795219979064,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "intel-demandas-baja-acciones",
+      "master_id": "intel-earnings",
+      "english_title": "Intel Faces Major Lawsuit After Stock Wipeout",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    "3f6bf7c2d279d9e6": {
+      "ts": 1795219979153,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "condamnations-policiers-michel-zecler",
+      "master_id": "policiers-agression",
+      "english_title": "Prison Sentences for Police in Michel Zecler Case",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    "5aa14ad7a4c6815d": {
+      "ts": 1795219979433,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "interpellation-violente-michel-zecler",
+      "master_id": "michel-barnier",
+      "english_title": "Violent Arrest of Michel Zecler: Racism Acknowledged",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    "205a56c406923a50": {
+      "ts": 1795219979812,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "dispositions-guide-annulees-exploitants-carrieres",
+      "master_id": "exploitants-carriere",
+      "english_title": "Several Provisions of Guide Cancelled at Quarry Operators' Request",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    "e2f3dd095b8f37d3": {
+      "ts": 1795219980416,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "springfield-armory-strike-industries-pistol",
+      "master_id": "springfield-armory",
+      "english_title": "Springfield Armory Partners with Strike Industries",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    "2f1d62186e871faa": {
+      "ts": 1795219990051,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "ai-impact-on-australian-jobs-market",
+      "master_id": "ai-jobs",
+      "english_title": "AI's Impact on the Australian Job Market",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "AU"
+    },
+    "4fa4f746f8d43206": {
+      "ts": 1795219990203,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "alza-salario-minimo-inflacion-banxico",
+      "master_id": "banxico-peso",
+      "english_title": "Minimum Wage Increase Challenges Inflation Control",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "MX"
+    },
+    "72555255ce26b07e": {
+      "ts": 1795219990772,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "stock-market-dow-sp500-correction",
+      "master_id": "stockmarket-dow",
+      "english_title": "Stock Market Correction: Dow and S&P 500 Updates",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    "28ff84250c4399ba": {
+      "ts": 1795219990806,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "tombo-acoes-anthropic-alerta-mercado-ia",
+      "master_id": "anthropic-ipo",
+      "english_title": "Anthropic Stock Drop Raises Concerns in AI Market",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "BR"
+    },
+    "3e7e50c22a6237f1": {
+      "ts": 1795219990811,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "nasdaq-wipes-out-2026-gains",
+      "master_id": "nasdaq-anthropic",
+      "english_title": "Market Turmoil: Nasdaq and Major Indices Decline",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "CA"
+    },
+    "c7588b0532362822": {
+      "ts": 1795219991144,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "tech-stock-sell-off-anthropic-shares",
+      "master_id": "anthropic-ipo",
+      "english_title": "Tech Stock Sell-Off Impacts Markets and Anthropic Shares",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "UK"
+    },
+    "10859fb07a0c5b66": {
+      "ts": 1795219991270,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "revolut-amministrazione-speciale-ecb",
+      "master_id": "revolut-commissariata",
+      "english_title": "Revolut Faces Special Administration Under ECB Scrutiny",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    "6d13830e95425370": {
+      "ts": 1795219991479,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "anthropic-ipo-gemischtes-fazit",
+      "master_id": "anthropic-ipo",
+      "english_title": "Anthropic IPO: Mixed Results Despite Record Debut",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "DE"
+    },
+    "b4c5f3bec2e8fbfa": {
+      "ts": 1795219992007,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "bankitalia-nicoletti-altimari-energia-shock",
+      "master_id": "bankitalia-energia",
+      "english_title": "Bankitalia on Energy Shock: Not the End Yet",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    "d7c6612f43367a65": {
+      "ts": 1795219992290,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "ibex-35-peor-semana-caida",
+      "master_id": "ibex35-caida",
+      "english_title": "Ibex 35 Records Worst Week Since March",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    "c7a4ec9a0feaeb7d": {
+      "ts": 1795219992481,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "marches-boursiers-febrilite-autour-ia",
+      "master_id": "marches-boursiers",
+      "english_title": "Global Stock Markets Shaken by AI Uncertainty",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    "9e732f60fbb38d11": {
+      "ts": 1795219993710,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "roma-sciopero-generale-cgil",
+      "master_id": "roma-sciopero",
+      "english_title": "General Strike in Rome Causes Major Disruptions",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    "69a2f4fda9e89652": {
+      "ts": 1795219993955,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "7f7084bdbdec7530": {
+      "ts": 1795219993971,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "6cb56ac2e0e207d5": {
+      "ts": 1795219993987,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "a2c0f651c7f6bc12": {
+      "ts": 1795219994011,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "51226c59c9537ba9": {
+      "ts": 1795219994032,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "742e5d56afce61ea": {
+      "ts": 1795219994033,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "04da087c3d8b2c98": {
+      "ts": 1795220001195,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "sp-lucky-strike-outlook-negativo",
+      "master_id": "sp-lucky",
+      "english_title": "S&P Downgrades Lucky Strike Outlook to Negative",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    "66706ffb409a5045": {
+      "ts": 1795220003654,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "couvre-sols-pollinisateurs-remplacer-pelouse",
+      "master_id": "couvre-sols",
+      "english_title": "8 Unknown Ground Covers for Pollinators",
+      "type": "RECALLS",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    "444c2be25d5fd998": {
+      "ts": 1795220004114,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "expulsions-loyers-avantages-fiscaux-europe",
+      "master_id": "europe-asylum",
+      "english_title": "Europe Struggles with Rising Real Estate Prices",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    "21f90eea49c90b63": {
+      "ts": 1795220004954,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "sp-senkt-ausblick-lucky-strike",
+      "master_id": "sp-lucky",
+      "english_title": "S&P Lowers Lucky Strike Outlook to Negative",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "DE"
+    },
+    "8f10de24cbddffbf": {
+      "ts": 1795220005416,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "fuites-ministere-interieur-risques-rn-prefet",
+      "master_id": "ministere-interieur",
+      "english_title": "Risks for RN and Prefect Hugues Moutouh from Interior Leaks",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    "f82b61b55193b8bd": {
+      "ts": 1795220006771,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "bce-presidenza-spagna-parigi-berlino",
+      "master_id": "bce-presidenza",
+      "english_title": "ECB Presidency Transitions to Spain with Key Roles for Paris and Berlin",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    "1fdb8be6c2971505": {
+      "ts": 1795220006846,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "04ef65866f9fff65": {
+      "ts": 1795220006857,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "999d742de2ea9798": {
+      "ts": 1795220006864,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "e51a5f1d046938fb": {
+      "ts": 1795220006872,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "a7d14fc002c66526": {
+      "ts": 1795220006878,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "586c72c5a8ef15d5": {
+      "ts": 1795220007004,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "ec393e8beb460fbb": {
+      "ts": 1795220007016,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "9f36cb32c642226c": {
+      "ts": 1795220007039,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "ba648101357c7feb": {
+      "ts": 1795220007042,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "232041b0b9b89d19": {
+      "ts": 1795220016025,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "bell-cyberattack-business-data-theft",
+      "master_id": "bell-mts",
+      "english_title": "Bell Investigates Cyberattack on Business Customer Data",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    "e7bf8c35c3d1b68c": {
+      "ts": 1795220017306,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "dolar-deja-en-la-lona-al-peso",
+      "master_id": "dolar-ibovespa",
+      "english_title": "Dollar's Impact on Peso: Worst Drop Since March",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "MX"
+    },
+    "47e4c80a8f438561": {
+      "ts": 1795220019200,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "missili-droni-russi-polonia-tusk",
+      "master_id": "tusk-provocation",
+      "english_title": "Russian Missiles and Drones Threaten Poland",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    "b7d555d672b39f64": {
+      "ts": 1795220019304,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "057a534f03869a25": {
+      "ts": 1795220019401,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "c02f7e8ff401933a": {
+      "ts": 1795220019424,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "829fe1418c515dd4": {
+      "ts": 1795220019432,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "d0487a34f470437d": {
+      "ts": 1795220019440,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "d8a66d51b22c2a45": {
+      "ts": 1795220019441,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "d9cc1e4237b89a37": {
+      "ts": 1795220019441,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "b657b96d5eff5723": {
+      "ts": 1795220019448,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "a704c4688d8a30d6": {
+      "ts": 1795220019488,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "61889b4109fb0bae": {
+      "ts": 1795220019503,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "c5ee31b7c58bcb82": {
+      "ts": 1795220019559,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "63b37742bd9ee561": {
+      "ts": 1795220032860,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "bce-promuove-banche-europee",
+      "master_id": "bce-banche",
+      "english_title": "ECB Promotes 108 European Banks Amid Risks",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    "e587e01eca0cb694": {
+      "ts": 1795220032925,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "096f10de9b283abc": {
+      "ts": 1795220032934,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "a03ced24ea105319": {
+      "ts": 1795220032935,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "4569da014f08a49d": {
+      "ts": 1795220032938,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "9614320f91af55fc": {
+      "ts": 1795220032939,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "38316224229670fa": {
+      "ts": 1795220032940,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "62d32c0baa62f2a6": {
+      "ts": 1795220032942,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "dc2b82efaf71b5b6": {
+      "ts": 1795220032943,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "0884377f7588038d": {
+      "ts": 1795220032945,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "a075301df54fec5a": {
+      "ts": 1795220032945,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "eb436d3098d5f035": {
+      "ts": 1795220032949,
+      "status": "SKIPPED",
+      "v14": true
+    },
+    "57ddddcd24271d4b": {
+      "ts": 1795220032956,
+      "status": "SKIPPED",
+      "v14": true
     }
   },
   "active_silos": [
+    {
+      "id": "bce-promuove-banche-europee",
+      "ts": 1795220032860,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "bce-promuove-banche-europee",
+      "master_id": "bce-banche",
+      "english_title": "ECB Promotes 108 European Banks Amid Risks",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    {
+      "id": "missili-droni-russi-polonia-tusk",
+      "ts": 1795220019200,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "missili-droni-russi-polonia-tusk",
+      "master_id": "tusk-provocation",
+      "english_title": "Russian Missiles and Drones Threaten Poland",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    {
+      "id": "dolar-deja-en-la-lona-al-peso",
+      "ts": 1795220017306,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "dolar-deja-en-la-lona-al-peso",
+      "master_id": "dolar-ibovespa",
+      "english_title": "Dollar's Impact on Peso: Worst Drop Since March",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "MX"
+    },
+    {
+      "id": "bell-cyberattack-business-data-theft",
+      "ts": 1795220016025,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "bell-cyberattack-business-data-theft",
+      "master_id": "bell-mts",
+      "english_title": "Bell Investigates Cyberattack on Business Customer Data",
+      "type": "FINANCE",
+      "tier": "TIER_2_LEDGER",
+      "region": "CA"
+    },
+    {
+      "id": "bce-presidenza-spagna-parigi-berlino",
+      "ts": 1795220006771,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "bce-presidenza-spagna-parigi-berlino",
+      "master_id": "bce-presidenza",
+      "english_title": "ECB Presidency Transitions to Spain with Key Roles for Paris and Berlin",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    {
+      "id": "fuites-ministere-interieur-risques-rn-prefet",
+      "ts": 1795220005416,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "fuites-ministere-interieur-risques-rn-prefet",
+      "master_id": "ministere-interieur",
+      "english_title": "Risks for RN and Prefect Hugues Moutouh from Interior Leaks",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    {
+      "id": "sp-senkt-ausblick-lucky-strike",
+      "ts": 1795220004954,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "sp-senkt-ausblick-lucky-strike",
+      "master_id": "sp-lucky",
+      "english_title": "S&P Lowers Lucky Strike Outlook to Negative",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "DE"
+    },
+    {
+      "id": "expulsions-loyers-avantages-fiscaux-europe",
+      "ts": 1795220004114,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "expulsions-loyers-avantages-fiscaux-europe",
+      "master_id": "europe-asylum",
+      "english_title": "Europe Struggles with Rising Real Estate Prices",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    {
+      "id": "couvre-sols-pollinisateurs-remplacer-pelouse",
+      "ts": 1795220003654,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "couvre-sols-pollinisateurs-remplacer-pelouse",
+      "master_id": "couvre-sols",
+      "english_title": "8 Unknown Ground Covers for Pollinators",
+      "type": "RECALLS",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    {
+      "id": "sp-lucky-strike-outlook-negativo",
+      "ts": 1795220001195,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "sp-lucky-strike-outlook-negativo",
+      "master_id": "sp-lucky",
+      "english_title": "S&P Downgrades Lucky Strike Outlook to Negative",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "EU"
+    },
+    {
+      "id": "roma-sciopero-generale-cgil",
+      "ts": 1795219993710,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "roma-sciopero-generale-cgil",
+      "master_id": "roma-sciopero",
+      "english_title": "General Strike in Rome Causes Major Disruptions",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    {
+      "id": "marches-boursiers-febrilite-autour-ia",
+      "ts": 1795219992481,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "marches-boursiers-febrilite-autour-ia",
+      "master_id": "marches-boursiers",
+      "english_title": "Global Stock Markets Shaken by AI Uncertainty",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    {
+      "id": "ibex-35-peor-semana-caida",
+      "ts": 1795219992290,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "ibex-35-peor-semana-caida",
+      "master_id": "ibex35-caida",
+      "english_title": "Ibex 35 Records Worst Week Since March",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    {
+      "id": "bankitalia-nicoletti-altimari-energia-shock",
+      "ts": 1795219992007,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "bankitalia-nicoletti-altimari-energia-shock",
+      "master_id": "bankitalia-energia",
+      "english_title": "Bankitalia on Energy Shock: Not the End Yet",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    {
+      "id": "anthropic-ipo-gemischtes-fazit",
+      "ts": 1795219991479,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "anthropic-ipo-gemischtes-fazit",
+      "master_id": "anthropic-ipo",
+      "english_title": "Anthropic IPO: Mixed Results Despite Record Debut",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "DE"
+    },
+    {
+      "id": "revolut-amministrazione-speciale-ecb",
+      "ts": 1795219991270,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "revolut-amministrazione-speciale-ecb",
+      "master_id": "revolut-commissariata",
+      "english_title": "Revolut Faces Special Administration Under ECB Scrutiny",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    {
+      "id": "tech-stock-sell-off-anthropic-shares",
+      "ts": 1795219991144,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "tech-stock-sell-off-anthropic-shares",
+      "master_id": "anthropic-ipo",
+      "english_title": "Tech Stock Sell-Off Impacts Markets and Anthropic Shares",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "UK"
+    },
+    {
+      "id": "nasdaq-wipes-out-2026-gains",
+      "ts": 1795219990811,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "nasdaq-wipes-out-2026-gains",
+      "master_id": "nasdaq-anthropic",
+      "english_title": "Market Turmoil: Nasdaq and Major Indices Decline",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "CA"
+    },
+    {
+      "id": "tombo-acoes-anthropic-alerta-mercado-ia",
+      "ts": 1795219990806,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "tombo-acoes-anthropic-alerta-mercado-ia",
+      "master_id": "anthropic-ipo",
+      "english_title": "Anthropic Stock Drop Raises Concerns in AI Market",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "BR"
+    },
+    {
+      "id": "stock-market-dow-sp500-correction",
+      "ts": 1795219990772,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "stock-market-dow-sp500-correction",
+      "master_id": "stockmarket-dow",
+      "english_title": "Stock Market Correction: Dow and S&P 500 Updates",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "US"
+    },
+    {
+      "id": "alza-salario-minimo-inflacion-banxico",
+      "ts": 1795219990203,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "alza-salario-minimo-inflacion-banxico",
+      "master_id": "banxico-peso",
+      "english_title": "Minimum Wage Increase Challenges Inflation Control",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "MX"
+    },
+    {
+      "id": "ai-impact-on-australian-jobs-market",
+      "ts": 1795219990051,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "ai-impact-on-australian-jobs-market",
+      "master_id": "ai-jobs",
+      "english_title": "AI's Impact on the Australian Job Market",
+      "type": "FINANCE",
+      "tier": "TIER_3_POLL",
+      "region": "AU"
+    },
+    {
+      "id": "springfield-armory-strike-industries-pistol",
+      "ts": 1795219980416,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "springfield-armory-strike-industries-pistol",
+      "master_id": "springfield-armory",
+      "english_title": "Springfield Armory Partners with Strike Industries",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "EU"
+    },
+    {
+      "id": "dispositions-guide-annulees-exploitants-carrieres",
+      "ts": 1795219979812,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "dispositions-guide-annulees-exploitants-carrieres",
+      "master_id": "exploitants-carriere",
+      "english_title": "Several Provisions of Guide Cancelled at Quarry Operators' Request",
+      "type": "OUTAGES",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    {
+      "id": "interpellation-violente-michel-zecler",
+      "ts": 1795219979433,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "interpellation-violente-michel-zecler",
+      "master_id": "michel-barnier",
+      "english_title": "Violent Arrest of Michel Zecler: Racism Acknowledged",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    {
+      "id": "condamnations-policiers-michel-zecler",
+      "ts": 1795219979153,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "condamnations-policiers-michel-zecler",
+      "master_id": "policiers-agression",
+      "english_title": "Prison Sentences for Police in Michel Zecler Case",
+      "type": "CULTURE",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    {
+      "id": "intel-demandas-baja-acciones",
+      "ts": 1795219979064,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "intel-demandas-baja-acciones",
+      "master_id": "intel-earnings",
+      "english_title": "Intel Faces Major Lawsuit After Stock Wipeout",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    {
+      "id": "telcel-telmex-fallas-servicio",
+      "ts": 1795219978844,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "telcel-telmex-fallas-servicio",
+      "master_id": "telcel-outage",
+      "english_title": "Telcel and Telmex Confirm Service Degradation Issues",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "MX"
+    },
+    {
+      "id": "declaracion-institucional-dia-mundial-infancia",
+      "ts": 1795219978793,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "declaracion-institucional-dia-mundial-infancia",
+      "master_id": "declaracion-dia",
+      "english_title": "Institutional Statement on World Children's Day",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "ES"
+    },
+    {
+      "id": "ppx-mining-debt-settlement",
+      "ts": 1795219978463,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "ppx-mining-debt-settlement",
+      "master_id": "ppx-mining",
+      "english_title": "PPX Mining Completes Debt Settlement Announcement",
+      "type": "RECALLS",
+      "tier": "TIER_3_POLL",
+      "region": "FR"
+    },
+    {
+      "id": "merz-regierung-katastrophe-experte",
+      "ts": 1795219978343,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "merz-regierung-katastrophe-experte",
+      "master_id": "merz-gipfel",
+      "english_title": "Expert Critiques Merz Government After Catastrophic 48 Hours",
+      "type": "POLITICS",
+      "tier": "TIER_3_POLL",
+      "region": "DE"
+    },
+    {
+      "id": "the-orb-factory-safety-notice",
+      "ts": 1795219978202,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "the-orb-factory-safety-notice",
+      "master_id": "orb-factory",
+      "english_title": "The Orb Factory Limited Safety Notice",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "DE"
+    },
+    {
+      "id": "sp-revisa-perspectiva-lucky-strike",
+      "ts": 1795219978200,
+      "status": "LIVE",
+      "v14": true,
+      "slug": "sp-revisa-perspectiva-lucky-strike",
+      "master_id": "sp-lucky",
+      "english_title": "S&P Revises Lucky Strike Outlook to Negative",
+      "type": "OUTAGES",
+      "tier": "TIER_2_LEDGER",
+      "region": "ES"
+    },
     {
       "id": "american-state-capitalism-nvidia-scandal",
       "ts": 1795216909703,
@@ -65838,7 +66792,7 @@
       "master_id": "honda-avancier",
       "english_title": "Honda to Recall Over 800,000 Vehicles in the US",
       "type": "RECALLS",
-      "tier": "TIER_1_STATUTORY",
+      "tier": "TIER_3_POLL",
       "region": "BR"
     },
     {
@@ -136462,6 +137416,6 @@
       "region": "UK261"
     }
   ],
-  "airport_cursor": 0,
-  "feed_cursor": 20
+  "airport_cursor": 3,
+  "feed_cursor": 50
 }
