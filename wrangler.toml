@@ -14,3 +14,5 @@ database_id = "1581a174-8d39-4937-a093-3198a39321a6"
 [[r2_buckets]]
 binding = "VAULT"
 bucket_name = "po-evidence-vault"
+[vars]
+SITE_URL = "https://preferredoutcomes.org"
