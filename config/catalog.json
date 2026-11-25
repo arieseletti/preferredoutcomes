@@ -1,0 +1,327 @@
+{
+  "version": "1.0.0",
+  "currency": "USD",
+  "brand": {
+    "name": "Preferred Outcomes // Intelligence Desk",
+    "domain": "preferredoutcomes.org",
+    "contact_email": "desk@preferredoutcomes.org",
+    "dispatch_email": "dispatch@preferredoutcomes.org",
+    "patronage": {
+      "organization": "PLETHORA",
+      "url": "https://theworldhasplenty.org",
+      "revenue_allocation_pct": 10,
+      "purpose": "Fund direct financial relief"
+    }
+  },
+  "commercial_rules": {
+    "diagnostic_credit": {
+      "enabled": true,
+      "window_days": 14,
+      "monthly_cap_pct": 25,
+      "stacking_allowed": false,
+      "selection_rule": "single_highest_one_time_only",
+      "forfeit_on_cancellation": true,
+      "refundable": false
+    },
+    "multi_service_recurring_reduction": {
+      "two_services_pct": 10,
+      "three_or_more_services_pct": 15,
+      "max_cap_pct": 15,
+      "stripe_coupons": {
+        "2": "PO_MULTI_10",
+        "3_plus": "PO_MULTI_15"
+      }
+    },
+    "annual_prepay": {
+      "months_billed": 10,
+      "months_delivered": 12,
+      "effective_discount_pct": 16.67,
+      "applies_to": "all_recurring_monthly_desks"
+    },
+    "paid_exclusivity": {
+      "default_policy": "strict_confidentiality_no_free_exclusivity",
+      "multiplier_min": 2.5,
+      "multiplier_max": 3.0,
+      "scope": "defined_city_or_1_mile_radius",
+      "quote_only_if_requested": true
+    },
+    "external_referral_fee_pct": {
+      "min": 15,
+      "max": 20,
+      "applies_to": "manual_agency_work_outside_desk_scope"
+    }
+  },
+  "core_services": [
+    {
+      "id": "svc-teardown",
+      "practice": "competitive",
+      "name": "Competitor & Market Teardown",
+      "billing_type": "one_time",
+      "price_usd": 1000,
+      "price_cents": 100000,
+      "turnaround": "48h",
+      "stripe_price_id": "price_REPLACE_TEARDOWN",
+      "includes_client_benchmark": true,
+      "cross_sell_triggers": ["svc-weekly-brief", "addon-sales-kit", "svc-geo-audit"]
+    },
+    {
+      "id": "svc-weekly-brief",
+      "practice": "competitive",
+      "name": "Weekly Competitor Brief",
+      "billing_type": "recurring",
+      "interval": "month",
+      "price_usd": 1000,
+      "price_cents": 100000,
+      "annual_prepay_usd": 10000,
+      "schedule": "weekly_mon_0600_local",
+      "stripe_price_id": "price_REPLACE_BRIEF",
+      "includes_quarterly_rollup": true,
+      "cross_sell_triggers": ["addon-sales-kit", "svc-disruption"]
+    },
+    {
+      "id": "svc-disruption",
+      "practice": "competitive",
+      "name": "Live Disruption & Trigger Radar",
+      "billing_type": "recurring",
+      "interval": "month",
+      "price_usd": 750,
+      "price_cents": 75000,
+      "annual_prepay_usd": 7500,
+      "schedule": "realtime_alerts",
+      "stripe_price_id": "price_REPLACE_RADAR",
+      "includes_quarterly_rollup": true,
+      "cross_sell_triggers": ["svc-weekly-brief"]
+    },
+    {
+      "id": "svc-local-audit",
+      "practice": "perception",
+      "name": "Local Business & Venue Audit",
+      "billing_type": "one_time",
+      "price_usd": 400,
+      "price_cents": 40000,
+      "turnaround": "24h",
+      "stripe_price_id": "price_REPLACE_LOCAL",
+      "cross_sell_triggers": ["svc-sentinel", "addon-friction-playbook", "addon-geo-pack"]
+    },
+    {
+      "id": "svc-geo-audit",
+      "practice": "perception",
+      "name": "AI-Search (GEO) Visibility Audit",
+      "billing_type": "one_time",
+      "price_usd": 450,
+      "price_cents": 45000,
+      "turnaround": "24h",
+      "stripe_price_id": "price_REPLACE_GEO",
+      "cross_sell_triggers": ["addon-geo-pack", "svc-sentinel"]
+    },
+    {
+      "id": "svc-mirror-audit",
+      "practice": "perception",
+      "name": "The \"Mirror\" Perception Audit",
+      "billing_type": "one_time",
+      "price_usd": 650,
+      "price_cents": 65000,
+      "turnaround": "48h",
+      "stripe_price_id": "price_REPLACE_MIRROR",
+      "cross_sell_triggers": ["svc-sentinel", "addon-friction-playbook", "addon-geo-pack"]
+    },
+    {
+      "id": "svc-sentinel",
+      "practice": "perception",
+      "name": "Continuous Sentiment & Crisis Sentinel",
+      "billing_type": "recurring",
+      "interval": "month",
+      "price_usd": 500,
+      "price_cents": 50000,
+      "annual_prepay_usd": 5000,
+      "schedule": "weekly_mon_0600_local",
+      "stripe_price_id": "price_REPLACE_SENTINEL",
+      "includes_quarterly_rollup": true,
+      "cross_sell_triggers": ["addon-friction-playbook", "svc-weekly-brief"]
+    },
+    {
+      "id": "svc-employer-diligence",
+      "practice": "diligence",
+      "name": "Executive & Employer Diligence",
+      "billing_type": "one_time",
+      "price_usd": 350,
+      "price_cents": 35000,
+      "turnaround": "24h",
+      "stripe_price_id": "price_REPLACE_EMPLOYER",
+      "cross_sell_triggers": ["addon-negotiation-pack"]
+    },
+    {
+      "id": "svc-target-osint",
+      "practice": "diligence",
+      "name": "Acquisition, Vendor & Site OSINT Dossier",
+      "billing_type": "one_time",
+      "price_usd": 1200,
+      "price_cents": 120000,
+      "turnaround": "48h",
+      "stripe_price_id": "price_REPLACE_DILIGENCE",
+      "cross_sell_triggers": ["addon-negotiation-pack", "svc-weekly-brief"]
+    },
+    {
+      "id": "svc-wl-single",
+      "practice": "diligence",
+      "name": "Single-Track White-Label Desk",
+      "billing_type": "recurring",
+      "interval": "month",
+      "price_usd": 1500,
+      "price_cents": 150000,
+      "annual_prepay_usd": 15000,
+      "base_seats": 5,
+      "practices_included": 1,
+      "stripe_price_id": "price_REPLACE_WL_SINGLE",
+      "fleet_pricing_key": "single_track"
+    },
+    {
+      "id": "svc-wl-full",
+      "practice": "diligence",
+      "name": "Full-Desk White-Label Partner",
+      "billing_type": "recurring",
+      "interval": "month",
+      "price_usd": 4500,
+      "price_cents": 450000,
+      "annual_prepay_usd": 45000,
+      "base_seats": 10,
+      "practices_included": 3,
+      "stripe_price_id": "price_REPLACE_WL_FULL",
+      "fleet_pricing_key": "full_desk"
+    },
+    {
+      "id": "svc-license",
+      "practice": "diligence",
+      "name": "Turnkey Engine Licensing",
+      "billing_type": "custom_inquiry",
+      "price_range_usd": [5000, 10000],
+      "stripe_price_id": null
+    }
+  ],
+  "white_label_fleet_tiers": {
+    "single_track": {
+      "base_seats": 5,
+      "base_monthly_usd": 1500,
+      "additional_seat_tiers": [
+        { "from_seat": 6, "to_seat": 15, "per_seat_monthly_usd": 250 },
+        { "from_seat": 16, "to_seat": 30, "per_seat_monthly_usd": 200 },
+        { "from_seat": 31, "to_seat": null, "per_seat_monthly_usd": 150 }
+      ]
+    },
+    "full_desk": {
+      "base_seats": 10,
+      "base_monthly_usd": 4500,
+      "additional_seat_tiers": [
+        { "from_seat": 11, "to_seat": 25, "per_seat_monthly_usd": 350 },
+        { "from_seat": 26, "to_seat": null, "per_seat_monthly_usd": 275 }
+      ]
+    }
+  },
+  "off_menu_recurring_and_seasonal": [
+    {
+      "id": "off-quarterly-pulse",
+      "name": "Quarterly Pulse Audit",
+      "billing_type": "recurring",
+      "interval": "quarter",
+      "price_usd": 900,
+      "annual_prepay_usd": 3000,
+      "description": "Every 90 days: rival pricing check, customer sentiment drift, and AI-search visibility delta.",
+      "auto_pitch_trigger": {
+        "event": "no_monthly_upgrade_after_one_time",
+        "delay_days": 21
+      }
+    },
+    {
+      "id": "off-year-end-benchmark",
+      "name": "Annual / Year-End Strategic Benchmark",
+      "billing_type": "one_time",
+      "price_usd": 1800,
+      "price_range_usd": [1500, 2500],
+      "description": "Full-year competitive, pricing, and digital perception baseline built for Q1 planning and budget allocation.",
+      "auto_pitch_trigger": {
+        "event": "seasonal_outreach_window",
+        "active_months": [11, 12, 1]
+      }
+    }
+  ],
+  "post_dossier_execution_addons": [
+    {
+      "id": "addon-geo-pack",
+      "name": "GEO Authority Content Pack",
+      "triggered_from_practices": ["perception"],
+      "billing_type": "one_time",
+      "price_usd": 950,
+      "price_range_usd": [750, 1500],
+      "deliverable": "Batch of 5-10 citation-ready, schema-formatted articles + FAQ JSON-LD + fast-indexing checklist delivered as a ready-to-publish zip.",
+      "meetings_included": 0
+    },
+    {
+      "id": "addon-friction-playbook",
+      "name": "Friction & Response Playbook",
+      "triggered_from_practices": ["perception"],
+      "billing_type": "one_time",
+      "price_usd": 450,
+      "price_range_usd": [350, 500],
+      "deliverable": "Rewritten customer-facing policies, owner response templates for recurring 1-3 star complaints, and a 1-page staff SOP.",
+      "meetings_included": 0
+    },
+    {
+      "id": "addon-sales-kit",
+      "name": "Counter-Positioning Sales Kit",
+      "triggered_from_practices": ["competitive"],
+      "billing_type": "one_time",
+      "price_usd": 500,
+      "price_range_usd": [400, 600],
+      "optional_monthly_addon_usd": 250,
+      "deliverable": "1-page PDF battlecards per rival + outbound email scripts exploiting verified competitor pricing hikes or service friction.",
+      "meetings_included": 0
+    },
+    {
+      "id": "addon-negotiation-pack",
+      "name": "Negotiation & Diligence Pack",
+      "triggered_from_practices": ["diligence"],
+      "billing_type": "one_time",
+      "price_usd": 350,
+      "price_range_usd": [250, 400],
+      "deliverable": "Tailored follow-up audit questions, red-flag verification requests, or executive interview questions based on dossier findings.",
+      "meetings_included": 0
+    },
+    {
+      "id": "addon-async-roadmap",
+      "name": "Async Execution Roadmap",
+      "triggered_from_practices": ["competitive", "perception", "diligence"],
+      "billing_type": "one_time",
+      "price_usd": 600,
+      "price_range_usd": [500, 750],
+      "deliverable": "Written 3-page step-by-step implementation memo answering specific execution questions within 24 hours, zero phone calls.",
+      "meetings_included": 0
+    }
+  ],
+  "automated_lifecycle_triggers": [
+    {
+      "trigger": "on_one_time_dossier_delivered",
+      "action": "append_dynamic_credit_cta_and_matching_addon",
+      "notes": "Insert dynamic 25% credit button showing exact highest one-time fee paid + 1 matching execution add-on."
+    },
+    {
+      "trigger": "on_one_time_day_10_no_upgrade",
+      "action": "send_credit_expiry_reminder",
+      "notes": "4-day warning before 14-day diagnostic credit expires."
+    },
+    {
+      "trigger": "on_one_time_day_21_no_upgrade",
+      "action": "pitch_quarterly_pulse_audit",
+      "notes": "Offer $900/quarter Pulse Audit for clients who did not want monthly monitoring."
+    },
+    {
+      "trigger": "on_monthly_day_60_active",
+      "action": "pitch_annual_prepay",
+      "notes": "Offer 12 months for the price of 10 on their active monthly desk."
+    },
+    {
+      "trigger": "on_monthly_day_90_active",
+      "action": "auto_deliver_quarterly_rollup",
+      "notes": "Compile 12 weeks of D1 intel_snapshots into an automatic Quarterly Market Shift Summary at no extra fee."
+    }
+  ]
+}
