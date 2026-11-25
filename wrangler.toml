@@ -5,3 +5,12 @@ compatibility_date = "2026-11-01"
 [assets]
 directory = "."
 binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "po-intel-db"
+database_id = "1581a174-8d39-4937-a093-3198a39321a6"
+
+[[r2_buckets]]
+binding = "VAULT"
+bucket_name = "po-evidence-vault"
