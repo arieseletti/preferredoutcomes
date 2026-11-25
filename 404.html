@@ -1,155 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preferred Outcomes | Flight Statutory Demand Dossier</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
-            --border: #334155;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Preferred Outcomes // Intelligence Desk</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#14362B" />
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
+  <!-- Inline SVG Favicon: Editorial P/O Monogram on Dark Forest Green (#14362B) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314362B'/%3E%3Ctext x='16' y='21.5' text-anchor='middle' fill='%23FAF9F6' font-family='Georgia,serif' font-size='13.5' font-weight='500' letter-spacing='0.4'%3EP/O%3C/text%3E%3C/svg%3E" />
 
-        .container {
-            max-width: 540px;
-            width: 100%;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            box-sizing: border-box;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
 
-        .badge {
-            display: inline-block;
-            background-color: rgba(59, 130, 246, 0.15);
-            color: var(--accent);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-        }
+  <style>
+    :root {
+      --bg-paper: #FAF9F6;
+      --bg-card: #FFFFFF;
+      --border-hairline: #E5E2DC;
+      --ink-primary: #141413;
+      --ink-muted: #57534E;
+      --accent-forest: #14362B;
+      --accent-forest-hover: #0E271F;
+    }
 
-        h1 {
-            font-size: 22px;
-            margin-top: 0;
-            margin-bottom: 12px;
-            word-break: break-word;
-        }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .flight-id {
-            color: var(--accent);
-            font-family: monospace;
-        }
+    body {
+      background-color: var(--bg-paper);
+      color: var(--ink-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        p.description {
-            color: var(--text-muted);
-            font-size: 15px;
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
+    .card {
+      width: 100%;
+      max-width: 520px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-hairline);
+      border-top: 3px solid var(--accent-forest);
+      border-radius: 2px;
+      padding: 2.25rem 2rem;
+    }
 
-        .buy-button {
-            display: block;
-            width: 100%;
-            background-color: var(--accent);
-            color: white;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            padding: 14px 16px;
-            border-radius: 8px;
-            box-sizing: border-box;
-            text-align: center;
-            transition: background-color 0.2s;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
+    .eyebrow {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent-forest);
+      margin-bottom: 0.9rem;
+    }
 
-        .buy-button:hover {
-            background-color: var(--accent-hover);
-        }
+    h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.9rem;
+      line-height: 1.18;
+      color: var(--ink-primary);
+      margin-bottom: 0.85rem;
+    }
 
-        .footer-note {
-            margin-top: 16px;
-            font-size: 12px;
-            color: var(--text-muted);
-            line-height: 1.4;
-            word-break: break-word;
-        }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--ink-muted);
+      margin-bottom: 1.75rem;
+    }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 12px;
-            }
-            .container {
-                padding: 18px;
-            }
-            h1 {
-                font-size: 20px;
-            }
-            .buy-button {
-                font-size: 14px;
-                padding: 12px 14px;
-            }
-        }
-    </style>
+    .btn {
+      display: inline-block;
+      background-color: var(--accent-forest);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.78rem 1.35rem;
+      border-radius: 2px;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-forest-hover);
+    }
+
+    .footer-meta {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-hairline);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <div class="badge">Statutory Verification Notice</div>
-        <h1>Flight Dossier: <span id="flightIdentDisplay" class="flight-id">Loading...</span></h1>
-        
-        <p class="description" id="hookText">
-            Verifying flight disruption data and compiling institutional statutory demand documentation...
-        </p>
-
-        <a href="#" id="checkoutButton" class="buy-button">Acquire Statutory Demand Dossier - $15.00</a>
-
-        <div class="footer-note" id="footerNote">
-            Secure 256-bit encrypted checkout. Instant digital delivery of verified legal demand documents.
-        </div>
-    </div>
-
-    <script>
-        const pathSegments = window.location.pathname.replace(/^\/+/, '').split('/');
-        const flightIdent = pathSegments[0] ? pathSegments[0].toUpperCase() : '';
-
-        if (flightIdent && flightIdent !== 'INDEX.HTML' && flightIdent !== '404.HTML') {
-            document.getElementById('flightIdentDisplay').textContent = flightIdent;
-            document.getElementById('hookText').textContent = `This flight qualifies for maximum statutory cash settlement under the applicable regulatory framework due to verified disruption. Download your complete legal dossier and formal airline claim package instantly.`;
-            document.getElementById('checkoutButton').href = `https://gumroad.com/l/${flightIdent.toLowerCase()}`;
-        } else {
-            document.getElementById('flightIdentDisplay').textContent = 'SYSTEM READY';
-            document.getElementById('hookText').textContent = 'Please navigate to a specific flight URL (e.g., preferredoutcomes.org/ACA119) to access a verified statutory claim dossier.';
-            document.getElementById('checkoutButton').style.display = 'none';
-        }
-    </script>
-
+  <main class="card">
+    <span class="eyebrow">HTTP 404 // Record Not Found</span>
+    <h1>This document is no longer on file.</h1>
+    <p>
+      The page you requested has been archived or does not exist. Return to the main desk to view active practices and fee schedules.
+    </p>
+    <a href="/" class="btn">Return to Intelligence Desk &rarr;</a>
+    <div class="footer-meta">Preferred Outcomes // Intelligence Desk</div>
+  </main>
 </body>
 </html>
